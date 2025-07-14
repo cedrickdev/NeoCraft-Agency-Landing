@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -16,7 +17,6 @@ export const metadata: Metadata = {
     description: "Solutions digitales sur mesure et formation technique de qualité",
     type: "website",
   },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
