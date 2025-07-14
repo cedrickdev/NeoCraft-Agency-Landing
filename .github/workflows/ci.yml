@@ -23,7 +23,7 @@ jobs:
         run: node --version && npm --version
 
       - name: 📥 Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: 🔍 Run Linter
         run: npm run lint
