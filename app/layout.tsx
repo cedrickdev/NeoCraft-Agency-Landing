@@ -1,11 +1,11 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { Analytics } from "@vercel/analytics/next"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NeoCraft - L'artisanat du code, réinventé",
@@ -44,10 +44,16 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="fr" suppressHydrationWarning>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="iNDnJUeBgvHM6dLZFpFQP6SDlcQ04djSzYPoiZ5W4Ys"
+        />
+      </head>
       <body className={inter.className}>{children}</body>
       <GoogleAnalytics gaId="G-45NDXPYWFZ" />
       <Analytics />
