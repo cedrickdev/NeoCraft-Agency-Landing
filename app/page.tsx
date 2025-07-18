@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform, AnimatePresence, color } from "framer-motion"
 import {
   Code2,
   Palette,
@@ -22,7 +22,6 @@ import {
   Quote,
   Mail,
   Phone,
-  MapPin,
   ChevronRight,
   Clock,
   Zap,
@@ -30,6 +29,7 @@ import {
   Github,
   Linkedin,
   Twitter,
+  MessageCircleMore
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -117,36 +117,44 @@ export default function NeoCraftLanding() {
     {
       icon: Search,
       title: "Découverte",
-      description: "Analyse approfondie de vos besoins, objectifs et contraintes pour définir la meilleure approche.",
-      color: "from-blue-600 to-indigo-700",
+      description:
+        "Analyse approfondie de vos besoins, objectifs et contraintes pour définir la meilleure approche.",
+      iconColor: "from-blue-600 to-indigo-700",
+      color: "text-blue-600",
     },
     {
       icon: Lightbulb,
       title: "Design & prototype",
       description:
         "Conception créative et prototypage interactif pour visualiser et tester votre solution avant développement.",
-      color: "from-emerald-500 to-teal-600",
+      iconColor: "from-emerald-500 to-teal-600",
+      color: "text-emerald-500",
     },
     {
       icon: Code2,
       title: "Développement agile",
-      description: "Développement itératif avec des cycles courts pour s'adapter rapidement aux retours et évolutions.",
-      color: "from-amber-500 to-orange-600",
+      description:
+        "Développement itératif avec des cycles courts pour s'adapter rapidement aux retours et évolutions.",
+      iconColor: "from-amber-500 to-orange-600",
+      color: "text-amber-500",
     },
     {
       icon: TestTube,
       title: "Tests & QA",
-      description: "Validation rigoureuse et optimisation des performances pour garantir une qualité irréprochable.",
-      color: "from-purple-600 to-pink-600",
+      description:
+        "Validation rigoureuse et optimisation des performances pour garantir une qualité irréprochable.",
+      iconColor: "from-purple-600 to-pink-600",
+      color: "text-purple-600",
     },
     {
       icon: CheckCircle,
       title: "Livraison + suivi",
       description:
         "Déploiement maîtrisé et formation de vos équipes pour une transition en douceur et une autonomie rapide.",
-      color: "from-rose-500 to-red-600",
+      iconColor: "from-rose-500 to-red-600",
+      color: "text-rose-500",
     },
-  ]
+  ];
 
   const team = [
     {
@@ -200,7 +208,15 @@ export default function NeoCraftLanding() {
         "Formation technique de haut niveau qui a transformé notre équipe. Nos développeurs ont gagné en autonomie et en efficacité grâce à l'approche pédagogique de NeoCraft.",
       rating: 5,
     },
-  ]
+  ];
+
+  const contact = 
+    {
+     email: "contact@neocraft.dev",
+     phone: "+33 6 12 34 56 78",
+     whatsApp: "https://wa.me/41783410631"
+    }
+  
 
   const values = [
     {
@@ -435,7 +451,7 @@ export default function NeoCraftLanding() {
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  Travailler avec nous
+                  Dmander un devis
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
@@ -619,15 +635,15 @@ export default function NeoCraftLanding() {
                   Notre Vision
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                 {/*  Chez NeoCraft, nous croyons que le développement des solutions
+                  {/*  Chez NeoCraft, nous croyons que le développement des solutions
                   informatiques est un art. Chaque ligne de code est ciselée
                   avec précision, chaque interface est pensée pour
                   l'utilisateur, et chaque projet est une œuvre unique qui
                   reflète notre passion pour l'excellence technique.  */}
-                  Nous créons de la valeur sociale, environnementale et économique durable
-                  en œuvrant pour le progrès digital et humain. La motivation de
-                  contribuer à ces trois dimensions du développement durable a
-                  toujours été au cœur de nos activités
+                  Nous créons de la valeur sociale, environnementale et
+                  économique durable en œuvrant pour le progrès digital et
+                  humain. La motivation de contribuer à ces trois dimensions du
+                  développement durable a toujours été au cœur de nos activités
                 </p>
               </div>
 
@@ -636,10 +652,10 @@ export default function NeoCraftLanding() {
                   Notre Mission
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                  Démocratiser l'excellence technique en
-                  combinant savoir-faire artisanal et innovation technologique.
-                  Nous créons des solutions digitales qui transforment les idées
-                  en réalités concrètes et formons les talents de demain.
+                  Démocratiser l'excellence technique en combinant savoir-faire
+                  artisanal et innovation technologique. Nous créons des
+                  solutions digitales qui transforment les idées en réalités
+                  concrètes et formons les talents de demain.
                 </p>
               </div>
 
@@ -686,7 +702,7 @@ export default function NeoCraftLanding() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400 border-emerald-100 dark:border-emerald-800/30 px-4 py-1.5 text-sm font-medium">
+            <Badge className="mb-4 bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400 border-emerald-100 dark:border-emerald-800/30 px-4 py-1.5 text-sm font-medium hover:text-stone-100">
               Nos expertises
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -790,20 +806,22 @@ export default function NeoCraftLanding() {
                         : "lg:text-left lg:pl-16"
                     } text-center mb-8 lg:mb-0`}
                   >
-                    <span className="inline-block text-5xl font-bold text-gray-200 dark:text-gray-800 mb-4">
+                    <span className="inline-block text-5xl font-bold text-gray-200 dark:text-gray mb-4">
                       0{index + 1}
                     </span>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3
+                      className={`text-2xl font-bold ${step.color} dark:text-white mb-4`}
+                    >
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="dark:text-gray-400 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
 
                   <div className="relative z-10 flex-shrink-0">
                     <div
-                      className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center shadow-lg transform hover:rotate-6 transition-transform duration-300`}
+                      className={`w-20 h-20 bg-gradient-to-br ${step.iconColor} rounded-2xl flex items-center justify-center shadow-lg transform hover:rotate-6 transition-transform duration-300`}
                     >
                       <step.icon className="w-10 h-10 text-white" />
                     </div>
@@ -835,17 +853,13 @@ export default function NeoCraftLanding() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium">
+            <Badge className="mb-4 bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium hover:text-amber-100">
               Notre équipe
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Les Crafteurs
+              Des collaborateurs passionnés et engagés
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
-            {/*  <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Des professionnels talentueux et passionnés qui donnent vie à vos
-              projets avec expertise et créativité.
-            </p> */}
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-10">
@@ -920,7 +934,7 @@ export default function NeoCraftLanding() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-amber-800 text-white  dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium">
+            <Badge className="mb-4 bg-amber-600 text-white  dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium">
               Témoignages
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold  text-gray-900 dark:text-white mb-6">
@@ -1030,16 +1044,16 @@ export default function NeoCraftLanding() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium">
+            <Badge className="mb-4 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium hover:text-amber-100">
               Contactez-nous
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Parlons de votre projet
+              Parlez-nous de votre projet
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Prêt à démarrer votre projet ? Contactez-nous pour discuter de vos
-              besoins et découvrir comment nous pouvons vous aider.
+              Dites-nous en plus sur vos idées, un de nos chefs de projet vous
+              contactera rapidement. Nos offres sont sans engagement
             </p>
           </motion.div>
 
@@ -1177,10 +1191,7 @@ export default function NeoCraftLanding() {
                         <Mail className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="font-medium text-sm text-white/80">
-                          Email
-                        </p>
-                        <p className="font-medium">contact@neocraft.dev</p>
+                        <a href={`mailto:${contact.email}`}>Envoyez un mail</a>
                       </div>
                     </div>
 
@@ -1189,22 +1200,18 @@ export default function NeoCraftLanding() {
                         <Phone className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="font-medium text-sm text-white/80">
-                          Téléphone
-                        </p>
-                        <p className="font-medium">+33 1 23 45 67 89</p>
+                        <a href={`tel:${contact.phone}`}>Appellez Nous</a>
                       </div>
                     </div>
 
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-white" />
+                        <MessageCircleMore className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="font-medium text-sm text-white/80">
-                          Adresse
-                        </p>
-                        <p className="font-medium">Paris, France</p>
+                        <a href={`${contact.whatsApp}`}>
+                          Ecrivez Nous sur whatsApp
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1281,9 +1288,7 @@ export default function NeoCraftLanding() {
                 <span className="text-xl font-bold">NeoCraft</span>
               </div>
               <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-                L'artisanat du code, réinventé. Nous créons des solutions
-                digitales sur mesure et formons les talents de demain avec
-                passion et expertise.
+                Nous traduisons vos besoins en solutions.
               </p>
               <div className="flex space-x-4">
                 <a
@@ -1308,15 +1313,14 @@ export default function NeoCraftLanding() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-6">Navigation</h4>
+              <h4 className="text-lg font-semibold mb-6">Services</h4>
               <ul className="space-y-3">
                 <li>
                   <a
                     href="#about"
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
-                    <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform" />
-                    À propos
+                    Sites vitrine & institutionnels
                   </a>
                 </li>
                 <li>
@@ -1324,8 +1328,7 @@ export default function NeoCraftLanding() {
                     href="#services"
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
-                    <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform" />
-                    Services
+                    Sites e-commerce
                   </a>
                 </li>
                 <li>
@@ -1333,8 +1336,7 @@ export default function NeoCraftLanding() {
                     href="#team"
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
-                    <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform" />
-                    Équipe
+                    Développement sur mesure
                   </a>
                 </li>
                 <li>
@@ -1342,8 +1344,23 @@ export default function NeoCraftLanding() {
                     href="#contact"
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
-                    <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform" />
-                    Contact
+                    Google Ads
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
+                  >
+                    Facebook Ads
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
+                  >
+                    SEO
                   </a>
                 </li>
               </ul>
