@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://neocraftdev.vercel.app
+
+# Sitemaps
 Sitemap: https://neocraftdev.vercel.app/sitemap.xml
