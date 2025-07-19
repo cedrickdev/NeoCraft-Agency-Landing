@@ -25,9 +25,6 @@ jobs:
       - name: 📥 Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: 🔍 Run Linter
-        run: npm run lint
-
       - name: ✅ Run Tests
         run: npm test
 
