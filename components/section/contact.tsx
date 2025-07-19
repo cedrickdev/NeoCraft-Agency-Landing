@@ -23,17 +23,34 @@ export default function Contact() {
     "idle" | "loading" | "success" | "error"
   >("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  async function handleSubmit(e: any) {
     e.preventDefault();
     setFormStatus("loading");
+    const form = new FormData(e.target);
 
-    // Simulation d'envoi de formulaire
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify({
+        name: form.get("name"),
+        email: form.get("email"),
+        subject: form.get("subject"), // Ajoute ceci
+        message: form.get("message"),
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    let isSuccess = res.ok;
+    let errorData = null;
+    if (!isSuccess) {
+      errorData = await res.json();
+      // Affiche errorData.message si besoin
+    }
     setTimeout(() => {
-      setFormStatus("success");
+      setFormStatus(isSuccess ? "success" : "error");
       setFormData({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setFormStatus("idle"), 3000);
     }, 1500);
-  };
+  }
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
@@ -86,6 +103,7 @@ export default function Contact() {
                         Nom *
                       </label>
                       <Input
+                      name="name"
                         type="text"
                         required
                         value={formData.name}
@@ -101,6 +119,7 @@ export default function Contact() {
                         Email *
                       </label>
                       <Input
+                      name="email"
                         type="email"
                         required
                         value={formData.email}
@@ -118,6 +137,7 @@ export default function Contact() {
                       Sujet *
                     </label>
                     <Input
+                       name="subject"
                       type="text"
                       required
                       value={formData.subject}
@@ -134,6 +154,7 @@ export default function Contact() {
                       Message *
                     </label>
                     <Textarea
+                    name="message"
                       required
                       value={formData.message}
                       onChange={(e) =>
