@@ -12,6 +12,7 @@ import Services from "@/components/section/services";
 import Hero from "@/components/section/hero";
 import About from "@/components/section/about";
 import Header from "@/components/header";
+import InteractiveServices from "@/components/section/interactive-services";
 
 export default function NeoCraftLanding() {
   return (
@@ -23,6 +24,8 @@ export default function NeoCraftLanding() {
       <About />
 
       <Services />
+
+      <InteractiveServices />
 
       <Methodology />
 
