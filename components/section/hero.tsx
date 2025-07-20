@@ -68,7 +68,7 @@ export default function Hero() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Dmander un devis
+                Demander un devis
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
