@@ -13,6 +13,7 @@ import Hero from "@/components/section/hero";
 import About from "@/components/section/about";
 import Header from "@/components/header";
 import InteractiveServices from "@/components/section/interactive-services";
+import ProgressiveContactForm from "@/components/section/progressive-contact-form";
 
 export default function NeoCraftLanding() {
   return (
@@ -33,7 +34,7 @@ export default function NeoCraftLanding() {
 
       <Testimonial />
 
-      <Contact />
+      <ProgressiveContactForm />
 
       <CTA />
 
