@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from rag import get_answer
+from rag import get_answer, rebuild_index
 
 
 app = FastAPI()
@@ -14,10 +14,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/ask")
+@app.post("/askNeochat")
 async def ask(request: Request):
     data = await request.json()
     question = data.get("question")
-    print(f"Question Reçue: {question}")
     answer = get_answer(question)
     return {"answer": answer}
+
+@app.post("/reload") # rebuild the index of the RAG database to avoid memory issues
+def reload():
+    vectorStore = rebuild_index()
+    return {"message": "la base de connaissances a été rechargée avec succès"}

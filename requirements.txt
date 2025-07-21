@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-langchain
+langchain-ollama
 chromadb
 ollama
 python-dotenv
