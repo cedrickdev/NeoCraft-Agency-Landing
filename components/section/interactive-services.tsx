@@ -257,18 +257,14 @@ export default function InteractiveServices() {
           <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
           <div className="max-w-4xl mx-auto space-y-4">
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              Notre agence web associe un esprit{" "}
+              Notre agence  associe a l'esprit{" "}
               <strong className="text-gray-900 dark:text-white">
                 entrepreneurial
               </strong>{" "}
-              à de{" "}
-              <strong className="text-gray-900 dark:text-white">
-                solides compétences digitales
-              </strong>{" "}
-              pour vous proposer des leviers marketing adaptés à votre budget.
-              Vous bénéficiez d'un chef de projet pour suivre l'avancement de
-              votre site internet et vous conseiller quant à votre stratégie de
-              communication.
+              et les compétences numériques pour vous fournir les leviers
+              marketing adaptés à votre budget. Vous bénéficiez de quelqu'un qui
+              vérifie l'avancement du développement de votre site web et vous
+              assiste dans votre stratégie de communication.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300">
               Choisissez ci-dessous un pôle de l'agence afin de découvrir les
