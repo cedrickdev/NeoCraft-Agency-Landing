@@ -40,7 +40,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2 text-center lg:text-left"
           >
-            <Badge className="mb-6 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium">
+            <Badge className="mb-6 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
               NeoCraft - L'artisanat du code
             </Badge>
 

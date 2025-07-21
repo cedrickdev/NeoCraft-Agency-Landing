@@ -69,7 +69,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <Badge className="mb-4 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium hover:text-amber-100">
+          <Badge className="mb-4 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
             Contactez-nous
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -103,7 +103,7 @@ export default function Contact() {
                         Nom *
                       </label>
                       <Input
-                      name="name"
+                        name="name"
                         type="text"
                         required
                         value={formData.name}
@@ -119,7 +119,7 @@ export default function Contact() {
                         Email *
                       </label>
                       <Input
-                      name="email"
+                        name="email"
                         type="email"
                         required
                         value={formData.email}
@@ -137,7 +137,7 @@ export default function Contact() {
                       Sujet *
                     </label>
                     <Input
-                       name="subject"
+                      name="subject"
                       type="text"
                       required
                       value={formData.subject}
@@ -154,7 +154,7 @@ export default function Contact() {
                       Message *
                     </label>
                     <Textarea
-                    name="message"
+                      name="message"
                       required
                       value={formData.message}
                       onChange={(e) =>

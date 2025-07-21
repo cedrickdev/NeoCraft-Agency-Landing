@@ -62,7 +62,7 @@ export default function Methodology() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <Badge className="mb-4 bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 border-purple-100 dark:border-purple-800/30 px-4 py-1.5 text-sm font-medium">
+          <Badge className="mb-4 bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 border-purple-100 dark:border-purple-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
             Notre approche
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">

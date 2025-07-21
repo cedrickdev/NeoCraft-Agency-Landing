@@ -43,7 +43,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <Badge className="mb-4 bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium hover:text-amber-100">
+          <Badge className="mb-4 bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
             Notre équipe
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
