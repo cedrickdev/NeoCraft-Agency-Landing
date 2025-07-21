@@ -29,8 +29,6 @@ export default function NeoCraftLanding() {
 
       <Methodology />
 
-      <Team />
-
       <Testimonial />
 
       <ProgressiveContactForm />
