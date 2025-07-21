@@ -236,7 +236,7 @@ export default function InteractiveServices() {
     servicesData[activeMainService]?.[activeSubService] || {};
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="iservices" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gray-50 dark:bg-gray-900"></div>
