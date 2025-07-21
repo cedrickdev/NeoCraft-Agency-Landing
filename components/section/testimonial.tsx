@@ -75,7 +75,7 @@ export default function Testimonial() {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            <div className="overflow-hidden">
+            <div>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTestimonial}
@@ -141,8 +141,8 @@ export default function Testimonial() {
                   onClick={() => setActiveTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     activeTestimonial === index
-                      ? "bg-white scale-125"
-                      : "bg-white/50 hover:bg-white/70"
+                      ? "bg-slate-500 dark:bg-white scale-125"
+                      : "bg-slate-300 dark:bg-white/50 hover:bg-white/70"
                   }`}
                   aria-label={`Voir le témoignage ${index + 1}`}
                 />
