@@ -31,8 +31,8 @@ export default function CTA() {
               </h2>
 
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
-                Transformons votre vision en réalité digitale avec notre
-                expertise artisanale.
+                Réalisez votre vision numérique grâce à nos compétences
+                artisanales.
               </p>
             </div>
 
@@ -69,7 +69,7 @@ export default function CTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               size="lg"
-              className="group relative bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-0"
+              className="group relative bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-emerald-500 hover:to-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-0"
               onClick={() =>
                 document
                   .getElementById("contact")
@@ -106,9 +106,7 @@ export default function CTA() {
             </p>
             <div className="flex items-center justify-center space-x-8 opacity-60">
               <div className="text-2xl font-bold text-gray-400">TechStart</div>
-              <div className="text-2xl font-bold text-gray-400">
-                InnovateCorp
-              </div>
+              <div className="text-2xl font-bold text-gray-400  ">Sigeris</div>
               <div className="text-2xl font-bold text-gray-400">StartupLab</div>
             </div>
           </div>
