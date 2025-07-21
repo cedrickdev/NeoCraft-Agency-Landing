@@ -5,7 +5,6 @@ import type React from "react";
 import Footer from "@/components/section/footer";
 import CTA from "@/components/section/cta";
 import Testimonial from "@/components/section/testimonial";
-import Team from "@/components/section/team";
 import Methodology from "@/components/section/methodology";
 import Services from "@/components/section/services";
 import Hero from "@/components/section/hero";
