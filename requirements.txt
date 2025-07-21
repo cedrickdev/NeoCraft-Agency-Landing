@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+langchain
+chromadb
+ollama
+python-dotenv
