@@ -4,14 +4,15 @@ import type React from "react";
 
 import Footer from "@/components/section/footer";
 import CTA from "@/components/section/cta";
-import Contact from "@/components/section/contact";
 import Testimonial from "@/components/section/testimonial";
-import Team from "@/components/section/team";
 import Methodology from "@/components/section/methodology";
 import Services from "@/components/section/services";
 import Hero from "@/components/section/hero";
 import About from "@/components/section/about";
 import Header from "@/components/header";
+import InteractiveServices from "@/components/section/interactive-services";
+import ProgressiveContactForm from "@/components/section/progressive-contact-form";
+import { ChatWidget } from "@/components/chat-widget";
 
 export default function NeoCraftLanding() {
   return (
@@ -24,15 +25,17 @@ export default function NeoCraftLanding() {
 
       <Services />
 
-      <Methodology />
+      <InteractiveServices />
 
-      <Team />
+      <Methodology />
 
       <Testimonial />
 
-      <Contact />
+      <ProgressiveContactForm />
 
       <CTA />
+
+      <ChatWidget />
 
       <Footer />
     </div>

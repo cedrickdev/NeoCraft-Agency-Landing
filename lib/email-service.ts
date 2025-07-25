@@ -13,36 +13,37 @@ interface ContactFormData {
 
 export async function sendContactFormEmails(formData: ContactFormData) {
   try {
-    // Send confirmation email to client
-    const clientEmailResult = await resend.emails.send({
-      from: "Neocraft <onboarding@resend.dev>",
-      to: [formData.email],
-      subject: "Confirmation de réception - NeoCraft",
-      react: ClientConfirmationEmail({
-        clientName: formData.name,
-        clientEmail: formData.email,
-        subject: formData.subject,
-      }),
-    });
+    const emailResult = await resend.batch.send([
+      // Send confirmation email to client
+      {
+        from: "Neocraft <onboarding@resend.dev>",
+        to: [formData.email],
+        subject: "Confirmation de réception - NeoCraft",
+        react: ClientConfirmationEmail({
+          clientName: formData.name,
+          clientEmail: formData.email,
+          subject: formData.subject,
+        }),
+      },
 
-    // Send notification email to company
-    const companyEmailResult = await resend.emails.send({
-      from: "NeoCraft Contact Form <onboarding@resend.dev>",
-      to: ["cedrickfeze24@gmail.com"], // Remplacez par votre email
-      subject: "Nouvelle demande de contact",
-      react: CompanyNotificationEmail({
-        clientName: formData.name,
-        clientEmail: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        submittedAt: new Date(),
-      }),
-    });
+      // Send notification email to company
+      {
+        from: "NeoCraft Contact Form <onboarding@resend.dev>",
+        to: ["cedrickfeze24@gmail.com"],
+        subject: "Nouvelle demande de contact",
+        react: CompanyNotificationEmail({
+          clientName: formData.name,
+          clientEmail: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          submittedAt: new Date(),
+        }),
+      },
+    ]);
 
     return {
       success: true,
-      clientEmailId: clientEmailResult.data,
-      companyEmailId: companyEmailResult.data,
+      data: emailResult.data,
     };
   } catch (error) {
     console.error("Error sending emails:", error);

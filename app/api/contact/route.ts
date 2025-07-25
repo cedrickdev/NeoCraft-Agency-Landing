@@ -38,10 +38,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: "Message envoyé avec succès",
-      emailIds: {
-        client: emailResult.clientEmailId,
-        company: emailResult.companyEmailId,
-      },
+      data: emailResult.data,
     });
   } catch (error) {
     console.error("Contact form error:", error);

@@ -4,22 +4,22 @@ import { Badge } from "@/components/ui/badge";
 const team = [
   {
     name: "Jorel KUE ",
-    role: "Full Stack Web Developer",
-    avatar: "/IMG_9221.jpg?height=400&width=400",
+    role: "Lead Developer, Open Source Contributor",
+    avatar: "/IMG_9554.jpg?height=400&width=400",
     bio: "Expert en React/Next.js avec 8 ans d'expérience dans le développement d'applications web complexes.",
     skills: ["React", "Next.js", "Node.js", "TypeScript"],
   },
   {
     name: "Cédrick FEZE",
-    role: "Back End Developer, Open Source Contributor",
+    role: "Back End Developer, Product Owner",
     avatar: "/IMG_9221.jpg?height=400&width=400",
     bio: "Créatrice d'expériences digitales mémorables avec une approche centrée sur l'utilisateur.",
     skills: ["Figma", "UX Research", "Design System", "Prototyping"],
   },
   {
     name: "Stéphane KAMGA",
-    role: "Mobile Developer & User Experience Designer",
-    avatar: "/IMG_9221.jpg?height=400&width=400",
+    role: "Mobile Developer, User Experience Designer, Content Strategist",
+    avatar: "/IMG_9553.jpg?height=400&width=400",
     bio: "Architecte de solutions techniques innovantes qui transforment les défis en opportunités.",
     skills: ["Architecture", "Cloud", "DevOps", "Performance"],
   },
@@ -43,7 +43,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <Badge className="mb-4 bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium hover:text-amber-100">
+          <Badge className="mb-4 bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
             Notre équipe
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
