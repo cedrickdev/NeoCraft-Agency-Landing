@@ -12,6 +12,7 @@ import About from "@/components/section/about";
 import Header from "@/components/header";
 import InteractiveServices from "@/components/section/interactive-services";
 import ProgressiveContactForm from "@/components/section/progressive-contact-form";
+import { ChatWidget } from "@/components/chat-widget";
 
 export default function NeoCraftLanding() {
   return (
@@ -33,6 +34,8 @@ export default function NeoCraftLanding() {
       <ProgressiveContactForm />
 
       <CTA />
+
+      <ChatWidget />
 
       <Footer />
     </div>
