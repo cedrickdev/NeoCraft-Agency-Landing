@@ -50,17 +50,17 @@ export default function er() {
             À propos
           </a>
           <a
-            href="#services"
+            href="#iservices"
             className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
           >
             Services
           </a>
-          <a
+         {/*  <a
             href="#team"
             className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
           >
             Équipe
-          </a>
+          </a> */}
           <a
             href="#contact"
             className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
