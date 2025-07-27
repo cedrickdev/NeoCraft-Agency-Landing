@@ -16,7 +16,7 @@ export async function sendContactFormEmails(formData: ContactFormData) {
     const emailResult = await resend.batch.send([
       // Send confirmation email to client
       {
-        from: "Neocraft <onboarding@resend.dev>",
+        from: process.env.SEND_FORM_EMAIL!,
         to: [formData.email],
         subject: "Confirmation de réception - NeoCraft",
         react: ClientConfirmationEmail({
@@ -28,8 +28,8 @@ export async function sendContactFormEmails(formData: ContactFormData) {
 
       // Send notification email to company
       {
-        from: "NeoCraft Contact Form <onboarding@resend.dev>",
-        to: ["cedrickfeze24@gmail.com"],
+        from: process.env.SEND_FORM_EMAIL!,
+        to: [process.env.COMPANY_EMAIL!],
         subject: "Nouvelle demande de contact",
         react: CompanyNotificationEmail({
           clientName: formData.name,

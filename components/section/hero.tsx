@@ -41,7 +41,7 @@ export default function Hero() {
             className="lg:w-1/2 text-center lg:text-left"
           >
             <Badge className="mb-6 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
-              NeoCraft - L'artisanat du code
+              L'innovation web pour un succès numérique
             </Badge>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
