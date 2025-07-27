@@ -62,30 +62,15 @@ export default function ClientConfirmationEmail({
               En attendant, n'hésitez pas à consulter nos derniers projets sur
               notre site web ou à nous suivre sur nos réseaux sociaux.
             </Text>
-
-            <Hr style={hr} />
-
-            {/* CTA Section */}
-            <Section style={ctaSection}>
-              <Text style={ctaTitle}>En attendant notre réponse</Text>
-              <div style={buttonContainer}>
-                <Link href={`${baseUrl}`} style={button}>
-                  Voir nos projets
-                </Link>
-                <Link href={`${blogUrl}`} style={buttonSecondary}>
-                  Lire notre blog
-                </Link>
-              </div>
-            </Section>
           </Section>
 
           {/* Footer */}
           <Section style={footer}>
             <Text style={footerText}>
-              <strong>NeoCraft</strong> - L'artisanat du code, réinventé
+              <strong>NeoCraft</strong> - Traduisons vos besoins en solutions.
             </Text>
             <Text style={footerText}>
-              📧 contact@neocraft.dev | 📞 +33 1 23 45 67 89 | 📍 Paris, France
+              📧 www.neocraft.dev | 📞 +33 1 23 45 67 89 | 📍 Paris, France
             </Text>
             <Text style={footerLinks}>
               <Link href={`${baseUrl}`} style={link}>
