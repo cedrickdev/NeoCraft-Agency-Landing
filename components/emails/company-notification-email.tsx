@@ -89,25 +89,6 @@ export default function CompanyNotificationEmail({
                 <Text style={messageText}>{message}</Text>
               </div>
             </Section>
-
-            {/* Quick Actions */}
-            <Section style={actionsSection}>
-              <Text style={actionsTitle}>Actions rapides</Text>
-              <div style={buttonContainer}>
-                <Link
-                  href={`mailto:${clientEmail}?subject=Re: ${subject}`}
-                  style={primaryButton}
-                >
-                  📧 Répondre par email
-                </Link>
-                <Link
-                  href="https://neocraft.dev/admin/contacts"
-                  style={secondaryButton}
-                >
-                  📋 Voir dans l'admin
-                </Link>
-              </div>
-            </Section>
           </Section>
 
           {/* Footer */}
