@@ -92,7 +92,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>{children}</body>
-      <GoogleAnalytics gaId="G-45NDXPYWFZ" />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       <Analytics />
     </html>
   );
