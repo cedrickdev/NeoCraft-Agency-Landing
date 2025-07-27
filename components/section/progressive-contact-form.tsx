@@ -39,15 +39,16 @@ export default function ProgressiveContactForm() {
   });
   const [formStatus, setFormStatus] = useState<FormStatus>("idle");
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   // Focus input when step changes
   useEffect(() => {
-    if (inputRef.current && currentStep !== "complete") {
+    if (hasInteracted && inputRef.current && currentStep !== "complete") {
       setTimeout(() => {
         inputRef.current?.focus();
       }, 300);
     }
-  }, [currentStep]);
+  }, [currentStep, hasInteracted]);
 
   const handleNext = () => {
     const steps: FormStep[] = [
@@ -341,6 +342,7 @@ export default function ProgressiveContactForm() {
                             onKeyPress={handleKeyPress}
                             placeholder={getStepPlaceholder(currentStep)}
                             className="w-full text-lg py-4 px-6 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl transition-all duration-300"
+                            onFocus={() => setHasInteracted(true)}
                           />
                         )}
 
@@ -359,6 +361,7 @@ export default function ProgressiveContactForm() {
                             onKeyPress={handleKeyPress}
                             placeholder={getStepPlaceholder(currentStep)}
                             className="w-full text-lg py-4 px-6 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl transition-all duration-300"
+                            onFocus={() => setHasInteracted(true)}
                           />
                         )}
 
@@ -377,6 +380,7 @@ export default function ProgressiveContactForm() {
                             onKeyPress={handleKeyPress}
                             placeholder={getStepPlaceholder(currentStep)}
                             className="w-full text-lg py-4 px-6 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl transition-all duration-300"
+                            onFocus={() => setHasInteracted(true)}
                           />
                         )}
 
@@ -396,6 +400,7 @@ export default function ProgressiveContactForm() {
                             onKeyPress={handleKeyPress}
                             placeholder={getStepPlaceholder(currentStep)}
                             className="w-full text-lg py-4 px-6 h-32 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl resize-none transition-all duration-300"
+                            onFocus={() => setHasInteracted(true)}
                           />
                         )}
 
