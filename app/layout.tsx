@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     images: [
       {
-        url: "https://neocraft.dev/logo/logo512.png",
+        url: "https://www.neocraft.dev/logo/logo512.png",
         width: 512,
         height: 512,
         alt: "NeoCraft Logo",
@@ -49,12 +49,12 @@ const jsonLd = {
   url: "https://www.neocraft.dev",
   logo: "https://www.neocraft.dev/logo/logo512.png",
   sameAs: [
-    "https://twitter.com/neocraft",
-    "https://www.linkedin.com/company/neocraft",
+    "https://x.com/neocraftdev",
+    "https://www.linkedin.com/in/neocraftdev",
   ],
   description:
     "NeoCraft est une agence digitale spécialisée dans le développement des solutions IT",
-  email: "contact.neocraft.dev",
+  email: "support.neocraft.dev",
   telephone: "+33 6 27 00 00 00",
   aggregateRating: {
     "@type": "AggregateRating",
