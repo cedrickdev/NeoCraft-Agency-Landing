@@ -18,11 +18,11 @@ export default function Footer() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 dark:shadow-emerald-500/20">
+                <div className="w-10 h-10  rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 dark:shadow-emerald-500/20">
                   <img
-                    src="/logo/logo180.png"
+                    src="/logo/logo.png"
                     alt="Logo NeoCraft"
-                    className="w-8 h-8 object-contain"
+                    className="w-10 h-10 object-contain"
                   />
                 </div>
                 <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
@@ -168,7 +168,14 @@ export default function Footer() {
                 <div className="flex items-center space-x-1">
                   <Code2 className="w-4 h-4 text-blue-400" />
                   <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent font-medium">
-                    Cédrick feze
+                    <a
+                      href="https://github.com/NeoCraftTeam"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {" "}
+                      NeoCraftTeam
+                    </a>
                   </span>
                 </div>
               </div>
