@@ -33,7 +33,7 @@ export default function er() {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center space-x-2"
         >
-          <a href="#hero">
+          <a href="/">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lgdark:shadow-emerald-500/20">
               <img
                 src="/logo/logo.png"
