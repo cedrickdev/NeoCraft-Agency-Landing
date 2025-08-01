@@ -33,13 +33,15 @@ export default function er() {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center space-x-2"
         >
-          <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 dark:shadow-emerald-500/20">
-            <img
-              src="/logo/logo180.png"
-              alt="Logo NeoCraft"
-              className="w-8 h-8 object-contain"
-            />
-          </div>
+          <a href="/">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lgdark:shadow-emerald-500/20">
+              <img
+                src="/logo/logo.png"
+                alt="Logo NeoCraft"
+                className="w-10 h-10 object-contain"
+              />
+            </div>
+          </a>
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300">
             NeoCraft
           </span>

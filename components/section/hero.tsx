@@ -8,7 +8,7 @@ export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section
+    <section id="hero"
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >

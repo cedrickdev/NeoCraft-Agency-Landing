@@ -1,6 +1,14 @@
-import { Code2, ChevronRight, Github, Linkedin, Twitter, CheckCircle } from "lucide-react";
+import {
+  Code2,
+  ChevronRight,
+  Github,
+  Linkedin,
+  Twitter,
+  CheckCircle,
+  Instagram,
+} from "lucide-react";
 
-const date = new Date;
+const date = new Date();
 const year = date.getFullYear();
 
 export default function Footer() {
@@ -18,13 +26,12 @@ export default function Footer() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 dark:shadow-emerald-500/20">
-                  <img
-                    src="/logo/logo180.png"
-                    alt="Logo NeoCraft"
-                    className="w-8 h-8 object-contain"
-                  />
-                </div>
+                <img
+                  src="/logo/logo.png"
+                  alt="Logo NeoCraft"
+                  className="w-10 h-10 object-contain"
+                />
+
                 <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                   NeoCraft
                 </span>
@@ -34,7 +41,7 @@ export default function Footer() {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/neocraft"
+                  href="https://github.com/NeoCraftTeam"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
@@ -42,7 +49,7 @@ export default function Footer() {
                   <Github className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all" />
                 </a>
                 <a
-                  href="https://linkedin.com/company/neocraft"
+                  href="https://www.linkedin.com/in/neocraftdev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
@@ -50,12 +57,39 @@ export default function Footer() {
                   <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all" />
                 </a>
                 <a
-                  href="https://twitter.com/neocraft"
+                  href="https://x.com/neocraftdev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
                 >
                   <Twitter className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all" />
+                </a>
+                <a
+                  href="https://mastodon.social/@neocraftdev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="2em"
+                    height="2em"
+                    viewBox="0 0 32 32"
+                    className=" group-hover:text-white group-hover:scale-110 transition-all"
+                  >
+                    <path
+                      fill="#9CA3AF"
+                      d="M15.938 4.031c-3.021.013-6.02.396-7.58 1.115c0 0-3.358 1.529-3.358 6.735c0 6.197-.005 13.98 5.563 15.484c2.131.573 3.965.697 5.439.612c2.675-.151 3.998-.971 3.998-.971l-.09-1.977s-1.734.611-3.88.541c-2.128-.075-4.369-.234-4.718-2.89a5.64 5.64 0 0 1-.046-.746c4.507 1.119 8.35.487 9.408.359c2.954-.359 5.525-2.211 5.853-3.904c.514-2.668.471-6.508.471-6.508c0-5.206-3.352-6.735-3.352-6.735c-1.645-.768-4.688-1.127-7.709-1.115zm-3.233 3.971c1.035.028 2.058.49 2.688 1.469l.609 1.035l.607-1.035c1.265-1.967 4.1-1.845 5.45-.323c1.244 1.448.966 2.383.966 8.852v.002h-2.447v-5.629c0-2.635-3.36-2.737-3.36.365V16h-2.43v-3.262c0-3.102-3.358-3.002-3.358-.367V18H8.977c0-6.474-.273-7.415.966-8.852c.68-.766 1.727-1.174 2.762-1.146z"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/neocraftdev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
+                >
+                  <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all" />
                 </a>
               </div>
             </div>
@@ -120,38 +154,11 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="/mentions-legales"
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
-                  >
-                    <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-emerald-400" />
-                    Mentions légales
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/politique-confidentialite"
+                    href="/privacy-policy"
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
                     <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-blue-400" />
                     Politique de confidentialité
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/cgv"
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
-                  >
-                    <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-emerald-400" />
-                    CGV
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/cookies"
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
-                  >
-                    <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-blue-400" />
-                    Cookies
                   </a>
                 </li>
               </ul>
@@ -159,7 +166,7 @@ export default function Footer() {
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex flex-col md:flex-row items-center ">
               <p className="text-gray-400 text-center md:text-left mb-4 md:mb-0">
                 © {year} NeoCraft. Tous droits réservés.
               </p>
@@ -168,7 +175,14 @@ export default function Footer() {
                 <div className="flex items-center space-x-1">
                   <Code2 className="w-4 h-4 text-blue-400" />
                   <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent font-medium">
-                    Cédrick feze
+                    <a
+                      href="https://github.com/NeoCraftTeam"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {" "}
+                      NeoCraftTeam
+                    </a>
                   </span>
                 </div>
               </div>
