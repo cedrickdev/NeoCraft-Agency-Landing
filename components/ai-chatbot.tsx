@@ -64,11 +64,14 @@ export function AIChatbot() {
 
     // Appel à l'API backend
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_NEOCHAT_BASE_URL!, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: input }),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_NEOCHAT_BASE_URL}/askNeochat`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: input }),
+        }
+      );
       const data = await response.json();
       console.log(data);
       const aiResponse: Message = {
