@@ -515,7 +515,7 @@ export default function ProgressiveContactForm() {
                     </a>
 
                     <a
-                      href="tel:+237693118109"
+                      href="tel:+41783410631"
                       className="flex items-center space-x-4 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 group"
                     >
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
