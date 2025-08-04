@@ -497,7 +497,7 @@ export default function ProgressiveContactForm() {
                     </a>
 
                     <a
-                      href="https://wa.me/237693118109?text=Bonjour%20NeoCraft%2C%20je%20souhaite%20discuter%20d%27un%20projet"
+                      href="https://wa.me/41783410631?text=Bonjour%20NeoCraft%2C%20je%20souhaite%20discuter%20d%27un%20projet"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-4 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 group"

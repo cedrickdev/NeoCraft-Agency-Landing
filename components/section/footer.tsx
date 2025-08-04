@@ -49,7 +49,8 @@ export default function Footer() {
                   <Github className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/neocraftdev"
+                  href="https://www.linkedin.com/company/neocraftdev
+"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
