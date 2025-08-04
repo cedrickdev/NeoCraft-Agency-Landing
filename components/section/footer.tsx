@@ -6,6 +6,7 @@ import {
   Twitter,
   CheckCircle,
   Instagram,
+  Facebook,
 } from "lucide-react";
 
 const date = new Date();
@@ -36,17 +37,15 @@ export default function Footer() {
                   NeoCraft
                 </span>
               </div>
-              <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-                Nous traduisons vos besoins en solutions.
-              </p>
+              
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/NeoCraftTeam"
+                  href="https://www.facebook.com/neocraftdev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
                 >
-                  <Github className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all" />
+                  <Facebook className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all" />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/neocraftdev
@@ -63,7 +62,20 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
                 >
-                  <Twitter className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="2em"
+                    height="2em"
+                    viewBox="0 0 50 50"
+                    className=" group-hover:text-white group-hover:scale-110 transition-all"
+                  >
+                    <path
+                      fill="#9CA3AF"
+                      d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"
+                    ></path>
+                  </svg>
                 </a>
                 <a
                   href="https://mastodon.social/@neocraftdev"
