@@ -40,7 +40,7 @@ export default function CTA() {
             <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto py-8">
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-                  50+
+                  6+
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
                   Projets réalisés
