@@ -13,5 +13,12 @@
     },
     "jsonLd": {
       "description": "NeoCraft is a digital agency specialized in web development offering customized solutions to meet your specific project needs and requirements."    }
+  },
+
+  "Header": {
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "Contact us"
   }
 }

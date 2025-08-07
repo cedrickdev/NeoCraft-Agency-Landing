@@ -14,5 +14,12 @@
     "jsonLd": {
       "description": "NeoCraft est une  agence numérique qui aide ses clients à développer des plateformes en ligne, des applications mobiles et des boutiques en ligne primées. Notre équipe d'experts en développement web, design UI/UX et stratégie digitale est dédiée à fournir des solutions personnalisées pour répondre aux besoins uniques de chaque projet. Que vous ayez besoin d'une boutique en ligne, d'une application mobile ou d'un site web sur mesure, nous sommes là pour vous accompagner à chaque étape de votre parcours numérique."
     }
+  },
+
+  "Header": {
+    "about": "À propos",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "Contactez-nous"
   }
 }

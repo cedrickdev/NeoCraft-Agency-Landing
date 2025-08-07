@@ -20,15 +20,17 @@ export default function LanguageSwitcher() {
   return (
     <div className="flex gap-2">
       {locales.map((l) => (
-        <button
-          key={l}
-          onClick={() => handleChange(l)}
-          className={`px-3 py-1 rounded ${
-            locale === l ? "bg-blue-500 text-white" : "bg-gray-200"
-          }`}
-        >
-          {l.toUpperCase()}
-        </button>
+          <span
+              key={l}
+              onClick={() => handleChange(l)}
+              className={`cursor-pointer select-none  ${
+                  locale === l
+                      ? "bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent hover:from-blue-700 hover:to-emerald-600 font-bold"
+                      : "text-black dark:text-gray-200"
+              }`}
+          >
+  {l.toUpperCase()}
+</span>
       ))}
     </div>
   );
