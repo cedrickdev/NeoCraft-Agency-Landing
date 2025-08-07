@@ -1,0 +1,11 @@
+{
+  "Home": {
+    "title": "Welcome to NeoCraft",
+    "description": "A modern platform for creating and sharing projects"
+  },
+
+  "Team": {
+    "title": "NeoCraft Team",
+    "team": "Meet our dedicated team of developers, designers, and creators who are passionate about building a better platform for everyone."
+  }
+}
