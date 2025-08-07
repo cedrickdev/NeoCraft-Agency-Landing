@@ -1,11 +1,18 @@
 {
-  "Home": {
-    "title": "Bienvenue sur NeoCraft",
-    "description": "Une plateforme moderne pour la création et le partage de projets"
-  },
-
-  "Team": {
-    "title": "l'équipe NeoCraft",
-    "team": "Rencontrez notre équipe dédiée de développeurs, designers et créateurs passionnés par la construction d'une meilleure plateforme pour tous."
+  "Seo": {
+    "title": "NeoCraft - L'innovation web pour un succès numérique",
+    "description": "NeoCraft est une agence digitale spécialisée dans le développement web offrant des solutions personnalisées pour répondre aux besoins et exigences spécifiques de vos projets. Nous couvrons différents domaines tels que le développement web sur mesure, l'e-commerce (WooCommerce, Shopify), le design UI/UX, la consultation technique ainsi que la formation en développement web. Notre équipe expérimentée et creative est à votre disposition pour vous accompagner dans vos projets numériques et digitaux.",
+    "keywords": "développement web, agence digitale, e-commerce, design UI/UX, consultation technique, formation développement web",
+    "authors": "Cédrick FEZE, Jorel KUE, Stéphane KAMGA",
+    "openGraph": {
+      "description": "Solutions digitales sur mesure et formation technique de qualité",
+      "locale": "fr_FR"
+    },
+    "twitter": {
+      "description": "L'innovation web pour un succès numérique."
+    },
+    "jsonLd": {
+      "description": "NeoCraft est une  agence numérique qui aide ses clients à développer des plateformes en ligne, des applications mobiles et des boutiques en ligne primées. Notre équipe d'experts en développement web, design UI/UX et stratégie digitale est dédiée à fournir des solutions personnalisées pour répondre aux besoins uniques de chaque projet. Que vous ayez besoin d'une boutique en ligne, d'une application mobile ou d'un site web sur mesure, nous sommes là pour vous accompagner à chaque étape de votre parcours numérique."
+    }
   }
 }
