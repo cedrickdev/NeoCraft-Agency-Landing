@@ -1,11 +1,11 @@
+"use client";
+
 import { defaultLocale, locales } from "@/i18n";
 import { usePathname } from "next/navigation";
-import { headers } from "next/headers";
 
-export default async function HreflangTags() {
+export default function HreflangTags() {
     const pathname = usePathname();
-    const headersList = await headers();
-    const host = headersList.get("host") || "www.neocraft.dev";
+    const host = typeof window !== "undefined" ? window.location.host : "www.neocraft.dev";
     const protocol = host.startsWith("localhost") ? "http" : "https";
 
     return (
