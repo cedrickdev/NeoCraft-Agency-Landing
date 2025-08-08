@@ -240,5 +240,30 @@
         "3": "Audit and optimisation"
       }
     }
+  },
+  "Methodology": {
+    "badge": "Our approach",
+    "title": "NeoCraft Methodology",
+    "description": "A proven 5-step process to ensure the success of your projects and seamless collaboration.",
+    "step1": {
+      "title": "Discovery",
+      "description": "In-depth analysis of your needs, objectives and constraints to determine the best approach."
+    },
+    "step2": {
+      "title": "Design & prototype",
+      "description": "Creative design and interactive prototyping to visualise and test your solution before development."
+    },
+    "step3": {
+      "title": "Agile development",
+      "description": "Iterative development with short cycles to quickly adapt to feedback and changes."
+    },
+    "step4": {
+      "title": "Tests & QA",
+      "description": "Rigorous validation and performance optimisation to guarantee impeccable quality."
+    },
+    "step5": {
+      "title": "Delivery + tracking",
+      "description": "Controlled deployment and training of your teams for a smooth transition and rapid autonomy."
+    }
   }
 }

@@ -1,51 +1,50 @@
 import { motion } from "framer-motion";
 import { Code2, Search, Lightbulb, TestTube, CheckCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import {useTranslations} from "next-intl";
 
-const methodology = [
-  {
-    icon: Search,
-    title: "Découverte",
-    description:
-      "Analyse approfondie de vos besoins, objectifs et contraintes pour définir la meilleure approche.",
-    iconColor: "from-blue-600 to-indigo-700",
-    color: "text-blue-600",
-  },
-  {
-    icon: Lightbulb,
-    title: "Design & prototype",
-    description:
-      "Conception créative et prototypage interactif pour visualiser et tester votre solution avant développement.",
-    iconColor: "from-emerald-500 to-teal-600",
-    color: "text-emerald-500",
-  },
-  {
-    icon: Code2,
-    title: "Développement agile",
-    description:
-      "Développement itératif avec des cycles courts pour s'adapter rapidement aux retours et évolutions.",
-    iconColor: "from-amber-500 to-orange-600",
-    color: "text-amber-500",
-  },
-  {
-    icon: TestTube,
-    title: "Tests & QA",
-    description:
-      "Validation rigoureuse et optimisation des performances pour garantir une qualité irréprochable.",
-    iconColor: "from-purple-600 to-pink-600",
-    color: "text-purple-600",
-  },
-  {
-    icon: CheckCircle,
-    title: "Livraison + suivi",
-    description:
-      "Déploiement maîtrisé et formation de vos équipes pour une transition en douceur et une autonomie rapide.",
-    iconColor: "from-rose-500 to-red-600",
-    color: "text-rose-500",
-  },
-];
+
 
 export default function Methodology() {
+  const t = useTranslations('Methodology');
+
+  const methodology = [
+    {
+      icon: Search,
+      title: t("step1.title"),
+      description: t("step1.description"),
+      iconColor: "from-blue-600 to-indigo-700",
+      color: "text-blue-600",
+    },
+    {
+      icon: Lightbulb,
+      title: t("step2.title"),
+      description: t("step2.description"),
+      iconColor: "from-emerald-500 to-teal-600",
+      color: "text-emerald-500",
+    },
+    {
+      icon: Code2,
+      title: t("step3.title"),
+      description: t("step3.description"),
+      iconColor: "from-amber-500 to-orange-600",
+      color: "text-amber-500",
+    },
+    {
+      icon: TestTube,
+      title: t("step4.title"),
+      description: t("step4.description"),
+      iconColor: "from-purple-600 to-pink-600",
+      color: "text-purple-600",
+    },
+    {
+      icon: CheckCircle,
+      title: t("step5.title"),
+      description: t("step5.description"),
+      iconColor: "from-rose-500 to-red-600",
+      color: "text-rose-500",
+    },
+  ];
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background Elements */}
@@ -63,15 +62,14 @@ export default function Methodology() {
           className="text-center mb-16"
         >
           <Badge className="mb-4 bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 border-purple-100 dark:border-purple-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
-            Notre approche
+            {t("badge")}
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Méthodologie NeoCraft
+            {t("title")}
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Un processus éprouvé en 5 étapes pour garantir le succès de vos
-            projets et une collaboration transparente.
+            {t("description")}
           </p>
         </motion.div>
 
