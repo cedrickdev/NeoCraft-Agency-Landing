@@ -12,22 +12,53 @@
       "description": "The web innovation for digital success."
     },
     "jsonLd": {
-      "description": "NeoCraft is a digital agency specialized in web development offering customized solutions to meet your specific project needs and requirements."    }
+      "description": "NeoCraft is a digital agency specialized in web development offering customized solutions to meet your specific project needs and requirements."
+    }
   },
-
   "Header": {
     "about": "About",
     "services": "Services",
     "contact": "Contact",
     "cta": "Contact us"
   },
-
   "Hero": {
     "badge": "The web innovation for digital success",
     "h1": "Craftsmanship of code,",
     "span": "reinvented",
-    "p" : "Designed with a thoughtful approach, we practice what we preach. The result is a website that is accessible to all, loads in the blink of an eye and minimises the amount of carbon emitted each time a page is loaded.",
+    "p": "Designed with a thoughtful approach, we practice what we preach. The result is a website that is accessible to all, loads in the blink of an eye and minimises the amount of carbon emitted each time a page is loaded.",
     "button": "Demander un devis",
     "button2": "Discover our values"
+  },
+  "About": {
+    "badge": "Our mission",
+    "h2": "About NeoCraft",
+    "card": {
+      "title": "Create, transmit, elevate.",
+      "description": "Our manifesto in three words"
+    },
+    "element1": {
+      "title": "Our Vision",
+      "description": "We create sustainable social, environmental and economic value by working for digital and human progress. Contributing to these three dimensions of sustainable development has always been at the heart of our activities."
+    },
+    "element2": {
+      "title": "Our Mission",
+      "description": "Democratising technical excellence by combining craftsmanship and technological innovation. We create digital solutions that turn ideas into reality and train the talent of tomorrowDemocratising technical excellence by combining traditional know-how with technological innovation. We create digital solutions that turn ideas into reality and train the talent of tomorrow."
+    },
+    "value1": {
+      "title": "Excellence",
+      "description": "We aim for excellence in every line of code and every pixel of design."
+    },
+    "value2": {
+      "title": "Collaboration",
+      "description": "We work closely with our customers to create tailor-made solutions."
+    },
+    "value3": {
+      "title": "Innovation",
+      "description": "We are constantly exploring new technologies to stay at the cutting edge."
+    },
+    "value4": {
+      "title": "Commitment",
+      "description": "We respect our commitments in terms of deadlines, budget and quality."
+    }
   }
 }

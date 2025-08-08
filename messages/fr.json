@@ -15,20 +15,50 @@
       "description": "NeoCraft est une  agence numérique qui aide ses clients à développer des plateformes en ligne, des applications mobiles et des boutiques en ligne primées. Notre équipe d'experts en développement web, design UI/UX et stratégie digitale est dédiée à fournir des solutions personnalisées pour répondre aux besoins uniques de chaque projet. Que vous ayez besoin d'une boutique en ligne, d'une application mobile ou d'un site web sur mesure, nous sommes là pour vous accompagner à chaque étape de votre parcours numérique."
     }
   },
-
   "Header": {
     "about": "À propos",
     "services": "Services",
     "contact": "Contact",
     "cta": "Contactez-nous"
   },
-
   "Hero": {
     "badge": "L'innovation web pour un succès numérique",
     "h1": "L'artisanat du code,",
     "span": "réinventé",
-    "p" : "Conçu avec une approche réfléchie, nous mettons en pratique ce que nous prêchons. Le résultat est un site web accessible à tous, qui se charge en un clin d’œil et qui minimise la quantité de carbone émise à chaque chargement de page",
+    "p": "Conçu avec une approche réfléchie, nous mettons en pratique ce que nous prêchons. Le résultat est un site web accessible à tous, qui se charge en un clin d’œil et qui minimise la quantité de carbone émise à chaque chargement de page",
     "button": "Demander un devis",
     "button2": "Découvrir nos valeurs"
+  },
+  "About": {
+    "badge": "Notre mission",
+    "h2": "À propos de NeoCraft",
+    "card": {
+      "title": "Créer, transmettre, élever.",
+      "description": "Notre manifeste en trois mots"
+    },
+    "element1": {
+      "title": "Notre Vision",
+      "description": "Nous créons de la valeur sociale, environnementale et économique durable en œuvrant pour le progrès digital et humain. La  de contribuer à ces trois dimensions du développement durable a toujours été au cœur de nos activités"
+    },
+    "element2": {
+      "title": "Notre Mission",
+      "description": "Démocratiser l'excellence technique en combinant savoir-faire artisanal et innovation technologique. Nous créons des solutions digitales qui transforment les idées en réalités concrètes et formons les talents de demainDémocratiser l'excellence technique en combinant savoir-faire artisanal et innovation technologique. Nous créons des solutions digitales qui transforment les idées en réalités concrètes et formons les talents de demain"
+    },
+    "value1": {
+      "title": "Excellence",
+      "description": "Nous visons l'excellence dans chaque ligne de code et chaque pixel de design."
+    },
+    "value2": {
+      "title": "Collaboration",
+      "description": "Nous travaillons en étroite collaboration avec nos clients pour créer des solutions sur mesure."
+    },
+    "value3": {
+      "title": "Innovation",
+      "description": "Nous explorons constamment de nouvelles technologies pour rester à la pointe."
+    },
+    "value4": {
+      "title": "Engagement",
+      "description": "Nous respectons nos engagements en termes de délais, de budget et de qualité."
+    }
   }
 }
