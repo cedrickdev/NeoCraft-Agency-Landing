@@ -19,7 +19,7 @@
     "about": "About",
     "services": "Services",
     "contact": "Contact",
-    "cta": "Contact us"
+    "cta": "I have a project"
   },
   "Hero": {
     "badge": "The web innovation for digital success",
@@ -60,5 +60,27 @@
       "title": "Commitment",
       "description": "We respect our commitments in terms of deadlines, budget and quality."
     }
+  },
+  "Services": {
+    "badge": "Our expertise",
+    "title": "Tailored services",
+    "description": "Comprehensive services to support your digital transformation and help you achieve your objectives.",
+    "card1": {
+      "title": "Web Development",
+      "description": "Custom web applications to perfectly meet your specific needs and technical requirements."
+    },
+    "card2": {
+      "title": "Custom UI/UX",
+      "description": "Elegant interfaces and optimal user experiences that capture attention and convert your visitors."
+    },
+    "card3": {
+      "title": "Technical Consulting",
+      "description": "Tailored training programmes to develop your teams' technical skills."
+    },
+    "card4": {
+      "title": "Project support",
+      "description": "Full support from design to delivery with an agile and transparent methodology."
+    },
+    "learnMore": "Learn more"
   }
 }

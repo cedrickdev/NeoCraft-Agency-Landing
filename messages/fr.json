@@ -19,7 +19,7 @@
     "about": "À propos",
     "services": "Services",
     "contact": "Contact",
-    "cta": "Contactez-nous"
+    "cta": "J'ai un projet"
   },
   "Hero": {
     "badge": "L'innovation web pour un succès numérique",
@@ -60,5 +60,27 @@
       "title": "Engagement",
       "description": "Nous respectons nos engagements en termes de délais, de budget et de qualité."
     }
+  },
+  "Services": {
+    "badge": "Nos expertises",
+    "title": "Services sur mesure",
+    "description": "Des services complets pour accompagner votre transformation digitale et vous aider à atteindre vos objectifs.",
+    "card1": {
+      "title": "Développement Web",
+      "description": "Applications web sur mesure pour répondre parfaitement à vos besoins spécifiques et exigences techniques."
+    },
+    "card2": {
+      "title": "UI/UX sur mesure",
+      "description": "Interfaces élégantes et expériences utilisateur optimales qui captent l'attention et convertissent vos visiteurs."
+    },
+    "card3": {
+      "title": "Formation technique ciblée",
+      "description": "Programmes de formation adaptés pour développer les compétences techniques de vos équipes."
+    },
+    "card4": {
+      "title": "Accompagnement des projets",
+      "description": "Support complet de la conception à la livraison avec une méthodologie agile et transparente."
+    },
+    "learnMore": "En savoir plus"
   }
 }
