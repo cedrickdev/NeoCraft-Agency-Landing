@@ -82,5 +82,163 @@
       "description": "Support complet de la conception à la livraison avec une méthodologie agile et transparente."
     },
     "learnMore": "En savoir plus"
+  },
+  "iServices": {
+    "title": "Nos Services",
+    "description": "Notre agence associe a l'esprit entrepreneurial et les compétences numériques pour vous fournir les leviers marketing adaptés à votre budget. Vous bénéficiez de quelqu'un qui vérifie l'avancement du développement de votre site web et vous assiste dans votre stratégie de communication.",
+    "p": "Choisissez ci-dessous un pôle de l'agence afin de découvrir les services qu'il propose.",
+    "functionalities": "Fonctionnalités incluses :",
+    "development": {
+      "title": "Développement web",
+      "customDevelopment": {
+        "title": "Développement sur mesure",
+        "description": "Un site web est souvent le moteur de développement d'une entreprise, mais c'est aussi un outil de gestion essentiel à votre activité. Au quotidien, vous utilisez différents logiciels pour mettre à jour votre inventaire avec votre boutique, suivre vos opportunités commerciales, gérer vos factures et vos fournisseurs. Mais répondent-ils vraiment à vos méthodes de travail ?",
+        "details": "Pour gagner en performance et optimiser le retour sur investissement de vos applications, il est fondamental pour vos équipes de compter sur des technologies adaptées. Chez NeoCraft, nous développons des plateformes web qui tiennent compte à 100% des spécificités de votre organisation. Certains de nos clients ont gagné 2 semaines de travail par an et par collaborateur grâce à la conception d'un CRM sur mesure.",
+        "features": {
+          "feature1": "Applications web personnalisées",
+          "feature2": "Intégration avec vos outils existants",
+          "feature3": "Interface utilisateur intuitive",
+          "feature4": "Architecture scalable",
+          "feature5": "Support technique dédié",
+          "feature6": "Formation de vos équipes"
+        },
+        "cta": "Développez votre entreprise avec une plateforme web adaptée à vos besoins !"
+      },
+      "ecommerce": {
+        "title": "Site e-commerce",
+        "description": "Créez votre boutique en ligne avec une solution e-commerce complète et performante. Nous développons des plateformes de vente adaptées à votre secteur d'activité avec toutes les fonctionnalités nécessaires pour maximiser vos conversions.",
+        "details": "Notre expertise en e-commerce nous permet de créer des solutions sur mesure qui s'adaptent parfaitement à vos produits et à votre clientèle. Gestion des stocks, paiements sécurisés, livraisons, nous prenons tout en charge.",
+        "features": {
+          "feature1": "Catalogue produits avancé",
+          "feature2": "Gestion des commandes",
+          "feature3": "Paiements sécurisés",
+          "feature4": "Gestion des stocks",
+          "feature5": "Tableau de bord analytique",
+          "feature6": "SEO optimisé"
+        },
+        "cta": "Lancez votre boutique en ligne et boostez vos ventes dès aujourd'hui !"
+      },
+      "showcase": {
+        "title": "Site vitrine",
+        "description": "Présentez votre entreprise avec un site vitrine élégant et professionnel. Nous créons des sites web qui reflètent parfaitement votre image de marque et convertissent vos visiteurs en clients.",
+        "details": "Un site vitrine efficace doit allier esthétique et performance. Nous concevons des sites rapides, responsive et optimisés pour le référencement naturel afin de maximiser votre visibilité en ligne.",
+        "features": {
+          "feature1": "Design responsive",
+          "feature2": "Optimisation SEO",
+          "feature3": "Temps de chargement rapide",
+          "feature4": "Formulaires de contact",
+          "feature5": "Galerie photos/vidéos",
+          "feature6": "Intégration réseaux sociaux"
+        },
+        "cta": "Créez votre présence en ligne avec un site vitrine qui vous ressemble !"
+      }
+    },
+    "marketing": {
+      "title": "Marketing digital",
+      "seo": {
+        "title": "Référencement SEO",
+        "description": "Améliorez votre visibilité sur les moteurs de recherche avec notre expertise SEO. Nous optimisons votre site web pour qu'il apparaisse en première page des résultats Google et attire plus de visiteurs qualifiés.",
+        "details": "Notre approche SEO combine technique et contenu pour des résultats durables. Audit technique, recherche de mots-clés, optimisation on-page et stratégie de contenu, nous mettons tout en œuvre pour améliorer votre positionnement.",
+        "features": {
+          "feature1": "Audit SEO complet",
+          "feature2": "Recherche de mots-clés",
+          "feature3": "Optimisation technique",
+          "feature4": "Création de contenu",
+          "feature5": "Netlinking qualifié",
+          "feature6": "Suivi des performances"
+        },
+        "cta": "Dominez les résultats de recherche et attirez plus de clients !"
+      },
+      "social-media": {
+        "title": "Réseaux sociaux",
+        "description": "Développez votre présence sur les réseaux sociaux avec une stratégie adaptée à votre audience. Nous créons et gérons vos comptes pour engager votre communauté et développer votre notoriété.",
+        "details": "Les réseaux sociaux sont devenus incontournables pour toucher votre audience. Nous élaborons une stratégie social media personnalisée et créons du contenu engageant pour faire grandir votre communauté.",
+        "features": {
+          "feature1": "Stratégie social media",
+          "feature2": "Création de contenu",
+          "feature3": "Gestion des publications",
+          "feature4": "Community management",
+          "feature5": "Publicités ciblées",
+          "feature6": "Analyse des performances"
+        },
+        "cta": "Engagez votre audience et développez votre communauté en ligne !"
+      },
+      "advertising": {
+        "title": "Publicité en ligne",
+        "description": "Maximisez votre retour sur investissement avec des campagnes publicitaires ciblées. Google Ads, Facebook Ads, LinkedIn Ads, nous optimisons vos budgets pour générer plus de leads et de ventes.",
+        "details": "La publicité en ligne permet d'obtenir des résultats rapides quand elle est bien maîtrisée. Nous créons et optimisons vos campagnes pour maximiser votre ROI et atteindre vos objectifs commerciaux.",
+        "features": {
+          "feature1": "Campagnes Google Ads",
+          "feature2": "Publicités Facebook/Instagram",
+          "feature3": "LinkedIn Ads B2B",
+          "feature4": "Remarketing",
+          "feature5": "Optimisation des conversions",
+          "feature6": "Reporting détaillé"
+        },
+        "cta": "Générez plus de leads avec des campagnes publicitaires performantes !"
+      }
+    },
+    "consulting": {
+      "title": "Conseil & Formation",
+      "strategy": {
+        "title": "Stratégie digitale",
+        "description": "Définissez une stratégie digitale cohérente avec vos objectifs business. Nous vous accompagnons dans la transformation digitale de votre entreprise avec une approche personnalisée et des recommandations concrètes.",
+        "details": "Une stratégie digitale efficace nécessite une vision globale de votre écosystème. Nous analysons votre marché, vos concurrents et vos objectifs pour élaborer une feuille de route digitale sur mesure.",
+        "features": {
+          "feature1": "Audit digital complet",
+          "feature2": "Analyse concurrentielle",
+          "feature3": "Définition des objectifs",
+          "feature4": "Feuille de route digitale",
+          "feature5": "Recommandations techniques",
+          "feature6": "Accompagnement dans la mise en œuvre"
+        },
+        "cta": "Accélérez votre transformation digitale avec une stratégie sur mesure !"
+      },
+      "training": {
+        "title": "Formation technique",
+        "description": "Formez vos équipes aux dernières technologies et bonnes pratiques du web. Nos formations sur mesure permettent à vos collaborateurs de monter en compétences et d'être plus autonomes.",
+        "details": "Nous proposons des formations adaptées à votre niveau et vos besoins spécifiques. De l'initiation au perfectionnement, nos experts transmettent leur savoir-faire avec une approche pratique et opérationnelle.",
+        "features": {
+          "feature1": "Formations personnalisées",
+          "feature2": "Approche pratique",
+          "feature3": "Support de cours fourni",
+          "feature4": "Suivi post-formation",
+          "feature5": "Certification possible",
+          "feature6": "Formation en présentiel ou distanciel"
+        },
+        "cta": "Investissez dans les compétences de vos équipes pour l'avenir !"
+      },
+      "audit": {
+        "title": "Audit & optimisation",
+        "description": "Identifiez les points d'amélioration de votre présence digitale avec un audit complet. Nous analysons vos performances actuelles et vous proposons des solutions concrètes pour optimiser vos résultats.",
+        "details": "Un audit approfondi révèle souvent des opportunités d'amélioration importantes. Nous passons au crible tous les aspects de votre présence digitale pour identifier les leviers de croissance les plus pertinents.",
+        "features": {
+          "feature1": "Audit technique complet",
+          "feature2": "Analyse des performances",
+          "feature3": "Recommandations prioritaires",
+          "feature4": "Plan d'action détaillé",
+          "feature5": "Estimation des gains",
+          "feature6": "Accompagnement dans la mise en œuvre"
+        },
+        "cta": "Optimisez vos performances digitales avec un audit professionnel !"
+      }
+    },
+    "subServices": {
+      "development": {
+        "1": "Développement web sur mesure",
+        "2": "Site e-commerce",
+        "3": "Site vitrine"
+      },
+      "marketing": {
+        "1": "Référencement SEO",
+        "2": "Réseaux sociaux",
+        "3": "Publicité en ligne"
+      },
+      "consulting": {
+        "1": "Stratégie digitale",
+        "2": "Formation technique",
+        "3": "Audit & optimisation"
+      }
+    }
   }
 }

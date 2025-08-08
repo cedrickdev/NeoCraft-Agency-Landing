@@ -82,5 +82,163 @@
       "description": "Full support from design to delivery with an agile and transparent methodology."
     },
     "learnMore": "Learn more"
+  },
+  "iServices": {
+    "title": "Our services",
+    "description": "Our agency combines entrepreneurial spirit and digital skills to provide you with marketing tools tailored to your budget. You benefit from someone who monitors the progress of your website development and assists you with your communication strategy.",
+    "p": "Select an agency division below to discover the services it offers.",
+    "functionalities": "Features included :",
+    "development": {
+      "title": "Web Development",
+      "customDevelopment": {
+        "title": "Custom Web Development",
+        "description": "A website is often the driving force behind a company's growth, but it is also an essential management tool for your business. Every day, you use different software to update your inventory with your shop, track your business opportunities, and manage your invoices and suppliers. But do they really fit your working methods?",
+        "details": "To improve performance and optimise the return on investment of your applications, it is essential for your teams to have access to the right technologies. At NeoCraft, we develop web platforms that are fully tailored to the specific needs of your organisation. Some of our clients have gained two weeks of work per year per employee thanks to the design of a customised CRM system.",
+        "features": {
+          "feature1": "Custom web applications",
+          "feature2": "Integration with your existing tools",
+          "feature3": "Intuitive user interface",
+          "feature4": "Architecture scalable",
+          "feature5": "Dedicated technical support",
+          "feature6": "Training your teams"
+        },
+        "cta": "Grow your business with a web platform tailored to your needs!"
+      },
+      "ecommerce": {
+        "title": "E-commerce websites",
+        "description": "Create your online shop with a comprehensive and powerful e-commerce solution. We develop sales platforms tailored to your industry with all the features you need to maximise your conversions.",
+        "details": "Our expertise in e-commerce allows us to create tailor-made solutions that are perfectly suited to your products and your customers. Inventory management, secure payments, deliveries—we take care of everything.",
+        "features": {
+          "feature1": "Advanced product catalogue",
+          "feature2": "Order management",
+          "feature3": "Secure payments",
+          "feature4": "Inventory management",
+          "feature5": "Analytical dashboard",
+          "feature6": "Optimised SEO"
+        },
+        "cta": "Launch your online shop and boost your sales today!"
+      },
+      "showcase": {
+        "title": "Showcase websites",
+        "description": "Showcase your business with an elegant and professional website. We create websites that perfectly reflect your brand image and convert your visitors into customers.",
+        "details": "An effective showcase website must combine aesthetics and performance. We design fast, responsive websites that are optimised for natural referencing in order to maximise your online visibility.",
+        "features": {
+          "feature1": "Responsive design",
+          "feature2": "SEO optimization",
+          "feature3": "Fast loading time",
+          "feature4": "Contact forms",
+          "feature5": "Photo/video gallery",
+          "feature6": "Social media integration"
+        },
+        "cta": "Create your online presence with a showcase website that reflects who you are!"
+      }
+    },
+    "marketing": {
+      "title": "Digital Marketing",
+      "seo": {
+        "title": "SEO referencing",
+        "description": "Improve your visibility on search engines with our SEO expertise. We optimise your website so that it appears on the first page of Google results and attracts more qualified visitors.",
+        "details": "Our SEO approach combines technique and content for lasting results. Technical audits, keyword research, on-page optimisation and content strategy: we do everything we can to improve your ranking.",
+        "features": {
+          "feature1": "Complete SEO audit",
+          "feature2": "Keyword search",
+          "feature3": "Technical optimization",
+          "feature4": "Content creation",
+          "feature5": "Qualified netlinking",
+          "feature6": "Performance monitoring"
+        },
+        "cta": "Dominate search results and attract more customers !"
+      },
+      "social-media": {
+        "title": "Social media",
+        "description": "Grow your social media presence with a strategy tailored to your audience. We create and manage your accounts to engage your community and build your brand awareness.",
+        "details": "Social media has become essential for reaching your audience. We develop a personalised social media strategy and create engaging content to grow your community.",
+        "features": {
+          "feature1": "Social media strategy",
+          "feature2": "Content creation",
+          "feature3": "Publish management",
+          "feature4": "Community management",
+          "feature5": "Targeted advertisement",
+          "feature6": "Performance analysis"
+        },
+        "cta": "Engage your audience and grow your online community!"
+      },
+      "advertising": {
+        "title": "Online advertisement",
+        "description": "Maximise your return on investment with targeted advertising campaigns. Google Ads, Facebook Ads, LinkedIn Ads – we optimise your budgets to generate more leads and sales.",
+        "details": "Online advertising can deliver rapid results when done right. We create and optimise your campaigns to maximise your ROI and achieve your business goals.",
+        "features": {
+          "feature1": "Google Ads campaigns",
+          "feature2": "Facebook/Instagram advertisements",
+          "feature3": "LinkedIn Ads B2B",
+          "feature4": "Remarketing",
+          "feature5": "Conversion optimisation",
+          "feature6": "Detailed reporting"
+        },
+        "cta": "Generate more leads with effective advertising campaigns !"
+      }
+    },
+    "consulting": {
+      "title": "Consulting & Training",
+      "strategy": {
+        "title": "Digital strategy",
+        "description": "Define a digital strategy that is consistent with your business objectives. We support you in the digital transformation of your company with a personalised approach and concrete recommendations.",
+        "details": "An effective digital strategy requires a comprehensive view of your ecosystem. We analyse your market, your competitors and your objectives to develop a tailor-made digital roadmap.",
+        "features": {
+          "feature1": "Complete digital audit",
+          "feature2": "Competitive analysis",
+          "feature3": "Setting objectives",
+          "feature4": "Digital roadmap",
+          "feature5": "Technical recommendations",
+          "feature6": "Support in implementation"
+        },
+        "cta": "Accelerate your digital transformation with a tailor-made strategy !"
+      },
+      "training": {
+        "title": "Technical training",
+        "description": "Train your teams in the latest web technologies and best practices. Our customised training courses enable your employees to develop their skills and become more autonomous.",
+        "details": "We offer training courses tailored to your level and specific needs. From beginner to advanced, our experts share their expertise with a practical and operational approach.",
+        "features": {
+          "feature1": "Customised training courses",
+          "feature2": "Practical approach",
+          "feature3": "Course materials provided",
+          "feature4": "Post-training follow-up",
+          "feature5": "Certification possible",
+          "feature6": "Face-to-face or distance learning"
+        },
+        "cta": "Invest in your teams' skills for the future !"
+      },
+      "audit": {
+        "title": "Audit & optimization",
+        "description": "Identify areas for improvement in your digital presence with a comprehensive audit. We analyse your current performance and offer concrete solutions to optimise your results.",
+        "details": "A thorough audit often reveals significant opportunities for improvement. We scrutinise every aspect of your digital presence to identify the most relevant growth drivers.",
+        "features": {
+          "feature1": "Full technical audit",
+          "feature2": "Performance analysis",
+          "feature3": "Priority recommendations",
+          "feature4": "Detailed action plan",
+          "feature5": "Estimation des gains",
+          "feature6": "Support in implementation"
+        },
+        "cta": "Optimise your digital performance with a professional audit !"
+      }
+    },
+    "subServices": {
+      "development": {
+        "1": "Custom web development",
+        "2": "E-commerce website",
+        "3": "Showcase website"
+      },
+      "marketing": {
+        "1": "SEO optimisation",
+        "2": "Social media management",
+        "3": "Online advertisement"
+      },
+      "consulting": {
+        "1": "Digital strategy",
+        "2": "Technical training",
+        "3": "Audit and optimisation"
+      }
+    }
   }
 }
