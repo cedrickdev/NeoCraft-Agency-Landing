@@ -265,5 +265,22 @@
       "title": "Livraison + suivi",
       "description": "Déploiement maîtrisé et formation de vos équipes pour une transition en douceur et une autonomie rapide."
     }
+  },
+  "Testimonials": {
+    "badge": "Témoignages",
+    "title": "Ce que l’on dit de nous",
+    "description": "Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs grâce à notre expertise et notre approche personnalisée.",
+    "testimonial1": {
+      "position": "PDG",
+      "text": "NeoCraft a transformé notre vision en une application exceptionnelle. Leur approche artisanale et leur attention aux détails ont fait toute la différence. Un partenaire de confiance pour l'avenir."
+    },
+    "testimonial2": {
+      "position": "Directeur Technique",
+      "text": "Une équipe passionnée qui livre des solutions de qualité. Leur expertise technique et leur capacité à comprendre nos enjeux métier nous ont permis d'accélérer notre transformation digitale."
+    },
+    "testimonial3": {
+      "position": "Responsable Marketing",
+      "text": "Formation technique de haut niveau qui a transformé notre équipe. Nos développeurs ont gagné en autonomie et en efficacité grâce à l'approche pédagogique de NeoCraft."
+    }
   }
 }

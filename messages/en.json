@@ -265,5 +265,22 @@
       "title": "Delivery + tracking",
       "description": "Controlled deployment and training of your teams for a smooth transition and rapid autonomy."
     }
+  },
+  "Testimonial": {
+    "badge": "Testimonials",
+    "title": "What people say about us",
+    "description": "Discover how we have helped our clients achieve their goals through our expertise and personalised approach.",
+    "testimonial1": {
+      "position": "CEO",
+      "text": "NeoCraft transformed our vision into an exceptional application. Their artisanal approach and attention to detail made all the difference. A trusted partner for the future."
+    },
+    "testimonial2": {
+      "position": "CTO",
+      "text": "A passionate team that delivers high-quality solutions. Their technical expertise and ability to understand our business challenges have enabled us to accelerate our digital transformation."
+    },
+    "testimonial3": {
+      "position": "Marketing Manager",
+      "text": "High-level technical training that transformed our team. Our developers gained autonomy and efficiency thanks to NeoCraft's educational approach."
+    }
   }
 }
