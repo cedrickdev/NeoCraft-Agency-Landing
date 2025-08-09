@@ -8,11 +8,13 @@ import {
   Instagram,
   Facebook,
 } from "lucide-react";
+import {useTranslations} from "next-intl";
 
 const date = new Date();
 const year = date.getFullYear();
 
 export default function Footer() {
+  const t = useTranslations('footer');
   return (
     <footer className="relative overflow-hidden">
       {/* Background with gradient */}
@@ -118,7 +120,7 @@ export default function Footer() {
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
                     <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-blue-400" />
-                    Sites vitrine & institutionnels
+                    {t('services.showcaseWebsite')}
                   </a>
                 </li>
                 <li>
@@ -127,7 +129,7 @@ export default function Footer() {
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
                     <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-emerald-400" />
-                    Sites e-commerce
+                    {t('services.ecommerceWebsite')}
                   </a>
                 </li>
                 <li>
@@ -136,7 +138,7 @@ export default function Footer() {
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
                     <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-blue-400" />
-                    Développement sur mesure
+                    {t('services.development')}
                   </a>
                 </li>
                 <li>
@@ -145,7 +147,7 @@ export default function Footer() {
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
                     <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-emerald-400" />
-                    Google Ads & Facebook Ads
+                    {t('services.ads')}
                   </a>
                 </li>
                 <li>
@@ -154,7 +156,7 @@ export default function Footer() {
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
                     <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-emerald-400" />
-                    SEO
+                    {t('services.seo')}
                   </a>
                 </li>
               </ul>
@@ -162,7 +164,7 @@ export default function Footer() {
 
             <div>
               <h4 className="text-lg font-semibold mb-6 bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-                Légal
+                {t('legal.title')}
               </h4>
               <ul className="space-y-3">
                 <li>
@@ -171,7 +173,7 @@ export default function Footer() {
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                   >
                     <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform text-blue-400" />
-                    Politique de confidentialité
+                    {t('legal.policy')}
                   </a>
                 </li>
               </ul>
@@ -181,17 +183,14 @@ export default function Footer() {
           <div className="border-t border-gray-800 mt-12 pt-8">
             <div className="flex flex-col md:flex-row items-center ">
               <p className="text-gray-400 text-center md:text-left mb-4 md:mb-0">
-                © {year} NeoCraft. Tous droits réservés.
+                © {year} NeoCraft. {t('copyright')}
               </p>
               <div className="flex items-center">
-                <span className="text-gray-400 text-sm mr-2">Propulsé par</span>
+                <span className="text-gray-400 text-sm mr-2 ml-2">{t('by')}</span>
                 <div className="flex items-center space-x-1">
                   <Code2 className="w-4 h-4 text-blue-400" />
                   <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent font-medium">
                     <a
-                      href="https://github.com/NeoCraftTeam"
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       {" "}
                       NeoCraftTeam

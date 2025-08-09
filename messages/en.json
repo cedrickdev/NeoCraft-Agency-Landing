@@ -350,5 +350,21 @@
       "more": "Find out more"
     },
     "trustMessage": "They trust us"
+  },
+
+  "footer": {
+    "services": {
+      "showcaseWebsite": "Showcase & institutional websites",
+      "ecommerceWebsite": "E-commerce websites",
+      "development": "Custom web development",
+      "ads": "Google Ads & Facebook Ads",
+      "seo": "SEO"
+    },
+    "legal": {
+      "title": "Legal information",
+      "policy": "Privacy Policy"
+    },
+    "copyright": "All rights reserved.",
+    "by": "Powered by"
   }
 }

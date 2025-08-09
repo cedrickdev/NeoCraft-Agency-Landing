@@ -350,6 +350,21 @@
       "more": "En savoir plus"
     },
     "trustMessage": "Ils nous font confiance"
+  },
+  "footer": {
+    "services": {
+      "showcaseWebsite": "Sites vitrine & institutionnels",
+      "ecommerceWebsite": "Sites e-commerce",
+      "development": "Développement sur mesure",
+      "ads": "Google Ads & Facebook Ads",
+      "seo": "SEO"
+    },
+    "legal": {
+      "title": "Mentions légales",
+      "policy": "Politique de confidentialité"
+    },
+    "copyright": "Tous droits réservés.",
+    "by": "Propulsé par"
   }
 }
 
