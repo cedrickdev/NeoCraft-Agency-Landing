@@ -351,7 +351,6 @@
     },
     "trustMessage": "They trust us"
   },
-
   "footer": {
     "services": {
       "showcaseWebsite": "Showcase & institutional websites",
@@ -366,5 +365,12 @@
     },
     "copyright": "All rights reserved.",
     "by": "Powered by"
+  },
+  "chat-widget": {
+    "button": "Discuss"
+  },
+  "chat": {
+    "welcomeMessage": "Hello. I am NeoBot, your virtual assistant. How can I help you?",
+    "placeholder": "Enter your message..."
   }
 }

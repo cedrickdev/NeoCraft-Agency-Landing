@@ -5,8 +5,10 @@ import React, { useState } from "react";
 import { AIChatbot } from "./ai-chatbot";
 import { Bot } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import {useTranslations} from "next-intl";
 
 export function ChatWidget() {
+    const t = useTranslations('chat-widget');
   const [open, setOpen] = useState(false);
 
   return (
@@ -19,7 +21,7 @@ export function ChatWidget() {
         aria-label="Ouvrir le chat"
       >
         <Bot className="w-6 h-6" />
-        <span className="hidden md:inline">Discuter</span>
+        <span className="hidden md:inline">{t('button')}</span>
       </button>
 
       {/* Fenêtre du chatbot avec animation */}

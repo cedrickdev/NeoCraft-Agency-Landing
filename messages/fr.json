@@ -365,6 +365,13 @@
     },
     "copyright": "Tous droits réservés.",
     "by": "Propulsé par"
+  },
+  "chat-widget": {
+    "button": "Discuter?"
+  },
+  "chat": {
+    "welcomeMessage": "Bonjour. Je suis NeoBot, votre assistant virtuel. Comment puis-je vous aider ?",
+    "placeholder": "Saisissez votre message..."
   }
 }
 
