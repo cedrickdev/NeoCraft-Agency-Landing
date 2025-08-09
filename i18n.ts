@@ -3,7 +3,7 @@ import { getRequestConfig } from 'next-intl/server';
 
 export const locales = ['en', 'fr'] as const;
 export type Locale = (typeof locales)[number];
-export const defaultLocale = 'en';
+export const defaultLocale = 'fr';
 
 export function getLocaleFromPath(pathname: string) {
     return locales.find((locale) => pathname.startsWith(`/${locale}/`)) ?? defaultLocale;
