@@ -44,7 +44,7 @@ export default function CTA() {
 
                             <div className="text-center">
                                 <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-                                    6+
+                                    3
                                 </div>
                                 <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
                                     {t('stats.years')}
@@ -52,7 +52,7 @@ export default function CTA() {
                             </div>
                             <div className="text-center border-x border-gray-200 dark:border-gray-800">
                                 <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-                                    98%
+                                    6+
                                 </div>
                                 <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
                                     {t('stats.projects')}
