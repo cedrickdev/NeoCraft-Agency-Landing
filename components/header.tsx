@@ -31,12 +31,11 @@ export default function Header() {
   }, [isDark]);
 
   return (
-    <motion.header
-      style={{ opacity: headerOpacity }}
+    <header
       className="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-white/10 dark:border-gray-800/50"
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <motion.div
+        <div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center space-x-2"
@@ -53,7 +52,7 @@ export default function Header() {
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300">
             NeoCraft
           </span>
-        </motion.div>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -182,6 +181,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
