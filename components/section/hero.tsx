@@ -49,7 +49,7 @@ export default function Hero() {
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               <span className="block">{t('h1')}</span>
-              <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600  to-emerald-500 bg-clip-text text-transparent animate-gradient">
                 {t('span')}
               </span>
             </h1>
