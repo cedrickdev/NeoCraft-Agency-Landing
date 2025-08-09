@@ -308,7 +308,7 @@
       "message": "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais à l'adresse",
       "time": "Temps de réponse habituel : moins de 24h"
     },
-    "action" : {
+    "action": {
       "continue": "Appuyez sur Entrée pour continuer",
       "send": "Appuyez sur Entrée pour envoyer"
     },
@@ -317,7 +317,7 @@
       "send": "Envoyer",
       "continue": "Continuer"
     },
-    "step" : {
+    "step": {
       "name": "Étape",
       "of": "sur 4"
     },
@@ -332,6 +332,24 @@
       "description": "Réservez un créneau dans notre agenda pour discuter de votre projet en détail.",
       "button": "Planifier un appel"
     }
+  },
+  "cta": {
+    "title": {
+      "h1": "Prêt à créer quelque chose",
+      "span": "d'extraordinaire ?"
+    },
+    "description": "Réalisez votre vision numérique grâce à nos compétences artisanales.",
+    "stats": {
+      "years": "Années d'expérience",
+      "projects": "Projets réalisés",
+      "clients": "Clients satisfaits",
+      "time": "Temps de réponse"
+    },
+    "button": {
+      "cta": "Contactez-nous",
+      "more": "En savoir plus"
+    },
+    "trustMessage": "Ils nous font confiance"
   }
 }
 

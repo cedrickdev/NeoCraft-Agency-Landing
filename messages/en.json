@@ -308,18 +308,18 @@
       "message": "Your message has been sent successfully. We will respond as soon as possible to the address",
       "time": "Typical response time: less than 24 hours"
     },
-    "action" : {
+    "action": {
       "continue": "Press Enter to continue",
-        "send": "Press Enter to send"
+      "send": "Press Enter to send"
     },
     "formStatus": {
       "sending": "Sending...",
       "send": "Send",
       "continue": "Continue"
     },
-    "step" : {
+    "step": {
       "name": "Step",
-        "of": "of 4"
+      "of": "of 4"
     },
     "contact": {
       "title": "Contact us directly",
@@ -332,5 +332,23 @@
       "description": "Book a time slot in our calendar to discuss your project in detail.",
       "button": "Schedule a call"
     }
+  },
+  "cta": {
+    "title": {
+      "h1": "Ready to create something",
+      "span": "extraordinary?"
+    },
+    "description": "Bring your digital vision to life with our craftsmanship skills.",
+    "stats": {
+      "years": "Years of experience",
+      "projects": "Completed projects",
+      "clients": "Satisfied customers",
+      "time": "Response time"
+    },
+    "button": {
+      "cta": "Get a quote",
+      "more": "Find out more"
+    },
+    "trustMessage": "They trust us"
   }
 }
