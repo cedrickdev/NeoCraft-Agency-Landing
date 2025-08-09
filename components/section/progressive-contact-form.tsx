@@ -18,6 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {useTranslations} from "next-intl";
 
 interface FormData {
   name: string;
@@ -30,6 +31,7 @@ type FormStatus = "idle" | "loading" | "success" | "error";
 type FormStep = "name" | "email" | "subject" | "message" | "complete";
 
 export default function ProgressiveContactForm() {
+  const t = useTranslations('progressiveContactForm');
   const [currentStep, setCurrentStep] = useState<FormStep>("name");
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -135,15 +137,15 @@ export default function ProgressiveContactForm() {
   const getStepTitle = (step: FormStep) => {
     switch (step) {
       case "name":
-        return "Comment pouvons-nous vous appeler ?";
+        return t('formStepTitle.name')
       case "email":
-        return `Ravi de vous rencontrer ${formData.name} ! Quel est votre email ?`;
+        return `${t('formStepTitle.email.start')} ${formData.name} ${t('formStepTitle.email.end')}`;
       case "subject":
-        return "De quoi souhaitez-vous parler ?";
+        return t('formStepTitle.subject');
       case "message":
-        return "Parlez-nous de votre projet";
+        return t('formStepTitle.message');
       case "complete":
-        return "Message envoyé avec succès !";
+        return t('formStepTitle.complete');
       default:
         return "";
     }
@@ -152,13 +154,13 @@ export default function ProgressiveContactForm() {
   const getStepPlaceholder = (step: FormStep) => {
     switch (step) {
       case "name":
-        return "Votre prénom ou nom...";
+        return t('formStepPlaceholder.name');
       case "email":
-        return "votre@email.com";
+        return t('formStepPlaceholder.email');
       case "subject":
-        return "Sujet de votre message...";
+        return t('formStepPlaceholder.subject');
       case "message":
-        return "Décrivez votre projet, vos besoins, vos objectifs...";
+        return t('formStepPlaceholder.message');
       default:
         return "";
     }
@@ -201,11 +203,10 @@ export default function ProgressiveContactForm() {
             <CheckCircle className="w-10 h-10 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Merci {formData.name} !
+            {t('formData.thanks')} {formData.name} !
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Votre message a été envoyé avec succès. Nous vous répondrons dans
-            les plus brefs délais à l'adresse{" "}
+            {t('formData.message')}{" "}
             <span className="font-semibold text-blue-600 dark:text-blue-400">
               {formData.email}
             </span>
@@ -213,7 +214,7 @@ export default function ProgressiveContactForm() {
           </p>
           <div className="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-xl p-4">
             <p className="text-emerald-800 dark:text-emerald-400 text-sm">
-              ✨ Temps de réponse habituel : moins de 24h
+              ✨ {t('formData.time')}
             </p>
           </div>
         </motion.div>
@@ -238,15 +239,14 @@ export default function ProgressiveContactForm() {
           className="text-center mb-16"
         >
           <Badge className="mb-4 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium">
-            Contactez-nous
+            {t('badge')}
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Parlons de votre projet
+            {t('title')}
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Prêt à démarrer votre projet ? Contactez-nous pour discuter de vos
-            besoins et découvrir comment nous pouvons vous aider.
+            {t('description')}
           </p>
         </motion.div>
 
@@ -408,8 +408,8 @@ export default function ProgressiveContactForm() {
                         <div className="flex justify-between items-center pt-4">
                           <div className="text-sm text-gray-500 dark:text-gray-400">
                             {currentStep !== "message"
-                              ? "Appuyez sur Entrée pour continuer"
-                              : "Appuyez sur Entrée pour envoyer"}
+                              ? t('action.continue')
+                              : t('action.send')}
                           </div>
 
                           <Button
@@ -427,16 +427,16 @@ export default function ProgressiveContactForm() {
                             {formStatus === "loading" ? (
                               <div className="flex items-center">
                                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                                Envoi...
+                                {t('formStatus.sending')}
                               </div>
                             ) : currentStep === "message" ? (
                               <div className="flex items-center">
                                 <Send className="w-5 h-5 mr-2" />
-                                Envoyer
+                                {t('formStatus.send')}
                               </div>
                             ) : (
                               <div className="flex items-center">
-                                Continuer
+                                {t('formStatus.continue')}
                                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                               </div>
                             )}
@@ -447,11 +447,11 @@ export default function ProgressiveContactForm() {
                       {/* Progress Text */}
                       <div className="text-center pt-4">
                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                          Étape{" "}
+                          {t('step.name')}{" "}
                           {["name", "email", "subject", "message"].indexOf(
                             currentStep
                           ) + 1}{" "}
-                          sur 4
+                          {t('step.of')}
                         </p>
                       </div>
                     </motion.div>
@@ -476,7 +476,7 @@ export default function ProgressiveContactForm() {
               <div className="bg-gradient-to-br from-blue-600 to-emerald-500 rounded-3xl shadow-xl overflow-hidden text-white">
                 <div className="p-8">
                   <h3 className="text-2xl font-bold mb-6">
-                    Contactez-nous directement
+                    {t('contact.title')}
                   </h3>
 
                   <div className="space-y-4">
@@ -491,13 +491,13 @@ export default function ProgressiveContactForm() {
                         <p className="font-medium text-sm text-white/80">
                           Email
                         </p>
-                        <p className="font-medium">Envoyer un message</p>
+                        <p className="font-medium">{t('contact.email')}</p>
                       </div>
                       <ArrowRight className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all ml-auto" />
                     </a>
 
                     <a
-                      href="https://wa.me/41783410631?text=Bonjour%20NeoCraft%2C%20je%20souhaite%20discuter%20d%27un%20projet"
+                      href="https://wa.me/41778078806?text=Bonjour%20NeoCraft%2C%20je%20souhaite%20discuter%20d%27un%20projet"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-4 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 group"
@@ -509,13 +509,13 @@ export default function ProgressiveContactForm() {
                         <p className="font-medium text-sm text-white/80">
                           WhatsApp
                         </p>
-                        <p className="font-medium">Message instantané</p>
+                        <p className="font-medium">{t('contact.whatsapp')}</p>
                       </div>
                       <ArrowRight className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all ml-auto" />
                     </a>
 
                     <a
-                      href="tel:+41783410631"
+                      href="tel:+41778078806"
                       className="flex items-center space-x-4 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 group"
                     >
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -525,7 +525,7 @@ export default function ProgressiveContactForm() {
                         <p className="font-medium text-sm text-white/80">
                           Téléphone
                         </p>
-                        <p className="font-medium">Appel direct</p>
+                        <p className="font-medium">{t('contact.phone')}</p>
                       </div>
                       <ArrowRight className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all ml-auto" />
                     </a>
@@ -536,11 +536,10 @@ export default function ProgressiveContactForm() {
               <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800">
                 <div className="p-8">
                   <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                    Prêt à commencer ?
+                    {t('call.title')}
                   </h4>
                   <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    Réservez un créneau dans notre agenda pour discuter de votre
-                    projet en détail.
+                    {t('call.description')}
                   </p>
                   <a
                     href="https://calendly.com/neocraftteam/30min"
@@ -548,7 +547,7 @@ export default function ProgressiveContactForm() {
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white rounded-lg shadow-lg shadow-blue-500/20 dark:shadow-emerald-500/20 px-6 py-3 font-medium transition-all duration-300 group"
                   >
-                    Planifier un appel
+                    {t('call.button')}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

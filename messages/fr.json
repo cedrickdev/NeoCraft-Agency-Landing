@@ -1,0 +1,377 @@
+{
+  "Seo": {
+    "title": "NeoCraft - L'innovation web pour un succès numérique",
+    "description": "NeoCraft est une agence digitale spécialisée dans le développement web offrant des solutions personnalisées pour répondre aux besoins et exigences spécifiques de vos projets. Nous couvrons différents domaines tels que le développement web sur mesure, l'e-commerce (WooCommerce, Shopify), le design UI/UX, la consultation technique ainsi que la formation en développement web. Notre équipe expérimentée et creative est à votre disposition pour vous accompagner dans vos projets numériques et digitaux.",
+    "keywords": "développement web, agence digitale, e-commerce, design UI/UX, consultation technique, formation développement web",
+    "authors": "Cédrick FEZE, Jorel KUE, Stéphane KAMGA",
+    "openGraph": {
+      "description": "Solutions digitales sur mesure et formation technique de qualité",
+      "locale": "fr_FR"
+    },
+    "twitter": {
+      "description": "L'innovation web pour un succès numérique."
+    },
+    "jsonLd": {
+      "description": "NeoCraft est une  agence numérique qui aide ses clients à développer des plateformes en ligne, des applications mobiles et des boutiques en ligne primées. Notre équipe d'experts en développement web, design UI/UX et stratégie digitale est dédiée à fournir des solutions personnalisées pour répondre aux besoins uniques de chaque projet. Que vous ayez besoin d'une boutique en ligne, d'une application mobile ou d'un site web sur mesure, nous sommes là pour vous accompagner à chaque étape de votre parcours numérique."
+    }
+  },
+  "Header": {
+    "about": "À propos",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "J'ai un projet"
+  },
+  "Hero": {
+    "badge": "L'innovation web pour un succès numérique",
+    "h1": "L'artisanat du code,",
+    "span": "réinventé",
+    "p": "Conçu avec une approche réfléchie, nous mettons en pratique ce que nous prêchons. Le résultat est un site web accessible à tous, qui se charge en un clin d’œil et qui minimise la quantité de carbone émise à chaque chargement de page",
+    "button": "Demander un devis",
+    "button2": "Découvrir nos valeurs"
+  },
+  "About": {
+    "badge": "Notre mission",
+    "h2": "À propos de NeoCraft",
+    "card": {
+      "title": "Créer, transmettre, élever.",
+      "description": "Notre manifeste en trois mots"
+    },
+    "element1": {
+      "title": "Notre Vision",
+      "description": "Nous créons de la valeur sociale, environnementale et économique durable en œuvrant pour le progrès digital et humain. La  de contribuer à ces trois dimensions du développement durable a toujours été au cœur de nos activités"
+    },
+    "element2": {
+      "title": "Notre Mission",
+      "description": "Démocratiser l'excellence technique en combinant savoir-faire artisanal et innovation technologique. Nous créons des solutions digitales qui transforment les idées en réalités concrètes et formons les talents de demainDémocratiser l'excellence technique en combinant savoir-faire artisanal et innovation technologique. Nous créons des solutions digitales qui transforment les idées en réalités concrètes et formons les talents de demain"
+    },
+    "value1": {
+      "title": "Excellence",
+      "description": "Nous visons l'excellence dans chaque ligne de code et chaque pixel de design."
+    },
+    "value2": {
+      "title": "Collaboration",
+      "description": "Nous travaillons en étroite collaboration avec nos clients pour créer des solutions sur mesure."
+    },
+    "value3": {
+      "title": "Innovation",
+      "description": "Nous explorons constamment de nouvelles technologies pour rester à la pointe."
+    },
+    "value4": {
+      "title": "Engagement",
+      "description": "Nous respectons nos engagements en termes de délais, de budget et de qualité."
+    }
+  },
+  "Services": {
+    "badge": "Nos expertises",
+    "title": "Services sur mesure",
+    "description": "Des services complets pour accompagner votre transformation digitale et vous aider à atteindre vos objectifs.",
+    "card1": {
+      "title": "Développement Web",
+      "description": "Applications web sur mesure pour répondre parfaitement à vos besoins spécifiques et exigences techniques."
+    },
+    "card2": {
+      "title": "UI/UX sur mesure",
+      "description": "Interfaces élégantes et expériences utilisateur optimales qui captent l'attention et convertissent vos visiteurs."
+    },
+    "card3": {
+      "title": "Formation technique ciblée",
+      "description": "Programmes de formation adaptés pour développer les compétences techniques de vos équipes."
+    },
+    "card4": {
+      "title": "Accompagnement des projets",
+      "description": "Support complet de la conception à la livraison avec une méthodologie agile et transparente."
+    },
+    "learnMore": "En savoir plus"
+  },
+  "iServices": {
+    "title": "Nos Services",
+    "description": "Notre agence associe a l'esprit entrepreneurial et les compétences numériques pour vous fournir les leviers marketing adaptés à votre budget. Vous bénéficiez de quelqu'un qui vérifie l'avancement du développement de votre site web et vous assiste dans votre stratégie de communication.",
+    "p": "Choisissez ci-dessous un pôle de l'agence afin de découvrir les services qu'il propose.",
+    "functionalities": "Fonctionnalités incluses :",
+    "development": {
+      "title": "Développement web",
+      "customDevelopment": {
+        "title": "Développement sur mesure",
+        "description": "Un site web est souvent le moteur de développement d'une entreprise, mais c'est aussi un outil de gestion essentiel à votre activité. Au quotidien, vous utilisez différents logiciels pour mettre à jour votre inventaire avec votre boutique, suivre vos opportunités commerciales, gérer vos factures et vos fournisseurs. Mais répondent-ils vraiment à vos méthodes de travail ?",
+        "details": "Pour gagner en performance et optimiser le retour sur investissement de vos applications, il est fondamental pour vos équipes de compter sur des technologies adaptées. Chez NeoCraft, nous développons des plateformes web qui tiennent compte à 100% des spécificités de votre organisation. Certains de nos clients ont gagné 2 semaines de travail par an et par collaborateur grâce à la conception d'un CRM sur mesure.",
+        "features": {
+          "feature1": "Applications web personnalisées",
+          "feature2": "Intégration avec vos outils existants",
+          "feature3": "Interface utilisateur intuitive",
+          "feature4": "Architecture scalable",
+          "feature5": "Support technique dédié",
+          "feature6": "Formation de vos équipes"
+        },
+        "cta": "Développez votre entreprise avec une plateforme web adaptée à vos besoins !"
+      },
+      "ecommerce": {
+        "title": "Site e-commerce",
+        "description": "Créez votre boutique en ligne avec une solution e-commerce complète et performante. Nous développons des plateformes de vente adaptées à votre secteur d'activité avec toutes les fonctionnalités nécessaires pour maximiser vos conversions.",
+        "details": "Notre expertise en e-commerce nous permet de créer des solutions sur mesure qui s'adaptent parfaitement à vos produits et à votre clientèle. Gestion des stocks, paiements sécurisés, livraisons, nous prenons tout en charge.",
+        "features": {
+          "feature1": "Catalogue produits avancé",
+          "feature2": "Gestion des commandes",
+          "feature3": "Paiements sécurisés",
+          "feature4": "Gestion des stocks",
+          "feature5": "Tableau de bord analytique",
+          "feature6": "SEO optimisé"
+        },
+        "cta": "Lancez votre boutique en ligne et boostez vos ventes dès aujourd'hui !"
+      },
+      "showcase": {
+        "title": "Site vitrine",
+        "description": "Présentez votre entreprise avec un site vitrine élégant et professionnel. Nous créons des sites web qui reflètent parfaitement votre image de marque et convertissent vos visiteurs en clients.",
+        "details": "Un site vitrine efficace doit allier esthétique et performance. Nous concevons des sites rapides, responsive et optimisés pour le référencement naturel afin de maximiser votre visibilité en ligne.",
+        "features": {
+          "feature1": "Design responsive",
+          "feature2": "Optimisation SEO",
+          "feature3": "Temps de chargement rapide",
+          "feature4": "Formulaires de contact",
+          "feature5": "Galerie photos/vidéos",
+          "feature6": "Intégration réseaux sociaux"
+        },
+        "cta": "Créez votre présence en ligne avec un site vitrine qui vous ressemble !"
+      }
+    },
+    "marketing": {
+      "title": "Marketing digital",
+      "seo": {
+        "title": "Référencement SEO",
+        "description": "Améliorez votre visibilité sur les moteurs de recherche avec notre expertise SEO. Nous optimisons votre site web pour qu'il apparaisse en première page des résultats Google et attire plus de visiteurs qualifiés.",
+        "details": "Notre approche SEO combine technique et contenu pour des résultats durables. Audit technique, recherche de mots-clés, optimisation on-page et stratégie de contenu, nous mettons tout en œuvre pour améliorer votre positionnement.",
+        "features": {
+          "feature1": "Audit SEO complet",
+          "feature2": "Recherche de mots-clés",
+          "feature3": "Optimisation technique",
+          "feature4": "Création de contenu",
+          "feature5": "Netlinking qualifié",
+          "feature6": "Suivi des performances"
+        },
+        "cta": "Dominez les résultats de recherche et attirez plus de clients !"
+      },
+      "social-media": {
+        "title": "Réseaux sociaux",
+        "description": "Développez votre présence sur les réseaux sociaux avec une stratégie adaptée à votre audience. Nous créons et gérons vos comptes pour engager votre communauté et développer votre notoriété.",
+        "details": "Les réseaux sociaux sont devenus incontournables pour toucher votre audience. Nous élaborons une stratégie social media personnalisée et créons du contenu engageant pour faire grandir votre communauté.",
+        "features": {
+          "feature1": "Stratégie social media",
+          "feature2": "Création de contenu",
+          "feature3": "Gestion des publications",
+          "feature4": "Community management",
+          "feature5": "Publicités ciblées",
+          "feature6": "Analyse des performances"
+        },
+        "cta": "Engagez votre audience et développez votre communauté en ligne !"
+      },
+      "advertising": {
+        "title": "Publicité en ligne",
+        "description": "Maximisez votre retour sur investissement avec des campagnes publicitaires ciblées. Google Ads, Facebook Ads, LinkedIn Ads, nous optimisons vos budgets pour générer plus de leads et de ventes.",
+        "details": "La publicité en ligne permet d'obtenir des résultats rapides quand elle est bien maîtrisée. Nous créons et optimisons vos campagnes pour maximiser votre ROI et atteindre vos objectifs commerciaux.",
+        "features": {
+          "feature1": "Campagnes Google Ads",
+          "feature2": "Publicités Facebook/Instagram",
+          "feature3": "LinkedIn Ads B2B",
+          "feature4": "Remarketing",
+          "feature5": "Optimisation des conversions",
+          "feature6": "Reporting détaillé"
+        },
+        "cta": "Générez plus de leads avec des campagnes publicitaires performantes !"
+      }
+    },
+    "consulting": {
+      "title": "Conseil & Formation",
+      "strategy": {
+        "title": "Stratégie digitale",
+        "description": "Définissez une stratégie digitale cohérente avec vos objectifs business. Nous vous accompagnons dans la transformation digitale de votre entreprise avec une approche personnalisée et des recommandations concrètes.",
+        "details": "Une stratégie digitale efficace nécessite une vision globale de votre écosystème. Nous analysons votre marché, vos concurrents et vos objectifs pour élaborer une feuille de route digitale sur mesure.",
+        "features": {
+          "feature1": "Audit digital complet",
+          "feature2": "Analyse concurrentielle",
+          "feature3": "Définition des objectifs",
+          "feature4": "Feuille de route digitale",
+          "feature5": "Recommandations techniques",
+          "feature6": "Accompagnement dans la mise en œuvre"
+        },
+        "cta": "Accélérez votre transformation digitale avec une stratégie sur mesure !"
+      },
+      "training": {
+        "title": "Formation technique",
+        "description": "Formez vos équipes aux dernières technologies et bonnes pratiques du web. Nos formations sur mesure permettent à vos collaborateurs de monter en compétences et d'être plus autonomes.",
+        "details": "Nous proposons des formations adaptées à votre niveau et vos besoins spécifiques. De l'initiation au perfectionnement, nos experts transmettent leur savoir-faire avec une approche pratique et opérationnelle.",
+        "features": {
+          "feature1": "Formations personnalisées",
+          "feature2": "Approche pratique",
+          "feature3": "Support de cours fourni",
+          "feature4": "Suivi post-formation",
+          "feature5": "Certification possible",
+          "feature6": "Formation en présentiel ou distanciel"
+        },
+        "cta": "Investissez dans les compétences de vos équipes pour l'avenir !"
+      },
+      "audit": {
+        "title": "Audit & optimisation",
+        "description": "Identifiez les points d'amélioration de votre présence digitale avec un audit complet. Nous analysons vos performances actuelles et vous proposons des solutions concrètes pour optimiser vos résultats.",
+        "details": "Un audit approfondi révèle souvent des opportunités d'amélioration importantes. Nous passons au crible tous les aspects de votre présence digitale pour identifier les leviers de croissance les plus pertinents.",
+        "features": {
+          "feature1": "Audit technique complet",
+          "feature2": "Analyse des performances",
+          "feature3": "Recommandations prioritaires",
+          "feature4": "Plan d'action détaillé",
+          "feature5": "Estimation des gains",
+          "feature6": "Accompagnement dans la mise en œuvre"
+        },
+        "cta": "Optimisez vos performances digitales avec un audit professionnel !"
+      }
+    },
+    "subServices": {
+      "development": {
+        "1": "Développement web sur mesure",
+        "2": "Site e-commerce",
+        "3": "Site vitrine"
+      },
+      "marketing": {
+        "1": "Référencement SEO",
+        "2": "Réseaux sociaux",
+        "3": "Publicité en ligne"
+      },
+      "consulting": {
+        "1": "Stratégie digitale",
+        "2": "Formation technique",
+        "3": "Audit & optimisation"
+      }
+    }
+  },
+  "Methodology": {
+    "badge": "Notre approche",
+    "title": "Méthodologie NeoCraft",
+    "description": "Un processus éprouvé en 5 étapes pour garantir le succès de vos projets et une collaboration transparente.",
+    "step1": {
+      "title": "Découverte",
+      "description": "Analyse approfondie de vos besoins, objectifs et contraintes pour définir la meilleure approche."
+    },
+    "step2": {
+      "title": "Design & prototype",
+      "description": "Conception créative et prototypage interactif pour visualiser et tester votre solution avant développement."
+    },
+    "step3": {
+      "title": "Développement agile",
+      "description": "Développement itératif avec des cycles courts pour s'adapter rapidement aux retours et évolutions."
+    },
+    "step4": {
+      "title": "Tests & QA",
+      "description": "Validation rigoureuse et optimisation des performances pour garantir une qualité irréprochable."
+    },
+    "step5": {
+      "title": "Livraison + suivi",
+      "description": "Déploiement maîtrisé et formation de vos équipes pour une transition en douceur et une autonomie rapide."
+    }
+  },
+  "Testimonial": {
+    "badge": "Témoignages",
+    "title": "Ce que l’on dit de nous",
+    "description": "Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs grâce à notre expertise et notre approche personnalisée.",
+    "testimonial1": {
+      "position": "PDG",
+      "text": "NeoCraft a transformé notre vision en une application exceptionnelle. Leur approche artisanale et leur attention aux détails ont fait toute la différence. Un partenaire de confiance pour l'avenir."
+    },
+    "testimonial2": {
+      "position": "Directeur Technique",
+      "text": "Une équipe passionnée qui livre des solutions de qualité. Leur expertise technique et leur capacité à comprendre nos enjeux métier nous ont permis d'accélérer notre transformation digitale."
+    },
+    "testimonial3": {
+      "position": "Responsable Marketing",
+      "text": "Formation technique de haut niveau qui a transformé notre équipe. Nos développeurs ont gagné en autonomie et en efficacité grâce à l'approche pédagogique de NeoCraft."
+    }
+  },
+  "progressiveContactForm": {
+    "badge": "Contactez-nous",
+    "title": "Parlons de votre projet",
+    "description": "Prêt à démarrer votre projet ? Contactez-nous pour discuter de vos besoins et découvrir comment nous pouvons vous aider.",
+    "formStepTitle": {
+      "name": "Comment pouvons-nous vous appeler ?",
+      "email": {
+        "start": "Ravi de vous rencontrer",
+        "end": "! Quel est votre email ?"
+      },
+      "subject": "De quoi souhaitez-vous parler ?",
+      "message": "Parlez-nous de votre projet",
+      "complete": "Message envoyé avec succès !"
+    },
+    "formStepPlaceholder": {
+      "name": "Votre prénom ou nom...",
+      "email": "nom@email.com",
+      "subject": "Sujet de votre message...",
+      "message": "Décrivez votre projet, vos besoins, vos objectifs..."
+    },
+    "formData": {
+      "thanks": "Merci",
+      "message": "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais à l'adresse",
+      "time": "Temps de réponse habituel : moins de 24h"
+    },
+    "action": {
+      "continue": "Appuyez sur Entrée pour continuer",
+      "send": "Appuyez sur Entrée pour envoyer"
+    },
+    "formStatus": {
+      "sending": "Envoi en cours...",
+      "send": "Envoyer",
+      "continue": "Continuer"
+    },
+    "step": {
+      "name": "Étape",
+      "of": "sur 4"
+    },
+    "contact": {
+      "title": "Contactez-nous directement",
+      "email": "Envoyer un message",
+      "whatsapp": "Message instantané",
+      "phone": "Appel direct"
+    },
+    "call": {
+      "title": "Prêt à commencer ?",
+      "description": "Réservez un créneau dans notre agenda pour discuter de votre projet en détail.",
+      "button": "Planifier un appel"
+    }
+  },
+  "cta": {
+    "title": {
+      "h1": "Prêt à créer quelque chose",
+      "span": "d'extraordinaire ?"
+    },
+    "description": "Réalisez votre vision numérique grâce à nos compétences artisanales.",
+    "stats": {
+      "years": "Années d'expérience",
+      "projects": "Projets réalisés",
+      "clients": "Clients satisfaits",
+      "time": "Temps de réponse"
+    },
+    "button": {
+      "cta": "Contactez-nous",
+      "more": "En savoir plus"
+    },
+    "trustMessage": "Ils nous font confiance"
+  },
+  "footer": {
+    "services": {
+      "showcaseWebsite": "Sites vitrine & institutionnels",
+      "ecommerceWebsite": "Sites e-commerce",
+      "development": "Développement sur mesure",
+      "ads": "Google Ads & Facebook Ads",
+      "seo": "SEO"
+    },
+    "legal": {
+      "title": "Mentions légales",
+      "policy": "Politique de confidentialité"
+    },
+    "copyright": "Tous droits réservés.",
+    "by": "Propulsé par"
+  },
+  "chat-widget": {
+    "button": "Discuter?"
+  },
+  "chat": {
+    "welcomeMessage": "Bonjour. Je suis NeoBot, votre assistant virtuel. Comment puis-je vous aider ?",
+    "placeholder": "Saisissez votre message..."
+  }
+}
+

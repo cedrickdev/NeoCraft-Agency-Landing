@@ -1,13 +1,21 @@
+'use client';
+
 import {
   motion,
   useScroll,
   useTransform,
   AnimatePresence,
 } from "framer-motion";
+
+
+import { useTranslations } from 'next-intl';
 import { Code2, ChevronRight, Sun, Moon, X, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-export default function er() {
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+export default function Header() {
+    const t = useTranslations('Header');
+
   const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -53,13 +61,13 @@ export default function er() {
             href="#about"
             className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
           >
-            À propos
+            {t("about")}
           </a>
           <a
             href="#iservices"
             className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
           >
-            Services
+            {t("services")}
           </a>
           {/*  <a
             href="#team"
@@ -71,11 +79,12 @@ export default function er() {
             href="#contact"
             className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
           >
-            Contact
+            {t("contact")}
           </a>
         </nav>
 
         <div className="flex items-center space-x-4">
+          <LanguageSwitcher />
           <Button
             variant="ghost"
             size="icon"
@@ -98,7 +107,7 @@ export default function er() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Nous contacter
+            {t("cta")}
           </Button>
 
           <Button
@@ -131,7 +140,7 @@ export default function er() {
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium flex items-center justify-between"
                 onClick={() => setIsMenuOpen(false)}
               >
-                À propos
+                {t("about")}
                 <ChevronRight className="w-5 h-5" />
               </a>
               <a
@@ -139,23 +148,23 @@ export default function er() {
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium flex items-center justify-between"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                {t("services")}
                 <ChevronRight className="w-5 h-5" />
               </a>
-              <a
+              {/*<a
                 href="#team"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium flex items-center justify-between"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Équipe
                 <ChevronRight className="w-5 h-5" />
-              </a>
+              </a>*/}
               <a
                 href="#contact"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium flex items-center justify-between"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                {t("contact")}
                 <ChevronRight className="w-5 h-5" />
               </a>
               <Button
@@ -167,7 +176,7 @@ export default function er() {
                   setIsMenuOpen(false);
                 }}
               >
-                Nous contacter
+                {t("cta")}
               </Button>
             </nav>
           </motion.div>

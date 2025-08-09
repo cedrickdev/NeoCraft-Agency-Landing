@@ -2,39 +2,40 @@ import { Badge } from "@/components/ui/badge";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import {useTranslations} from "next-intl";
 
-const testimonials = [
-  {
-    name: "Marie Dupont",
-    role: "CEO",
-    company: "TechStart",
-    avatar: "/placeholder.svg?height=100&width=100",
-    content:
-      "NeoCraft a transformé notre vision en une application exceptionnelle. Leur approche artisanale et leur attention aux détails ont fait toute la différence. Un partenaire de confiance pour l'avenir.",
-    rating: 5,
-  },
-  {
-    name: "Pierre Moreau",
-    role: "CTO",
-    company: "InnovateCorp",
-    avatar: "/placeholder.svg?height=100&width=100",
-    content:
-      "Une équipe passionnée qui livre des solutions de qualité. Leur expertise technique et leur capacité à comprendre nos enjeux métier nous ont permis d'accélérer notre transformation digitale.",
-    rating: 5,
-  },
-  {
-    name: "Julie Bernard",
-    role: "Head of Product",
-    company: "StartupLab",
-    avatar: "/placeholder.svg?height=100&width=100",
-    content:
-      "Formation technique de haut niveau qui a transformé notre équipe. Nos développeurs ont gagné en autonomie et en efficacité grâce à l'approche pédagogique de NeoCraft.",
-    rating: 5,
-  },
-];
+
 
 export default function Testimonial() {
+  const t = useTranslations('Testimonial');
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  const testimonials = [
+    {
+      name: "Marie Dupont",
+      role: t('testimonial1.position'),
+      company: "TechStart",
+      avatar: "/placeholder.svg?height=100&width=100",
+      content: t('testimonial1.text'),
+      rating: 5,
+    },
+    {
+      name: "Pierre Moreau",
+      role: t('testimonial2.position'),
+      company: "InnovateCorp",
+      avatar: "/placeholder.svg?height=100&width=100",
+      content: t('testimonial2.text'),
+      rating: 5,
+    },
+    {
+      name: "Julie Bernard",
+      role: t('testimonial3.position'),
+      company: "StartupLab",
+      avatar: "/placeholder.svg?height=100&width=100",
+      content: t('testimonial3.text'),
+      rating: 5,
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,15 +62,14 @@ export default function Testimonial() {
           className="text-center mb-16"
         >
           <Badge className="mb-4 bg-amber-600 text-white  dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium">
-            Témoignages
+            {t('badge')}
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold  text-gray-900 dark:text-white mb-6">
-            Ce que nos clients disent
+            {t('title')}
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Découvrez les retours d'expérience de nos clients satisfaits et
-            comment nous avons transformé leurs projets.
+            {t('description')}
           </p>
         </motion.div>
 
