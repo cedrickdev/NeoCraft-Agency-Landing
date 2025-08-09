@@ -308,6 +308,19 @@
       "message": "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais à l'adresse",
       "time": "Temps de réponse habituel : moins de 24h"
     },
+    "action" : {
+      "continue": "Appuyez sur Entrée pour continuer",
+      "send": "Appuyez sur Entrée pour envoyer"
+    },
+    "formStatus": {
+      "sending": "Envoi en cours...",
+      "send": "Envoyer",
+      "continue": "Continuer"
+    },
+    "step" : {
+      "name": "Étape",
+      "of": "sur 4"
+    },
     "contact": {
       "title": "Contactez-nous directement",
       "email": "Envoyer un message",

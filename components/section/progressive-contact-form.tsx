@@ -408,8 +408,8 @@ export default function ProgressiveContactForm() {
                         <div className="flex justify-between items-center pt-4">
                           <div className="text-sm text-gray-500 dark:text-gray-400">
                             {currentStep !== "message"
-                              ? "Appuyez sur Entrée pour continuer"
-                              : "Appuyez sur Entrée pour envoyer"}
+                              ? t('action.continue')
+                              : t('action.send')}
                           </div>
 
                           <Button
@@ -427,16 +427,16 @@ export default function ProgressiveContactForm() {
                             {formStatus === "loading" ? (
                               <div className="flex items-center">
                                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                                Envoi...
+                                {t('formStatus.sending')}
                               </div>
                             ) : currentStep === "message" ? (
                               <div className="flex items-center">
                                 <Send className="w-5 h-5 mr-2" />
-                                Envoyer
+                                {t('formStatus.send')}
                               </div>
                             ) : (
                               <div className="flex items-center">
-                                Continuer
+                                {t('formStatus.continue')}
                                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                               </div>
                             )}
@@ -447,11 +447,11 @@ export default function ProgressiveContactForm() {
                       {/* Progress Text */}
                       <div className="text-center pt-4">
                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                          Étape{" "}
+                          {t('step.name')}{" "}
                           {["name", "email", "subject", "message"].indexOf(
                             currentStep
                           ) + 1}{" "}
-                          sur 4
+                          {t('step.of')}
                         </p>
                       </div>
                     </motion.div>
