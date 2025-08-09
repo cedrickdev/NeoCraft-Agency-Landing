@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { Code2, Palette, GraduationCap, Users, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {useTranslations} from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations('Hero');
+
   const heroRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -41,21 +44,18 @@ export default function Hero() {
             className="lg:w-1/2 text-center lg:text-left"
           >
             <Badge className="mb-6 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
-              L'innovation web pour un succès numérique
+                {t('badge')}
             </Badge>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="block">L'artisanat du code,</span>
+              <span className="block">{t('h1')}</span>
               <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
-                réinventé.
+                {t('span')}
               </span>
             </h1>
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Conçu avec une approche réfléchie, nous mettons en pratique ce que
-              nous prêchons. Le résultat est un site web accessible à tous, qui
-              se charge en un clin d’œil et qui minimise la quantité de carbone
-              émise à chaque chargement de page
+                {t('p')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -68,7 +68,7 @@ export default function Hero() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Demander un devis
+                {t('button')}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
@@ -81,7 +81,7 @@ export default function Hero() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Découvrir nos valeurs
+                {t('button2')}
               </Button>
             </div>
           </motion.div>

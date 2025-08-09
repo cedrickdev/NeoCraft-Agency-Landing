@@ -1,35 +1,37 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Users, Clock, Zap, Shield } from "lucide-react";
+import {useTranslations} from "next-intl";
 
-const values = [
-  {
-    icon: Shield,
-    title: "Excellence",
-    description:
-      "Nous visons l'excellence dans chaque ligne de code et chaque pixel de design.",
-  },
-  {
-    icon: Users,
-    title: "Collaboration",
-    description:
-      "Nous travaillons en étroite collaboration avec nos clients pour créer des solutions sur mesure.",
-  },
-  {
-    icon: Zap,
-    title: "Innovation",
-    description:
-      "Nous explorons constamment de nouvelles technologies pour rester à la pointe.",
-  },
-  {
-    icon: Clock,
-    title: "Engagement",
-    description:
-      "Nous respectons nos engagements en termes de délais, de budget et de qualité.",
-  },
-];
 
 export default function About() {
+  const t = useTranslations('About');
+
+
+  const values = [
+    {
+      icon: Shield,
+      title: t("value1.title"),
+      description: t("value1.description"),
+    },
+    {
+      icon: Users,
+      title: t("value2.title"),
+      description: t("value2.description"),
+    },
+    {
+      icon: Zap,
+      title: t("value3.title"),
+      description: t("value3.description"),
+    },
+    {
+      icon: Clock,
+      title: t("value4.title"),
+      description: t("value4.description"),
+    },
+  ];
+
+
   return (
     <section id="about" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
@@ -48,10 +50,10 @@ export default function About() {
           className="text-center mb-16"
         >
           <Badge className="mb-4 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
-            Notre mission
+            {t("badge")}
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            À propos de NeoCraft
+            {t("h2")}
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
         </motion.div>
@@ -71,10 +73,10 @@ export default function About() {
                   <div className="text-white text-center p-8">
                     <Code2 className="w-16 h-16 mx-auto mb-6 opacity-80" />
                     <h3 className="text-3xl font-bold mb-4">
-                      Créer, transmettre, élever.
+                        {t("card.title")}
                     </h3>
                     <p className="text-lg opacity-90">
-                      Notre manifeste en trois mots
+                        {t("card.description")}
                     </p>
                   </div>
                 </div>
@@ -95,25 +97,19 @@ export default function About() {
           >
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Notre Vision
+                {t("element1.title")}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                Nous créons de la valeur sociale, environnementale et économique
-                durable en œuvrant pour le progrès digital et humain. La
-                motivation de contribuer à ces trois dimensions du développement
-                durable a toujours été au cœur de nos activités
+                {t("element1.description")}
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Notre Mission
+                {t("element2.title")}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                Démocratiser l'excellence technique en combinant savoir-faire
-                artisanal et innovation technologique. Nous créons des solutions
-                digitales qui transforment les idées en réalités concrètes et
-                formons les talents de demain.
+                {t("element2.description")}
               </p>
             </div>
 

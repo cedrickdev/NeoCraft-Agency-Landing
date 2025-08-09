@@ -7,43 +7,44 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import {useTranslations} from "next-intl";
 
-const services = [
-  {
-    icon: Code2,
-    title: "Développement web personnalisé",
-    description:
-      "Applications web sur mesure avec les dernières technologies pour répondre parfaitement à vos besoins spécifiques.",
-    color: "from-blue-600 to-indigo-700",
-    delay: 0.1,
-  },
-  {
-    icon: Palette,
-    title: "UI/UX sur mesure",
-    description:
-      "Interfaces élégantes et expériences utilisateur optimales qui captent l'attention et convertissent vos visiteurs.",
-    color: "from-emerald-500 to-teal-600",
-    delay: 0.2,
-  },
-  {
-    icon: GraduationCap,
-    title: "Formation technique ciblée",
-    description:
-      "Programmes de formation adaptés pour développer les compétences techniques de vos équipes.",
-    color: "from-amber-500 to-orange-600",
-    delay: 0.3,
-  },
-  {
-    icon: Users,
-    title: "Accompagnement projet",
-    description:
-      "Support complet de la conception à la livraison avec une méthodologie agile et transparente.",
-    color: "from-purple-600 to-pink-600",
-    delay: 0.4,
-  },
-];
+
 
 export default function Services() {
+  const t = useTranslations('Services');
+
+  const services = [
+    {
+      icon: Code2,
+      title: t('card1.title'),
+      description: t('card1.description'),
+      color: "from-blue-600 to-indigo-700",
+      delay: 0.1,
+    },
+    {
+      icon: Palette,
+      title: t('card2.title'),
+      description: t('card2.description'),
+      color: "from-emerald-500 to-teal-600",
+      delay: 0.2,
+    },
+    {
+      icon: GraduationCap,
+      title: t('card3.title') + "",
+      description: t('card3.description'),
+      color: "from-amber-500 to-orange-600",
+      delay: 0.3,
+    },
+    {
+      icon: Users,
+      title: t('card4.title') + "",
+      description: t('card4.description'),
+      color: "from-purple-600 to-pink-600",
+      delay: 0.4,
+    },
+  ];
+
   return (
     <section id="services" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
@@ -61,15 +62,14 @@ export default function Services() {
           className="text-center mb-16"
         >
           <Badge className="mb-4 bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400 border-emerald-100 dark:border-emerald-800/30 px-4 py-1.5 text-sm font-medium hover:text-stone-100">
-            Nos expertises
+            {t('badge')}
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Services sur mesure
+            {t('title')}
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Des services complets pour accompagner votre transformation digitale
-            et vous aider à atteindre vos objectifs.
+            {t('description')}
           </p>
         </motion.div>
 
@@ -101,7 +101,7 @@ export default function Services() {
                     {service.description}
                   </p>
                   <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
-                    <span>En savoir plus</span>
+                    <span>{t('learnMore')}</span>
                     <ChevronRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>

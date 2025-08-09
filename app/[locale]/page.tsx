@@ -15,29 +15,29 @@ import ProgressiveContactForm from "@/components/section/progressive-contact-for
 import { ChatWidget } from "@/components/chat-widget";
 
 export default function NeoCraftLanding() {
-  return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
-      <Header />
+    return (
+        <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+            <Header />
 
-      <Hero />
+            <Hero />
 
-      <About />
+            <About />
 
-      <Services />
+            <Services />
 
-      <InteractiveServices />
+            <InteractiveServices />
 
-      <Methodology />
+            <Methodology />
 
-      <Testimonial />
+            <Testimonial />
 
-      <ProgressiveContactForm />
+            <ProgressiveContactForm />
 
-      <CTA />
+            <CTA />
 
-      <ChatWidget />
+            <ChatWidget />
 
-      <Footer />
-    </div>
-  );
+            <Footer />
+        </div>
+    );
 }

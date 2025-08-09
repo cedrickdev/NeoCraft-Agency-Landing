@@ -1,0 +1,376 @@
+{
+  "Seo": {
+    "title": "NeoCraft - The web innovation for digital success",
+    "description": "NeoCraft is a digital agency specialized in web development, offering customised solutions to meet the specific needs and requirements of your projects. We cover various areas such as custom web development, e-commerce (WooCommerce, Shopify), UI/UX design, technical consulting and web development training. Our experienced and creative team is at your disposal to support you in your digital projects.",
+    "keywords": "web development, digital agency, e-commerce, UI/UX design, technical consulting, web development training",
+    "authors": "Cédrick FEZE, Jorel KUE, Stéphane KAMGA",
+    "openGraph": {
+      "description": "Tailored digital solutions and high-quality technical training",
+      "locale": "en_US"
+    },
+    "twitter": {
+      "description": "The web innovation for digital success."
+    },
+    "jsonLd": {
+      "description": "NeoCraft is a digital agency specialized in web development offering customized solutions to meet your specific project needs and requirements."
+    }
+  },
+  "Header": {
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "I have a project"
+  },
+  "Hero": {
+    "badge": "The web innovation for digital success",
+    "h1": "Craftsmanship of code,",
+    "span": "reinvented",
+    "p": "Designed with a thoughtful approach, we practice what we preach. The result is a website that is accessible to all, loads in the blink of an eye and minimises the amount of carbon emitted each time a page is loaded.",
+    "button": "Demander un devis",
+    "button2": "Discover our values"
+  },
+  "About": {
+    "badge": "Our mission",
+    "h2": "About NeoCraft",
+    "card": {
+      "title": "Create, transmit, elevate.",
+      "description": "Our manifesto in three words"
+    },
+    "element1": {
+      "title": "Our Vision",
+      "description": "We create sustainable social, environmental and economic value by working for digital and human progress. Contributing to these three dimensions of sustainable development has always been at the heart of our activities."
+    },
+    "element2": {
+      "title": "Our Mission",
+      "description": "Democratising technical excellence by combining craftsmanship and technological innovation. We create digital solutions that turn ideas into reality and train the talent of tomorrowDemocratising technical excellence by combining traditional know-how with technological innovation. We create digital solutions that turn ideas into reality and train the talent of tomorrow."
+    },
+    "value1": {
+      "title": "Excellence",
+      "description": "We aim for excellence in every line of code and every pixel of design."
+    },
+    "value2": {
+      "title": "Collaboration",
+      "description": "We work closely with our customers to create tailor-made solutions."
+    },
+    "value3": {
+      "title": "Innovation",
+      "description": "We are constantly exploring new technologies to stay at the cutting edge."
+    },
+    "value4": {
+      "title": "Commitment",
+      "description": "We respect our commitments in terms of deadlines, budget and quality."
+    }
+  },
+  "Services": {
+    "badge": "Our expertise",
+    "title": "Tailored services",
+    "description": "Comprehensive services to support your digital transformation and help you achieve your objectives.",
+    "card1": {
+      "title": "Web Development",
+      "description": "Custom web applications to perfectly meet your specific needs and technical requirements."
+    },
+    "card2": {
+      "title": "Custom UI/UX",
+      "description": "Elegant interfaces and optimal user experiences that capture attention and convert your visitors."
+    },
+    "card3": {
+      "title": "Technical Consulting",
+      "description": "Tailored training programmes to develop your teams' technical skills."
+    },
+    "card4": {
+      "title": "Project support",
+      "description": "Full support from design to delivery with an agile and transparent methodology."
+    },
+    "learnMore": "Learn more"
+  },
+  "iServices": {
+    "title": "Our services",
+    "description": "Our agency combines entrepreneurial spirit and digital skills to provide you with marketing tools tailored to your budget. You benefit from someone who monitors the progress of your website development and assists you with your communication strategy.",
+    "p": "Select an agency division below to discover the services it offers.",
+    "functionalities": "Features included :",
+    "development": {
+      "title": "Web Development",
+      "customDevelopment": {
+        "title": "Custom Web Development",
+        "description": "A website is often the driving force behind a company's growth, but it is also an essential management tool for your business. Every day, you use different software to update your inventory with your shop, track your business opportunities, and manage your invoices and suppliers. But do they really fit your working methods?",
+        "details": "To improve performance and optimise the return on investment of your applications, it is essential for your teams to have access to the right technologies. At NeoCraft, we develop web platforms that are fully tailored to the specific needs of your organisation. Some of our clients have gained two weeks of work per year per employee thanks to the design of a customised CRM system.",
+        "features": {
+          "feature1": "Custom web applications",
+          "feature2": "Integration with your existing tools",
+          "feature3": "Intuitive user interface",
+          "feature4": "Architecture scalable",
+          "feature5": "Dedicated technical support",
+          "feature6": "Training your teams"
+        },
+        "cta": "Grow your business with a web platform tailored to your needs!"
+      },
+      "ecommerce": {
+        "title": "E-commerce websites",
+        "description": "Create your online shop with a comprehensive and powerful e-commerce solution. We develop sales platforms tailored to your industry with all the features you need to maximise your conversions.",
+        "details": "Our expertise in e-commerce allows us to create tailor-made solutions that are perfectly suited to your products and your customers. Inventory management, secure payments, deliveries—we take care of everything.",
+        "features": {
+          "feature1": "Advanced product catalogue",
+          "feature2": "Order management",
+          "feature3": "Secure payments",
+          "feature4": "Inventory management",
+          "feature5": "Analytical dashboard",
+          "feature6": "Optimised SEO"
+        },
+        "cta": "Launch your online shop and boost your sales today!"
+      },
+      "showcase": {
+        "title": "Showcase websites",
+        "description": "Showcase your business with an elegant and professional website. We create websites that perfectly reflect your brand image and convert your visitors into customers.",
+        "details": "An effective showcase website must combine aesthetics and performance. We design fast, responsive websites that are optimised for natural referencing in order to maximise your online visibility.",
+        "features": {
+          "feature1": "Responsive design",
+          "feature2": "SEO optimization",
+          "feature3": "Fast loading time",
+          "feature4": "Contact forms",
+          "feature5": "Photo/video gallery",
+          "feature6": "Social media integration"
+        },
+        "cta": "Create your online presence with a showcase website that reflects who you are!"
+      }
+    },
+    "marketing": {
+      "title": "Digital Marketing",
+      "seo": {
+        "title": "SEO referencing",
+        "description": "Improve your visibility on search engines with our SEO expertise. We optimise your website so that it appears on the first page of Google results and attracts more qualified visitors.",
+        "details": "Our SEO approach combines technique and content for lasting results. Technical audits, keyword research, on-page optimisation and content strategy: we do everything we can to improve your ranking.",
+        "features": {
+          "feature1": "Complete SEO audit",
+          "feature2": "Keyword search",
+          "feature3": "Technical optimization",
+          "feature4": "Content creation",
+          "feature5": "Qualified netlinking",
+          "feature6": "Performance monitoring"
+        },
+        "cta": "Dominate search results and attract more customers !"
+      },
+      "social-media": {
+        "title": "Social media",
+        "description": "Grow your social media presence with a strategy tailored to your audience. We create and manage your accounts to engage your community and build your brand awareness.",
+        "details": "Social media has become essential for reaching your audience. We develop a personalised social media strategy and create engaging content to grow your community.",
+        "features": {
+          "feature1": "Social media strategy",
+          "feature2": "Content creation",
+          "feature3": "Publish management",
+          "feature4": "Community management",
+          "feature5": "Targeted advertisement",
+          "feature6": "Performance analysis"
+        },
+        "cta": "Engage your audience and grow your online community!"
+      },
+      "advertising": {
+        "title": "Online advertisement",
+        "description": "Maximise your return on investment with targeted advertising campaigns. Google Ads, Facebook Ads, LinkedIn Ads – we optimise your budgets to generate more leads and sales.",
+        "details": "Online advertising can deliver rapid results when done right. We create and optimise your campaigns to maximise your ROI and achieve your business goals.",
+        "features": {
+          "feature1": "Google Ads campaigns",
+          "feature2": "Facebook/Instagram advertisements",
+          "feature3": "LinkedIn Ads B2B",
+          "feature4": "Remarketing",
+          "feature5": "Conversion optimisation",
+          "feature6": "Detailed reporting"
+        },
+        "cta": "Generate more leads with effective advertising campaigns !"
+      }
+    },
+    "consulting": {
+      "title": "Consulting & Training",
+      "strategy": {
+        "title": "Digital strategy",
+        "description": "Define a digital strategy that is consistent with your business objectives. We support you in the digital transformation of your company with a personalised approach and concrete recommendations.",
+        "details": "An effective digital strategy requires a comprehensive view of your ecosystem. We analyse your market, your competitors and your objectives to develop a tailor-made digital roadmap.",
+        "features": {
+          "feature1": "Complete digital audit",
+          "feature2": "Competitive analysis",
+          "feature3": "Setting objectives",
+          "feature4": "Digital roadmap",
+          "feature5": "Technical recommendations",
+          "feature6": "Support in implementation"
+        },
+        "cta": "Accelerate your digital transformation with a tailor-made strategy !"
+      },
+      "training": {
+        "title": "Technical training",
+        "description": "Train your teams in the latest web technologies and best practices. Our customised training courses enable your employees to develop their skills and become more autonomous.",
+        "details": "We offer training courses tailored to your level and specific needs. From beginner to advanced, our experts share their expertise with a practical and operational approach.",
+        "features": {
+          "feature1": "Customised training courses",
+          "feature2": "Practical approach",
+          "feature3": "Course materials provided",
+          "feature4": "Post-training follow-up",
+          "feature5": "Certification possible",
+          "feature6": "Face-to-face or distance learning"
+        },
+        "cta": "Invest in your teams' skills for the future !"
+      },
+      "audit": {
+        "title": "Audit & optimization",
+        "description": "Identify areas for improvement in your digital presence with a comprehensive audit. We analyse your current performance and offer concrete solutions to optimise your results.",
+        "details": "A thorough audit often reveals significant opportunities for improvement. We scrutinise every aspect of your digital presence to identify the most relevant growth drivers.",
+        "features": {
+          "feature1": "Full technical audit",
+          "feature2": "Performance analysis",
+          "feature3": "Priority recommendations",
+          "feature4": "Detailed action plan",
+          "feature5": "Estimation des gains",
+          "feature6": "Support in implementation"
+        },
+        "cta": "Optimise your digital performance with a professional audit !"
+      }
+    },
+    "subServices": {
+      "development": {
+        "1": "Custom web development",
+        "2": "E-commerce website",
+        "3": "Showcase website"
+      },
+      "marketing": {
+        "1": "SEO optimisation",
+        "2": "Social media management",
+        "3": "Online advertisement"
+      },
+      "consulting": {
+        "1": "Digital strategy",
+        "2": "Technical training",
+        "3": "Audit and optimisation"
+      }
+    }
+  },
+  "Methodology": {
+    "badge": "Our approach",
+    "title": "NeoCraft Methodology",
+    "description": "A proven 5-step process to ensure the success of your projects and seamless collaboration.",
+    "step1": {
+      "title": "Discovery",
+      "description": "In-depth analysis of your needs, objectives and constraints to determine the best approach."
+    },
+    "step2": {
+      "title": "Design & prototype",
+      "description": "Creative design and interactive prototyping to visualise and test your solution before development."
+    },
+    "step3": {
+      "title": "Agile development",
+      "description": "Iterative development with short cycles to quickly adapt to feedback and changes."
+    },
+    "step4": {
+      "title": "Tests & QA",
+      "description": "Rigorous validation and performance optimisation to guarantee impeccable quality."
+    },
+    "step5": {
+      "title": "Delivery + tracking",
+      "description": "Controlled deployment and training of your teams for a smooth transition and rapid autonomy."
+    }
+  },
+  "Testimonial": {
+    "badge": "Testimonials",
+    "title": "What people say about us",
+    "description": "Discover how we have helped our clients achieve their goals through our expertise and personalised approach.",
+    "testimonial1": {
+      "position": "CEO",
+      "text": "NeoCraft transformed our vision into an exceptional application. Their artisanal approach and attention to detail made all the difference. A trusted partner for the future."
+    },
+    "testimonial2": {
+      "position": "CTO",
+      "text": "A passionate team that delivers high-quality solutions. Their technical expertise and ability to understand our business challenges have enabled us to accelerate our digital transformation."
+    },
+    "testimonial3": {
+      "position": "Marketing Manager",
+      "text": "High-level technical training that transformed our team. Our developers gained autonomy and efficiency thanks to NeoCraft's educational approach."
+    }
+  },
+  "progressiveContactForm": {
+    "badge": "Get in touch",
+    "title": "Let's discuss your project",
+    "description": "Ready to get started on your project? Contact us to discuss your needs and find out how we can help.",
+    "formStepTitle": {
+      "name": "What would you like us to call you?",
+      "email": {
+        "start": "Nice to meet you ",
+        "end": "! What is your email address?"
+      },
+      "subject": "What would you like to discuss?",
+      "message": "Tell us about your project",
+      "complete": "Message sent successfully!"
+    },
+    "formStepPlaceholder": {
+      "name": "Your first name or last name",
+      "email": "name@email.com",
+      "subject": "Subject of your message...",
+      "message": "Describe your project, your needs, your objectives..."
+    },
+    "formData": {
+      "thanks": "Thank you",
+      "message": "Your message has been sent successfully. We will respond as soon as possible to the address",
+      "time": "Typical response time: less than 24 hours"
+    },
+    "action": {
+      "continue": "Press Enter to continue",
+      "send": "Press Enter to send"
+    },
+    "formStatus": {
+      "sending": "Sending...",
+      "send": "Send",
+      "continue": "Continue"
+    },
+    "step": {
+      "name": "Step",
+      "of": "of 4"
+    },
+    "contact": {
+      "title": "Contact us directly",
+      "email": "Send a message",
+      "whatsapp": "Instant message",
+      "phone": "Direct call"
+    },
+    "call": {
+      "title": "Ready to get started?",
+      "description": "Book a time slot in our calendar to discuss your project in detail.",
+      "button": "Schedule a call"
+    }
+  },
+  "cta": {
+    "title": {
+      "h1": "Ready to create something",
+      "span": "extraordinary?"
+    },
+    "description": "Bring your digital vision to life with our craftsmanship skills.",
+    "stats": {
+      "years": "Years of experience",
+      "projects": "Completed projects",
+      "clients": "Satisfied customers",
+      "time": "Response time"
+    },
+    "button": {
+      "cta": "Get a quote",
+      "more": "Find out more"
+    },
+    "trustMessage": "They trust us"
+  },
+  "footer": {
+    "services": {
+      "showcaseWebsite": "Showcase & institutional websites",
+      "ecommerceWebsite": "E-commerce websites",
+      "development": "Custom web development",
+      "ads": "Google Ads & Facebook Ads",
+      "seo": "SEO"
+    },
+    "legal": {
+      "title": "Legal information",
+      "policy": "Privacy Policy"
+    },
+    "copyright": "All rights reserved.",
+    "by": "Powered by"
+  },
+  "chat-widget": {
+    "button": "Discuss"
+  },
+  "chat": {
+    "welcomeMessage": "Hello. I am NeoBot, your virtual assistant. How can I help you?",
+    "placeholder": "Enter your message..."
+  }
+}
