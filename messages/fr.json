@@ -266,7 +266,7 @@
       "description": "Déploiement maîtrisé et formation de vos équipes pour une transition en douceur et une autonomie rapide."
     }
   },
-  "Testimonials": {
+  "Testimonial": {
     "badge": "Témoignages",
     "title": "Ce que l’on dit de nous",
     "description": "Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs grâce à notre expertise et notre approche personnalisée.",
@@ -282,5 +282,43 @@
       "position": "Responsable Marketing",
       "text": "Formation technique de haut niveau qui a transformé notre équipe. Nos développeurs ont gagné en autonomie et en efficacité grâce à l'approche pédagogique de NeoCraft."
     }
+  },
+  "progressiveContactForm": {
+    "badge": "Contactez-nous",
+    "title": "Parlons de votre projet",
+    "description": "Prêt à démarrer votre projet ? Contactez-nous pour discuter de vos besoins et découvrir comment nous pouvons vous aider.",
+    "formStepTitle": {
+      "name": "Comment pouvons-nous vous appeler ?",
+      "email": {
+        "start": "Ravi de vous rencontrer",
+        "end": "! Quel est votre email ?"
+      },
+      "subject": "De quoi souhaitez-vous parler ?",
+      "message": "Parlez-nous de votre projet",
+      "complete": "Message envoyé avec succès !"
+    },
+    "formStepPlaceholder": {
+      "name": "Votre prénom ou nom...",
+      "email": "nom@email.com",
+      "subject": "Sujet de votre message...",
+      "message": "Décrivez votre projet, vos besoins, vos objectifs..."
+    },
+    "formData": {
+      "thanks": "Merci",
+      "message": "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais à l'adresse",
+      "time": "Temps de réponse habituel : moins de 24h"
+    },
+    "contact": {
+      "title": "Contactez-nous directement",
+      "email": "Envoyer un message",
+      "whatsapp": "Message instantané",
+      "phone": "Appel direct"
+    },
+    "call": {
+      "title": "Prêt à commencer ?",
+      "description": "Réservez un créneau dans notre agenda pour discuter de votre projet en détail.",
+      "button": "Planifier un appel"
+    }
   }
 }
+

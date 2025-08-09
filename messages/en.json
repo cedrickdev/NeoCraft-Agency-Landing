@@ -282,5 +282,42 @@
       "position": "Marketing Manager",
       "text": "High-level technical training that transformed our team. Our developers gained autonomy and efficiency thanks to NeoCraft's educational approach."
     }
+  },
+  "progressiveContactForm": {
+    "badge": "Get in touch",
+    "title": "Let's discuss your project",
+    "description": "Ready to get started on your project? Contact us to discuss your needs and find out how we can help.",
+    "formStepTitle": {
+      "name": "What would you like us to call you?",
+      "email": {
+        "start": "Nice to meet you ",
+        "end": "! What is your email address?"
+      },
+      "subject": "What would you like to discuss?",
+      "message": "Tell us about your project",
+      "complete": "Message sent successfully!"
+    },
+    "formStepPlaceholder": {
+      "name": "Your first name or last name",
+      "email": "name@email.com",
+      "subject": "Subject of your message...",
+      "message": "Describe your project, your needs, your objectives..."
+    },
+    "formData": {
+      "thanks": "Thank you",
+      "message": "Your message has been sent successfully. We will respond as soon as possible to the address",
+      "time": "Typical response time: less than 24 hours"
+    },
+    "contact": {
+      "title": "Contact us directly",
+      "email": "Send a message",
+      "whatsapp": "Instant message",
+      "phone": "Direct call"
+    },
+    "call": {
+      "title": "Ready to get started?",
+      "description": "Book a time slot in our calendar to discuss your project in detail.",
+      "button": "Schedule a call"
+    }
   }
 }
