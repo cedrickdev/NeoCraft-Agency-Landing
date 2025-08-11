@@ -10,6 +10,7 @@ import {Analytics} from '@vercel/analytics/next';
 import {GoogleAnalytics} from '@next/third-parties/google';
 import CanonicalTag from '@/components/canonical-tag';
 import HreflangTags from "@/components/HreflangTags";
+import { ThemeProvider } from '@/components/providers';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -140,9 +141,11 @@ export default async function LocaleLayout({children, params}: Props) {
             />
         </head>
         <body className={inter.className}>
+        <ThemeProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
             {children}
         </NextIntlClientProvider>
+        </ThemeProvider>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!}/>
         <Analytics/>
         </body>
