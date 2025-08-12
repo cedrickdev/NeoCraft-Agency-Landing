@@ -90,7 +90,7 @@ export const BlogContent = ({
         </div>
         <div className="my-8 space-x-2">
           {tags.map((tag) => (
-            <Link href={`/category/${tag.name}`} key={tag.id}>
+            <Link href={`/blog/category/${tag.name}`} key={tag.id}>
               #{tag.name}
             </Link>
           ))}
