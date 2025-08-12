@@ -26,7 +26,7 @@ const constructPath = ({
 
 export const PostPagination = ({
   pagination,
-  basePath = "/",
+  basePath = "",
   query,
   numSiblingPages = 2,
   className,
