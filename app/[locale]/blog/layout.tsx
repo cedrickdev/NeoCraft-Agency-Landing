@@ -20,14 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${fontSans.variable} antialiased font-sans`}>
+
+
         <Providers>
+          <div className={`${fontSans.variable} antialiased font-sans`}>
           <div className=" bg-white dark:bg-gray-950 transition-colors duration-300"> 
           {children}
           </div>
+          </div>
         </Providers>
-      </body>
-    </html>
+
+
   );
 }
