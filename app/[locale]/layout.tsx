@@ -11,6 +11,8 @@ import {GoogleAnalytics} from '@next/third-parties/google';
 import CanonicalTag from '@/components/canonical-tag';
 import HreflangTags from "@/components/HreflangTags";
 import { ThemeProvider } from '@/components/providers';
+import Footer from '@/components/section/footer';
+import Header from '@/components/header';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -118,37 +120,39 @@ export default async function LocaleLayout({children, params}: Props) {
     };
 
     return (
-        <html lang={locale} suppressHydrationWarning={true}>
+      <html lang={locale} suppressHydrationWarning={true}>
         <head>
-            <meta name="description" content={messages.description}/>
-            <meta name="robots" content="index, follow"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <CanonicalTag/>
-            <HreflangTags/>
-            <link
-                rel="icon"
-                type="image/png"
-                sizes="16x16"
-                href="/logo/logo48.png"
-            />
-            <meta
-                name="google-site-verification"
-                content="6AsUNXUX0cK-jPCNwuVgRKs0or51N4Vqk6mvwYw7Ve4"
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
-            />
+          <meta name="description" content={messages.description} />
+          <meta name="robots" content="index, follow" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <CanonicalTag />
+          <HreflangTags />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/logo/logo48.png"
+          />
+          <meta
+            name="google-site-verification"
+            content="6AsUNXUX0cK-jPCNwuVgRKs0or51N4Vqk6mvwYw7Ve4"
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
         </head>
         <body className={inter.className}>
-        <ThemeProvider>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-            {children}
-        </NextIntlClientProvider>
-        </ThemeProvider>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!}/>
-        <Analytics/>
+          <ThemeProvider>
+            <NextIntlClientProvider locale={locale} messages={messages}>
+              <Header />
+              {children}
+              <Footer />
+            </NextIntlClientProvider>
+          </ThemeProvider>
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+          <Analytics />
         </body>
-        </html>
+      </html>
     );
 }

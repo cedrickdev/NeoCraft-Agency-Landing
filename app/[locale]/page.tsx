@@ -36,8 +36,6 @@ export default function NeoCraftLanding() {
             <CTA/>
 
             <ChatWidget/>
-
-            <Footer/>
         </div>
     );
 }

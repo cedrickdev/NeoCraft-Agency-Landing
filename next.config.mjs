@@ -11,7 +11,12 @@ const nextConfig = {
         ignoreBuildErrors: true,
     },
     images: {
-        unoptimized: true,
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "*",
+            },
+        ],
     },
     // Configuration pour les origines autorisées en développement (correctement placée)
     allowedDevOrigins: ['localhost', '127.0.0.1'],
