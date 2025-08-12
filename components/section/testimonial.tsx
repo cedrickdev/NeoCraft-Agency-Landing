@@ -1,156 +1,41 @@
-import { Badge } from "@/components/ui/badge";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import {useTranslations} from "next-intl";
 
-
-
-export default function Testimonial() {
+function Testimonial() {
   const t = useTranslations('Testimonial');
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
   const testimonials = [
     {
-      name: "Marie Dupont",
-      role: t('testimonial1.position'),
-      company: "TechStart",
-      avatar: "/placeholder.svg?height=100&width=100",
-      content: t('testimonial1.text'),
-      rating: 5,
+      quote: t('testimonial1.quote'),
+      name: "Sarah Chen",
+      designation: t('testimonial1.designation'),
+      src: "https://media.istockphoto.com/id/1705503967/fr/photo/femme-daffaires-confiante-dans-un-bureau-moderne.webp?a=1&b=1&s=612x612&w=0&k=20&c=5LkpRbeIzwGHVEmJmd8pa_6kzrLt-GE5dtB9vXdRZTk=",
     },
     {
-      name: "Pierre Moreau",
-      role: t('testimonial2.position'),
-      company: "InnovateCorp",
-      avatar: "/placeholder.svg?height=100&width=100",
-      content: t('testimonial2.text'),
-      rating: 5,
+      quote: t('testimonial2.quote'),
+      name: "Michael Rodriguez",
+      designation: t('testimonial2.designation'),
+      src: "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODZ8fHBlb3BsZSUyMGF0JTIwd29ya3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
-      name: "Julie Bernard",
-      role: t('testimonial3.position'),
-      company: "StartupLab",
-      avatar: "/placeholder.svg?height=100&width=100",
-      content: t('testimonial3.text'),
-      rating: 5,
+      quote: t('testimonial3.quote'),
+      name: "Natalie Iwara",
+      designation: t('testimonial3.designation'),
+      src: "https://images.unsplash.com/photo-1592520112754-6d74d747ef89?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA4fHxibGFjayUyMGdpcmxzJTIwYXQlMjB3b3JrfGVufDB8fDB8fHww",
+    },
+    {
+      quote: t('testimonial4.quote'),
+      name: "James Kombou",
+      designation: t('testimonial4.designation'),
+      src: "https://plus.unsplash.com/premium_photo-1663040154843-8663ecb1f007?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxhY2slMjBwZW9wbGUlMjBhdCUyMHdvcmt8ZW58MHx8MHx8fDA%3D",
+    },
+    {
+      quote: t('testimonial5.quote'),
+      name: "Lisa Thompson",
+      designation: t('testimonial5.designation'),
+      src: "https://plus.unsplash.com/premium_photo-1666299357105-f82402c04826?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzgxfHxwZW9wbGUlMjBhdCUyMHdvcmt8ZW58MHx8MHx8fDA%3D",
     },
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-emerald-500">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 mix-blend-soft-light"></div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <Badge className="mb-4 bg-amber-600 text-white  dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium">
-            {t('badge')}
-          </Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold  text-gray-900 dark:text-white mb-6">
-            {t('title')}
-          </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t('description')}
-          </p>
-        </motion.div>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            <div>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTestimonial}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center gap-8">
-                    <div className="md:w-1/3 flex flex-col items-center text-center">
-                      <div className="relative mb-4">
-                        <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-gray-100 dark:border-gray-800">
-                          <img
-                            src={
-                              testimonials[activeTestimonial].avatar ||
-                              "/placeholder.svg"
-                            }
-                            alt={testimonials[activeTestimonial].name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="absolute -bottom-2 -right-2 bg-gradient-to-br from-blue-600 to-emerald-500 rounded-full p-1">
-                          <Quote className="w-4 h-4 text-white" />
-                        </div>
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 dark:text-white">
-                        {testimonials[activeTestimonial].name}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400 mb-2">
-                        {testimonials[activeTestimonial].role}
-                      </p>
-                      <p className="text-blue-600 dark:text-blue-400 font-medium">
-                        {testimonials[activeTestimonial].company}
-                      </p>
-                    </div>
-
-                    <div className="md:w-2/3">
-                      <div className="flex mb-6">
-                        {[...Array(testimonials[activeTestimonial].rating)].map(
-                          (_, i) => (
-                            <Star
-                              key={i}
-                              className="w-5 h-5 text-yellow-400 fill-current"
-                            />
-                          )
-                        )}
-                      </div>
-                      <p className="text-gray-700 dark:text-gray-300 text-lg italic leading-relaxed mb-6">
-                        "{testimonials[activeTestimonial].content}"
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Navigation Dots */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    activeTestimonial === index
-                      ? "bg-slate-500 dark:bg-white scale-125"
-                      : "bg-slate-300 dark:bg-white/50 hover:bg-white/70"
-                  }`}
-                  aria-label={`Voir le témoignage ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return <AnimatedTestimonials testimonials={testimonials} />;
 }
+
+export { Testimonial };

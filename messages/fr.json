@@ -23,8 +23,8 @@
   },
   "Hero": {
     "badge": "L'innovation web pour un succès numérique",
-    "h1": "L'artisanat du code,",
-    "span": "réinventé",
+    "h1": "Créons l'avenir digital",
+    "span": "ensemble",
     "p": "Conçu avec une approche réfléchie, nous mettons en pratique ce que nous prêchons. Le résultat est un site web accessible à tous, qui se charge en un clin d’œil et qui minimise la quantité de carbone émise à chaque chargement de page",
     "button": "Demander un devis",
     "button2": "Découvrir nos valeurs"
@@ -268,19 +268,27 @@
   },
   "Testimonial": {
     "badge": "Témoignages",
-    "title": "Ce que l’on dit de nous",
-    "description": "Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs grâce à notre expertise et notre approche personnalisée.",
+    "title": "Ce que nos clients disent de nous",
+    "description": "Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs grâce à notre expertise et à notre approche personnalisée.",
     "testimonial1": {
-      "position": "PDG",
-      "text": "NeoCraft a transformé notre vision en une application exceptionnelle. Leur approche artisanale et leur attention aux détails ont fait toute la différence. Un partenaire de confiance pour l'avenir."
+      "designation": "Chef de produit chez TechFlow",
+      "quote": "NeoCraft a transformé notre vision en une application exceptionnelle. Leur approche artisanale et leur souci du détail ont fait toute la différence. Un partenaire de confiance pour l'avenir."
     },
     "testimonial2": {
-      "position": "Directeur Technique",
-      "text": "Une équipe passionnée qui livre des solutions de qualité. Leur expertise technique et leur capacité à comprendre nos enjeux métier nous ont permis d'accélérer notre transformation digitale."
+      "designation": "Directeur technique chez InnovateSphere",
+      "quote": "Une équipe passionnée qui fournit des solutions de haute qualité. Leur expertise technique et leur capacité à comprendre les défis auxquels notre entreprise est confrontée nous ont permis d'accélérer notre transformation numérique."
     },
     "testimonial3": {
-      "position": "Responsable Marketing",
-      "text": "Formation technique de haut niveau qui a transformé notre équipe. Nos développeurs ont gagné en autonomie et en efficacité grâce à l'approche pédagogique de NeoCraft."
+      "designation": "Ingénieur logiciel chez DataPro",
+      "quote": "Une formation technique de haut niveau qui a transformé notre équipe. Nos développeurs ont gagné en autonomie et en efficacité grâce à l'approche pédagogique de NeoCraft."
+    },
+    "testimonial4": {
+      "designation": "Vice-président de la technologie chez FutureNet",
+      "quote": "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for."
+    },
+    "testimonial5": {
+      "designation": "Responsable marketing chez CloudScale",
+      "quote": "La mise en œuvre s'est déroulée sans heurts et les résultats ont dépassé nos attentes. La flexibilité de la plateforme est remarquable."
     }
   },
   "progressiveContactForm": {
