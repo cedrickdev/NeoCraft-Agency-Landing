@@ -16,6 +16,9 @@ export const BlogPostList = ({ posts }: { posts: GetPostsResult["posts"] }) => {
                   className="object-cover rounded-3xl"
                   src={post.image}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={true}
+
                 />
               ) : (
                 <Image src="/placeholder.jpg" alt="placeholder" fill />
