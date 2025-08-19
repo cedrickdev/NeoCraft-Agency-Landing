@@ -13,6 +13,7 @@ import HreflangTags from "@/components/HreflangTags";
 import { ThemeProvider } from "@/components/providers";
 import Footer from "@/components/section/footer";
 import Header from "@/components/header";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -229,6 +230,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Header />
             {children}
+            <SpeedInsights />
             <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
