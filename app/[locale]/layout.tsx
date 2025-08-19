@@ -148,6 +148,8 @@ export default async function LocaleLayout({ children, params }: Props) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"></script>
+        <script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="oW4-gV9UfCaJnc" async></script>
         <script
           defer
           data-domain="neocraft.dev"
