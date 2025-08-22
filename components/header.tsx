@@ -9,6 +9,8 @@ import {Button} from "@/components/ui/button";
 import {useState} from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import {DarkModeToggle} from "@/components/DarkModeToggle";
+import Image from 'next/image'
+import Link from "next/link";
 
 export default function Header() {
     const t = useTranslations('Header');
@@ -28,54 +30,51 @@ export default function Header() {
                 <div
                     className="flex items-center space-x-2"
                 >
-                    <a href="/">
+                    <Link href="/">
                         <div
                             className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lgdark:shadow-emerald-500/20">
-                            <img
+                            <Image
                                 src="/logo/logo.png"
+                                width={110}
+                                height={110}
                                 alt="Logo NeoCraft"
-                                className="w-10 h-10 object-contain"
                             />
                         </div>
-                    </a>
-                    <span
-                        className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300">
-            NeoCraft
-          </span>
+                    </Link>
                 </div>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center space-x-8">
-                    <a
+                    <Link
                         href="#about"
                         className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
                     >
                         {t("about")}
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="#iservices"
                         className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
                     >
                         {t("services")}
-                    </a>
-                    {/*  <a
+                    </Link>
+                    {/*  <Link
             href="#team"
             className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
           >
             Équipe
-          </a> */}
-                    <a
+          </Link> */}
+                    <Link
                         href="#contact"
                         className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
                     >
                         {t("contact")}
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/blog"
                         className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium"
                     >
                         Blog
-                    </a>
+                    </Link>
                 </nav>
 
                 <div className="flex items-center space-x-4">
@@ -120,14 +119,14 @@ export default function Header() {
                         className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 overflow-hidden"
                     >
                         <nav className="container mx-auto px-4 py-6 flex flex-col space-y-6">
-                            <a
+                            <Link
                                 href="#about"
                                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium flex items-center justify-between"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {t("about")}
                                 <ChevronRight className="w-5 h-5"/>
-                            </a>
+                            </Link>
                             <a
                                 href="#services"
                                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium flex items-center justify-between"
@@ -136,30 +135,30 @@ export default function Header() {
                                 {t("services")}
                                 <ChevronRight className="w-5 h-5"/>
                             </a>
-                            {/*<a
+                            {/*<Link
                 href="#team"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium flex items-center justify-between"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Équipe
                 <ChevronRight className="w-5 h-5" />
-              </a>*/}
-                            <a
+              </Link>*/}
+                            <Link
                                 href="#contact"
                                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium flex items-center justify-between"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {t("contact")}
                                 <ChevronRight className="w-5 h-5"/>
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="/blog"
                                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors font-medium flex items-center justify-between"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Blog
                                 <ChevronRight className="w-5 h-5"/>
-                            </a>
+                            </Link>
                             <Button
                                 className="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white"
                                 onClick={() => {
