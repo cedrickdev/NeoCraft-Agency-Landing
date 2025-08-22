@@ -9,6 +9,7 @@ import {
   Facebook,
 } from "lucide-react";
 import {useTranslations} from "next-intl";
+import Image from "next/image";
 
 const date = new Date();
 const year = date.getFullYear();
@@ -29,10 +30,12 @@ export default function Footer() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-6">
-                <img
+                <Image
                   src="/logo/logo.png"
                   alt="Logo NeoCraft"
-                  className="w-10 h-10 object-contain"
+                    width={100}
+                    height={100}
+                  className="object-contain"
                 />
 
                 <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
