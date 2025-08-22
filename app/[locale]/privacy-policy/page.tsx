@@ -5,6 +5,7 @@ import {Database, Eye, Lock, Shield, Users} from "lucide-react"
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card"
 import Header from "@/components/header"
 import Footer from "@/components/section/footer";
+import Link from "next/link";
 
 export default function PrivacyPage() {
     return (
@@ -312,10 +313,10 @@ export default function PrivacyPage() {
                                 <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg">
                                     <p className="text-sm text-gray-700">
                                         <strong>Comment exercer vos droits :</strong> Contactez-nous à l'adresse
-                                        <a href="mailto:privacy@neocraft.fr"
+                                        <Link href="mailto:privacy@neocraft.fr"
                                            className="text-blue-600 hover:underline ml-1">
                                             privacy@neocraft.fr
-                                        </a>
+                                        </Link>
                                         avec une pièce d'identité. Nous répondrons dans un délai de 30 jours maximum.
                                     </p>
                                 </div>
