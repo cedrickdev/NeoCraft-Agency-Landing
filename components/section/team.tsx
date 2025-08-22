@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 const team = [
   {
@@ -68,7 +69,7 @@ export default function Team() {
                   <div className="aspect-[3/2] bg-gradient-to-br from-blue-600 to-emerald-500 relative overflow-hidden">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px] opacity-30 mix-blend-soft-light"></div>
                     <div className="absolute inset-0 flex items-center justify-center p-8">
-                      <img
+                      <Image
                         src={member.avatar || "/placeholder.svg"}
                         alt={member.name}
                         className="w-32 h-32 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg transform group-hover:scale-110 transition-transform duration-300"
