@@ -8,7 +8,6 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import {Analytics} from "@vercel/analytics/next";
 import {GoogleAnalytics} from "@next/third-parties/google";
-import CanonicalTag from "@/components/canonical-tag";
 import HreflangTags from "@/components/HreflangTags";
 import {ThemeProvider} from "@/components/providers";
 import Footer from "@/components/section/footer";
@@ -54,10 +53,35 @@ export async function generateMetadata({
         authors: seo.authors
             .split(",")
             .map((name: string) => ({name: name.trim()})),
+
+        // ✅ CANONICAL ET ALTERNATES - Essentiel contre le duplicate content
+        metadataBase: new URL("https://www.neocraft.dev"),
+        alternates: {
+            canonical: `/${locale}`,
+            languages: {
+                'fr': '/fr',
+                'en': '/en',
+                'x-default': '/fr', // Langue par défaut
+            },
+        },
+
+        // ✅ ROBOTS optimisé
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+            },
+        },
+
         openGraph: {
             title: "NeoCraft",
             description: seo.openGraph.description,
-            url: "https://www.neocraft.dev",
+            url: `https://www.neocraft.dev/${locale}`,
             siteName: "NeoCraft",
             type: "website",
             locale: seo.openGraph.locale,
@@ -74,9 +98,19 @@ export async function generateMetadata({
             card: "summary_large_image",
             title: "NeoCraft",
             description: seo.twitter.description,
-            site: "@neocraft",
-            creator: "@neocraft",
-            images: ["https://www.neocraft.dev/logo/180"],
+            site: "@neocraftdev",
+            creator: "@neocraftdev",
+            images: [{
+                url: "https://www.neocraft.dev/logo/logo512.png",
+                alt: "NeoCraft Logo",
+            }],
+        },
+        publisher: "NeoCraft",
+        creator: "NeoCraft",
+        formatDetection: {
+            email: false,
+            address: false,
+            telephone: false,
         },
     };
 }
@@ -179,11 +213,9 @@ export default async function LocaleLayout({children, params}: Props) {
     return (
         <html lang={locale} suppressHydrationWarning={true}>
         <Head>
-            <title>{messages.Seo.title}</title>
-            <meta name="description" content={messages.Seo.description} key="description"/>
-            <meta name="robots" content="index, follow"/>
+            <title>Neocraft</title>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <CanonicalTag/>
+            <meta name="theme-color" content="#1a73e8" />
             <HreflangTags/>
             <link
                 rel="icon"
@@ -201,9 +233,6 @@ export default async function LocaleLayout({children, params}: Props) {
                     __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
                 }}
             />
-            <Script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"/>
-            <Script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js"
-                    data-settings-id="oW4-gV9UfCaJnc" async/>
             <Script
                 defer
                 data-domain="neocraft.dev"
