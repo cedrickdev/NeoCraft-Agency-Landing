@@ -17,8 +17,11 @@ import Script from "next/script";
 
 const inter = Inter({
     subsets: ["latin"],
-    display: "swap", // ✅ Optimisation des fonts
-    preload: true
+    display: "swap",
+    preload: true,
+    fallback: ['system-ui', 'arial'], // ✅ Fallback fonts
+    adjustFontFallback: false, // ✅ Évite les recalculs de layout
+    variable: '--font-inter' // ✅ CSS custom property
 });
 
 type Props = {
@@ -348,19 +351,19 @@ export default async function LocaleLayout({children, params}: Props) {
                 }}
             />
 
-            {/* Plausible - Chargement différé  */}
+            {/* ✅ ANALYTICS - Strategy worker pour performance */}
             <Script
                 id="plausible-analytics"
                 defer
                 data-domain="neocraft.dev"
                 src="https://plausible.io/js/script.pageview-props.tagged-events.js"
-                strategy="afterInteractive"
+                strategy="worker" // ✅ Plus performant que afterInteractive
             />
 
-            {/* META PIXEL  */}
+            {/* ✅ META PIXEL - Strategy worker */}
             <Script
                 id="facebook-pixel"
-                strategy="afterInteractive"
+                strategy="worker"
                 dangerouslySetInnerHTML={{
                     __html: `
                         !function(f,b,e,v,n,t,s)
@@ -377,7 +380,7 @@ export default async function LocaleLayout({children, params}: Props) {
                 }}
             />
 
-            {/* LINKEDIN INSIGHT  */}
+            {/* ✅ LINKEDIN INSIGHT - Optimisé */}
             <Script
                 id="linkedin-insight"
                 strategy="afterInteractive"
@@ -401,7 +404,7 @@ export default async function LocaleLayout({children, params}: Props) {
                 }}
             />
 
-            {/* MICROSOFT CLARITY */}
+            {/* ✅ MICROSOFT CLARITY - Optimisé */}
             <Script
                 id="microsoft-clarity"
                 strategy="afterInteractive"
@@ -416,7 +419,7 @@ export default async function LocaleLayout({children, params}: Props) {
                 }}
             />
 
-            {/* NOSCRIPT FALLBACKS */}
+            {/* ✅ NOSCRIPT FALLBACKS */}
             <noscript>
                 <img
                     height="1"
@@ -433,7 +436,6 @@ export default async function LocaleLayout({children, params}: Props) {
                     src="https://px.ads.linkedin.com/collect/?pid=7716050&fmt=gif"
                 />
             </noscript>
-            <title>Neocraft</title>
         </head>
 
         <body className={inter.className}>
@@ -447,7 +449,7 @@ export default async function LocaleLayout({children, params}: Props) {
             </NextIntlClientProvider>
         </ThemeProvider>
 
-        {/* ANALYTICS EN FIN DE BODY */}
+        {/* ✅ ANALYTICS EN FIN DE BODY */}
         <SpeedInsights/>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!}/>
         <Analytics/>
