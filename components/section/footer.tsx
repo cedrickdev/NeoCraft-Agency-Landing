@@ -45,6 +45,7 @@ export default function Footer() {
                 <Link
                   href="https://www.facebook.com/neocraftdev"
                   target="_blank"
+                  aria-label="Facebook"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
                 >
@@ -54,6 +55,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/neocraftdev
 "
                   target="_blank"
+                  aria-label="LinkedIn"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
                 >
@@ -62,6 +64,7 @@ export default function Footer() {
                 <Link
                   href="https://x.com/neocraftdev"
                   target="_blank"
+                    aria-label="X"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
                 >
@@ -83,6 +86,7 @@ export default function Footer() {
                 <Link
                   href="https://mastodon.social/@neocraftdev"
                   target="_blank"
+                    aria-label="Mastodon"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
                 >
@@ -102,6 +106,7 @@ export default function Footer() {
                 <Link
                   href="https://www.instagram.com/neocraftdev/"
                   target="_blank"
+                    aria-label="Instagram"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300 group border border-gray-700 hover:border-transparent"
                 >

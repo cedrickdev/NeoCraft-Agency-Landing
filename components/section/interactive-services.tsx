@@ -256,6 +256,7 @@ export default function InteractiveServices() {
                         {/* Main Service Tabs */}
                         <div className="flex flex-col md:flex-row justify-center mb-8 gap-4">
                             <button
+                                aria-label="Development"
                                 onClick={() => setActiveMainService("development")}
                                 className={`px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 ${
                                     activeMainService === "development"
@@ -266,6 +267,7 @@ export default function InteractiveServices() {
                                 {t('development.title')}
                             </button>
                             <button
+                                aria-label="Marketing"
                                 onClick={() => setActiveMainService("marketing")}
                                 className={`px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 ${
                                     activeMainService === "marketing"
@@ -276,6 +278,7 @@ export default function InteractiveServices() {
                                 {t('marketing.title')}
                             </button>
                             <button
+                                aria-label="Consulting"
                                 onClick={() => setActiveMainService("consulting")}
                                 className={`px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 ${
                                     activeMainService === "consulting"
@@ -301,6 +304,7 @@ export default function InteractiveServices() {
                                 >
                                     {currentSubServices.map((subService) => (
                                         <button
+                                            aria-label="sub-service"
                                             key={subService.id}
                                             onClick={() => setActiveSubService(subService.id)}
                                             className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${

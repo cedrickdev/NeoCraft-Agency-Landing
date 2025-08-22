@@ -22,6 +22,7 @@ export const DarkModeToggle = () => {
   // Once the component has mounted, we can safely render
   return (
     <Button
+      aria-label="Toggle Dark Mode"
       variant="ghost"
       size="icon"
       onClick={toggleDarkMode}

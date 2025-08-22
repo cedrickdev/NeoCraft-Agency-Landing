@@ -413,6 +413,7 @@ export default function ProgressiveContactForm() {
                           </div>
 
                           <Button
+                              aria-label="Send"
                             onClick={
                               currentStep === "message"
                                 ? handleSubmit

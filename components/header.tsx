@@ -84,6 +84,7 @@ export default function Header() {
 
                     <Button
                         variant="default"
+                        aria-label="Contact us"
                         className="hidden md:flex bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white shadow-lg shadow-blue-500/20 dark:shadow-emerald-500/20"
                         onClick={() =>
                             document
@@ -97,6 +98,7 @@ export default function Header() {
                     <Button
                         variant="ghost"
                         size="icon"
+                        aria-label="Toggle Menu"
                         className="md:hidden bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
@@ -160,6 +162,7 @@ export default function Header() {
                                 <ChevronRight className="w-5 h-5"/>
                             </Link>
                             <Button
+                                aria-label="Contact us"
                                 className="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white"
                                 onClick={() => {
                                     document
