@@ -8,6 +8,7 @@ import {Avatar} from "@/components/ui/avatar";
 import {Card, CardContent, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card";
 import {Bot, ImageIcon, Send, Video} from "lucide-react";
 import {useTranslations} from "next-intl";
+import Image from "next/image";
 
 type Message = {
     id: string;
@@ -150,7 +151,7 @@ export function AIChatbot() {
                                     <div className="mt-2 space-y-2">
                                         {message.attachments.map((attachment, index) =>
                                             attachment.type === "image" ? (
-                                                <img
+                                                <Image
                                                     key={index}
                                                     src={attachment.url || "/placeholder.svg"}
                                                     alt="Attachment"
