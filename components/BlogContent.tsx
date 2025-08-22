@@ -54,7 +54,7 @@ export const BlogContent = ({
           { label: title, href: "" },
         ]}
       />
-      <div className="container mx-auto mt-4 px-4 max-w-6xl">
+      <div className="container mx-auto mt-4 px-4 max-w-6xl dark:text-gray-400">
         <div className="flex">
           <div className="lg:w-3/4 prose prose-lg max-w-none w-full break-words blog-content">
             <Accordion

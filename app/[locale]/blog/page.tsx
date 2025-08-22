@@ -32,7 +32,7 @@ export default async function Page(
   const searchParams = await props.searchParams;
   const page = searchParams?.page ? parseInt(searchParams.page) : 1;
   const result = await wisp.getPosts({
-    limit: 6,
+    limit: 24,
     query: searchParams?.query,
     page,
   });
