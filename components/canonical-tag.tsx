@@ -2,7 +2,8 @@
 import { usePathname } from "next/navigation";
 
 export default function CanonicalTag() {
-  const pathname = usePathname();
+  const pathname = usePathname(); // ex: /fr/ma-page
+
   const canonicalUrl = `https://www.neocraft.dev${pathname}`;
 
   return <link rel="canonical" href={canonicalUrl} />;
