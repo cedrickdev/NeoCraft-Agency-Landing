@@ -1,110 +1,135 @@
-import { motion } from "framer-motion";
+"use client";
+
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-const team = [
+const teamMembers = [
   {
-    name: "Jorel KUE ",
-    role: "Lead Developer, Open Source Contributor",
-    avatar: "/IMG_9554.jpg?height=400&width=400",
-    bio: "Expert en React/Next.js avec 8 ans d'expérience dans le développement d'applications web complexes.",
-    skills: ["React", "Next.js", "Node.js", "TypeScript"],
+    id: "member1",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=60",
+    socials: { twitter: "#", linkedin: "#", github: "#" }
   },
   {
-    name: "Cédrick FEZE",
-    role: "Back End Developer, Product Owner",
-    avatar: "/IMG_9221.jpg?height=400&width=400",
-    bio: "Créatrice d'expériences digitales mémorables avec une approche centrée sur l'utilisateur.",
-    skills: ["Figma", "UX Research", "Design System", "Prototyping"],
+    id: "member2",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop&q=60",
+    socials: { twitter: "#", linkedin: "#", github: "#" }
   },
   {
-    name: "Stéphane KAMGA",
-    role: "Mobile Developer, User Experience Designer, Content Strategist",
-    avatar: "/IMG_9553.jpg?height=400&width=400",
-    bio: "Architecte de solutions techniques innovantes qui transforment les défis en opportunités.",
-    skills: ["Architecture", "Cloud", "DevOps", "Performance"],
+    id: "member3",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&auto=format&fit=crop&q=60",
+    socials: { twitter: "#", linkedin: "#", github: "#" }
   },
+  {
+    id: "member4",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=60",
+    socials: { twitter: "#", linkedin: "#", github: "#" }
+  }
 ];
 
 export default function Team() {
+  const t = useTranslations("Team");
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
-    <section id="team" className="py-24 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-white dark:bg-gray-950"></div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gray-50 to-transparent dark:from-gray-900 dark:to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-gray-50 to-transparent dark:from-gray-900 dark:to-transparent"></div>
-      </div>
+    <section id="team" className="py-32 relative overflow-hidden bg-background">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Badge variant="outline" className="mb-6 px-4 py-1.5 rounded-full border-primary/10 bg-primary/5 text-primary/80 font-medium whitespace-nowrap">
+              {t("badge")}
+            </Badge>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              {t("title")}
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t("description")}
+            </p>
+          </motion.div>
+        </div>
 
-      <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
-          <Badge className="mb-4 bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 border-amber-100 dark:border-amber-800/30 px-4 py-1.5 text-sm font-medium hover:text-white">
-            Notre équipe
-          </Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Des collaborateurs passionnés et engagés
-          </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-10">
-          {team.map((member, index) => (
+          {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="group"
+              variants={itemVariants}
+              className="group relative"
             >
-              <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800 h-full">
-                <div className="relative">
-                  <div className="aspect-[3/2] bg-gradient-to-br from-blue-600 to-emerald-500 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px] opacity-30 mix-blend-soft-light"></div>
-                    <div className="absolute inset-0 flex items-center justify-center p-8">
-                      <Image
-                        src={member.avatar || "/placeholder.svg"}
-                        alt={member.name}
-                        className="w-32 h-32 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg transform group-hover:scale-110 transition-transform duration-300"
-                      />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
-                </div>
-
-                <div className="p-8 pt-4 text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-4">
-                    {member.role}
-                  </p>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6">
-                    {member.bio}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {member.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 glass-card border-primary/5">
+                <Image
+                  src={member.image}
+                  alt={t(`${member.id}.name`)}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                />
+                
+                {/* Social Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                  <div className="flex gap-4">
+                    <a href={member.socials.twitter} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
+                      <Twitter className="w-4 h-4" />
+                    </a>
+                    <a href={member.socials.linkedin} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                    <a href={member.socials.github} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
+                      <Github className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
               </div>
+
+              <div className="space-y-2">
+                <h3 className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
+                  {t(`${member.id}.name`)}
+                </h3>
+                <p className="text-sm font-bold uppercase tracking-widest text-primary/40">
+                  {t(`${member.id}.role`)}
+                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-2">
+                  {t(`${member.id}.description`)}
+                </p>
+              </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
       </div>
     </section>
   );

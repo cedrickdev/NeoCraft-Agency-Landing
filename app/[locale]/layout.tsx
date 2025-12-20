@@ -1,19 +1,19 @@
-import "../globals.css";
-import {notFound} from "next/navigation";
-import {NextIntlClientProvider} from "next-intl";
-import type {Locale} from "@/i18n";
-import {locales} from "@/i18n";
-import {ReactNode} from "react";
-import type {Metadata} from "next";
-import {Inter} from "next/font/google";
-import {Analytics} from "@vercel/analytics/next";
-import {GoogleAnalytics} from "@next/third-parties/google";
-import HreflangTags from "@/components/HreflangTags";
-import {ThemeProvider} from "@/components/providers";
-import Footer from "@/components/section/footer";
 import Header from "@/components/header";
-import {SpeedInsights} from "@vercel/speed-insights/next"
+import HreflangTags from "@/components/HreflangTags";
+import { ThemeProvider } from "@/components/providers";
+import Footer from "@/components/section/footer";
+import type { Locale } from "@/i18n";
+import { locales } from "@/i18n";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { Inter } from "next/font/google";
+import { notFound } from "next/navigation";
 import Script from "next/script";
+import { ReactNode } from "react";
+import "../globals.css";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -444,6 +444,13 @@ export default async function LocaleLayout({children, params}: Props) {
                 <div className="relative min-h-screen bg-background">
                     {/* Textured background overlay */}
                     <div className="fixed inset-0 z-0 bg-dot-pattern pointer-events-none opacity-50" aria-hidden="true" />
+                    
+                    {/* Animated Decorative Blobs */}
+                    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+                        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full animate-slow-float" />
+                        <div className="absolute bottom-[10%] right-[-5%] w-[35%] h-[35%] bg-primary/5 blur-[100px] rounded-full animate-slow-float" style={{ animationDelay: '-5s' }} />
+                        <div className="absolute top-[20%] right-[10%] w-[25%] h-[25%] bg-primary/5 blur-[80px] rounded-full animate-slow-float" style={{ animationDelay: '-10s' }} />
+                    </div>
                     
                     <div className="relative z-10 flex flex-col min-h-screen">
                         <Header/>

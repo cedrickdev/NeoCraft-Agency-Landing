@@ -303,7 +303,7 @@
       },
       "subject": "What would you like to discuss?",
       "message": "Tell us about your project",
-      "complete": "Message sent successfully!"
+      "complete": "Message sent successfully! Our team will call you back shortly."
     },
     "formStepPlaceholder": {
       "name": "Your first name or last name",
@@ -323,7 +323,8 @@
     "formStatus": {
       "sending": "Sending...",
       "send": "Send",
-      "continue": "Continue"
+      "continue": "Continue",
+      "back": "Back"
     },
     "step": {
       "name": "Step",

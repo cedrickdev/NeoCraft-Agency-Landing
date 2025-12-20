@@ -278,7 +278,7 @@ export default function InteractiveServices() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.4 }}
-                                    className="glass-card rounded-[2.5rem] p-10 md:p-16 h-full border-primary/10"
+                                    className="glass-card rounded-[3rem] p-10 md:p-16 h-full border-primary/10"
                                 >
                                     <div className="flex items-center gap-6 mb-10">
                                         <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center text-primary">
@@ -317,7 +317,7 @@ export default function InteractiveServices() {
                                             className="h-14 px-10 rounded-2xl group transition-all"
                                             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                                         >
-                                            Get started
+                                            {t('getStarted')}
                                             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                                         </Button>
                                     </div>

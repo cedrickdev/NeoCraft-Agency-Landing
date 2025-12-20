@@ -21,9 +21,9 @@ export default function Header() {
     });
 
     const navLinks = [
-        { href: "#about", label: t("about") },
-        { href: "#services", label: t("services") },
-        { href: "#contact", label: t("contact") },
+        { href: "/about", label: t("about") },
+        { href: "/#services", label: t("services") },
+        { href: "/#contact", label: t("contact") },
         { href: "/blog", label: "Blog" },
     ];
 
@@ -36,25 +36,39 @@ export default function Header() {
             }`}
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
-                <Link href="/" className="relative z-50 flex items-center gap-2 group">
-                    <div className="w-10 h-10 transition-transform duration-500 group-hover:rotate-[10deg]">
+                <Link href="/" className="relative z-50 flex items-center gap-3 group">
+                    <motion.div 
+                        whileHover={{ rotate: 10, scale: 1.1 }}
+                        className="w-10 h-10 relative"
+                    >
                         <Image
                             src="/logo/logo.png"
                             width={40}
                             height={40}
                             alt="NeoCraft"
-                            className="grayscale group-hover:grayscale-0 transition-all"
+                            className="grayscale contrast-125 brightness-0 dark:brightness-200 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500"
                         />
+                    </motion.div>
+                    <div className="flex items-center text-xl font-bold tracking-tighter transition-all duration-500">
+                      <span>Neo</span>
+                      <span className="relative flex items-center">
+                        <span className="text-primary italic">C</span>
+                        <span className="-ml-[0.1em] text-primary italic">r</span>
+                        <svg className="absolute -bottom-1 -left-1.5 w-7 h-4 text-primary/40 pointer-events-none" viewBox="0 0 28 16" fill="none">
+                          <path d="M4,12 C8,2 14,2 20,12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                        </svg>
+                      </span>
+                      <span>aft</span>
                     </div>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-8 glass-card px-8 py-2.5 rounded-full border-primary/5">
+                <nav className="hidden md:flex items-center gap-10 bg-background/40 backdrop-blur-md px-10 py-3 rounded-full border border-primary/5 shadow-2xl shadow-primary/5">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="text-sm font-semibold text-muted-foreground hover:text-primary transition-colors"
+                            className="text-[13px] font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-all duration-300"
                         >
                             {link.label}
                         </Link>
@@ -67,14 +81,28 @@ export default function Header() {
                         <DarkModeToggle />
                     </div>
 
-                    <Button
-                        size="sm"
-                        className="hidden md:flex h-10 px-6 rounded-full font-bold group transition-all active:scale-95"
-                        onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                    >
-                        {t("cta")}
-                        <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
+                    <div className="hidden md:flex items-center gap-2">
+                        <Link href="/about">
+                            <Button variant="outline" size="sm" className="h-10 px-6 rounded-full font-bold transition-all hover:bg-primary/5 active:scale-95">
+                                {t("about")}
+                            </Button>
+                        </Link>
+                        <Button
+                            size="sm"
+                            className="h-10 px-6 rounded-full font-bold group transition-all active:scale-95 shadow-lg shadow-primary/10"
+                            onClick={() => {
+                                const contactSection = document.getElementById("contact");
+                                if (contactSection) {
+                                    contactSection.scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                    window.location.href = "/#contact";
+                                }
+                            }}
+                        >
+                            {t("cta")}
+                            <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </Button>
+                    </div>
 
                     <Button
                         variant="ghost"

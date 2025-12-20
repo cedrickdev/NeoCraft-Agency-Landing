@@ -26,7 +26,7 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
-    --radius: 0.75rem;
+    --radius: 1.5rem;
   }
 
   .dark {
@@ -70,23 +70,33 @@
 
 @layer utilities {
   .bg-dot-pattern {
-    background-image: radial-gradient(circleAtCenter, hsl(var(--foreground) / 0.1) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-image: radial-gradient(circle at center, hsl(var(--foreground) / 0.15) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 
   .bg-grid-pattern {
     background-image: 
       linear-gradient(to right, hsl(var(--foreground) / 0.05) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(var(--foreground) / 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-size: 48px 48px;
   }
 
   .glass-card {
-    @apply bg-background/60 backdrop-blur-md border border-border/50 shadow-sm;
+    @apply bg-background/60 backdrop-blur-xl border border-border/50 shadow-[0_8px_32px_0_rgba(0,0,0,0.02)] rounded-[3rem] transition-all duration-500;
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/60;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground to-foreground/40;
+  }
+
+  .animate-slow-float {
+    animation: float 20s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(2%, 2%) scale(1.1); }
+    66% { transform: translate(-2%, 4%) scale(0.9); }
   }
 }
 

@@ -3,11 +3,11 @@
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import {
-    ArrowRight,
-    Code2,
-    GraduationCap,
-    Palette,
-    Users,
+  ArrowRight,
+  Code2,
+  GraduationCap,
+  Palette,
+  Users,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -48,11 +48,13 @@ export default function Services() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40, scale: 0.9, rotateX: -5 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+      scale: 1,
+      rotateX: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
     },
   };
 

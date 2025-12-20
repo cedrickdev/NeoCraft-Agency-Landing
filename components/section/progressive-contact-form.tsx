@@ -6,12 +6,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-    ArrowRight,
-    Calendar,
-    CheckCircle,
-    Mail,
-    MessageSquare,
-    Phone
+  ArrowRight,
+  Calendar,
+  CheckCircle,
+  Mail,
+  MessageSquare,
+  Phone
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type React from "react";
@@ -53,6 +53,14 @@ export default function ProgressiveContactForm() {
     const currentIndex = steps.indexOf(currentStep);
     if (currentIndex < steps.length - 1) {
       setCurrentStep(steps[currentIndex + 1]);
+    }
+  };
+
+  const handleBack = () => {
+    const steps: FormStep[] = ["name", "email", "subject", "message", "complete"];
+    const currentIndex = steps.indexOf(currentStep);
+    if (currentIndex > 0) {
+      setCurrentStep(steps[currentIndex - 1]);
     }
   };
 
@@ -133,7 +141,7 @@ export default function ProgressiveContactForm() {
             viewport={{ once: true }}
             className="lg:col-span-3 h-full"
           >
-            <div className="glass-card rounded-[2.5rem] overflow-hidden flex flex-col h-full min-h-[500px]">
+            <div className="glass-card rounded-[3rem] overflow-hidden flex flex-col h-full min-h-[500px]">
               {/* Progress Line */}
               <div className="h-1 bg-primary/5">
                 <motion.div
@@ -177,7 +185,7 @@ export default function ProgressiveContactForm() {
                     >
                       <div className="mb-12">
                         <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">
-                          Step {["name", "email", "subject", "message"].indexOf(currentStep) + 1} of 4
+                          {t('step.name')} {["name", "email", "subject", "message"].indexOf(currentStep) + 1} {t('step.of')}
                         </span>
                         <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
                           {currentStep === "name" && t('formStepTitle.name')}
@@ -191,7 +199,6 @@ export default function ProgressiveContactForm() {
                         {currentStep === "name" && (
                           <Input
                             ref={inputRef as any}
-                            autoFocus
                             placeholder={t('formStepPlaceholder.name')}
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -203,7 +210,6 @@ export default function ProgressiveContactForm() {
                         {currentStep === "email" && (
                           <Input
                             ref={inputRef as any}
-                            autoFocus
                             type="email"
                             placeholder={t('formStepPlaceholder.email')}
                             value={formData.email}
@@ -216,7 +222,6 @@ export default function ProgressiveContactForm() {
                         {currentStep === "subject" && (
                           <Input
                             ref={inputRef as any}
-                            autoFocus
                             placeholder={t('formStepPlaceholder.subject')}
                             value={formData.subject}
                             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -228,7 +233,6 @@ export default function ProgressiveContactForm() {
                         {currentStep === "message" && (
                           <Textarea
                             ref={inputRef as any}
-                            autoFocus
                             placeholder={t('formStepPlaceholder.message')}
                             value={formData.message}
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -240,9 +244,22 @@ export default function ProgressiveContactForm() {
                       </div>
 
                       <div className="mt-12 flex justify-between items-center">
-                        <p className="text-sm text-muted-foreground font-medium opacity-50">
-                          {t('action.continue')} (Enter ↵)
-                        </p>
+                        <div className="flex items-center gap-4">
+                            {["email", "subject", "message"].includes(currentStep) && (
+                                <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={handleBack}
+                                    className="h-10 px-4 rounded-xl text-muted-foreground hover:text-primary transition-all flex items-center gap-2"
+                                >
+                                    <ArrowRight className="w-4 h-4 rotate-180" />
+                                    {t('formStatus.back')}
+                                </Button>
+                            )}
+                            <p className="text-sm text-muted-foreground font-medium opacity-50 hidden md:block">
+                            {t('action.continue')} (Enter ↵)
+                            </p>
+                        </div>
                         <Button
                           size="lg"
                           disabled={!isStepValid(currentStep) || formStatus === "loading"}
@@ -253,7 +270,7 @@ export default function ProgressiveContactForm() {
                             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                           ) : (
                             <>
-                              {currentStep === "message" ? "Send realization" : "Next step"}
+                              {currentStep === "message" ? t('formStatus.send') : t('formStatus.continue')}
                               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                             </>
                           )}
@@ -273,7 +290,7 @@ export default function ProgressiveContactForm() {
             viewport={{ once: true }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="glass-card p-10 rounded-[2.5rem] space-y-10">
+            <div className="glass-card p-10 rounded-[3rem] space-y-10">
               <h3 className="text-2xl font-bold tracking-tight">{t('contact.title')}</h3>
               
               <div className="space-y-8">
@@ -295,7 +312,7 @@ export default function ProgressiveContactForm() {
               </div>
             </div>
 
-            <div className="glass-card p-10 rounded-[2.5rem] bg-primary group hover:bg-primary/95 transition-all duration-500">
+            <div className="glass-card p-10 rounded-[3rem] bg-primary group hover:bg-primary/95 transition-all duration-500">
               <div className="space-y-6">
                 <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white">
                   <Calendar className="w-6 h-6" />

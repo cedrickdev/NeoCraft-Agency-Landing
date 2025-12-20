@@ -1,11 +1,11 @@
 "use client";
 
 import {
-    Code2,
-    Facebook,
-    Instagram,
-    Linkedin,
-    Twitter,
+  Code2,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -27,11 +27,19 @@ export default function Footer() {
                 alt="NeoCraft"
                 width={40}
                 height={40}
-                className="grayscale group-hover:grayscale-0 transition-all"
+                className="grayscale opacity-50 transition-all hover:opacity-100"
               />
-              <span className="text-xl font-bold tracking-tight">
-                NeoCraft
-              </span>
+              <div className="text-xl font-bold tracking-tighter flex items-center">
+                <span>Neo</span>
+                <span className="relative flex items-center">
+                  <span className="text-primary italic">C</span>
+                  <span className="-ml-[0.1em] text-primary italic">r</span>
+                  <svg className="absolute -bottom-1 -left-1 w-6 h-3 text-primary/40 pointer-events-none" viewBox="0 0 24 12" fill="none">
+                    <path d="M3,9 C6,1 12,1 18,9" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                  </svg>
+                </span>
+                <span>aft</span>
+              </div>
             </div>
             
             <p className="text-muted-foreground max-w-sm leading-relaxed">
