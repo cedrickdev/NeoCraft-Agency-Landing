@@ -1,7 +1,11 @@
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-import {useTranslations} from "next-intl";
+"use client";
 
-function Testimonial() {
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+
+export function Testimonial() {
   const t = useTranslations('Testimonial');
   const testimonials = [
     {
@@ -35,7 +39,28 @@ function Testimonial() {
       src: "https://plus.unsplash.com/premium_photo-1666299357105-f82402c04826?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzgxfHxwZW9wbGUlMjBhdCUyMHdvcmt8ZW58MHx8MHx8fDA%3D",
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} />;
-}
 
-export { Testimonial };
+  return (
+    <section id="testimonials" className="py-32 relative overflow-hidden bg-background">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Badge variant="outline" className="mb-6 px-4 py-1.5 rounded-full border-primary/10 bg-primary/5 text-primary/80 font-medium">
+              Expertise & Impact
+            </Badge>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              Testimonials
+            </h2>
+          </motion.div>
+        </div>
+        
+        <AnimatedTestimonials testimonials={testimonials} />
+      </div>
+    </section>
+  );
+}

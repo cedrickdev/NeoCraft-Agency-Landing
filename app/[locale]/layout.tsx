@@ -438,14 +438,21 @@ export default async function LocaleLayout({children, params}: Props) {
             </noscript>
         </head>
 
-        <body className={inter.className}>
+        <body className={`${inter.variable} font-sans antialiased selection:bg-primary/10 selection:text-primary`}>
         <ThemeProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
-                <Header/>
-                <main id="main-content" role="main">
-                    {children}
-                </main>
-                <Footer/>
+                <div className="relative min-h-screen bg-background">
+                    {/* Textured background overlay */}
+                    <div className="fixed inset-0 z-0 bg-dot-pattern pointer-events-none opacity-50" aria-hidden="true" />
+                    
+                    <div className="relative z-10 flex flex-col min-h-screen">
+                        <Header/>
+                        <main id="main-content" role="main" className="flex-grow">
+                            {children}
+                        </main>
+                        <Footer/>
+                    </div>
+                </div>
             </NextIntlClientProvider>
         </ThemeProvider>
 

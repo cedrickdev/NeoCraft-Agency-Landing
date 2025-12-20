@@ -1,14 +1,13 @@
 "use client";
 
-import type React from "react";
-import {useEffect, useRef, useState} from "react";
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
-import {Avatar} from "@/components/ui/avatar";
-import {Card, CardContent, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card";
-import {Bot, ImageIcon, Send, Video} from "lucide-react";
-import {useTranslations} from "next-intl";
+import { Avatar } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Bot, ImageIcon, Paperclip, Send, Video } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Message = {
     id: string;
@@ -38,7 +37,6 @@ export function AIChatbot() {
     const handleSendMessage = async () => {
         if (!input.trim() && attachments.length === 0) return;
 
-        // Création du message utilisateur
         const newUserMessage: Message = {
             id: Date.now().toString(),
             content: input,
@@ -53,25 +51,24 @@ export function AIChatbot() {
         };
 
         setMessages((prev) => [...prev, newUserMessage]);
+        const question = input;
         setInput("");
         setAttachments([]);
-        setIsLoading(true); // <-- Ajout ici
+        setIsLoading(true);
 
-        // Appel à l'API backend
         try {
             const response = await fetch(
                 `${process.env.NEXT_PUBLIC_NEOCHAT_BASE_URL}/askNeochat`,
                 {
                     method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify({question: input}),
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ question }),
                 }
             );
             const data = await response.json();
-            console.log(data);
             const aiResponse: Message = {
                 id: (Date.now() + 1).toString(),
-                content: data.answer.result,
+                content: data.answer?.result || "I couldn't process that. Could you try again?",
                 role: "assistant",
             };
             setMessages((prev) => [...prev, aiResponse]);
@@ -80,12 +77,12 @@ export function AIChatbot() {
                 ...prev,
                 {
                     id: (Date.now() + 2).toString(),
-                    content: "Erreur lors de la connexion au serveur.",
+                    content: "Sorry, I'm having trouble connecting to the server.",
                     role: "assistant",
                 },
             ]);
         } finally {
-            setIsLoading(false); // <-- Ajout ici
+            setIsLoading(false);
         }
     };
 
@@ -96,147 +93,135 @@ export function AIChatbot() {
         }
     };
 
-    // Auto-scroll to bottom when messages change
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({behavior: "smooth"});
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
     return (
-        <Card className="w-full max-w-md mx-auto h-[600px] flex flex-col">
-            <CardHeader className=" text-primary-foreground">
-                <CardTitle className="flex items-center gap-2">
-                    <Bot className="text-gray-900 dark:text-white" size={20}/>
-                    <span
-                        className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-            NeoChat
-          </span>
-                </CardTitle>
-            </CardHeader>
-            <CardContent className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex flex-col h-[550px] bg-background">
+            <div className="p-6 border-b border-primary/5 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+                        <Bot className="w-5 h-5" />
+                    </div>
+                    <div>
+                        <h3 className="font-bold tracking-tight">NeoChat Assistant</h3>
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40">Powered by NeoCraft AI</p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-hide">
                 {messages.map((message) => (
                     <div
                         key={message.id}
-                        className={`flex ${
-                            message.role === "user" ? "justify-end" : "justify-start"
-                        }`}
+                        className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                     >
-                        <div
-                            className={`flex gap-2 max-w-[80%] ${
-                                message.role === "user" ? "flex-row-reverse" : "flex-row"
-                            }`}
-                        >
-                            <Avatar className="h-8 w-8">
+                        <div className={`flex gap-3 max-w-[85%] ${message.role === "user" ? "flex-row-reverse" : "flex-row"}`}>
+                            <Avatar className="h-8 w-8 shrink-0">
                                 {message.role === "assistant" ? (
-                                    <Bot className="h-5 w-5"/>
+                                    <div className="h-full w-full bg-primary/5 flex items-center justify-center text-primary">
+                                        <Bot className="h-4 w-4" />
+                                    </div>
                                 ) : (
-                                    <div
-                                        className="h-full w-full bg-primary dark:bg-emerald-800 rounded-full flex items-center justify-center text-primary-foreground">
-                                        U
+                                    <div className="h-full w-full bg-primary flex items-center justify-center text-primary-foreground text-[10px] font-bold">
+                                        ME
                                     </div>
                                 )}
                             </Avatar>
-                            <div
-                                className={`rounded-lg p-3 ${
-                                    message.role === "user"
-                                        ? "bg-primary text-primary-foreground dark:bg-emerald-800"
-                                        : "bg-muted"
-                                }`}
-                            >
-                                <p>
-                                    {typeof message.content === "string"
-                                        ? message.content
-                                        : JSON.stringify(message.content)}
-                                </p>
+                            <div className={`space-y-2 ${message.role === "user" ? "items-end text-right" : "items-start"}`}>
+                                <div className={`px-4 py-3 rounded-2xl text-sm leading-relaxed ${
+                                    message.role === "user" 
+                                        ? "bg-primary text-primary-foreground font-medium rounded-tr-none" 
+                                        : "bg-primary/5 text-foreground rounded-tl-none"
+                                }`}>
+                                    <p>{typeof message.content === "string" ? message.content : JSON.stringify(message.content)}</p>
+                                </div>
                                 {message.attachments && message.attachments.length > 0 && (
-                                    <div className="mt-2 space-y-2">
-                                        {message.attachments.map((attachment, index) =>
-                                            attachment.type === "image" ? (
-                                                <Image
-                                                    key={index}
-                                                    src={attachment.url || "/placeholder.svg"}
-                                                    alt="Attachment"
-                                                    className="max-w-full rounded-md"
-                                                />
-                                            ) : (
-                                                <video
-                                                    key={index}
-                                                    src={attachment.url}
-                                                    controls
-                                                    className="max-w-full rounded-md"
-                                                />
-                                            )
-                                        )}
+                                    <div className="flex flex-wrap gap-2 mt-2">
+                                        {message.attachments.map((attachment, index) => (
+                                            <div key={index} className="rounded-xl overflow-hidden border border-primary/10 max-w-[200px]">
+                                                {attachment.type === "image" ? (
+                                                    <Image
+                                                        src={attachment.url || "/placeholder.svg"}
+                                                        alt="Attachment"
+                                                        width={200}
+                                                        height={150}
+                                                        className="object-cover"
+                                                    />
+                                                ) : (
+                                                    <video src={attachment.url} controls className="w-full" />
+                                                )}
+                                            </div>
+                                        ))}
                                     </div>
                                 )}
                             </div>
                         </div>
                     </div>
                 ))}
+                
                 {isLoading && (
                     <div className="flex justify-start">
-                        <div className="flex gap-2 max-w-[80%] flex-row">
-                            <Avatar className="h-8 w-8">
-                                <Bot className="h-5 w-5"/>
+                        <div className="flex gap-3 max-w-[85%]">
+                            <Avatar className="h-8 w-8 shrink-0">
+                                <div className="h-full w-full bg-primary/5 flex items-center justify-center text-primary">
+                                    <Bot className="h-4 w-4" />
+                                </div>
                             </Avatar>
-                            <div className="rounded-lg p-3 bg-muted">
-                                <p>Un instant...</p>
+                            <div className="bg-primary/5 px-4 py-3 rounded-2xl rounded-tl-none">
+                                <div className="flex gap-1.5">
+                                    <span className="w-1.5 h-1.5 bg-primary/20 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                                    <span className="w-1.5 h-1.5 bg-primary/20 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                                    <span className="w-1.5 h-1.5 bg-primary/20 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                                </div>
                             </div>
                         </div>
                     </div>
                 )}
-                <div ref={messagesEndRef}/>
-            </CardContent>
-            <CardFooter className="border-t p-3">
+                <div ref={messagesEndRef} />
+            </div>
+
+            <div className="p-6 border-t border-primary/5 bg-background/50 backdrop-blur-sm">
                 {attachments.length > 0 && (
-                    <div className="flex gap-2 mb-2 flex-wrap">
+                    <div className="flex gap-2 mb-4 overflow-x-auto pb-2 scrollbar-hide">
                         {attachments.map((file, index) => (
-                            <div
-                                key={index}
-                                className="bg-muted rounded px-2 py-1 text-xs flex items-center gap-1"
-                            >
-                                {file.type.startsWith("image/") ? (
-                                    <ImageIcon size={12}/>
-                                ) : (
-                                    <Video size={12}/>
-                                )}
-                                {file.name.length > 15
-                                    ? `${file.name.substring(0, 15)}...`
-                                    : file.name}
+                            <div key={index} className="px-3 py-1.5 bg-primary/5 rounded-full text-[10px] font-bold flex items-center gap-2 border border-primary/10 shrink-0">
+                                {file.type.startsWith("image/") ? <ImageIcon size={12} /> : <Video size={12} />}
+                                <span className="opacity-60">{file.name.substring(0, 10)}...</span>
+                                <button onClick={() => setAttachments(prev => prev.filter((_, i) => i !== index))} className="hover:text-primary transition-colors">
+                                    &times;
+                                </button>
                             </div>
                         ))}
                     </div>
                 )}
-                <div className="flex w-full gap-2">
+                <div className="relative flex items-center gap-2">
+                    <button 
+                        onClick={() => fileInputRef.current?.click()}
+                        className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/5 text-primary hover:bg-primary/10 transition-colors"
+                    >
+                        <Paperclip className="w-5 h-5" />
+                    </button>
+                    <input type="file" ref={fileInputRef} onChange={handleFileUpload} accept="image/*,video/*" className="hidden" multiple />
                     <Input
                         placeholder={t('placeholder')}
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        onKeyDown={(e) => {
-                            if (e.key === "Enter" && !e.shiftKey) {
-                                e.preventDefault();
-                                handleSendMessage();
-                            }
-                        }}
-                        className="flex-1 text-gray-900 dark:text-gray-100"
+                        onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && (e.preventDefault(), handleSendMessage())}
+                        className="h-12 border-primary/5 bg-primary/[0.02] rounded-xl focus-visible:ring-primary/20"
                     />
                     <Button
-                        className="dark:bg-gray-800"
-                        onClick={handleSendMessage}
                         size="icon"
-                        type="button"
+                        onClick={handleSendMessage}
+                        disabled={!input.trim() && attachments.length === 0}
+                        className="h-12 w-12 rounded-xl shrink-0 transition-transform active:scale-90"
                     >
-                        <Send className="h-4 w-4"/>
+                        <Send className="h-5 w-5" />
                     </Button>
-                    <input
-                        type="file"
-                        ref={fileInputRef}
-                        onChange={handleFileUpload}
-                        accept="image/*,video/*"
-                        className="hidden"
-                        multiple
-                    />
                 </div>
-            </CardFooter>
-        </Card>
+            </div>
+        </div>
     );
 }
+

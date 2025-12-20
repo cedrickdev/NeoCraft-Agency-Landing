@@ -1,24 +1,21 @@
 "use client";
 
-import type React from "react";
-
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  CheckCircle,
-  ArrowRight,
-  User,
-  Mail,
-  MessageSquare,
-  FileText,
-  Send,
-  Phone,
-} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {useTranslations} from "next-intl";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+    ArrowRight,
+    Calendar,
+    CheckCircle,
+    Mail,
+    MessageSquare,
+    Phone
+} from "lucide-react";
+import { useTranslations } from "next-intl";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface FormData {
   name: string;
@@ -43,7 +40,6 @@ export default function ProgressiveContactForm() {
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
   const [hasInteracted, setHasInteracted] = useState(false);
 
-  // Focus input when step changes
   useEffect(() => {
     if (hasInteracted && inputRef.current && currentStep !== "complete") {
       setTimeout(() => {
@@ -53,13 +49,7 @@ export default function ProgressiveContactForm() {
   }, [currentStep, hasInteracted]);
 
   const handleNext = () => {
-    const steps: FormStep[] = [
-      "name",
-      "email",
-      "subject",
-      "message",
-      "complete",
-    ];
+    const steps: FormStep[] = ["name", "email", "subject", "message", "complete"];
     const currentIndex = steps.indexOf(currentStep);
     if (currentIndex < steps.length - 1) {
       setCurrentStep(steps[currentIndex + 1]);
@@ -68,495 +58,269 @@ export default function ProgressiveContactForm() {
 
   const handleSubmit = async () => {
     setFormStatus("loading");
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        }),
+        body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
       });
 
-      let isSuccess = res.ok;
-      let errorData = null;
-
-      if (!isSuccess) {
-        errorData = await res.json();
-        console.error("Erreur lors de l'envoi:", errorData);
-      }
-
-      if (isSuccess) {
+      if (res.ok) {
         setFormStatus("success");
         setCurrentStep("complete");
-        setTimeout(() => {
-          setFormStatus("idle");
-          setCurrentStep("name");
-          setFormData({ name: "", email: "", subject: "", message: "" });
-        }, 3000);
       } else {
         setFormStatus("error");
-        setTimeout(() => setFormStatus("idle"), 3000);
       }
     } catch (error) {
-      console.error("Erreur lors de l'envoi:", error);
       setFormStatus("error");
-      setTimeout(() => setFormStatus("idle"), 3000);
     }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      if (currentStep === "message") {
+      if (currentStep === "message" && isStepValid(currentStep)) {
         handleSubmit();
-      } else {
+      } else if (isStepValid(currentStep)) {
         handleNext();
       }
     }
   };
 
-  const getStepIcon = (step: FormStep) => {
-    switch (step) {
-      case "name":
-        return User;
-      case "email":
-        return Mail;
-      case "subject":
-        return FileText;
-      case "message":
-        return MessageSquare;
-      default:
-        return CheckCircle;
-    }
-  };
-
-  const getStepTitle = (step: FormStep) => {
-    switch (step) {
-      case "name":
-        return t('formStepTitle.name')
-      case "email":
-        return `${t('formStepTitle.email.start')} ${formData.name} ${t('formStepTitle.email.end')}`;
-      case "subject":
-        return t('formStepTitle.subject');
-      case "message":
-        return t('formStepTitle.message');
-      case "complete":
-        return t('formStepTitle.complete');
-      default:
-        return "";
-    }
-  };
-
-  const getStepPlaceholder = (step: FormStep) => {
-    switch (step) {
-      case "name":
-        return t('formStepPlaceholder.name');
-      case "email":
-        return t('formStepPlaceholder.email');
-      case "subject":
-        return t('formStepPlaceholder.subject');
-      case "message":
-        return t('formStepPlaceholder.message');
-      default:
-        return "";
-    }
-  };
-
   const isStepValid = (step: FormStep) => {
     switch (step) {
-      case "name":
-        return formData.name.trim().length > 0;
-      case "email":
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
-      case "subject":
-        return formData.subject.trim().length > 0;
-      case "message":
-        return formData.message.trim().length > 10;
-      default:
-        return false;
+      case "name": return formData.name.trim().length > 0;
+      case "email": return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+      case "subject": return formData.subject.trim().length > 0;
+      case "message": return formData.message.trim().length > 5;
+      default: return false;
     }
   };
 
   const getProgressPercentage = () => {
     const steps = ["name", "email", "subject", "message"];
     const currentIndex = steps.indexOf(currentStep);
-    return currentStep === "complete"
-      ? 100
-      : ((currentIndex + 1) / steps.length) * 100;
+    return currentStep === "complete" ? 100 : ((currentIndex + 1) / steps.length) * 100;
   };
 
-  // Render success card content when complete
-  const renderSuccessCard = () => (
-    <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800">
-      <div className="h-2 bg-gradient-to-r from-blue-600 to-emerald-500"></div>
-      <div className="p-8">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center py-12"
-        >
-          <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-10 h-10 text-white" />
-          </div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            {t('formData.thanks')} {formData.name} !
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
-            {t('formData.message')}{" "}
-            <span className="font-semibold text-blue-600 dark:text-blue-400">
-              {formData.email}
-            </span>
-            .
-          </p>
-          <div className="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-xl p-4">
-            <p className="text-emerald-800 dark:text-emerald-400 text-sm">
-              ✨ {t('formData.time')}
-            </p>
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  );
-
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-white dark:bg-gray-950"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:20px_20px] opacity-50 dark:opacity-20"></div>
-        <div className="absolute left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-gray-50 to-transparent dark:from-gray-900 dark:to-transparent"></div>
-      </div>
-
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <Badge className="mb-4 bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800/30 px-4 py-1.5 text-sm font-medium">
-            {t('badge')}
-          </Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            {t('title')}
-          </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t('description')}
-          </p>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+    <section id="contact" className="py-32 relative overflow-hidden bg-background">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-20">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Badge variant="outline" className="mb-6 px-4 py-1.5 rounded-full border-primary/10 bg-primary/5 text-primary/80 font-medium">
+              {t('badge')}
+            </Badge>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              {t('title')}
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              {t('description')}
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-12 items-start max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="lg:col-span-3 h-full"
           >
-            {currentStep === "complete" ? (
-              renderSuccessCard()
-            ) : (
-              <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800">
-                {/* Progress Bar */}
-                <div className="h-2 bg-gray-200 dark:bg-gray-800">
-                  <motion.div
-                    className="h-full bg-gradient-to-r from-blue-600 to-emerald-500"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${getProgressPercentage()}%` }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                  />
-                </div>
+            <div className="glass-card rounded-[2.5rem] overflow-hidden flex flex-col h-full min-h-[500px]">
+              {/* Progress Line */}
+              <div className="h-1 bg-primary/5">
+                <motion.div
+                  className="h-full bg-primary"
+                  initial={{ width: 0 }}
+                  animate={{ width: `${getProgressPercentage()}%` }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                />
+              </div>
 
-                <div className="p-8">
-                  {/* Step Indicator */}
-                  <div className="flex items-center justify-center mb-8">
-                    <div className="flex items-center space-x-4">
-                      {["name", "email", "subject", "message"].map(
-                        (step, index) => {
-                          const StepIcon = getStepIcon(step as FormStep);
-                          const isActive = step === currentStep;
-                          const isCompleted =
-                            ["name", "email", "subject", "message"].indexOf(
-                              currentStep
-                            ) > index;
-
-                          return (
-                            <div key={step} className="flex items-center">
-                              <div
-                                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                                  isActive
-                                    ? "bg-gradient-to-br from-blue-600 to-emerald-500 text-white scale-110"
-                                    : isCompleted
-                                    ? "bg-emerald-500 text-white"
-                                    : "bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
-                                }`}
-                              >
-                                <StepIcon className="w-5 h-5" />
-                              </div>
-                              {index < 3 && (
-                                <div
-                                  className={`w-8 h-0.5 mx-2 transition-colors duration-300 ${
-                                    isCompleted
-                                      ? "bg-emerald-500"
-                                      : "bg-gray-200 dark:bg-gray-700"
-                                  }`}
-                                />
-                              )}
-                            </div>
-                          );
-                        }
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Form Content */}
-                  <AnimatePresence mode="wait">
+              <div className="p-10 md:p-16 flex-grow flex flex-col">
+                <AnimatePresence mode="wait">
+                  {currentStep === "complete" ? (
+                    <motion.div
+                      key="complete"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="flex flex-col items-center justify-center text-center h-full py-12"
+                    >
+                      <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center mb-8">
+                        <CheckCircle className="w-10 h-10 text-primary" />
+                      </div>
+                      <h3 className="text-3xl font-bold mb-4 tracking-tight">
+                        {t('formData.thanks')} {formData.name} !
+                      </h3>
+                      <p className="text-muted-foreground text-lg max-w-md leading-relaxed">
+                        {t('formData.message')} <span className="text-primary font-medium">{formData.email}</span>.
+                      </p>
+                      <Badge variant="secondary" className="mt-8 px-6 py-2 rounded-xl bg-primary/5 text-primary border-none">
+                        {t('formData.time')}
+                      </Badge>
+                    </motion.div>
+                  ) : (
                     <motion.div
                       key={currentStep}
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.3 }}
-                      className="space-y-6"
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      className="flex flex-col h-full"
                     >
-                      <div className="text-center mb-8">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                          {getStepTitle(currentStep)}
+                      <div className="mb-12">
+                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">
+                          Step {["name", "email", "subject", "message"].indexOf(currentStep) + 1} of 4
+                        </span>
+                        <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
+                          {currentStep === "name" && t('formStepTitle.name')}
+                          {currentStep === "email" && `${t('formStepTitle.email.start')} ${formData.name}${t('formStepTitle.email.end')}`}
+                          {currentStep === "subject" && t('formStepTitle.subject')}
+                          {currentStep === "message" && t('formStepTitle.message')}
                         </h3>
-                        <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto rounded-full"></div>
                       </div>
 
-                      <div className="space-y-4">
+                      <div className="flex-grow">
                         {currentStep === "name" && (
                           <Input
-                            ref={inputRef as React.RefObject<HTMLInputElement>}
-                            type="text"
-                            name="name"
+                            ref={inputRef as any}
+                            autoFocus
+                            placeholder={t('formStepPlaceholder.name')}
                             value={formData.name}
-                            onChange={(e) =>
-                              setFormData({ ...formData, name: e.target.value })
-                            }
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             onKeyPress={handleKeyPress}
-                            placeholder={getStepPlaceholder(currentStep)}
-                            className="w-full text-lg py-4 px-6 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl transition-all duration-300"
                             onFocus={() => setHasInteracted(true)}
+                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-none px-0 focus-visible:ring-0 placeholder:opacity-20 font-medium"
                           />
                         )}
-
                         {currentStep === "email" && (
                           <Input
-                            ref={inputRef as React.RefObject<HTMLInputElement>}
+                            ref={inputRef as any}
+                            autoFocus
                             type="email"
-                            name="email"
+                            placeholder={t('formStepPlaceholder.email')}
                             value={formData.email}
-                            onChange={(e) =>
-                              setFormData({
-                                ...formData,
-                                email: e.target.value,
-                              })
-                            }
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             onKeyPress={handleKeyPress}
-                            placeholder={getStepPlaceholder(currentStep)}
-                            className="w-full text-lg py-4 px-6 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl transition-all duration-300"
                             onFocus={() => setHasInteracted(true)}
+                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-none px-0 focus-visible:ring-0 placeholder:opacity-20 font-medium"
                           />
                         )}
-
                         {currentStep === "subject" && (
                           <Input
-                            ref={inputRef as React.RefObject<HTMLInputElement>}
-                            type="text"
-                            name="subject"
+                            ref={inputRef as any}
+                            autoFocus
+                            placeholder={t('formStepPlaceholder.subject')}
                             value={formData.subject}
-                            onChange={(e) =>
-                              setFormData({
-                                ...formData,
-                                subject: e.target.value,
-                              })
-                            }
+                            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                             onKeyPress={handleKeyPress}
-                            placeholder={getStepPlaceholder(currentStep)}
-                            className="w-full text-lg py-4 px-6 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl transition-all duration-300"
                             onFocus={() => setHasInteracted(true)}
+                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-none px-0 focus-visible:ring-0 placeholder:opacity-20 font-medium"
                           />
                         )}
-
                         {currentStep === "message" && (
                           <Textarea
-                            ref={
-                              inputRef as React.RefObject<HTMLTextAreaElement>
-                            }
-                            name="message"
+                            ref={inputRef as any}
+                            autoFocus
+                            placeholder={t('formStepPlaceholder.message')}
                             value={formData.message}
-                            onChange={(e) =>
-                              setFormData({
-                                ...formData,
-                                message: e.target.value,
-                              })
-                            }
+                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             onKeyPress={handleKeyPress}
-                            placeholder={getStepPlaceholder(currentStep)}
-                            className="w-full text-lg py-4 px-6 h-32 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl resize-none transition-all duration-300"
                             onFocus={() => setHasInteracted(true)}
+                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-none px-0 focus-visible:ring-0 placeholder:opacity-20 font-medium resize-none min-h-[150px]"
                           />
                         )}
-
-                        {/* Action Button */}
-                        <div className="flex justify-between items-center pt-4">
-                          <div className="text-sm text-gray-500 dark:text-gray-400">
-                            {currentStep !== "message"
-                              ? t('action.continue')
-                              : t('action.send')}
-                          </div>
-
-                          <Button
-                              aria-label="Send"
-                            onClick={
-                              currentStep === "message"
-                                ? handleSubmit
-                                : handleNext
-                            }
-                            disabled={
-                              !isStepValid(currentStep) ||
-                              formStatus === "loading"
-                            }
-                            className="bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white px-8 py-3 rounded-xl shadow-lg shadow-blue-500/20 dark:shadow-emerald-500/20 transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
-                          >
-                            {formStatus === "loading" ? (
-                              <div className="flex items-center">
-                                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                                {t('formStatus.sending')}
-                              </div>
-                            ) : currentStep === "message" ? (
-                              <div className="flex items-center">
-                                <Send className="w-5 h-5 mr-2" />
-                                {t('formStatus.send')}
-                              </div>
-                            ) : (
-                              <div className="flex items-center">
-                                {t('formStatus.continue')}
-                                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                              </div>
-                            )}
-                          </Button>
-                        </div>
                       </div>
 
-                      {/* Progress Text */}
-                      <div className="text-center pt-4">
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
-                          {t('step.name')}{" "}
-                          {["name", "email", "subject", "message"].indexOf(
-                            currentStep
-                          ) + 1}{" "}
-                          {t('step.of')}
+                      <div className="mt-12 flex justify-between items-center">
+                        <p className="text-sm text-muted-foreground font-medium opacity-50">
+                          {t('action.continue')} (Enter ↵)
                         </p>
+                        <Button
+                          size="lg"
+                          disabled={!isStepValid(currentStep) || formStatus === "loading"}
+                          onClick={currentStep === "message" ? handleSubmit : handleNext}
+                          className="h-14 px-10 rounded-2xl group transition-all duration-300"
+                        >
+                          {formStatus === "loading" ? (
+                            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          ) : (
+                            <>
+                              {currentStep === "message" ? "Send realization" : "Next step"}
+                              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            </>
+                          )}
+                        </Button>
                       </div>
                     </motion.div>
-                  </AnimatePresence>
-                </div>
+                  )}
+                </AnimatePresence>
               </div>
-            )}
+            </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            viewport={{ once: true }}
+            className="lg:col-span-2 space-y-6"
           >
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
-            >
-              <div className="bg-gradient-to-br from-blue-600 to-emerald-500 rounded-3xl shadow-xl overflow-hidden text-white">
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-6">
-                    {t('contact.title')}
-                  </h3>
-
-                  <div className="space-y-4">
-                    <a
-                      href="mailto:contact@neocraft.dev?subject=Demande de contact depuis le site"
-                      className="flex items-center space-x-4 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 group"
-                    >
-                      <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Mail className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-sm text-white/80">
-                          Email
-                        </p>
-                        <p className="font-medium">{t('contact.email')}</p>
-                      </div>
-                      <ArrowRight className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all ml-auto" />
-                    </a>
-
-                    <a
-                      href="https://wa.me/41778078806?text=Bonjour%20NeoCraft%2C%20je%20souhaite%20discuter%20d%27un%20projet"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-4 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 group"
-                    >
-                      <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <MessageSquare className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-sm text-white/80">
-                          WhatsApp
-                        </p>
-                        <p className="font-medium">{t('contact.whatsapp')}</p>
-                      </div>
-                      <ArrowRight className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all ml-auto" />
-                    </a>
-
-                    <a
-                      href="tel:+41778078806"
-                      className="flex items-center space-x-4 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 group"
-                    >
-                      <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Phone className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-sm text-white/80">
-                          Téléphone
-                        </p>
-                        <p className="font-medium">{t('contact.phone')}</p>
-                      </div>
-                      <ArrowRight className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all ml-auto" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800">
-                <div className="p-8">
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                    {t('call.title')}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    {t('call.description')}
-                  </p>
-                  <a
-                    href="https://calendly.com/neocraftteam/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white rounded-lg shadow-lg shadow-blue-500/20 dark:shadow-emerald-500/20 px-6 py-3 font-medium transition-all duration-300 group"
-                  >
-                    {t('call.button')}
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <div className="glass-card p-10 rounded-[2.5rem] space-y-10">
+              <h3 className="text-2xl font-bold tracking-tight">{t('contact.title')}</h3>
+              
+              <div className="space-y-8">
+                {[
+                  { icon: Mail, label: "Email", value: t('contact.email'), href: `mailto:${t('contact.email')}` },
+                  { icon: MessageSquare, label: "WhatsApp", value: t('contact.whatsapp'), href: "https://wa.me/41778078806" },
+                  { icon: Phone, label: "Phone", value: t('contact.phone'), href: "tel:+41778078806" }
+                ].map((item, i) => (
+                  <a key={i} href={item.href} className="group flex items-center gap-6">
+                    <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-1">{item.label}</p>
+                      <p className="font-semibold text-lg hover:text-primary transition-colors">{item.value}</p>
+                    </div>
                   </a>
-                </div>
+                ))}
               </div>
-            </motion.div>
+            </div>
+
+            <div className="glass-card p-10 rounded-[2.5rem] bg-primary group hover:bg-primary/95 transition-all duration-500">
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white">
+                  <Calendar className="w-6 h-6" />
+                </div>
+                <h4 className="text-xl font-bold text-white tracking-tight">
+                  {t('call.title')}
+                </h4>
+                <p className="text-white/70 leading-relaxed">
+                  {t('call.description')}
+                </p>
+                <Button 
+                  asChild 
+                  variant="secondary"
+                  className="w-full h-12 rounded-xl font-bold transition-transform active:scale-95 bg-white text-primary hover:bg-white/90"
+                >
+                  <a href="https://calendly.com/neocraftteam/30min" target="_blank" rel="noopener noreferrer">
+                    {t('call.button')}
+                  </a>
+                </Button>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
     </section>
   );
 }
+
