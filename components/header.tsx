@@ -22,6 +22,7 @@ export default function Header() {
 
     const navLinks = [
         { href: "/about", label: t("about") },
+        { href: "/team", label: "Équipe" },
         { href: "/#services", label: t("services") },
         { href: "/#contact", label: t("contact") },
         { href: "/blog", label: "Blog" },
@@ -36,7 +37,7 @@ export default function Header() {
             }`}
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
-                <Link href="/" className="relative z-50 flex items-center gap-3 group">
+                <Link href="/" className="relative z-50 flex items-center group">
                     <motion.div 
                         whileHover={{ rotate: 10, scale: 1.1 }}
                         className="w-10 h-10 relative"
@@ -49,17 +50,6 @@ export default function Header() {
                             className="grayscale contrast-125 brightness-0 dark:brightness-200 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500"
                         />
                     </motion.div>
-                    <div className="flex items-center text-xl font-bold tracking-tighter transition-all duration-500">
-                      <span>Neo</span>
-                      <span className="relative flex items-center">
-                        <span className="text-primary italic">C</span>
-                        <span className="-ml-[0.1em] text-primary italic">r</span>
-                        <svg className="absolute -bottom-1 -left-1.5 w-7 h-4 text-primary/40 pointer-events-none" viewBox="0 0 28 16" fill="none">
-                          <path d="M4,12 C8,2 14,2 20,12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                        </svg>
-                      </span>
-                      <span>aft</span>
-                    </div>
                 </Link>
 
                 {/* Desktop Navigation */}

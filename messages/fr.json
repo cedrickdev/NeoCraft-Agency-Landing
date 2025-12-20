@@ -382,6 +382,27 @@
   "chat": {
     "welcomeMessage": "Bonjour. Je suis NeoBot, votre assistant virtuel. Comment puis-je vous aider ?",
     "placeholder": "Saisissez votre message..."
+  },
+  "Team": {
+    "badge": "L'équipe",
+    "title": "Les artisans du digital",
+    "description": "Une équipe passionnée combinant expertise technique et vision créative pour donner vie à vos projets.",
+    "marc": {
+      "role": "Lead Developer",
+      "bio": "Expert en architecture logicielle et passionné par les technologies émergentes."
+    },
+    "sophie": {
+      "role": "Directrice Créative",
+      "bio": "Spécialiste en design UI/UX, elle transforme chaque idée en une expérience visuelle unique."
+    },
+    "thomas": {
+      "role": "UI/UX Designer",
+      "bio": "Détails et précision sont ses maîtres-mots pour créer des interfaces intuitives."
+    },
+    "lucas": {
+      "role": "Product Manager",
+      "bio": "Il assure le lien parfait entre vos besoins métier et la réalisation technique."
+    }
   }
 }
 

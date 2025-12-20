@@ -2,9 +2,9 @@
 // components/LocaleSwitcher.tsx
 'use client';
 
+import { locales } from '@/i18n';
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
-import { locales } from '@/i18n';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -25,10 +25,10 @@ export default function LanguageSwitcher() {
           <span
               key={l}
               onClick={() => handleChange(l)}
-              className={`cursor-pointer select-none  ${
+              className={`cursor-pointer select-none transition-colors duration-300 ${
                   locale === l
-                      ? "bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent hover:from-blue-700 hover:to-emerald-600 font-bold"
-                      : "text-black dark:text-gray-200"
+                      ? "text-primary font-black"
+                      : "text-muted-foreground/40 hover:text-muted-foreground"
               }`}
           >
   {l.toUpperCase()}

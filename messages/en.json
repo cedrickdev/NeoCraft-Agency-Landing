@@ -381,5 +381,26 @@
   "chat": {
     "welcomeMessage": "Hello. I am NeoBot, your virtual assistant. How can I help you?",
     "placeholder": "Enter your message..."
+  },
+  "Team": {
+    "badge": "The Team",
+    "title": "Digital Craftsmen",
+    "description": "A passionate team combining technical expertise and creative vision to bring your projects to life.",
+    "marc": {
+      "role": "Lead Developer",
+      "bio": "Expert in software architecture and passionate about emerging technologies."
+    },
+    "sophie": {
+      "role": "Creative Director",
+      "bio": "UI/UX design specialist, she transforms every idea into a unique visual experience."
+    },
+    "thomas": {
+      "role": "UI/UX Designer",
+      "bio": "Detail and precision are his watchwords for creating intuitive interfaces."
+    },
+    "lucas": {
+      "role": "Product Manager",
+      "bio": "He ensures the perfect link between your business needs and technical implementation."
+    }
   }
 }

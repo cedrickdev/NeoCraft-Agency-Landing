@@ -1,9 +1,9 @@
 // middleware.ts
-import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { locales, defaultLocale } from './i18n';
+import { NextResponse } from 'next/server';
+import { defaultLocale, locales } from './i18n';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
     
     // Ignorer les assets et les API

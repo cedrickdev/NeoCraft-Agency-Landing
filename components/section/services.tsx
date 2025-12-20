@@ -84,7 +84,7 @@ export default function Services() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {services.map((service, index) => (
@@ -93,27 +93,27 @@ export default function Services() {
               variants={itemVariants}
               className="group relative h-full"
             >
-              <div className="h-full glass-card p-10 rounded-3xl transition-all duration-500 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 group-hover:-translate-y-2">
-                <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
+              <div className="h-full glass-card p-10 rounded-3xl transition-all duration-500 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 group-hover:-translate-y-2 relative overflow-hidden">
+                {/* Individual Card Background Glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/[0.02] blur-3xl group-hover:bg-primary/[0.05] transition-colors duration-500 rounded-full" />
+                
+                <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 group-hover:rotate-12 relative z-10">
                   <service.icon className="w-6 h-6" />
                 </div>
                 
-                <h3 className="text-xl font-bold mb-4 tracking-tight">
+                <h3 className="text-xl font-bold mb-4 tracking-tight relative z-10">
                   {service.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed mb-8">
+                <p className="text-muted-foreground leading-relaxed mb-8 relative z-10">
                   {service.description}
                 </p>
 
-                <div className="flex items-center gap-2 text-sm font-semibold text-primary/80 group-hover:text-primary transition-colors cursor-pointer mt-auto">
+                <div className="flex items-center gap-2 text-sm font-semibold text-primary/80 group-hover:text-primary transition-colors cursor-pointer mt-auto relative z-10">
                   <span>{t('learnMore')}</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
-              
-              {/* Subtle hover background effect */}
-              <div className="absolute inset-0 -z-10 bg-primary/5 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500" />
             </motion.div>
           ))}
         </motion.div>

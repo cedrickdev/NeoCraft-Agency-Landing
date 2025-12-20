@@ -312,21 +312,21 @@ export default function ProgressiveContactForm() {
               </div>
             </div>
 
-            <div className="glass-card p-10 rounded-[3rem] bg-primary group hover:bg-primary/95 transition-all duration-500">
+            <div className="glass-card p-10 rounded-[3rem] bg-card border-primary/5 group hover:border-primary/20 transition-all duration-500">
               <div className="space-y-6">
-                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white">
+                <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
                   <Calendar className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold text-white tracking-tight">
+                <h4 className="text-xl font-bold tracking-tight">
                   {t('call.title')}
                 </h4>
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {t('call.description')}
                 </p>
                 <Button 
                   asChild 
-                  variant="secondary"
-                  className="w-full h-12 rounded-xl font-bold transition-transform active:scale-95 bg-white text-primary hover:bg-white/90"
+                  size="lg"
+                  className="w-full h-14 rounded-2xl font-bold transition-all active:scale-95 shadow-lg shadow-primary/10"
                 >
                   <a href="https://calendly.com/neocraftteam/30min" target="_blank" rel="noopener noreferrer">
                     {t('call.button')}

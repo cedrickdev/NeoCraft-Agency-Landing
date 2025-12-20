@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-4 gap-16 mb-20">
           <div className="md:col-span-2 space-y-8">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <Image
                 src="/logo/logo.png"
                 alt="NeoCraft"
@@ -29,17 +29,6 @@ export default function Footer() {
                 height={40}
                 className="grayscale opacity-50 transition-all hover:opacity-100"
               />
-              <div className="text-xl font-bold tracking-tighter flex items-center">
-                <span>Neo</span>
-                <span className="relative flex items-center">
-                  <span className="text-primary italic">C</span>
-                  <span className="-ml-[0.1em] text-primary italic">r</span>
-                  <svg className="absolute -bottom-1 -left-1 w-6 h-3 text-primary/40 pointer-events-none" viewBox="0 0 24 12" fill="none">
-                    <path d="M3,9 C6,1 12,1 18,9" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                  </svg>
-                </span>
-                <span>aft</span>
-              </div>
             </div>
             
             <p className="text-muted-foreground max-w-sm leading-relaxed">
