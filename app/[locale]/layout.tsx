@@ -3,6 +3,7 @@ import Header from "@/components/header";
 import HreflangTags from "@/components/HreflangTags";
 import { ThemeProvider } from "@/components/providers";
 import Footer from "@/components/section/footer";
+import { Toaster } from "@/components/ui/sonner";
 import type { Locale } from "@/i18n";
 import { locales } from "@/i18n";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -326,6 +327,7 @@ export default async function LocaleLayout({children, params}: Props) {
         </ThemeProvider>
         <SpeedInsights/>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!}/>
+        <Toaster position="top-center" richColors />
         <Analytics/>
         </body>
         </html>

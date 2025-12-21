@@ -1,4 +1,9 @@
 {
+  "Blog": {
+    "copyLink": "Copier le lien",
+    "linkCopied": "Lien copié dans le presse-papier !",
+    "backToHome": "Retour à l'accueil"
+  },
   "Seo": {
     "title": "NeoCraft - Agence Digitale : Web, Mobile, Design, SEO",
     "description": "Nous transformons vos idées en solutions digitales : web, mobile, design, SEO, formations. Expertise internationale, résultats garantis.",
@@ -20,6 +25,7 @@
     "services": "Services",
     "contact": "Contact",
     "realisations": "Réalisations",
+    "tools": "Outils",
     "cta": "Démarrer un projet"
   },
   "Hero": {
@@ -291,6 +297,22 @@
     "testimonial5": {
       "designation": "Responsable marketing chez CloudScale",
       "quote": "La mise en œuvre s'est déroulée sans heurts et les résultats ont dépassé nos attentes. La flexibilité de la plateforme est remarquable."
+    },
+    "testimonial6": {
+      "designation": "Fondateur de GreenTech",
+      "quote": "Un accompagnement humain et technique exceptionnel. NeoCraft a su écouter nos contraintes écologiques pour proposer une solution web sobre et performante."
+    },
+    "testimonial7": {
+      "designation": "CTO de FinNode",
+      "quote": "La sécurité était notre priorité absolue. L'expertise de NeoCraft en architecture backend sécurisée nous a permis de lancer notre plateforme en toute sérénité."
+    },
+    "testimonial8": {
+      "designation": "Directrice artistique chez CreativDesign",
+      "quote": "Travailler avec des développeurs qui comprennent les enjeux de l'UI/UX est un luxe. Le code de NeoCraft respecte chaque pixel de nos designs."
+    },
+    "testimonial9": {
+      "designation": "CEO de EduNext",
+      "quote": "L'agilité de l'équipe a été cruciale pour notre lancement. Ils ont su pivoter avec nous sans jamais sacrifier la qualité du code."
     }
   },
   "progressiveContactForm": {
@@ -449,6 +471,23 @@
     "title": "Nos Réalisations",
     "description": "Découvrez comment nous transformons les idées complexes en expériences numériques d'exception.",
     "viewProject": "Voir le projet"
+  },
+  "Outils": {
+    "badge": "Stack Technique",
+    "title": "Nos Outils de Précision",
+    "description": "Nous utilisons les technologies les plus avancées pour garantir la performance, la sécurité et la scalabilité de vos projets.",
+    "frontend": {
+      "title": "Frontend & Design",
+      "description": "Des interfaces fluides avec React, Next.js et Tailwind CSS pour une expérience utilisateur d'exception."
+    },
+    "backend": {
+      "title": "Backend & Cloud",
+      "description": "Une infrastructure robuste avec Node.js, PostgreSQL et Vercel pour une stabilité à toute épreuve."
+    },
+    "ai": {
+      "title": "Intelligence Artificielle",
+      "description": "Intégration d'outils d'IA comme OpenAI et Claude pour automatiser et optimiser vos workflows."
+    }
   }
 }
 

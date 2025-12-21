@@ -35,10 +35,18 @@ export default async function Page(
   const searchParams = await props.searchParams;
   const page = searchParams?.page ? parseInt(searchParams.page) : 1;
   const result = await wisp.getPosts({
-    limit: 24,
+    limit: 50, // Fetch more to account for filtered posts
     query: searchParams?.query,
     page,
   });
+
+  // Filtrer les articles qui sont des réalisations
+  const filteredPosts = result.posts.filter(post => 
+    !post.tags.some(tag => {
+      const name = tag.name.toLowerCase();
+      return name === "realisation" || name === "projet";
+    })
+  );
 
   return (
 
@@ -53,7 +61,7 @@ export default async function Page(
         </div>
         <FullWidthHeader title={title} />
         <FilterBar active="latest" className="my-8" categories={categories} />
-        <BlogPostList posts={result.posts} />
+        <BlogPostList posts={filteredPosts} />
         <PostPagination
           pagination={result.pagination}
           className="my-16"

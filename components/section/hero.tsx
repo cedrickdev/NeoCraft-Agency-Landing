@@ -1,15 +1,18 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Particles } from "@/components/ui/particles";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useRef } from "react";
 
 export default function Hero() {
   const t = useTranslations('Hero');
   const containerRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
   
   const { scrollY } = useScroll();
   const yText = useTransform(scrollY, [0, 500], [0, 100]);
@@ -21,6 +24,14 @@ export default function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20 px-4 bg-background"
     >
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={200}
+        staticity={60}
+        ease={50}
+        color={theme === "dark" ? "#ffffff" : "#000000"}
+        refresh
+      />
       {/* Blueprint Grid Background */}
       <div className="absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.07]" 
            style={{ backgroundImage: 'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)', backgroundSize: '60px 60px' }} />

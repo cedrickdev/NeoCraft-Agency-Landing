@@ -1,12 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Particles } from "@/components/ui/particles";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 
 export default function CTA() {
     const t = useTranslations('cta');
+    const { theme } = useTheme();
     
     const stats = [
         { value: "3", label: t('stats.years') },
@@ -26,6 +29,14 @@ export default function CTA() {
                     className="max-w-5xl mx-auto"
                 >
                     <div className="glass-card p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden group">
+                        <Particles
+                            className="absolute inset-0 z-0"
+                            quantity={100}
+                            staticity={50}
+                            ease={50}
+                            color={theme === "dark" ? "#ffffff" : "#000000"}
+                            refresh
+                        />
                         {/* Decorative background blur */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl aspect-square bg-primary/5 blur-[120px] rounded-full group-hover:bg-primary/10 transition-colors duration-700" />
                         
