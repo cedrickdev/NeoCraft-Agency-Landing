@@ -148,7 +148,7 @@ export default function ProgressiveContactForm() {
                   className="h-full bg-primary"
                   initial={{ width: 0 }}
                   animate={{ width: `${getProgressPercentage()}%` }}
-                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
                 />
               </div>
 
@@ -180,7 +180,7 @@ export default function ProgressiveContactForm() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
                       className="flex flex-col h-full"
                     >
                       <div className="mb-12">

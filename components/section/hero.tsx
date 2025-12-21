@@ -60,7 +60,7 @@ export default function Hero() {
             style={{ y: yText }}
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
             className="lg:col-span-7 text-left"
           >
             <div className="inline-flex items-center gap-2 mb-8 bg-primary/5 border border-primary/10 px-4 py-1.5 rounded-full backdrop-blur-md">
@@ -129,7 +129,7 @@ export default function Hero() {
             <motion.div 
               initial={{ opacity: 0, rotateY: 20, rotateX: 10 }}
               animate={{ opacity: 1, rotateY: 0, rotateX: 0 }}
-              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as const }}
               className="relative w-full aspect-[4/5] flex items-center justify-center"
             >
               {/* Floating UI Elements */}

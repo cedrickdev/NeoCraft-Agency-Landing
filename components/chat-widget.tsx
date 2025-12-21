@@ -53,7 +53,7 @@ export function ChatWidget() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
             className="fixed bottom-28 right-8 z-50 w-[400px] max-w-[calc(100vw-4rem)]"
           >
             <div className="glass-card rounded-[2rem] overflow-hidden shadow-2xl border-primary/10">

@@ -1,8 +1,8 @@
 "use client";
+import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { FullWidthHeader } from "./FullWidthHeader";
 import { Button } from "./ui/button";
-import { cn } from "@/lib/utils";
 
 enum Color {
   slate = "slate",
@@ -191,7 +191,6 @@ export const ThemeSelection = () => {
     <>
       <FullWidthHeader
         title="Theme selector"
-        description="Select a theme for the blog"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Theme Selector", href: "/theme" },

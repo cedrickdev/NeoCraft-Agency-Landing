@@ -52,7 +52,7 @@ export default function Methodology() {
       opacity: 1,
       x: 0,
       scale: 1,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
 
