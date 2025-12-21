@@ -19,7 +19,8 @@
     "about": "À propos",
     "services": "Services",
     "contact": "Contact",
-    "cta": "J'ai un projet"
+    "realisations": "Réalisations",
+    "cta": "Démarrer un projet"
   },
   "Hero": {
     "badge": "L'innovation web pour un succès numérique",
@@ -442,6 +443,12 @@
       "portability": "Portabilité",
       "how": "Contactez-nous à privacy@neocraft.dev pour exercer vos droits."
     }
+  },
+  "Realisations": {
+    "badge": "Portfolio",
+    "title": "Nos Réalisations",
+    "description": "Découvrez comment nous transformons les idées complexes en expériences numériques d'exception.",
+    "viewProject": "Voir le projet"
   }
 }
 
