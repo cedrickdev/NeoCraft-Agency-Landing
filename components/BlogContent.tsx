@@ -1,20 +1,21 @@
 "use client";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from "@/components/ui/accordion";
+import { formatFullDate } from "@/lib/date";
 import { Author, GetRelatedPostsResult, TagInPost } from "@wisp-cms/client";
-import Image from "next/image";
+import { ContentWithCustomComponents } from "@wisp-cms/react-custom-component";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { CommentSection } from "./CommentSection";
 import { FullWidthHeader } from "./FullWidthHeader";
 import { RelatedPosts } from "./RelatedPosts";
 import { processTableOfContents, TableOfContents } from "./TOC";
-import { ContentWithCustomComponents } from "@wisp-cms/react-custom-component";
+import { Button } from "./ui/button";
 import { FAQ } from "./WispComponents/FAQ";
-import { formatFullDate } from "@/lib/date";
-import { CommentSection } from "./CommentSection";
 
 export const BlogContent = ({
   post: { title, content, author, publishedAt, tags, slug },
@@ -47,6 +48,14 @@ export const BlogContent = ({
   });
   return (
     <>
+      <div className="container mx-auto px-4 max-w-6xl pt-32">
+        <Button variant="ghost" asChild className="group text-muted-foreground hover:text-primary transition-colors">
+          <Link href="/" className="flex items-center gap-2">
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            <span>Back to Home</span>
+          </Link>
+        </Button>
+      </div>
       <FullWidthHeader
         title={title}
         breadcrumb={[

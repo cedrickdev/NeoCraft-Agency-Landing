@@ -1,3 +1,4 @@
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import Header from "@/components/header";
 import HreflangTags from "@/components/HreflangTags";
 import { ThemeProvider } from "@/components/providers";
@@ -295,10 +296,11 @@ export default async function LocaleLayout({children, params}: Props) {
             />
             {/* Meta Pixel, LinkedIn, Clarity scripts can be added here similarly */}
         </head>
-        <body className={`${inter.variable} font-sans antialiased selection:bg-primary/10 selection:text-primary`}>
+        <body className={`${inter.variable} font-sans antialiased selection:bg-primary selection:text-white`}>
         <ThemeProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
-                <div className="relative min-h-screen bg-background selection:bg-primary/10 selection:text-primary overflow-x-hidden">
+                <BreadcrumbJsonLd />
+                <div className="relative min-h-screen bg-background selection:bg-primary selection:text-white overflow-x-hidden">
                     
                     {/* Multi-layered background */}
                     <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">

@@ -200,6 +200,7 @@ export default function ProgressiveContactForm() {
                           <Input
                             ref={inputRef as any}
                             placeholder={t('formStepPlaceholder.name')}
+                            aria-label={t('formStepPlaceholder.name')}
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             onKeyPress={handleKeyPress}
@@ -212,6 +213,7 @@ export default function ProgressiveContactForm() {
                             ref={inputRef as any}
                             type="email"
                             placeholder={t('formStepPlaceholder.email')}
+                            aria-label={t('formStepPlaceholder.email')}
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             onKeyPress={handleKeyPress}
@@ -223,6 +225,7 @@ export default function ProgressiveContactForm() {
                           <Input
                             ref={inputRef as any}
                             placeholder={t('formStepPlaceholder.subject')}
+                            aria-label={t('formStepPlaceholder.subject')}
                             value={formData.subject}
                             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                             onKeyPress={handleKeyPress}
@@ -234,6 +237,7 @@ export default function ProgressiveContactForm() {
                           <Textarea
                             ref={inputRef as any}
                             placeholder={t('formStepPlaceholder.message')}
+                            aria-label={t('formStepPlaceholder.message')}
                             value={formData.message}
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             onKeyPress={handleKeyPress}

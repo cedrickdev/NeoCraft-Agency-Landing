@@ -47,6 +47,7 @@ export default function Header() {
                             width={40}
                             height={40}
                             alt="NeoCraft"
+                            priority
                             className="grayscale contrast-125 brightness-0 dark:brightness-200 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500"
                         />
                     </motion.div>
