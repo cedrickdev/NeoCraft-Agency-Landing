@@ -14,9 +14,11 @@ const nextConfig = {
         ],
     },
     experimental: {
-        allowedDevOrigins: ['localhost', '127.0.0.1'],
+        turbopack: {
+            root: process.cwd(),
+        },
     },
-    // Ajoutez cette configuration pour les redirections
+    // Redirections
     async redirects() {
         return [
             {

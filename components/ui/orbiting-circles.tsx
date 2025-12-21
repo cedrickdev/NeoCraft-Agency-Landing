@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import React from "react";
 
 export interface OrbitingCirclesProps {
   className?: string
@@ -12,7 +13,7 @@ export interface OrbitingCirclesProps {
   path?: boolean
 }
 
-export function OrbitingCircles({
+export const OrbitingCircles = React.memo(function OrbitingCircles({
   className,
   children,
   reverse,
@@ -57,4 +58,4 @@ export function OrbitingCircles({
       </div>
     </>
   )
-}
+});
