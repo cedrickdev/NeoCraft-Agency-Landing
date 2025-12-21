@@ -403,6 +403,45 @@
       "role": "Product Manager",
       "bio": "Il assure le lien parfait entre vos besoins métier et la réalisation technique."
     }
+  },
+  "Privacy": {
+    "badge": "Confidentialité",
+    "title": "Politique de Confidentialité",
+    "description": "Nous nous engageons à protéger votre vie privée et vos données personnelles avec la plus grande transparence.",
+    "lastUpdated": "Dernière mise à jour : 21 Décembre 2025",
+    "introduction": {
+      "title": "Introduction",
+      "content": "La présente Politique de Confidentialité décrit la façon dont NeoCraft collecte, utilise et protège vos informations lorsque vous utilisez notre site web et nos services. En utilisant nos services, vous acceptez les pratiques décrites dans cette politique."
+    },
+    "dataCollection": {
+      "title": "Données collectées",
+      "content": "Lorsque vous visitez le Site, nous collectons automatiquement certaines informations sur votre appareil, notamment des informations sur votre navigateur Web, votre adresse IP, votre fuseau horaire et certains des cookies installés.",
+      "cookies": "Cookies et traceurs",
+      "logs": "Fichiers journaux",
+      "info": "Informations de commande"
+    },
+    "usage": {
+      "title": "Utilisation des données",
+      "services": "Services principaux",
+      "improvement": "Amélioration des services",
+      "marketing": "Marketing",
+      "legal": "Obligations légales"
+    },
+    "protection": {
+      "title": "Protection & Partage",
+      "noSale": "Engagement de non-vente",
+      "noSaleContent": "NeoCraft ne vend, ne loue, ni n'échange jamais vos informations personnelles avec des tiers à des fins commerciales.",
+      "security": "Mesures de sécurité technique et organisationnelle"
+    },
+    "rights": {
+      "title": "Vos droits (RGPD)",
+      "content": "Conformément au RGPD, vous disposez d'un contrôle total sur vos données :",
+      "access": "Droit d'accès",
+      "rectification": "Droit de rectification",
+      "erasure": "Droit à l'effacement",
+      "portability": "Portabilité",
+      "how": "Contactez-nous à privacy@neocraft.dev pour exercer vos droits."
+    }
   }
 }
 

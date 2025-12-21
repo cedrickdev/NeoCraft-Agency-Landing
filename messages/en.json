@@ -402,5 +402,44 @@
       "role": "Product Manager",
       "bio": "He ensures the perfect link between your business needs and technical implementation."
     }
+  },
+  "Privacy": {
+    "badge": "Privacy",
+    "title": "Privacy Policy",
+    "description": "We are committed to protecting your privacy and your personal data with the utmost transparency.",
+    "lastUpdated": "Last updated: December 21, 2025",
+    "introduction": {
+      "title": "Introduction",
+      "content": "This Privacy Policy describes how NeoCraft collects, uses, and protects your information when you use our website and services. By using our services, you agree to the practices described in this policy."
+    },
+    "dataCollection": {
+      "title": "Data Collection",
+      "content": "When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies installed.",
+      "cookies": "Cookies and Trackers",
+      "logs": "Log Files",
+      "info": "Order Information"
+    },
+    "usage": {
+      "title": "Data Usage",
+      "services": "Core Services",
+      "improvement": "Service Improvement",
+      "marketing": "Marketing",
+      "legal": "Legal Obligations"
+    },
+    "protection": {
+      "title": "Protection & Sharing",
+      "noSale": "Non-Sale Commitment",
+      "noSaleContent": "NeoCraft never sells, rents, or exchanges your personal information with third parties for commercial purposes.",
+      "security": "Technical and Organizational Security Measures"
+    },
+    "rights": {
+      "title": "Your Rights (GDPR)",
+      "content": "In accordance with GDPR, you have full control over your data:",
+      "access": "Right of Access",
+      "rectification": "Right of Rectification",
+      "erasure": "Right to Erasure",
+      "portability": "Portability",
+      "how": "Contact us at privacy@neocraft.dev to exercise your rights."
+    }
   }
 }
