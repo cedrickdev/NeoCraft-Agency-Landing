@@ -5,13 +5,14 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
     const t = useTranslations('Header');
+    const locale = useLocale();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const { scrollY } = useScroll();
@@ -22,9 +23,10 @@ export default function Header() {
 
     const navLinks = [
         { href: "/about", label: t("about") },
+        { href: "/realisations", label: t("realisations") },
         { href: "/team", label: "Équipe" },
-        { href: "/#services", label: t("services") },
-        { href: "/#contact", label: t("contact") },
+        { href: `/${locale}#services`, label: t("services") },
+        { href: `/${locale}#contact`, label: t("contact") },
         { href: "/blog", label: "Blog" },
     ];
 
@@ -73,11 +75,6 @@ export default function Header() {
                     </div>
 
                     <div className="hidden md:flex items-center gap-2">
-                        <Link href="/about">
-                            <Button variant="outline" size="sm" className="h-10 px-6 rounded-full font-bold transition-all hover:bg-primary/5 active:scale-95">
-                                {t("about")}
-                            </Button>
-                        </Link>
                         <Button
                             size="sm"
                             className="h-10 px-6 rounded-full font-bold group transition-all active:scale-95 shadow-lg shadow-primary/10"
@@ -86,7 +83,7 @@ export default function Header() {
                                 if (contactSection) {
                                     contactSection.scrollIntoView({ behavior: "smooth" });
                                 } else {
-                                    window.location.href = "/#contact";
+                                    window.location.href = `/${locale}#contact`;
                                 }
                             }}
                         >
