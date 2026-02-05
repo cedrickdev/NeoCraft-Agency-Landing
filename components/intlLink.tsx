@@ -1,5 +1,5 @@
 // components/IntlLink.tsx
-// @ts-ignore
+// @ts-expect-error - next-intl Link types may not match exactly
 import { Link } from 'next-intl';
 import { ComponentProps } from 'react';
 

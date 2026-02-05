@@ -6,7 +6,6 @@ import Methodology from "@/components/section/methodology";
 import ProgressiveContactForm from "@/components/section/progressive-contact-form";
 import Services from "@/components/section/services";
 import { Testimonial } from "@/components/section/testimonial";
-import TrustBadges from "@/components/section/trust-badges";
 import { setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 import { ChatWidgetWrapper } from "./chat-widget-wrapper";

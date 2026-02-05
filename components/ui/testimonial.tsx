@@ -104,6 +104,7 @@ const TestimonialCarousel = React.forwardRef<
                     </div>
                   )}
 
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
@@ -117,7 +118,7 @@ const TestimonialCarousel = React.forwardRef<
                       Client Verifié
                     </p>
                     <p className="text-center text-sm text-muted-foreground leading-relaxed line-clamp-3 italic">
-                      "{testimonial.description}"
+                      &quot;{testimonial.description}&quot;
                     </p>
                   </div>
                 </div>

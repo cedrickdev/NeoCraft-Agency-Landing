@@ -47,9 +47,10 @@ export const TestimonialsColumn = (props: TestimonialsColumnProps) => {
               >
                 <blockquote className="m-0 p-0">
                   <p className="text-muted-foreground leading-relaxed font-medium m-0 text-sm italic">
-                    "{text}"
+                    &quot;{text}&quot;
                   </p>
                   <footer className="flex items-center gap-3 mt-6">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       width={44}
                       height={44}

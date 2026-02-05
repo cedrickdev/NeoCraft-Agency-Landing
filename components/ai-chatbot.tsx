@@ -72,7 +72,7 @@ export function AIChatbot() {
                 role: "assistant",
             };
             setMessages((prev) => [...prev, aiResponse]);
-        } catch (error) {
+        } catch {
             setMessages((prev) => [
                 ...prev,
                 {

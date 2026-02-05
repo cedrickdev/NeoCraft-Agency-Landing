@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, CheckCircle, Clock, Globe, HeadphonesIcon, Shield, Star, Users, Zap } from 'lucide-react';
+import { Award, CheckCircle, Clock, HeadphonesIcon, Shield } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 // Client logos - Replace with actual client logos

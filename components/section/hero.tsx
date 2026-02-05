@@ -52,7 +52,7 @@ export default function Hero() {
 }
 
 // Skeleton for SSR fallback (rarely seen, but good practice)
-function HeroContentSkeleton() {
+function _HeroContentSkeleton() {
   return (
     <div className="lg:col-span-7 text-left animate-pulse">
       <div className="h-6 w-32 bg-primary/10 rounded-full mb-8" />

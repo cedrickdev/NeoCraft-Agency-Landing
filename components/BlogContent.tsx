@@ -20,7 +20,7 @@ import { Button } from "./ui/button";
 import { FAQ } from "./WispComponents/FAQ";
 
 export const BlogContent = ({
-  post: { title, content, author, publishedAt, tags, slug },
+  post: { title, content, author: _author, publishedAt, tags, slug },
   relatedPosts,
 }: {
   post: {

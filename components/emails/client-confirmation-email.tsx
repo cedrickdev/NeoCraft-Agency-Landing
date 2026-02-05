@@ -21,7 +21,7 @@ const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://neocraft.dev";
 
 export default function ClientConfirmationEmail({
   clientName = "Client",
-  clientEmail = "client@example.com",
+  clientEmail: _clientEmail = "client@example.com",
   subject = "Votre projet digital",
 }: ClientConfirmationEmailProps) {
   return (
@@ -40,7 +40,7 @@ export default function ClientConfirmationEmail({
             <Heading style={h1}>Bonjour {clientName},</Heading>
 
             <Text style={text}>
-               Merci de nous avoir contactés au sujet de "<strong>{subject}</strong>".
+               Merci de nous avoir contactés au sujet de &quot;<strong>{subject}</strong>&quot;.
             </Text>
 
             <Text style={text}>
@@ -68,7 +68,7 @@ export default function ClientConfirmationEmail({
           {/* Footer */}
           <Section style={footer}>
             <Text style={footerText}>
-              <strong>NeoCraft</strong> — L'excellence digitale, au service de vos ambitions.
+              <strong>NeoCraft</strong> — L&apos;excellence digitale, au service de vos ambitions.
             </Text>
             <Hr style={hr} />
             <Text style={footerLinks}>
