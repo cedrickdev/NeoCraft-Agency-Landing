@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { getCalApi } from "@calcom/embed-react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
@@ -16,6 +17,8 @@ import {
 import { useTranslations } from "next-intl";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
+
+const CAL_LINK = "neocraftdev/30min";
 
 interface FormData {
   name: string;
@@ -48,6 +51,14 @@ export default function ProgressiveContactForm() {
     }
   }, [currentStep, hasInteracted]);
 
+  // Initialize Cal.com embed
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("init");
+    })();
+  }, []);
+
   const handleNext = () => {
     const steps: FormStep[] = ["name", "email", "subject", "message", "complete"];
     const currentIndex = steps.indexOf(currentStep);
@@ -79,7 +90,7 @@ export default function ProgressiveContactForm() {
       } else {
         setFormStatus("error");
       }
-    } catch (error) {
+    } catch {
       setFormStatus("error");
     }
   };
@@ -205,7 +216,7 @@ export default function ProgressiveContactForm() {
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             onKeyPress={handleKeyPress}
                             onFocus={() => setHasInteracted(true)}
-                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-none px-0 focus-visible:ring-0 placeholder:opacity-20 font-medium"
+                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-0 border-none px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:outline-none shadow-none rounded-none placeholder:opacity-20 font-medium"
                           />
                         )}
                         {currentStep === "email" && (
@@ -218,7 +229,7 @@ export default function ProgressiveContactForm() {
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             onKeyPress={handleKeyPress}
                             onFocus={() => setHasInteracted(true)}
-                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-none px-0 focus-visible:ring-0 placeholder:opacity-20 font-medium"
+                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-0 border-none px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:outline-none shadow-none rounded-none placeholder:opacity-20 font-medium"
                           />
                         )}
                         {currentStep === "subject" && (
@@ -230,7 +241,7 @@ export default function ProgressiveContactForm() {
                             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                             onKeyPress={handleKeyPress}
                             onFocus={() => setHasInteracted(true)}
-                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-none px-0 focus-visible:ring-0 placeholder:opacity-20 font-medium"
+                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-0 border-none px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:outline-none shadow-none rounded-none placeholder:opacity-20 font-medium"
                           />
                         )}
                         {currentStep === "message" && (
@@ -242,7 +253,7 @@ export default function ProgressiveContactForm() {
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             onKeyPress={handleKeyPress}
                             onFocus={() => setHasInteracted(true)}
-                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-none px-0 focus-visible:ring-0 placeholder:opacity-20 font-medium resize-none min-h-[150px]"
+                            className="text-2xl md:text-3xl h-auto py-4 bg-transparent border-0 border-none px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:outline-none shadow-none rounded-none placeholder:opacity-20 font-medium resize-none min-h-[150px]"
                           />
                         )}
                       </div>
@@ -304,9 +315,7 @@ export default function ProgressiveContactForm() {
                   { icon: Phone, label: "Phone", value: t('contact.phone'), href: "tel:+41778078806" }
                 ].map((item, i) => (
                   <a key={i} href={item.href} className="group flex items-center gap-6">
-                    <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                      <item.icon className="w-5 h-5" />
-                    </div>
+                    <item.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-all duration-300" />
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-1">{item.label}</p>
                       <p className="font-semibold text-lg hover:text-primary transition-colors">{item.value}</p>
@@ -318,9 +327,7 @@ export default function ProgressiveContactForm() {
 
             <div className="glass-card p-10 rounded-[3rem] bg-card border-primary/5 group hover:border-primary/20 transition-all duration-500">
               <div className="space-y-6">
-                <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
-                  <Calendar className="w-6 h-6" />
-                </div>
+                <Calendar className="w-7 h-7 text-muted-foreground group-hover:text-primary transition-all duration-500" />
                 <h4 className="text-xl font-bold tracking-tight">
                   {t('call.title')}
                 </h4>
@@ -328,13 +335,11 @@ export default function ProgressiveContactForm() {
                   {t('call.description')}
                 </p>
                 <Button 
-                  asChild 
+                  data-cal-link={CAL_LINK}
                   size="lg"
-                  className="w-full h-14 rounded-2xl font-bold transition-all active:scale-95 shadow-lg shadow-primary/10"
+                  className="w-full h-14 rounded-2xl font-bold transition-all active:scale-95 shadow-lg shadow-primary/10 cursor-pointer"
                 >
-                  <a href="https://calendly.com/neocraftteam/30min" target="_blank" rel="noopener noreferrer">
-                    {t('call.button')}
-                  </a>
+                  {t('call.button')}
                 </Button>
               </div>
             </div>

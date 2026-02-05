@@ -13,8 +13,8 @@ interface BookingButtonProps {
   className?: string;
 }
 
-// Replace with your Cal.com username/event
-const DEFAULT_CAL_LINK = 'neocraft/discovery-call';
+// Cal.com booking link
+const DEFAULT_CAL_LINK = 'neocraftdev/30min';
 
 export default function BookingButton({
   calLink = DEFAULT_CAL_LINK,

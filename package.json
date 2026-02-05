@@ -22,7 +22,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint app components lib hooks --ext .ts,.tsx",
     "postbuild": "next-sitemap",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -32,6 +32,7 @@
     "test:e2e:report": "playwright show-report"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.9.1",
     "@next/third-parties": "^15.4.1",
