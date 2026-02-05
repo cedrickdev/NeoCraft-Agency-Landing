@@ -1,4 +1,6 @@
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import CookieConsent from "@/components/CookieConsent";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import Header from "@/components/header";
 import HreflangTags from "@/components/HreflangTags";
 import { ThemeProvider } from "@/components/providers";
@@ -11,6 +13,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import Script from "next/script";
@@ -182,6 +185,9 @@ export default async function LocaleLayout({children, params}: Props) {
         notFound();
     }
 
+    // Enable static rendering and set the locale for all nested Server Components
+    setRequestLocale(locale);
+
     let messages;
     try {
         messages = (await import(`../../messages/${locale}.json`)).default;
@@ -292,7 +298,22 @@ export default async function LocaleLayout({children, params}: Props) {
                 src="https://plausible.io/js/script.pageview-props.tagged-events.js"
                 strategy="afterInteractive"
             />
-            {/* Meta Pixel, LinkedIn, Clarity scripts can be added here similarly */}
+            {/* Microsoft Clarity - Free Heatmaps & Session Recordings */}
+            {process.env.NEXT_PUBLIC_CLARITY_ID && (
+                <Script
+                    id="microsoft-clarity"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function(c,l,a,r,i,t,y){
+                                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_ID}");
+                        `,
+                    }}
+                />
+            )}
         </head>
         <body className={`${inter.variable} font-sans antialiased selection:bg-primary selection:text-white`}>
         <ThemeProvider>
@@ -322,6 +343,8 @@ export default async function LocaleLayout({children, params}: Props) {
                         </Suspense>
                     </div>
                 </div>
+                <CookieConsent />
+                <WhatsAppButton />
             </NextIntlClientProvider>
         </ThemeProvider>
         
