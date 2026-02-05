@@ -1,6 +1,5 @@
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import CookieConsent from "@/components/CookieConsent";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import Header from "@/components/header";
 import HreflangTags from "@/components/HreflangTags";
 import { ThemeProvider } from "@/components/providers";
@@ -344,7 +343,6 @@ export default async function LocaleLayout({children, params}: Props) {
                     </div>
                 </div>
                 <CookieConsent />
-                <WhatsAppButton />
             </NextIntlClientProvider>
         </ThemeProvider>
         
