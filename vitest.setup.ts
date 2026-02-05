@@ -34,21 +34,31 @@ vi.mock('next-themes', () => ({
   }),
 }));
 
-// Mock framer-motion
-vi.mock('framer-motion', () => ({
-  motion: {
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-    span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
-    button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
-    section: ({ children, ...props }: any) => <section {...props}>{children}</section>,
-    p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
-    h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
-    h2: ({ children, ...props }: any) => <h2 {...props}>{children}</h2>,
-  },
-  AnimatePresence: ({ children }: any) => children,
-  useScroll: () => ({ scrollY: { get: () => 0 } }),
-  useTransform: () => 0,
-}));
+// Mock framer-motion (sans JSX pour éviter les erreurs de parsing)
+vi.mock('framer-motion', () => {
+  const createMotionComponent = (tag: string) => {
+    return ({ children, ...props }: any) => {
+      const { createElement } = require('react');
+      return createElement(tag, props, children);
+    };
+  };
+  
+  return {
+    motion: {
+      div: createMotionComponent('div'),
+      span: createMotionComponent('span'),
+      button: createMotionComponent('button'),
+      section: createMotionComponent('section'),
+      p: createMotionComponent('p'),
+      h1: createMotionComponent('h1'),
+      h2: createMotionComponent('h2'),
+      a: createMotionComponent('a'),
+    },
+    AnimatePresence: ({ children }: any) => children,
+    useScroll: () => ({ scrollY: { get: () => 0 } }),
+    useTransform: () => 0,
+  };
+});
 
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {

@@ -1,4 +1,4 @@
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -14,6 +14,10 @@ vi.mock('next/navigation', () => ({
 
 vi.mock('next-intl', () => ({
   useLocale: () => 'fr',
+}));
+
+vi.mock('@/i18n', () => ({
+  locales: ['fr', 'en'],
 }));
 
 describe('LanguageSwitcher', () => {
@@ -53,8 +57,3 @@ describe('LanguageSwitcher', () => {
     expect(mockReplace).not.toHaveBeenCalled();
   });
 });
-
-// Export default pour éviter l'erreur d'import
-export default function LanguageSwitcherExport() {
-  return <LanguageSwitcher />;
-}
