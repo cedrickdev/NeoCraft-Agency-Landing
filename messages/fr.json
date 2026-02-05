@@ -248,7 +248,8 @@
         "3": "Audit & optimisation"
       },
       "getStarted": "Démarrer mon projet"
-    }
+    },
+    "getStarted": "Démarrer mon projet"
   },
   "Methodology": {
     "badge": "Notre approche",
@@ -496,6 +497,61 @@
     "subtitle": "à votre projet",
     "description": "Transformons ensemble votre vision en une solution digitale exceptionnelle. Contactez-nous pour discuter de votre projet.",
     "button": "Démarrer un projet"
+  },
+  "TrustBadges": {
+    "stats": {
+      "projects": "Projets livrés",
+      "satisfaction": "Clients satisfaits",
+      "availability": "Disponibilité",
+      "rating": "Note moyenne"
+    },
+    "badges": {
+      "security": "Données sécurisées",
+      "delivery": "Livraison à temps",
+      "support": "Support réactif",
+      "quality": "Qualité garantie"
+    },
+    "clientsTitle": "Ils nous font confiance",
+    "guarantee": {
+      "title": "Garantie Satisfaction",
+      "description": "Satisfait ou remboursé pendant 30 jours"
+    }
+  },
+  "Booking": {
+    "bookCall": "Réserver un appel",
+    "title": "Planifiez une consultation gratuite",
+    "description": "Discutons de votre projet lors d'un appel de 30 minutes."
+  },
+  "WhatsApp": {
+    "greeting": "Besoin d'aide ?",
+    "subtitle": "Nous sommes là pour répondre à vos questions.",
+    "startChat": "Démarrer une conversation",
+    "defaultMessage": "Bonjour ! J'aimerais en savoir plus sur vos services."
+  },
+  "CookieConsent": {
+    "title": "Nous utilisons des cookies 🍪",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, analyser le trafic du site et personnaliser le contenu.",
+    "learnMore": "En savoir plus",
+    "customize": "Personnaliser",
+    "acceptAll": "Tout accepter",
+    "rejectAll": "Tout refuser",
+    "savePreferences": "Enregistrer",
+    "settings": {
+      "title": "Préférences de cookies",
+      "required": "Requis",
+      "necessary": {
+        "title": "Cookies essentiels",
+        "description": "Ces cookies sont nécessaires au fonctionnement du site et ne peuvent pas être désactivés."
+      },
+      "analytics": {
+        "title": "Cookies analytiques",
+        "description": "Nous aident à comprendre comment les visiteurs interagissent avec le site (Google Analytics, Clarity)."
+      },
+      "marketing": {
+        "title": "Cookies marketing",
+        "description": "Utilisés pour vous proposer des publicités pertinentes et mesurer l'efficacité des campagnes."
+      }
+    }
   }
 }
 

@@ -246,8 +246,10 @@
         "1": "Digital strategy",
         "2": "Technical training",
         "3": "Audit and optimisation"
-      }
-    }
+      },
+      "getStarted": "Start my project"
+    },
+    "getStarted": "Start my project"
   },
   "Methodology": {
     "badge": "Our approach",
@@ -495,5 +497,60 @@
     "subtitle": "your project to life",
     "description": "Let's transform your vision into an exceptional digital solution together. Contact us to discuss your project.",
     "button": "Start a project"
+  },
+  "TrustBadges": {
+    "stats": {
+      "projects": "Projects delivered",
+      "satisfaction": "Client satisfaction",
+      "availability": "Availability",
+      "rating": "Average rating"
+    },
+    "badges": {
+      "security": "Secure data",
+      "delivery": "On-time delivery",
+      "support": "Responsive support",
+      "quality": "Quality guaranteed"
+    },
+    "clientsTitle": "Trusted by leading companies",
+    "guarantee": {
+      "title": "Satisfaction Guarantee",
+      "description": "Money-back guarantee for 30 days"
+    }
+  },
+  "Booking": {
+    "bookCall": "Book a call",
+    "title": "Schedule a free consultation",
+    "description": "Let's discuss your project during a 30-minute call."
+  },
+  "WhatsApp": {
+    "greeting": "Need help?",
+    "subtitle": "We're here to answer your questions.",
+    "startChat": "Start a conversation",
+    "defaultMessage": "Hello! I'd like to learn more about your services."
+  },
+  "CookieConsent": {
+    "title": "We use cookies 🍪",
+    "description": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.",
+    "learnMore": "Learn more",
+    "customize": "Customize",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject all",
+    "savePreferences": "Save preferences",
+    "settings": {
+      "title": "Cookie preferences",
+      "required": "Required",
+      "necessary": {
+        "title": "Essential cookies",
+        "description": "These cookies are necessary for the website to function and cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics cookies",
+        "description": "Help us understand how visitors interact with the site (Google Analytics, Clarity)."
+      },
+      "marketing": {
+        "title": "Marketing cookies",
+        "description": "Used to deliver relevant ads and measure campaign effectiveness."
+      }
+    }
   }
 }
