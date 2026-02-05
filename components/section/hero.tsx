@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import HeroContent from "./hero-content";
 import { HeroFloatingElements, HeroParticles, HeroScrollIndicator } from "./hero-visuals";
 
@@ -6,7 +5,7 @@ import { HeroFloatingElements, HeroParticles, HeroScrollIndicator } from "./hero
  * Hero Section - Optimized for LCP
  * 
  * Strategy:
- * - HeroContent: Server Component - renders immediately (critical for LCP)
+ * - HeroContent: Client Component with useTranslations for reactive locale updates
  * - HeroParticles: Client Component - loaded after hydration (desktop only)
  * - HeroFloatingElements: Client Component - visual enhancements
  * - HeroScrollIndicator: Client Component - scroll indicator with animation
@@ -38,10 +37,8 @@ export default function Hero() {
 
       <div className="container max-w-7xl mx-auto z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
-          {/* Server-rendered content - Critical for LCP */}
-          <Suspense fallback={<HeroContentSkeleton />}>
-            <HeroContent />
-          </Suspense>
+          {/* Hero content with translations */}
+          <HeroContent />
 
           {/* Floating visual elements - Client component */}
           <HeroFloatingElements />

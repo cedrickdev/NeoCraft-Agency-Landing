@@ -3,33 +3,39 @@
 
 import { locales } from '@/i18n';
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
-import { useCallback } from 'react';
+import { usePathname } from 'next/navigation';
+import { useCallback, useEffect } from 'react';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
+
+  // Restaurer la position de défilement après changement de langue
+  useEffect(() => {
+    const savedPosition = sessionStorage.getItem('scrollPosition');
+    if (savedPosition) {
+      // Attendre que la page soit complètement chargée
+      requestAnimationFrame(() => {
+        window.scrollTo(0, parseInt(savedPosition, 10));
+        sessionStorage.removeItem('scrollPosition');
+      });
+    }
+  }, []);
 
   const handleChange = useCallback((newLocale: string) => {
     if (newLocale === locale) return;
 
-    // Sauvegarder la position de défilement actuelle
-    const scrollY = window.scrollY;
+    // Sauvegarder la position de défilement pour la restaurer après navigation
+    sessionStorage.setItem('scrollPosition', window.scrollY.toString());
     
     // Construire la nouvelle URL
     const segments = pathname.split('/');
     segments[1] = newLocale;
     const newPath = segments.join('/');
     
-    // Naviguer avec scroll: false pour éviter le retour en haut
-    router.replace(newPath, { scroll: false });
-    
-    // Restaurer la position après un court délai (pour que la navigation soit complète)
-    requestAnimationFrame(() => {
-      window.scrollTo(0, scrollY);
-    });
-  }, [locale, pathname, router]);
+    // Navigation complète pour garantir la mise à jour des traductions
+    window.location.href = newPath;
+  }, [locale, pathname]);
 
   return (
     <div className="flex gap-2">

@@ -1,15 +1,16 @@
+'use client';
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 /**
- * Server Component - Renders immediately without JS
- * Critical for LCP (Largest Contentful Paint)
+ * Client Component - Uses useTranslations for reactive locale updates
  */
-export default async function HeroContent() {
-  const t = await getTranslations('Hero');
+export default function HeroContent() {
+  const t = useTranslations('Hero');
 
   return (
     <div className="lg:col-span-7 text-left">
