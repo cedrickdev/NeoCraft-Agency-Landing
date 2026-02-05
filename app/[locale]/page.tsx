@@ -6,6 +6,8 @@ import Methodology from "@/components/section/methodology";
 import ProgressiveContactForm from "@/components/section/progressive-contact-form";
 import Services from "@/components/section/services";
 import { Testimonial } from "@/components/section/testimonial";
+import TrustBadges from "@/components/section/trust-badges";
+import { setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 import { ChatWidgetWrapper } from "./chat-widget-wrapper";
 
@@ -17,10 +19,18 @@ import { ChatWidgetWrapper } from "./chat-widget-wrapper";
  * - All sections can render on server (no dynamic imports needed in Server Components)
  * - ChatWidget is client-only and deferred via wrapper
  */
-export default function NeoCraftLanding() {
+export default async function NeoCraftLanding({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  
+  // Enable static rendering for this page
+  setRequestLocale(locale);
   return (
     <div className="flex flex-col">
-      {/* Critical: Server-rendered Hero for fast LCP */}
+      {/* Hero section */}
       <Suspense fallback={<HeroSkeleton />}>
         <Hero />
       </Suspense>
