@@ -60,7 +60,7 @@ export default function CTA() {
           {/* Heading */}
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-10">
             <span className="block">{t('title')}</span>
-            <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent italic">
+            <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent italic pr-4">
               {t('subtitle')}
             </span>
           </h2>

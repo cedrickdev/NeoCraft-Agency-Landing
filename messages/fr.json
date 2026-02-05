@@ -489,6 +489,13 @@
       "title": "Intelligence Artificielle",
       "description": "Intégration d'outils d'IA comme OpenAI et Claude pour automatiser et optimiser vos workflows."
     }
+  },
+  "CTA": {
+    "badge": "Prêt à démarrer ?",
+    "title": "Donnons vie",
+    "subtitle": "à votre projet",
+    "description": "Transformons ensemble votre vision en une solution digitale exceptionnelle. Contactez-nous pour discuter de votre projet.",
+    "button": "Démarrer un projet"
   }
 }
 
