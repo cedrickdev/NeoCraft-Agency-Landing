@@ -1,13 +1,8 @@
-import {
-  Code2,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
+import { Code2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
+import { SocialIcons } from "../SocialIcons";
 
 const year = new Date().getFullYear();
 
@@ -17,13 +12,6 @@ const year = new Date().getFullYear();
  */
 export default async function Footer() {
   const t = await getTranslations('footer');
-
-  const socialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/neocraftdev", label: "Facebook" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/neocraftdev", label: "LinkedIn" },
-    { icon: Twitter, href: "https://x.com/neocraftdev", label: "Twitter" },
-    { icon: Instagram, href: "https://www.instagram.com/neocraftdev/", label: "Instagram" }
-  ];
 
   const serviceLinks = [
     { label: t('services.showcaseWebsite'), href: "#hero" },
@@ -52,20 +40,7 @@ export default async function Footer() {
               Savoir-faire artisanal au service de votre transformation digitale. Création web, mobile et formations d&apos;excellence.
             </p>
 
-            <div className="flex items-center gap-4">
-              {socialLinks.map((social, i) => (
-                <Link
-                  key={i}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                >
-                  <social.icon className="w-5 h-5" />
-                </Link>
-              ))}
-            </div>
+            <SocialIcons />
           </div>
 
           <div>
