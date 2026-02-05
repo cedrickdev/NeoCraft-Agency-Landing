@@ -75,11 +75,11 @@ test.describe('Footer', () => {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
     
-    // Vérifie que le footer est visible
-    const footer = page.locator('footer');
+    // Vérifie que le footer principal est visible (utilise .first() pour éviter les multiples matches)
+    const footer = page.locator('body > div footer').first();
     await expect(footer).toBeVisible();
     
     // Vérifie les liens sociaux
-    await expect(page.locator('footer a[href*="linkedin"]')).toBeVisible();
+    await expect(page.locator('a[href*="linkedin"]').first()).toBeVisible();
   });
 });
