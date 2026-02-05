@@ -5,6 +5,10 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig = {
+    // Turbopack configuration (Next.js 16+)
+    turbopack: {
+        root: process.cwd(),
+    },
     images: {
         remotePatterns: [
             {
@@ -12,11 +16,6 @@ const nextConfig = {
                 hostname: "*",
             },
         ],
-    },
-    experimental: {
-        turbopack: {
-            root: process.cwd(),
-        },
     },
     // Redirections
     async redirects() {
