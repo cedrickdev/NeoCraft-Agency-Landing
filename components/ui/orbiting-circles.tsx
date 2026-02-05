@@ -49,7 +49,7 @@ export const OrbitingCircles = React.memo(function OrbitingCircles({
           } as React.CSSProperties
         }
         className={cn(
-          "absolute inset-0 m-auto flex transform-gpu animate-orbit items-center justify-center rounded-full border border-primary/10 bg-background/50 backdrop-blur-sm shadow-sm [animation-delay:calc(var(--delay)*1000ms)] dark:border-primary/5 dark:bg-card/50",
+          "absolute inset-0 m-auto flex transform-gpu animate-orbit items-center justify-center [animation-delay:calc(var(--delay)*1000ms)]",
           { "[animation-direction:reverse]": reverse },
           className,
         )}
