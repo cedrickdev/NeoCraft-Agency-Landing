@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Code2,
   Facebook,
@@ -7,14 +5,33 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
 const year = new Date().getFullYear();
 
-export default function Footer() {
-  const t = useTranslations('footer');
+/**
+ * Footer - Server Component
+ * No client-side interactivity needed, renders immediately
+ */
+export default async function Footer() {
+  const t = await getTranslations('footer');
+
+  const socialLinks = [
+    { icon: Facebook, href: "https://www.facebook.com/neocraftdev", label: "Facebook" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/neocraftdev", label: "LinkedIn" },
+    { icon: Twitter, href: "https://x.com/neocraftdev", label: "Twitter" },
+    { icon: Instagram, href: "https://www.instagram.com/neocraftdev/", label: "Instagram" }
+  ];
+
+  const serviceLinks = [
+    { label: t('services.showcaseWebsite'), href: "#hero" },
+    { label: t('services.ecommerceWebsite'), href: "#services" },
+    { label: t('services.development'), href: "#iservices" },
+    { label: t('services.ads'), href: "#iservices" },
+    { label: t('services.seo'), href: "#iservices" }
+  ];
 
   return (
     <footer className="relative bg-background border-t border-primary/5 pt-24 pb-12 overflow-hidden">
@@ -32,22 +49,17 @@ export default function Footer() {
             </div>
             
             <p className="text-muted-foreground max-w-sm leading-relaxed">
-              {/* Fallback description if translation is missing or too long */}
-              Savoir-faire artisanal au service de votre transformation digitale. Création web, mobile et formations d'excellence.
+              Savoir-faire artisanal au service de votre transformation digitale. Création web, mobile et formations d&apos;excellence.
             </p>
 
             <div className="flex items-center gap-4">
-              {[
-                { icon: Facebook, href: "https://www.facebook.com/neocraftdev" },
-                { icon: Linkedin, href: "https://www.linkedin.com/company/neocraftdev" },
-                { icon: Twitter, href: "https://x.com/neocraftdev" },
-                { icon: Instagram, href: "https://www.instagram.com/neocraftdev/" }
-              ].map((social, i) => (
+              {socialLinks.map((social, i) => (
                 <Link
                   key={i}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={social.label}
                   className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
@@ -58,16 +70,10 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest mb-8 opacity-50">
-              {t('services.showcaseWebsite') ? 'Services' : 'Links'}
+              Services
             </h3>
             <ul className="space-y-4">
-              {[
-                { label: t('services.showcaseWebsite'), href: "#hero" },
-                { label: t('services.ecommerceWebsite'), href: "#services" },
-                { label: t('services.development'), href: "#iservices" },
-                { label: t('services.ads'), href: "#iservices" },
-                { label: t('services.seo'), href: "#iservices" }
-              ].map((link, i) => (
+              {serviceLinks.map((link, i) => (
                 <li key={i}>
                   <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300">
                     {link.label}
@@ -109,8 +115,7 @@ export default function Footer() {
       </div>
 
       {/* Background Decorative Element */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" aria-hidden="true" />
     </footer>
   );
 }
-

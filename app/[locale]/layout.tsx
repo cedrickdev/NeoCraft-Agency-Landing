@@ -14,7 +14,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import "../globals.css";
 
 const inter = Inter({
@@ -150,15 +150,12 @@ export async function generateMetadata({
 
         icons: {
             icon: [
-                { url: '/logo/logo16.png', sizes: '16x16', type: 'image/png' },
-                { url: '/logo/logo32.png', sizes: '32x32', type: 'image/png' },
+                { url: '/favicon.ico', sizes: 'any' },
                 { url: '/logo/logo48.png', sizes: '48x48', type: 'image/png' },
+                { url: '/logo/logo192.png', sizes: '192x192', type: 'image/png' },
             ],
             apple: [
                 { url: '/logo/logo180.png', sizes: '180x180', type: 'image/png' },
-            ],
-            other: [
-                { rel: 'mask-icon', url: '/logo/safari-pinned-tab.svg', color: '#1a73e8' },
             ],
         },
 
@@ -303,7 +300,7 @@ export default async function LocaleLayout({children, params}: Props) {
                 <BreadcrumbJsonLd />
                 <div className="relative min-h-screen bg-background selection:bg-primary selection:text-white overflow-x-hidden">
                     
-                    {/* Multi-layered background */}
+                    {/* Multi-layered background - CSS only, no JS blocking */}
                     <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
                         <div className="absolute inset-0 bg-mesh opacity-60" />
                         <div className="absolute inset-0 bg-dot-pattern opacity-40" />
@@ -320,16 +317,44 @@ export default async function LocaleLayout({children, params}: Props) {
                         <main id="main-content" role="main" className="flex-grow">
                             {children}
                         </main>
-                        <Footer/>
+                        <Suspense fallback={<FooterSkeleton />}>
+                            <Footer/>
+                        </Suspense>
                     </div>
                 </div>
             </NextIntlClientProvider>
         </ThemeProvider>
-        <SpeedInsights/>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!}/>
+        
+        {/* Analytics - Deferred loading, non-blocking */}
         <Toaster position="top-center" richColors />
+        <SpeedInsights/>
         <Analytics/>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID}/>
+        )}
         </body>
         </html>
+    );
+}
+
+// Footer skeleton for streaming
+function FooterSkeleton() {
+    return (
+        <footer className="bg-background border-t border-primary/5 pt-24 pb-12">
+            <div className="container mx-auto px-4">
+                <div className="animate-pulse grid md:grid-cols-4 gap-16 mb-20">
+                    <div className="md:col-span-2 space-y-4">
+                        <div className="w-10 h-10 bg-primary/10 rounded" />
+                        <div className="h-4 w-3/4 bg-primary/5 rounded" />
+                        <div className="h-4 w-1/2 bg-primary/5 rounded" />
+                    </div>
+                    <div className="space-y-4">
+                        <div className="h-4 w-20 bg-primary/10 rounded" />
+                        <div className="h-3 w-24 bg-primary/5 rounded" />
+                        <div className="h-3 w-28 bg-primary/5 rounded" />
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
 }

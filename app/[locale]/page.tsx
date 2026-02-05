@@ -1,38 +1,31 @@
-"use client";
-
 import About from "@/components/section/about";
 import CTA from "@/components/section/cta";
 import Hero from "@/components/section/hero";
+import InteractiveServices from "@/components/section/interactive-services";
+import Methodology from "@/components/section/methodology";
 import ProgressiveContactForm from "@/components/section/progressive-contact-form";
 import Services from "@/components/section/services";
-import dynamic from "next/dynamic";
+import { Testimonial } from "@/components/section/testimonial";
+import { Suspense } from "react";
+import { ChatWidgetWrapper } from "./chat-widget-wrapper";
 
-// Lazy load ChatWidget (non critique au chargement initial)
-const ChatWidget = dynamic(() => import("@/components/chat-widget").then(mod => ({ default: mod.ChatWidget })), {
-  ssr: false, // Ne pas rendre côté serveur pour le chat
-  loading: () => null
-});
-
-// Lazy load sections qui ne sont pas immédiatement visibles (below the fold)
-const InteractiveServices = dynamic(() => import("@/components/section/interactive-services"), {
-  loading: () => <div className="min-h-[600px] flex items-center justify-center"><div className="animate-pulse text-primary">Chargement...</div></div>,
-  ssr: true
-});
-
-const Methodology = dynamic(() => import("@/components/section/methodology"), {
-  loading: () => <div className="min-h-[400px] flex items-center justify-center"><div className="animate-pulse text-primary">Chargement...</div></div>,
-  ssr: true
-});
-
-const Testimonial = dynamic(() => import("@/components/section/testimonial").then(mod => ({ default: mod.Testimonial })), {
-  loading: () => <div className="min-h-[600px] flex items-center justify-center"><div className="animate-pulse text-primary">Chargement...</div></div>,
-  ssr: true
-});
-
+/**
+ * Homepage - Server Component
+ * 
+ * Performance Strategy:
+ * - Hero renders server-side immediately (critical for LCP)
+ * - All sections can render on server (no dynamic imports needed in Server Components)
+ * - ChatWidget is client-only and deferred via wrapper
+ */
 export default function NeoCraftLanding() {
   return (
     <div className="flex flex-col">
-      <Hero />
+      {/* Critical: Server-rendered Hero for fast LCP */}
+      <Suspense fallback={<HeroSkeleton />}>
+        <Hero />
+      </Suspense>
+      
+      {/* All sections server-rendered */}
       <About />
       <Services />
       <InteractiveServices />
@@ -40,7 +33,24 @@ export default function NeoCraftLanding() {
       <Testimonial />
       <ProgressiveContactForm />
       <CTA />
-      <ChatWidget />
+      
+      {/* Non-critical: Client-only, loaded after page is interactive */}
+      <ChatWidgetWrapper />
     </div>
+  );
+}
+
+function HeroSkeleton() {
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-background pt-32 pb-20 px-4">
+      <div className="container max-w-7xl mx-auto">
+        <div className="animate-pulse space-y-8">
+          <div className="h-6 w-32 bg-primary/10 rounded-full" />
+          <div className="h-24 w-3/4 bg-primary/5 rounded-lg" />
+          <div className="h-16 w-1/2 bg-primary/10 rounded-lg" />
+          <div className="h-8 w-2/3 bg-primary/5 rounded-lg" />
+        </div>
+      </div>
+    </section>
   );
 }
