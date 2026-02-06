@@ -15,21 +15,16 @@ export default function MacbookShowcase() {
             {t("title")}
           </span>
         }
-        src="/images/placeholder.webp"
+        src="https://ui.aceternity.com/linear.webp"
         showGradient={true}
         badge={
-          <div className="flex items-center gap-2">
-            <Image
-              src="/logo/logo.png"
-              alt="NeoCraft"
-              width={24}
-              height={24}
-              className="rounded-sm"
-            />
-            <span className="text-xs font-medium text-neutral-400">
-              NeoCraft
-            </span>
-          </div>
+          <Image
+            src="/logo/logo.png"
+            alt="NeoCraft"
+            width={32}
+            height={32}
+            className="grayscale brightness-0 dark:invert opacity-40"
+          />
         }
       />
     </section>
