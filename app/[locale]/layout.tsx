@@ -162,13 +162,14 @@ export async function generateMetadata({
 
         icons: {
             icon: [
-                { url: '/favicon.ico', sizes: 'any' },
                 { url: '/logo/logo48.png', sizes: '48x48', type: 'image/png' },
                 { url: '/logo/logo192.png', sizes: '192x192', type: 'image/png' },
+                { url: '/logo/logo512.png', sizes: '512x512', type: 'image/png' },
             ],
             apple: [
                 { url: '/logo/logo180.png', sizes: '180x180', type: 'image/png' },
             ],
+            shortcut: '/logo/logo48.png',
         },
 
         manifest: '/manifest.json',
