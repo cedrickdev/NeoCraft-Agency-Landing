@@ -171,7 +171,7 @@ export async function generateMetadata({
             'apple-mobile-web-app-capable': 'yes',
             'apple-mobile-web-app-status-bar-style': 'black-translucent',
             'msapplication-TileColor': '#1a73e8',
-            'msapplication-config': '/browserconfig.xml',
+
         },
     };
 }
@@ -230,19 +230,11 @@ export default async function LocaleLayout({children, params}: Props) {
             "areaServed": ["CH", "FR", "CM"],
             "availableLanguage": ["fr", "en"]
         },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": 4.7,
-            "bestRating": 5,
-            "worstRating": 1,
-            "ratingCount": 13000
-        },
         "founder": {
             "@type": "Person",
             "name": "Cedrick Feze",
             "jobTitle": "Founder & CEO"
         },
-        "award": "Prix de l'innovation 2024",
     };
 
     const jsonLdWebsite = {
@@ -255,28 +247,14 @@ export default async function LocaleLayout({children, params}: Props) {
             "@type": "Organization",
             "name": "NeoCraft"
         },
-        "inLanguage": [locale],
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://www.neocraft.dev/search?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-        }
+        "inLanguage": [locale]
     };
 
     return (
         <html lang={locale} suppressHydrationWarning={true}>
         <head>
-            <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-            <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-            <meta name="bingbot" content="index, follow" />
-            <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-            <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-            <meta name="format-detection" content="telephone=no, address=no, email=no" />
+            {/* Meta robots, viewport, format-detection are handled by Next.js metadata API */}
             <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-            <meta name="referrer" content="strict-origin-when-cross-origin" />
             <HreflangTags/>
             <script
                 type="application/ld+json"

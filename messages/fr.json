@@ -412,21 +412,22 @@
     "badge": "L'équipe",
     "title": "Les artisans du digital",
     "description": "Une équipe passionnée combinant expertise technique et vision créative pour donner vie à vos projets.",
-    "marc": {
-      "role": "Lead Developer",
-      "bio": "Expert en architecture logicielle et passionné par les technologies émergentes."
+    "backToHome": "Retour à l'accueil",
+    "cedrick": {
+      "role": "Fondateur & CEO",
+      "bio": "Visionnaire et passionné de technologie, Cedrick dirige la stratégie et l'innovation chez NeoCraft."
     },
-    "sophie": {
-      "role": "Directrice Créative",
-      "bio": "Spécialiste en design UI/UX, elle transforme chaque idée en une expérience visuelle unique."
+    "mj": {
+      "role": "Directrice Marketing",
+      "bio": "Experte en stratégie digitale et communication, MJ pilote la croissance et la visibilité de NeoCraft."
     },
-    "thomas": {
-      "role": "UI/UX Designer",
-      "bio": "Détails et précision sont ses maîtres-mots pour créer des interfaces intuitives."
+    "jorel": {
+      "role": "Développeur Full-Stack",
+      "bio": "Spécialiste React et Node.js, Jorel conçoit des applications web performantes et élégantes."
     },
-    "lucas": {
-      "role": "Product Manager",
-      "bio": "Il assure le lien parfait entre vos besoins métier et la réalisation technique."
+    "stephane": {
+      "role": "Designer UI/UX",
+      "bio": "Créatif et méticuleux, Stephane transforme les idées en interfaces intuitives et modernes."
     }
   },
   "Privacy": {
@@ -472,7 +473,8 @@
     "badge": "Portfolio",
     "title": "Nos Réalisations",
     "description": "Découvrez comment nous transformons les idées complexes en expériences numériques d'exception.",
-    "viewProject": "Voir le projet"
+    "viewProject": "Voir le projet",
+    "backToHome": "Retour à l'accueil"
   },
   "Outils": {
     "badge": "Stack Technique",
@@ -554,4 +556,3 @@
     }
   }
 }
-

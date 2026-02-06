@@ -412,21 +412,22 @@
     "badge": "The Team",
     "title": "Digital Craftsmen",
     "description": "A passionate team combining technical expertise and creative vision to bring your projects to life.",
-    "marc": {
-      "role": "Lead Developer",
-      "bio": "Expert in software architecture and passionate about emerging technologies."
+    "backToHome": "Back to Home",
+    "cedrick": {
+      "role": "Founder & CEO",
+      "bio": "Visionary and technology enthusiast, Cedrick leads strategy and innovation at NeoCraft."
     },
-    "sophie": {
-      "role": "Creative Director",
-      "bio": "UI/UX design specialist, she transforms every idea into a unique visual experience."
+    "mj": {
+      "role": "Marketing Director",
+      "bio": "Expert in digital strategy and communication, MJ drives growth and visibility for NeoCraft."
     },
-    "thomas": {
+    "jorel": {
+      "role": "Full-Stack Developer",
+      "bio": "React and Node.js specialist, Jorel builds performant and elegant web applications."
+    },
+    "stephane": {
       "role": "UI/UX Designer",
-      "bio": "Detail and precision are his watchwords for creating intuitive interfaces."
-    },
-    "lucas": {
-      "role": "Product Manager",
-      "bio": "He ensures the perfect link between your business needs and technical implementation."
+      "bio": "Creative and meticulous, Stephane transforms ideas into intuitive and modern interfaces."
     }
   },
   "Privacy": {
@@ -472,7 +473,8 @@
     "badge": "Portfolio",
     "title": "Our Work",
     "description": "Discover how we transform complex ideas into exceptional digital experiences.",
-    "viewProject": "View Project"
+    "viewProject": "View Project",
+    "backToHome": "Back to Home"
   },
   "Outils": {
     "badge": "Tech Stack",

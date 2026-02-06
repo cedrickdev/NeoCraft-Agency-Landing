@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.neocraft.dev
-
-# Sitemaps
-Sitemap: https://www.neocraft.dev/sitemap.xml

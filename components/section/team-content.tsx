@@ -13,31 +13,31 @@ export default function TeamContent() {
 
   const team = [
     {
-      name: "Marc",
-      role: t("marc.role"),
-      bio: t("marc.bio"),
-      image: "/team/marc.png",
+      name: "Cedrick Feze",
+      role: t("cedrick.role"),
+      bio: t("cedrick.bio"),
+      image: "/team/cedrick.webp",
       social: { twitter: "#", linkedin: "#", github: "#" }
     },
     {
-      name: "Sophie",
-      role: t("sophie.role"),
-      bio: t("sophie.bio"),
-      image: "/team/sophie.png",
+      name: "MJ",
+      role: t("mj.role"),
+      bio: t("mj.bio"),
+      image: "/team/mj.webp",
       social: { twitter: "#", linkedin: "#", github: "#" }
     },
     {
-      name: "Thomas",
-      role: t("thomas.role"),
-      bio: t("thomas.bio"),
-      image: "/team/thomas.png",
+      name: "Jorel",
+      role: t("jorel.role"),
+      bio: t("jorel.bio"),
+      image: "/team/jorel.webp",
       social: { twitter: "#", linkedin: "#", github: "#" }
     },
     {
-      name: "Lucas",
-      role: t("lucas.role"),
-      bio: t("lucas.bio"),
-      image: "/team/lucas.png",
+      name: "Stephane",
+      role: t("stephane.role"),
+      bio: t("stephane.bio"),
+      image: "/team/stephane.webp",
       social: { twitter: "#", linkedin: "#", github: "#" }
     }
   ];
@@ -73,7 +73,7 @@ export default function TeamContent() {
           <Button variant="ghost" asChild className="group text-muted-foreground hover:text-primary transition-colors">
             <Link href="/" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-              <span>Back to Home</span>
+              <span>{t('backToHome')}</span>
             </Link>
           </Button>
         </motion.div>
