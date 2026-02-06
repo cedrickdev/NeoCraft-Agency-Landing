@@ -13,7 +13,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { ReactNode, Suspense } from "react";
@@ -26,6 +26,16 @@ const inter = Inter({
     fallback: ['system-ui', 'arial'],
     adjustFontFallback: false,
     variable: '--font-inter'
+});
+
+const outfit = Outfit({
+    subsets: ["latin"],
+    display: "swap",
+    preload: true,
+    fallback: ['system-ui', 'arial'],
+    adjustFontFallback: false,
+    variable: '--font-outfit',
+    weight: ['300', '400', '500', '600', '700']
 });
 
 type Props = {
@@ -292,21 +302,20 @@ export default async function LocaleLayout({children, params}: Props) {
                 />
             )}
         </head>
-        <body className={`${inter.variable} font-sans antialiased selection:bg-primary selection:text-white`}>
+        <body className={`${inter.variable} ${outfit.variable} font-sans antialiased selection:bg-primary selection:text-white`}>
         <ThemeProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
                 <BreadcrumbJsonLd />
                 <div className="relative min-h-screen bg-background selection:bg-primary selection:text-white overflow-x-hidden">
                     
-                    {/* Multi-layered background - CSS only, no JS blocking */}
+                    {/* Multi-layered background - simplified on mobile for performance */}
                     <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
                         <div className="absolute inset-0 bg-mesh opacity-60" />
-                        <div className="absolute inset-0 bg-dot-pattern opacity-40" />
-                        <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05]" />
-                        <div className="absolute inset-0 overflow-hidden">
+                        <div className="hidden md:block absolute inset-0 bg-dot-pattern opacity-40" />
+                        <div className="hidden md:block absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05]" />
+                        <div className="hidden md:block absolute inset-0 overflow-hidden">
                             <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/[0.03] dark:bg-primary/[0.07] blur-[120px] rounded-full animate-slow-float" />
                             <div className="absolute bottom-[10%] right-[-5%] w-[45%] h-[45%] bg-primary/[0.03] dark:bg-primary/[0.07] blur-[100px] rounded-full animate-slow-float" style={{ animationDelay: '-5s' }} />
-                            <div className="absolute top-[20%] right-[10%] w-[35%] h-[35%] bg-primary/[0.02] dark:bg-primary/[0.05] blur-[80px] rounded-full animate-slow-float" style={{ animationDelay: '-10s' }} />
                         </div>
                     </div>
                     

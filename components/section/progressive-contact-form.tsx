@@ -51,13 +51,29 @@ export default function ProgressiveContactForm() {
     }
   }, [currentStep, hasInteracted]);
 
-  // Initialize Cal.com embed
+  // Initialize Cal.com embed - lazy loaded when section is visible
+  const [calLoaded, setCalLoaded] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    (async function () {
-      const cal = await getCalApi();
-      cal("init");
-    })();
-  }, []);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !calLoaded) {
+          setCalLoaded(true);
+          (async function () {
+            const cal = await getCalApi();
+            cal("init");
+          })();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, [calLoaded]);
 
   const handleNext = () => {
     const steps: FormStep[] = ["name", "email", "subject", "message", "complete"];
@@ -123,7 +139,7 @@ export default function ProgressiveContactForm() {
   };
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden bg-background">
+    <section ref={sectionRef} id="contact" className="py-32 relative overflow-hidden bg-background">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-20">
           <motion.div

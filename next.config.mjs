@@ -9,7 +9,13 @@ const nextConfig = {
     turbopack: {
         root: process.cwd(),
     },
+    // Enable gzip compression
+    compress: true,
     images: {
+        formats: ['image/avif', 'image/webp'],
+        deviceSizes: [640, 750, 828, 1080, 1200],
+        imageSizes: [16, 32, 48, 64, 96, 128, 256],
+        minimumCacheTTL: 31536000,
         remotePatterns: [
             {
                 protocol: "https",
@@ -25,6 +31,9 @@ const nextConfig = {
             },
         ],
     },
+    // Optimize production builds
+    poweredByHeader: false,
+    reactStrictMode: true,
     // Redirections
     async redirects() {
         return [

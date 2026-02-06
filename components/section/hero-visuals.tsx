@@ -28,7 +28,7 @@ export function HeroParticles() {
   return (
     <Particles
       className="absolute inset-0 z-0"
-      quantity={200}
+      quantity={80}
       staticity={60}
       ease={50}
       color={theme === "dark" ? "#ffffff" : "#000000"}
