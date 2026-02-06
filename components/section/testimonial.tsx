@@ -25,7 +25,7 @@ export function Testimonial() {
       name: "Natalie Iwara",
       role: t('testimonial3.designation'),
       text: t('testimonial3.quote'),
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e16fd3c?w=400&auto=format&fit=crop&q=60",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=60",
     },
     {
       name: "James Kombou",
@@ -103,7 +103,7 @@ export function Testimonial() {
       </div>
 
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/[0.02] blur-[120px] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/[0.02] blur-[120px] rounded-full pointer-events-none" />
     </section>
   );
 }

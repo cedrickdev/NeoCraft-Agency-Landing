@@ -1,44 +1,19 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Particles } from "@/components/ui/particles";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export default function CTA() {
   const t = useTranslations('CTA');
-  const { theme } = useTheme();
-  const [isMobile, setIsMobile] = useState(true);
-  
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <section className="py-32 relative overflow-hidden bg-background">
-      {!isMobile && (
-        <Particles
-          className="absolute inset-0"
-          quantity={100}
-          staticity={50}
-          ease={50}
-          color={theme === "dark" ? "#ffffff" : "#000000"}
-          refresh
-        />
-      )}
-
-      {/* Background decorative elements */}
+      {/* Background decorative elements - simplified, no Particles for performance */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-primary/[0.03] blur-[120px] rounded-full animate-slow-float" />
-        <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-primary/[0.02] blur-[100px] rounded-full animate-slow-float" style={{ animationDelay: '-10s' }} />
+        <div className="hidden md:block absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-primary/[0.03] blur-[120px] rounded-full" />
+        <div className="hidden md:block absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-primary/[0.02] blur-[100px] rounded-full" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

@@ -19,9 +19,9 @@ export default function Hero() {
       {/* Particles - Client component, deferred */}
       <HeroParticles />
       
-      {/* Blueprint Grid Background - CSS only, no JS needed */}
+      {/* Blueprint Grid Background - hidden on mobile for performance */}
       <div 
-        className="absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.07]" 
+        className="hidden md:block absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.07]" 
         style={{ 
           backgroundImage: 'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)', 
           backgroundSize: '60px 60px' 
@@ -29,10 +29,10 @@ export default function Hero() {
         aria-hidden="true"
       />
       
-      {/* Decorative Blobs - CSS only */}
+      {/* Decorative Blobs - hidden on mobile for performance */}
       <div className="absolute inset-0 -z-10 bg-background" aria-hidden="true">
-        <div className="absolute top-[10%] right-[10%] w-[50%] h-[50%] bg-primary/[0.03] blur-[120px] rounded-full animate-slow-float" />
-        <div className="absolute bottom-[20%] left-[5%] w-[40%] h-[40%] bg-primary/[0.03] blur-[120px] rounded-full animate-slow-float" style={{ animationDelay: '-10s' }} />
+        <div className="hidden md:block absolute top-[10%] right-[10%] w-[50%] h-[50%] bg-primary/[0.03] blur-[120px] rounded-full" />
+        <div className="hidden md:block absolute bottom-[20%] left-[5%] w-[40%] h-[40%] bg-primary/[0.03] blur-[120px] rounded-full" />
       </div>
 
       <div className="container max-w-7xl mx-auto z-10">

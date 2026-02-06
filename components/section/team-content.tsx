@@ -20,7 +20,7 @@ export default function TeamContent() {
       social: { twitter: "#", linkedin: "#", github: "#" }
     },
     {
-      name: "MJ",
+      name: "Marine Mamgue",
       role: t("mj.role"),
       bio: t("mj.bio"),
       image: "/team/mj.webp",
