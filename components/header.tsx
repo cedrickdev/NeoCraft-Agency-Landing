@@ -43,12 +43,12 @@ export default function Header() {
                 <Link href="/" className="relative z-50 flex items-center group">
                     <motion.div 
                         whileHover={{ rotate: 10, scale: 1.1 }}
-                        className="w-10 h-10 relative"
+                        className="w-12 h-12 relative"
                     >
                         <Image
                             src="/logo/logo.png"
-                            width={40}
-                            height={40}
+                            width={48}
+                            height={48}
                             alt="NeoCraft"
                             priority
                             className="grayscale contrast-125 brightness-0 dark:brightness-200 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500"
@@ -114,7 +114,7 @@ export default function Header() {
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className="fixed inset-x-4 top-24 z-40 md:hidden"
                     >
-                        <div className="glass-card p-8 rounded-[2rem] shadow-2xl border-primary/10">
+                        <div className="bg-background border border-primary/10 p-8 rounded-[2rem] shadow-2xl">
                             <nav className="flex flex-col gap-6">
                                 {navLinks.map((link) => (
                                     <Link
@@ -150,4 +150,3 @@ export default function Header() {
         </header>
     );
 }
-
