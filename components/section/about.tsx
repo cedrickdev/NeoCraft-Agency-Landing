@@ -65,7 +65,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
               viewport={{ once: true, margin: "-100px" }}
-              className="sticky top-32"
+              className="lg:sticky lg:top-32"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
