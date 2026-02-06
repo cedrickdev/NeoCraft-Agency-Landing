@@ -5,6 +5,9 @@ import { Suspense } from "react";
 import { ChatWidgetWrapper } from "./chat-widget-wrapper";
 
 // Lazy-load below-the-fold sections to reduce initial JS bundle
+const MacbookShowcase = dynamic(() => import("@/components/section/macbook-showcase"), {
+  loading: () => <SectionSkeleton />,
+});
 const About = dynamic(() => import("@/components/section/about"), {
   loading: () => <SectionSkeleton />,
 });
@@ -51,6 +54,9 @@ export default async function NeoCraftLanding({
       <Suspense fallback={<HeroSkeleton />}>
         <Hero />
       </Suspense>
+      
+      {/* MacBook showcase - interactive scroll animation */}
+      <MacbookShowcase />
       
       {/* Below-the-fold sections - lazy loaded */}
       <About />
