@@ -51,22 +51,22 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 85%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 85%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 85%;
+    --primary: 0 0% 87%;
     --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 82%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 85%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 85%;
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
@@ -92,5 +92,108 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ===== LCP Optimized Animations ===== */
+/* CSS-only animations for above-the-fold content (no JS required) */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes slow-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.02);
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-draw-line {
+  animation: draw-line 1.5s ease-in-out 1s forwards;
+}
+
+.hero-underline {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+}
+
+.animate-slow-float {
+  animation: slow-float 20s ease-in-out infinite;
+}
+
+/* Animation delays */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-draw-line,
+  .animate-slow-float {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .hero-underline {
+    stroke-dashoffset: 0;
+  }
+  
+  .animation-delay-200,
+  .animation-delay-400,
+  .animation-delay-600 {
+    opacity: 1;
   }
 }

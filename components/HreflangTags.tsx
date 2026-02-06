@@ -5,16 +5,20 @@ import { usePathname } from "next/navigation";
 
 export default function HreflangTags() {
     const pathname = usePathname();
-    const host = typeof window !== "undefined" ? window.location.host : "www.neocraft.dev";
-    const protocol = host.startsWith("localhost") ? "http" : "https";
+    const host = "www.neocraft.dev";
+    const protocol = "https";
+
+    // Strip the current locale from the beginning of the pathname
+    const segments = pathname.split('/');
+    const currentLocaleInPath = locales.find(l => segments[1] === l);
+    const pathWithoutLocale = currentLocaleInPath 
+        ? '/' + segments.slice(2).join('/') 
+        : pathname;
 
     return (
         <>
             {locales.map((locale) => {
-                const href =
-                    locale === defaultLocale
-                        ? `${protocol}://${host}${pathname}`
-                        : `${protocol}://${host}/${locale}${pathname}`;
+                const href = `${protocol}://${host}/${locale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
 
                 return (
                     <link
@@ -28,7 +32,7 @@ export default function HreflangTags() {
             <link
                 rel="alternate"
                 hrefLang="x-default"
-                href={`${protocol}://${host}${pathname}`}
+                href={`${protocol}://${host}/${defaultLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`}
             />
         </>
     );

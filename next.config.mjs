@@ -1,15 +1,13 @@
-import {withSentryConfig} from '@sentry/nextjs';
+import { withSentryConfig } from '@sentry/nextjs';
 // next.config.mjs
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig = {
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
-    typescript: {
-        ignoreBuildErrors: true,
+    // Turbopack configuration (Next.js 16+)
+    turbopack: {
+        root: process.cwd(),
     },
     images: {
         remotePatterns: [
@@ -19,9 +17,7 @@ const nextConfig = {
             },
         ],
     },
-    // Configuration pour les origines autorisées en développement (correctement placée)
-    allowedDevOrigins: ['localhost', '127.0.0.1'],
-    // Ajoutez cette configuration pour les redirections
+    // Redirections
     async redirects() {
         return [
             {

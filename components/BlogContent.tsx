@@ -5,19 +5,22 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { formatFullDate } from "@/lib/date";
 import { Author, GetRelatedPostsResult, TagInPost } from "@wisp-cms/client";
-import Image from "next/image";
+import { ContentWithCustomComponents } from "@wisp-cms/react-custom-component";
+import { ArrowLeft, Link as LinkIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { toast } from "sonner";
+import { CommentSection } from "./CommentSection";
 import { FullWidthHeader } from "./FullWidthHeader";
 import { RelatedPosts } from "./RelatedPosts";
 import { processTableOfContents, TableOfContents } from "./TOC";
-import { ContentWithCustomComponents } from "@wisp-cms/react-custom-component";
+import { Button } from "./ui/button";
 import { FAQ } from "./WispComponents/FAQ";
-import { formatFullDate } from "@/lib/date";
-import { CommentSection } from "./CommentSection";
 
 export const BlogContent = ({
-  post: { title, content, author, publishedAt, tags, slug },
+  post: { title, content, author: _author, publishedAt, tags, slug },
   relatedPosts,
 }: {
   post: {
@@ -37,6 +40,20 @@ export const BlogContent = ({
   };
   relatedPosts: GetRelatedPostsResult["posts"];
 }) => {
+  const t = useTranslations("Blog");
+  const isRealization = tags.some((tag: any) => {
+    const name = tag.name.toLowerCase();
+    return name === "realisation" || name === "projet";
+  });
+
+  const filteredRelatedPosts = relatedPosts.filter((rp: any) => {
+    const rpIsRealization = rp.tags?.some((tag: any) => {
+      const name = tag.name.toLowerCase();
+      return name === "realisation" || name === "projet";
+    }) ?? false;
+    return isRealization ? rpIsRealization : !rpIsRealization;
+  });
+
   const { modifiedHtml, tableOfContents } = processTableOfContents(content, {
     h1: true,
     h2: true,
@@ -47,6 +64,26 @@ export const BlogContent = ({
   });
   return (
     <>
+      <div className="container mx-auto px-4 max-w-6xl pt-32 flex items-center justify-between">
+        <Button variant="ghost" asChild className="group text-muted-foreground hover:text-primary transition-colors">
+          <Link href="/" className="flex items-center gap-2">
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            <span>{t("backToHome")}</span>
+          </Link>
+        </Button>
+        <Button 
+          variant="outline" 
+          size="sm"
+          className="rounded-full gap-2 border-primary/10 bg-primary/5 hover:bg-primary/10 text-primary transition-all active:scale-95"
+          onClick={() => {
+            navigator.clipboard.writeText(window.location.href);
+            toast.success(t("linkCopied"));
+          }}
+        >
+          <LinkIcon className="w-4 h-4" />
+          <span>{t("copyLink")}</span>
+        </Button>
+      </div>
       <FullWidthHeader
         title={title}
         breadcrumb={[
@@ -97,7 +134,7 @@ export const BlogContent = ({
         </div>
 
         <CommentSection slug={slug} />
-        <RelatedPosts posts={relatedPosts} />
+        <RelatedPosts posts={filteredRelatedPosts} />
       </div>
     </>
   );

@@ -40,6 +40,66 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 lastModified: new Date(),
                 changeFrequency: 'daily',
                 priority: 0.8,
+            },
+            {
+                url: `${baseUrl}/fr/about`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.7,
+            },
+            {
+                url: `${baseUrl}/en/about`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.7,
+            },
+            {
+                url: `${baseUrl}/fr/team`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.7,
+            },
+            {
+                url: `${baseUrl}/en/team`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.7,
+            },
+            {
+                url: `${baseUrl}/fr/privacy-policy`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.4,
+            },
+            {
+                url: `${baseUrl}/en/privacy-policy`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.4,
+            },
+            {
+                url: `${baseUrl}/fr/realisations`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.8,
+            },
+            {
+                url: `${baseUrl}/en/realisations`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.8,
+            },
+            {
+                url: `${baseUrl}/fr/outils`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.8,
+            },
+            {
+                url: `${baseUrl}/en/outils`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.8,
             }
         ];
 

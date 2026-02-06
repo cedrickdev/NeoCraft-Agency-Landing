@@ -1,14 +1,14 @@
 import {
-  Body,
-  Container,
-  Head,
-  Heading,
-  Html,
-  Link,
-  Preview,
-  Section,
-  Text,
-  Hr,
+    Body,
+    Container,
+    Head,
+    Heading,
+    Hr,
+    Html,
+    Link,
+    Preview,
+    Section,
+    Text
 } from "@react-email/components";
 
 interface ClientConfirmationEmailProps {
@@ -17,80 +17,67 @@ interface ClientConfirmationEmailProps {
   subject: string;
 }
 
-const baseUrl = "neocraftdev.vercel.app";
-const blogUrl = `${baseUrl}/blog`;
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://neocraft.dev";
 
 export default function ClientConfirmationEmail({
   clientName = "Client",
-  clientEmail = "client@example.com",
-  subject = "Votre demande",
+  clientEmail: _clientEmail = "client@example.com",
+  subject = "Votre projet digital",
 }: ClientConfirmationEmailProps) {
   return (
     <Html>
       <Head />
-      <Preview>Nous avons bien reçu votre message - NeoCraft</Preview>
+      <Preview>NeoCraft - Nous avons bien reçu votre demande</Preview>
       <Body style={main}>
         <Container style={container}>
           {/* Header */}
           <Section style={header}>
-            <div style={logoContainer}>
-              <div style={logo}>
-                <Text style={logoText}>NeoCraft</Text>
-              </div>
-            </div>
+            <Text style={brandName}>NEOCRAFT</Text>
           </Section>
 
           {/* Main Content */}
           <Section style={content}>
-            <Heading style={h1}>Message bien reçu !</Heading>
+            <Heading style={h1}>Bonjour {clientName},</Heading>
 
             <Text style={text}>
-              Bonjour <strong>{clientName}</strong>,
+               Merci de nous avoir contactés au sujet de &quot;<strong>{subject}</strong>&quot;.
             </Text>
 
             <Text style={text}>
-              Nous vous remercions pour votre message concernant "
-              <strong>{subject}</strong>". Votre demande a été transmise à notre
-              équipe et nous vous répondrons dans les plus brefs délais.
+              Nous avons bien reçu vos informations. Un membre de notre équipe analysera votre demande et <strong>vous rappellera très prochainement</strong> pour discuter de la suite de votre projet.
             </Text>
 
-            <Text style={text}>
-              <strong>⏱️ Temps de réponse habituel :</strong> Moins de 24 heures
-            </Text>
+            <Section style={infoBox}>
+              <Text style={infoTitle}>⏱️ Prochaine étape</Text>
+              <Text style={infoText}>
+                Nous traitons votre demande. Temps de réponse estimé : moins de 24h.
+              </Text>
+            </Section>
 
             <Text style={text}>
-              En attendant, n'hésitez pas à consulter nos derniers projets sur
-              notre site web ou à nous suivre sur nos réseaux sociaux.
+              En attendant, vous pouvez découvrir nos dernières réalisations sur notre site.
             </Text>
+
+            <Section style={ctaSection}>
+                <Link href={`${baseUrl}`} style={button}>
+                    Visiter notre site
+                </Link>
+            </Section>
           </Section>
 
           {/* Footer */}
           <Section style={footer}>
             <Text style={footerText}>
-              <strong>NeoCraft</strong> - Traduisons vos besoins en solutions.
-            </Text>
-            <Text style={footerText}>
-              📧 www.neocraft.dev | 📞 +33 1 23 45 67 89 | 📍 Paris, France
-            </Text>
-            <Text style={footerLinks}>
-              <Link href={`${baseUrl}`} style={link}>
-                Site web
-              </Link>{" "}
-              •
-              <Link href="https://linkedin.com/company/neocraft" style={link}>
-                {" "}
-                LinkedIn
-              </Link>{" "}
-              •
-              <Link href="https://github.com/neocraft" style={link}>
-                {" "}
-                GitHub
-              </Link>
+              <strong>NeoCraft</strong> — L&apos;excellence digitale, au service de vos ambitions.
             </Text>
             <Hr style={hr} />
+            <Text style={footerLinks}>
+              <Link href={`${baseUrl}`} style={link}>Site Web</Link> •{" "}
+              <Link href="https://linkedin.com/company/neocraft" style={link}>LinkedIn</Link> •{" "}
+              <Link href="https://github.com/neocraft" style={link}>GitHub</Link>
+            </Text>
             <Text style={footerSmall}>
-              Vous recevez cet email car vous avez contacté NeoCraft via notre
-              formulaire de contact.
+              © {new Date().getFullYear()} NeoCraft. Tous droits réservés.
             </Text>
           </Section>
         </Container>
@@ -101,81 +88,71 @@ export default function ClientConfirmationEmail({
 
 // Styles
 const main = {
-  backgroundColor: "#f6f9fc",
+  backgroundColor: "#f9fafb",
   fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+    '-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif',
 };
 
 const container = {
   backgroundColor: "#ffffff",
-  margin: "0 auto",
-  padding: "20px 0 48px",
-  marginBottom: "64px",
+  margin: "40px auto",
   maxWidth: "600px",
+  borderRadius: "24px",
+  overflow: "hidden" as const,
+  border: "1px solid #e5e7eb",
 };
 
 const header = {
-  padding: "32px 24px",
-  backgroundColor: "#1f2937",
-  borderRadius: "12px 12px 0 0",
-};
-
-const logoContainer = {
+  padding: "40px 0",
   textAlign: "center" as const,
+  backgroundColor: "#050505",
 };
 
-const logo = {
-  display: "inline-block",
-  padding: "12px 24px",
-  backgroundColor: "linear-gradient(135deg, #3b82f6 0%, #10b981 100%)",
-  borderRadius: "12px",
-};
-
-const logoText = {
+const brandName = {
   color: "#ffffff",
   fontSize: "24px",
-  fontWeight: "bold",
+  fontWeight: "900",
+  letterSpacing: "4px",
   margin: "0",
 };
 
 const content = {
-  padding: "32px 24px",
+  padding: "48px 40px",
 };
 
 const h1 = {
-  color: "#1f2937",
-  fontSize: "28px",
-  fontWeight: "bold",
+  color: "#111827",
+  fontSize: "24px",
+  fontWeight: "700",
+  lineHeight: "32px",
   margin: "0 0 24px",
-  textAlign: "center" as const,
 };
 
 const text = {
-  color: "#374151",
+  color: "#4b5563",
   fontSize: "16px",
-  lineHeight: "24px",
+  lineHeight: "26px",
   margin: "16px 0",
 };
 
 const infoBox = {
   backgroundColor: "#f3f4f6",
-  border: "1px solid #e5e7eb",
-  borderRadius: "8px",
-  padding: "20px",
-  margin: "24px 0",
+  borderRadius: "16px",
+  padding: "24px",
+  margin: "32px 0",
 };
 
 const infoTitle = {
-  color: "#1f2937",
+  color: "#111827",
   fontSize: "16px",
   fontWeight: "600",
-  margin: "0 0 12px",
+  margin: "0 0 8px",
 };
 
 const infoText = {
-  color: "#4b5563",
+  color: "#6b7280",
   fontSize: "14px",
-  lineHeight: "20px",
+  lineHeight: "22px",
   margin: "0",
 };
 
@@ -184,45 +161,16 @@ const ctaSection = {
   margin: "32px 0",
 };
 
-const ctaTitle = {
-  color: "#1f2937",
-  fontSize: "18px",
-  fontWeight: "600",
-  margin: "0 0 20px",
-};
-
-const buttonContainer = {
-  display: "flex",
-  gap: "12px",
-  justifyContent: "center",
-  flexWrap: "wrap" as const,
-};
-
 const button = {
-  backgroundColor: "#3b82f6",
-  borderRadius: "8px",
+  backgroundColor: "#050505",
+  borderRadius: "12px",
   color: "#ffffff",
   fontSize: "16px",
   fontWeight: "600",
   textDecoration: "none",
   textAlign: "center" as const,
   display: "inline-block",
-  padding: "12px 24px",
-  margin: "4px",
-};
-
-const buttonSecondary = {
-  backgroundColor: "transparent",
-  border: "2px solid #3b82f6",
-  borderRadius: "8px",
-  color: "#3b82f6",
-  fontSize: "16px",
-  fontWeight: "600",
-  textDecoration: "none",
-  textAlign: "center" as const,
-  display: "inline-block",
-  padding: "10px 22px",
-  margin: "4px",
+  padding: "16px 32px",
 };
 
 const hr = {
@@ -231,32 +179,30 @@ const hr = {
 };
 
 const footer = {
-  padding: "24px",
-  backgroundColor: "#f9fafb",
-  borderRadius: "0 0 12px 12px",
+  padding: "0 40px 48px",
   textAlign: "center" as const,
 };
 
 const footerText = {
-  color: "#6b7280",
+  color: "#9ca3af",
   fontSize: "14px",
   lineHeight: "20px",
-  margin: "8px 0",
+  margin: "0 0 16px",
 };
 
 const footerLinks = {
-  color: "#6b7280",
   fontSize: "14px",
   margin: "16px 0",
 };
 
 const link = {
-  color: "#3b82f6",
+  color: "#050505",
   textDecoration: "none",
+  fontWeight: "600",
 };
 
 const footerSmall = {
-  color: "#9ca3af",
+  color: "#d1d5db",
   fontSize: "12px",
   lineHeight: "16px",
   margin: "16px 0 0",

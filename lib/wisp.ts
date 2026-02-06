@@ -1,8 +1,8 @@
 import { config } from "@/config";
 import {
-  buildWispClient,
-  GetPostsResult,
-  GetPostResult,
+    buildWispClient,
+    GetPostResult,
+    GetPostsResult,
 } from "@wisp-cms/client";
 
 export const wisp = buildWispClient({
@@ -26,13 +26,20 @@ export async function getTags(): Promise<Category[]> {
 
   if (!result?.tags) return [];
 
-  return result.tags.map((tag: Tag) => ({
-    id: tag.id,
-    label: tag.name,
-    tag: tag.name,
-    description: `Articles dans la catégorie ${tag.name}`,
-  }));
+  // On filtre les tags réservés aux réalisations pour ne pas les afficher dans le blog
+  return result.tags
+    .filter((tag: Tag) => {
+      const name = tag.name.toLowerCase();
+      return name !== "realisation" && name !== "projet";
+    })
+    .map((tag: Tag) => ({
+      id: tag.id,
+      label: tag.name,
+      tag: tag.name,
+      description: `Articles dans la catégorie ${tag.name}`,
+    }));
 }
 
 
-export type { GetPostsResult, GetPostResult };
+export type { GetPostResult, GetPostsResult };
+

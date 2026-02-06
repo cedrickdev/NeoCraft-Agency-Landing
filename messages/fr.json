@@ -1,4 +1,9 @@
 {
+  "Blog": {
+    "copyLink": "Copier le lien",
+    "linkCopied": "Lien copié dans le presse-papier !",
+    "backToHome": "Retour à l'accueil"
+  },
   "Seo": {
     "title": "NeoCraft - Agence Digitale : Web, Mobile, Design, SEO",
     "description": "Nous transformons vos idées en solutions digitales : web, mobile, design, SEO, formations. Expertise internationale, résultats garantis.",
@@ -19,7 +24,10 @@
     "about": "À propos",
     "services": "Services",
     "contact": "Contact",
-    "cta": "J'ai un projet"
+    "realisations": "Réalisations",
+    "tools": "Outils",
+    "team": "Équipe",
+    "cta": "Démarrer un projet"
   },
   "Hero": {
     "badge": "L'innovation web pour un succès numérique",
@@ -238,8 +246,10 @@
         "1": "Stratégie digitale",
         "2": "Formation technique",
         "3": "Audit & optimisation"
-      }
-    }
+      },
+      "getStarted": "Démarrer mon projet"
+    },
+    "getStarted": "Démarrer mon projet"
   },
   "Methodology": {
     "badge": "Notre approche",
@@ -289,6 +299,22 @@
     "testimonial5": {
       "designation": "Responsable marketing chez CloudScale",
       "quote": "La mise en œuvre s'est déroulée sans heurts et les résultats ont dépassé nos attentes. La flexibilité de la plateforme est remarquable."
+    },
+    "testimonial6": {
+      "designation": "Fondateur de GreenTech",
+      "quote": "Un accompagnement humain et technique exceptionnel. NeoCraft a su écouter nos contraintes écologiques pour proposer une solution web sobre et performante."
+    },
+    "testimonial7": {
+      "designation": "CTO de FinNode",
+      "quote": "La sécurité était notre priorité absolue. L'expertise de NeoCraft en architecture backend sécurisée nous a permis de lancer notre plateforme en toute sérénité."
+    },
+    "testimonial8": {
+      "designation": "Directrice artistique chez CreativDesign",
+      "quote": "Travailler avec des développeurs qui comprennent les enjeux de l'UI/UX est un luxe. Le code de NeoCraft respecte chaque pixel de nos designs."
+    },
+    "testimonial9": {
+      "designation": "CEO de EduNext",
+      "quote": "L'agilité de l'équipe a été cruciale pour notre lancement. Ils ont su pivoter avec nous sans jamais sacrifier la qualité du code."
     }
   },
   "progressiveContactForm": {
@@ -303,7 +329,7 @@
       },
       "subject": "De quoi souhaitez-vous parler ?",
       "message": "Parlez-nous de votre projet",
-      "complete": "Message envoyé avec succès !"
+      "complete": "Message envoyé avec succès ! Notre équipe vous rappellera très prochainement."
     },
     "formStepPlaceholder": {
       "name": "Votre prénom ou nom...",
@@ -323,7 +349,8 @@
     "formStatus": {
       "sending": "Envoi en cours...",
       "send": "Envoyer",
-      "continue": "Continuer"
+      "continue": "Continuer",
+      "back": "Retour"
     },
     "step": {
       "name": "Étape",
@@ -380,6 +407,151 @@
   "chat": {
     "welcomeMessage": "Bonjour. Je suis NeoBot, votre assistant virtuel. Comment puis-je vous aider ?",
     "placeholder": "Saisissez votre message..."
+  },
+  "Team": {
+    "badge": "L'équipe",
+    "title": "Les artisans du digital",
+    "description": "Une équipe passionnée combinant expertise technique et vision créative pour donner vie à vos projets.",
+    "marc": {
+      "role": "Lead Developer",
+      "bio": "Expert en architecture logicielle et passionné par les technologies émergentes."
+    },
+    "sophie": {
+      "role": "Directrice Créative",
+      "bio": "Spécialiste en design UI/UX, elle transforme chaque idée en une expérience visuelle unique."
+    },
+    "thomas": {
+      "role": "UI/UX Designer",
+      "bio": "Détails et précision sont ses maîtres-mots pour créer des interfaces intuitives."
+    },
+    "lucas": {
+      "role": "Product Manager",
+      "bio": "Il assure le lien parfait entre vos besoins métier et la réalisation technique."
+    }
+  },
+  "Privacy": {
+    "badge": "Confidentialité",
+    "title": "Politique de Confidentialité",
+    "description": "Nous nous engageons à protéger votre vie privée et vos données personnelles avec la plus grande transparence.",
+    "lastUpdated": "Dernière mise à jour : 21 Décembre 2025",
+    "introduction": {
+      "title": "Introduction",
+      "content": "La présente Politique de Confidentialité décrit la façon dont NeoCraft collecte, utilise et protège vos informations lorsque vous utilisez notre site web et nos services. En utilisant nos services, vous acceptez les pratiques décrites dans cette politique."
+    },
+    "dataCollection": {
+      "title": "Données collectées",
+      "content": "Lorsque vous visitez le Site, nous collectons automatiquement certaines informations sur votre appareil, notamment des informations sur votre navigateur Web, votre adresse IP, votre fuseau horaire et certains des cookies installés.",
+      "cookies": "Cookies et traceurs",
+      "logs": "Fichiers journaux",
+      "info": "Informations de commande"
+    },
+    "usage": {
+      "title": "Utilisation des données",
+      "services": "Services principaux",
+      "improvement": "Amélioration des services",
+      "marketing": "Marketing",
+      "legal": "Obligations légales"
+    },
+    "protection": {
+      "title": "Protection & Partage",
+      "noSale": "Engagement de non-vente",
+      "noSaleContent": "NeoCraft ne vend, ne loue, ni n'échange jamais vos informations personnelles avec des tiers à des fins commerciales.",
+      "security": "Mesures de sécurité technique et organisationnelle"
+    },
+    "rights": {
+      "title": "Vos droits (RGPD)",
+      "content": "Conformément au RGPD, vous disposez d'un contrôle total sur vos données :",
+      "access": "Droit d'accès",
+      "rectification": "Droit de rectification",
+      "erasure": "Droit à l'effacement",
+      "portability": "Portabilité",
+      "how": "Contactez-nous à privacy@neocraft.dev pour exercer vos droits."
+    }
+  },
+  "Realisations": {
+    "badge": "Portfolio",
+    "title": "Nos Réalisations",
+    "description": "Découvrez comment nous transformons les idées complexes en expériences numériques d'exception.",
+    "viewProject": "Voir le projet"
+  },
+  "Outils": {
+    "badge": "Stack Technique",
+    "title": "Nos Outils de Précision",
+    "description": "Nous utilisons les technologies les plus avancées pour garantir la performance, la sécurité et la scalabilité de vos projets.",
+    "frontend": {
+      "title": "Frontend & Design",
+      "description": "Des interfaces fluides avec React, Next.js et Tailwind CSS pour une expérience utilisateur d'exception."
+    },
+    "backend": {
+      "title": "Backend & Cloud",
+      "description": "Une infrastructure robuste avec Node.js, PostgreSQL et Vercel pour une stabilité à toute épreuve."
+    },
+    "ai": {
+      "title": "Intelligence Artificielle",
+      "description": "Intégration d'outils d'IA comme OpenAI et Claude pour automatiser et optimiser vos workflows."
+    }
+  },
+  "CTA": {
+    "badge": "Prêt à démarrer ?",
+    "title": "Donnons vie",
+    "subtitle": "à votre projet",
+    "description": "Transformons ensemble votre vision en une solution digitale exceptionnelle. Contactez-nous pour discuter de votre projet.",
+    "button": "Démarrer un projet"
+  },
+  "TrustBadges": {
+    "stats": {
+      "projects": "Projets livrés",
+      "satisfaction": "Clients satisfaits",
+      "availability": "Disponibilité",
+      "rating": "Note moyenne"
+    },
+    "badges": {
+      "security": "Données sécurisées",
+      "delivery": "Livraison à temps",
+      "support": "Support réactif",
+      "quality": "Qualité garantie"
+    },
+    "clientsTitle": "Ils nous font confiance",
+    "guarantee": {
+      "title": "Garantie Satisfaction",
+      "description": "Satisfait ou remboursé pendant 30 jours"
+    }
+  },
+  "Booking": {
+    "bookCall": "Réserver un appel",
+    "title": "Planifiez une consultation gratuite",
+    "description": "Discutons de votre projet lors d'un appel de 30 minutes."
+  },
+  "WhatsApp": {
+    "greeting": "Besoin d'aide ?",
+    "subtitle": "Nous sommes là pour répondre à vos questions.",
+    "startChat": "Démarrer une conversation",
+    "defaultMessage": "Bonjour ! J'aimerais en savoir plus sur vos services."
+  },
+  "CookieConsent": {
+    "title": "Nous utilisons des cookies 🍪",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, analyser le trafic du site et personnaliser le contenu.",
+    "learnMore": "En savoir plus",
+    "customize": "Personnaliser",
+    "acceptAll": "Tout accepter",
+    "rejectAll": "Tout refuser",
+    "savePreferences": "Enregistrer",
+    "settings": {
+      "title": "Préférences de cookies",
+      "required": "Requis",
+      "necessary": {
+        "title": "Cookies essentiels",
+        "description": "Ces cookies sont nécessaires au fonctionnement du site et ne peuvent pas être désactivés."
+      },
+      "analytics": {
+        "title": "Cookies analytiques",
+        "description": "Nous aident à comprendre comment les visiteurs interagissent avec le site (Google Analytics, Clarity)."
+      },
+      "marketing": {
+        "title": "Cookies marketing",
+        "description": "Utilisés pour vous proposer des publicités pertinentes et mesurer l'efficacité des campagnes."
+      }
+    }
   }
 }
 

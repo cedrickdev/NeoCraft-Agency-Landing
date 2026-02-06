@@ -1,51 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    <!-- Page d'accueil française -->
-    <url>
-        <loc>https://www.neocraft.dev/fr</loc>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://www.neocraft.dev/fr"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.neocraft.dev/en"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.neocraft.dev/fr"/>
-        <image:image>
-            <image:loc>https://www.neocraft.dev/fr/logo/logo180.png</image:loc>
-        </image:image>
-        <lastmod>2025-07-18T17:41:54.543Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Page d'accueil anglaise -->
-    <url>
-        <loc>https://www.neocraft.dev/en</loc>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://www.neocraft.dev/fr"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.neocraft.dev/en"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.neocraft.dev/fr"/>
-        <lastmod>2025-07-18T17:41:54.543Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Blog français -->
-    <url>
-        <loc>https://www.neocraft.dev/fr/blog</loc>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://www.neocraft.dev/fr/blog"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.neocraft.dev/en/blog"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.neocraft.dev/fr/blog"/>
-        <lastmod>2025-07-18T17:41:54.543Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Blog anglais -->
-    <url>
-        <loc>https://www.neocraft.dev/en/blog</loc>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://www.neocraft.dev/fr/blog"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.neocraft.dev/en/blog"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.neocraft.dev/fr/blog"/>
-        <lastmod>2025-07-18T17:41:54.543Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://www.neocraft.dev/en/about</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/fr/about</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/en/blog/theme</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/fr/blog/theme</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/en/outils</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/fr/outils</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/en</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/fr</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/en/privacy-policy</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/fr/privacy-policy</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/en/realisations</loc><lastmod>2026-02-05T23:37:56.518Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/fr/realisations</loc><lastmod>2026-02-05T23:37:56.519Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/en/team</loc><lastmod>2026-02-05T23:37:56.519Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/fr/team</loc><lastmod>2026-02-05T23:37:56.519Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/robots.txt</loc><lastmod>2026-02-05T23:37:56.519Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/sentry-example-page</loc><lastmod>2026-02-05T23:37:56.519Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.neocraft.dev/sitemap.xml</loc><lastmod>2026-02-05T23:37:56.519Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

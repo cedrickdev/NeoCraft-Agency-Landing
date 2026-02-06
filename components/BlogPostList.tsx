@@ -1,7 +1,7 @@
+import { formatFullDate } from "@/lib/date";
+import type { GetPostsResult } from "@wisp-cms/client";
 import Image from "next/image";
 import Link from "next/link";
-import type { GetPostsResult } from "@wisp-cms/client";
-import { formatFullDate } from "@/lib/date";
 
 export const BlogPostList = ({ posts }: { posts: GetPostsResult["posts"] }) => {
   return (
@@ -17,8 +17,7 @@ export const BlogPostList = ({ posts }: { posts: GetPostsResult["posts"] }) => {
                   src={post.image}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={true}
-
+                  priority={posts.indexOf(post) < 4}
                 />
               ) : (
                 <Image src="/placeholder.jpg" alt="placeholder" fill />

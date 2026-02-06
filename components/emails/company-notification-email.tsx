@@ -1,14 +1,14 @@
 import {
-  Body,
-  Container,
-  Head,
-  Heading,
-  Html,
-  Link,
-  Preview,
-  Section,
-  Text,
-  Hr,
+    Body,
+    Container,
+    Head,
+    Heading,
+    Hr,
+    Html,
+    Link,
+    Preview,
+    Section,
+    Text,
 } from "@react-email/components";
 
 interface CompanyNotificationEmailProps {
@@ -29,77 +29,68 @@ export default function CompanyNotificationEmail({
   return (
     <Html>
       <Head />
-      <Preview>Nouvelle demande de contact - {clientName}</Preview>
+      <Preview>Nouvelle demande de contact de {clientName}</Preview>
       <Body style={main}>
         <Container style={container}>
           {/* Header */}
           <Section style={header}>
-            <div style={logoContainer}>
-              <div style={logo}>
-                <Text style={logoText}>NeoCraft</Text>
-              </div>
-            </div>
-            <Text style={headerSubtitle}>Nouvelle demande de contact</Text>
+            <Text style={brandName}>NEOCRAFT</Text>
+            <Text style={headerSubtitle}>NOTIFICATION DE CONTACT</Text>
           </Section>
 
           {/* Main Content */}
           <Section style={content}>
-            <Heading style={h1}>Nouvelle demande de {clientName}</Heading>
+            <Heading style={h1}>Un nouveau projet se profile</Heading>
 
-            {/* Client Info Card */}
-            <Section style={clientCard}>
-              <Text style={cardTitle}>👤 Informations du client</Text>
-              <div style={clientInfo}>
-                <div style={infoRow}>
-                  <Text style={infoLabel}>Nom :</Text>
-                  <Text style={infoValue}>{clientName}</Text>
-                </div>
-                <div style={infoRow}>
-                  <Text style={infoLabel}>Email :</Text>
-                  <Text style={infoValue}>
-                    <Link href={`mailto:${clientEmail}`} style={emailLink}>
-                      {clientEmail}
-                    </Link>
-                  </Text>
-                </div>
-                <div style={infoRow}>
-                  <Text style={infoLabel}>Sujet :</Text>
-                  <Text style={infoValue}>{subject}</Text>
-                </div>
-                <div style={infoRow}>
-                  <Text style={infoLabel}>Date :</Text>
-                  <Text style={infoValue}>
-                    {submittedAt.toLocaleDateString("fr-FR", {
-                      weekday: "long",
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
-                  </Text>
-                </div>
-              </div>
+            <Section style={dataCard}>
+              <Text style={cardTitle}>Détails du contact</Text>
+              
+              <Section style={infoGrid}>
+                <table style={{ width: "100%" }}>
+                  <tr>
+                    <td style={labelCell}>Nom</td>
+                    <td style={valueCell}>{clientName}</td>
+                  </tr>
+                  <tr>
+                    <td style={labelCell}>Email</td>
+                    <td style={valueCell}>
+                      <Link href={`mailto:${clientEmail}`} style={link}>{clientEmail}</Link>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style={labelCell}>Sujet</td>
+                    <td style={valueCell}>{subject}</td>
+                  </tr>
+                  <tr>
+                    <td style={labelCell}>Date</td>
+                    <td style={valueCell}>
+                        {submittedAt.toLocaleString('fr-FR', {
+                            dateStyle: 'medium',
+                            timeStyle: 'short'
+                        })}
+                    </td>
+                  </tr>
+                </table>
+              </Section>
             </Section>
 
-            {/* Message Card */}
-            <Section style={messageCard}>
-              <Text style={cardTitle}>Message du client</Text>
-              <div style={messageContent}>
-                <Text style={messageText}>{message}</Text>
-              </div>
+            <Section style={messageSection}>
+              <Text style={cardTitle}>Message</Text>
+              <Text style={messageContent}>{message}</Text>
+            </Section>
+
+            <Section style={ctaSection}>
+                <Link href={`mailto:${clientEmail}`} style={button}>
+                    Répondre au client
+                </Link>
             </Section>
           </Section>
 
           {/* Footer */}
           <Section style={footer}>
             <Hr style={hr} />
-            <Text style={footerText}>
-              <strong>NeoCraft</strong> - Système de notification automatique
-            </Text>
             <Text style={footerSmall}>
-              Cet email a été généré automatiquement suite à une soumission du
-              formulaire de contact sur neocraft.dev
+              Cet email a été généré automatiquement par le système NeoCraft.
             </Text>
           </Section>
         </Container>
@@ -110,238 +101,138 @@ export default function CompanyNotificationEmail({
 
 // Styles
 const main = {
-  backgroundColor: "#f6f9fc",
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+  backgroundColor: "#f3f4f6",
+  fontFamily: '-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif',
 };
 
 const container = {
   backgroundColor: "#ffffff",
-  margin: "0 auto",
-  padding: "20px 0 48px",
-  marginBottom: "64px",
-  maxWidth: "700px",
+  margin: "40px auto",
+  maxWidth: "640px",
+  borderRadius: "24px",
+  overflow: "hidden" as const,
+  border: "1px solid #e5e7eb",
 };
 
 const header = {
-  padding: "32px 24px 24px",
-  backgroundColor: "#1f2937",
-  borderRadius: "12px 12px 0 0",
+  padding: "40px",
+  backgroundColor: "#050505",
   textAlign: "center" as const,
 };
 
-const logoContainer = {
-  marginBottom: "16px",
-};
-
-const logo = {
-  display: "inline-block",
-  padding: "12px 24px",
-  backgroundColor: "rgba(59, 130, 246, 0.2)",
-  borderRadius: "12px",
-  border: "2px solid #3b82f6",
-};
-
-const logoText = {
+const brandName = {
   color: "#ffffff",
-  fontSize: "24px",
-  fontWeight: "bold",
-  margin: "0",
+  fontSize: "20px",
+  fontWeight: "900",
+  letterSpacing: "4px",
+  margin: "0 0 8px",
 };
 
 const headerSubtitle = {
-  color: "#d1d5db",
-  fontSize: "16px",
+  color: "rgba(255,255,255,0.4)",
+  fontSize: "12px",
+  fontWeight: "700",
+  letterSpacing: "2px",
   margin: "0",
-};
-
-const alertBanner = {
-  backgroundColor: "#fef3c7",
-  border: "1px solid #f59e0b",
-  borderRadius: "8px",
-  padding: "16px 24px",
-  margin: "0 24px",
-};
-
-const alertText = {
-  color: "#92400e",
-  fontSize: "14px",
-  margin: "0",
-  textAlign: "center" as const,
 };
 
 const content = {
-  padding: "32px 24px",
+  padding: "48px 40px",
 };
 
 const h1 = {
-  color: "#1f2937",
-  fontSize: "28px",
-  fontWeight: "bold",
+  color: "#111827",
+  fontSize: "24px",
+  fontWeight: "700",
   margin: "0 0 32px",
   textAlign: "center" as const,
 };
 
-const clientCard = {
-  backgroundColor: "#f8fafc",
-  border: "2px solid #e2e8f0",
-  borderRadius: "12px",
-  padding: "24px",
-  margin: "24px 0",
-};
-
-const messageCard = {
-  backgroundColor: "#f0f9ff",
-  border: "2px solid #0ea5e9",
-  borderRadius: "12px",
-  padding: "24px",
-  margin: "24px 0",
+const dataCard = {
+  backgroundColor: "#f9fafb",
+  borderRadius: "16px",
+  padding: "32px",
+  margin: "0 0 24px",
+  border: "1px solid #f3f4f6",
 };
 
 const cardTitle = {
-  color: "#1e293b",
-  fontSize: "18px",
-  fontWeight: "600",
+  color: "#111827",
+  fontSize: "14px",
+  fontWeight: "800",
+  textTransform: "uppercase" as const,
+  letterSpacing: "1px",
   margin: "0 0 16px",
 };
 
-const clientInfo = {
-  display: "block",
+const infoGrid = {
+  width: "100%",
 };
 
-const infoRow = {
-  display: "flex",
-  alignItems: "center",
-  marginBottom: "12px",
-  gap: "12px",
-};
-
-const infoLabel = {
-  color: "#64748b",
-  fontSize: "14px",
+const labelCell = {
+  color: "#6b7280",
+  fontSize: "13px",
   fontWeight: "600",
-  margin: "0",
-  minWidth: "60px",
+  padding: "8px 0",
+  width: "80px",
 };
 
-const infoValue = {
-  color: "#1e293b",
+const valueCell = {
+  color: "#111827",
   fontSize: "14px",
-  margin: "0",
-  flex: "1",
+  fontWeight: "500",
+  padding: "8px 0",
 };
 
-const emailLink = {
-  color: "#0ea5e9",
-  textDecoration: "none",
-  fontWeight: "500",
+const messageSection = {
+  backgroundColor: "#ffffff",
+  borderRadius: "16px",
+  padding: "32px",
+  border: "1px solid #f3f4f6",
+  margin: "0 0 32px",
 };
 
 const messageContent = {
-  backgroundColor: "#ffffff",
-  border: "1px solid #cbd5e1",
-  borderRadius: "8px",
-  padding: "16px",
-};
-
-const messageText = {
-  color: "#374151",
+  color: "#4b5563",
   fontSize: "15px",
   lineHeight: "24px",
   margin: "0",
   whiteSpace: "pre-wrap" as const,
 };
 
-const actionsSection = {
+const ctaSection = {
   textAlign: "center" as const,
-  margin: "32px 0",
-  padding: "24px",
-  backgroundColor: "#f1f5f9",
+};
+
+const button = {
+  backgroundColor: "#050505",
   borderRadius: "12px",
-};
-
-const actionsTitle = {
-  color: "#1e293b",
-  fontSize: "18px",
-  fontWeight: "600",
-  margin: "0 0 20px",
-};
-
-const buttonContainer = {
-  display: "flex",
-  gap: "12px",
-  justifyContent: "center",
-  flexWrap: "wrap" as const,
-};
-
-const primaryButton = {
-  backgroundColor: "#0ea5e9",
-  borderRadius: "8px",
   color: "#ffffff",
   fontSize: "16px",
   fontWeight: "600",
   textDecoration: "none",
   textAlign: "center" as const,
   display: "inline-block",
-  padding: "14px 28px",
-  margin: "4px",
-};
-
-const secondaryButton = {
-  backgroundColor: "transparent",
-  border: "2px solid #64748b",
-  borderRadius: "8px",
-  color: "#64748b",
-  fontSize: "16px",
-  fontWeight: "600",
-  textDecoration: "none",
-  textAlign: "center" as const,
-  display: "inline-block",
-  padding: "12px 26px",
-  margin: "4px",
-};
-
-const prioritySection = {
-  backgroundColor: "#ecfdf5",
-  border: "1px solid #10b981",
-  borderRadius: "8px",
-  padding: "20px",
-  margin: "24px 0",
-};
-
-const priorityTitle = {
-  color: "#065f46",
-  fontSize: "16px",
-  fontWeight: "600",
-  margin: "0 0 12px",
-};
-
-const priorityText = {
-  color: "#047857",
-  fontSize: "14px",
-  lineHeight: "20px",
-  margin: "0",
-};
-
-const footer = {
-  padding: "24px",
-  textAlign: "center" as const,
+  padding: "16px 32px",
 };
 
 const hr = {
-  borderColor: "#e5e7eb",
+  borderColor: "#f3f4f6",
   margin: "32px 0 24px",
 };
 
-const footerText = {
-  color: "#6b7280",
-  fontSize: "14px",
-  margin: "8px 0",
+const link = {
+  color: "#050505",
+  textDecoration: "underline",
+};
+
+const footer = {
+  padding: "0 40px 48px",
+  textAlign: "center" as const,
 };
 
 const footerSmall = {
   color: "#9ca3af",
   fontSize: "12px",
   lineHeight: "16px",
-  margin: "16px 0 0",
 };

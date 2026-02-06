@@ -1,4 +1,9 @@
 {
+  "Blog": {
+    "copyLink": "Copy link",
+    "linkCopied": "Link copied to clipboard!",
+    "backToHome": "Back to Home"
+  },
   "Seo": {
     "title": "NeoCraft - Digital Agency: Web, Mobile, Design & SEO",
     "description": "Digital agency : web development, mobile apps, design, SEO, training. International team expertise. Free consultation.",
@@ -19,7 +24,10 @@
     "about": "About",
     "services": "Services",
     "contact": "Contact",
-    "cta": "I have a project"
+    "realisations": "Experience",
+    "tools": "Tools",
+    "team": "Team",
+    "cta": "Start a Project"
   },
   "Hero": {
     "badge": "The web innovation for digital success",
@@ -238,8 +246,10 @@
         "1": "Digital strategy",
         "2": "Technical training",
         "3": "Audit and optimisation"
-      }
-    }
+      },
+      "getStarted": "Start my project"
+    },
+    "getStarted": "Start my project"
   },
   "Methodology": {
     "badge": "Our approach",
@@ -289,6 +299,22 @@
     "testimonial5": {
       "designation": "Marketing Manager at CloudScale",
       "quote": "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable."
+    },
+    "testimonial6": {
+      "designation": "Founder of GreenTech",
+      "quote": "Exceptional human and technical support. NeoCraft listened to our ecological constraints to offer a sober and powerful web solution."
+    },
+    "testimonial7": {
+      "designation": "CTO of FinNode",
+      "quote": "Security was our top priority. NeoCraft's expertise in secure backend architecture allowed us to launch our platform with complete peace of mind."
+    },
+    "testimonial8": {
+      "designation": "Art Director at CreativeDesign",
+      "quote": "Working with developers who understand UI/UX challenges is a luxury. NeoCraft's code respects every pixel of our designs."
+    },
+    "testimonial9": {
+      "designation": "CEO of EduNext",
+      "quote": "The team's agility was crucial for our launch. They were able to pivot with us without ever sacrificing code quality."
     }
   },
   "progressiveContactForm": {
@@ -303,7 +329,7 @@
       },
       "subject": "What would you like to discuss?",
       "message": "Tell us about your project",
-      "complete": "Message sent successfully!"
+      "complete": "Message sent successfully! Our team will call you back shortly."
     },
     "formStepPlaceholder": {
       "name": "Your first name or last name",
@@ -323,7 +349,8 @@
     "formStatus": {
       "sending": "Sending...",
       "send": "Send",
-      "continue": "Continue"
+      "continue": "Continue",
+      "back": "Back"
     },
     "step": {
       "name": "Step",
@@ -380,5 +407,150 @@
   "chat": {
     "welcomeMessage": "Hello. I am NeoBot, your virtual assistant. How can I help you?",
     "placeholder": "Enter your message..."
+  },
+  "Team": {
+    "badge": "The Team",
+    "title": "Digital Craftsmen",
+    "description": "A passionate team combining technical expertise and creative vision to bring your projects to life.",
+    "marc": {
+      "role": "Lead Developer",
+      "bio": "Expert in software architecture and passionate about emerging technologies."
+    },
+    "sophie": {
+      "role": "Creative Director",
+      "bio": "UI/UX design specialist, she transforms every idea into a unique visual experience."
+    },
+    "thomas": {
+      "role": "UI/UX Designer",
+      "bio": "Detail and precision are his watchwords for creating intuitive interfaces."
+    },
+    "lucas": {
+      "role": "Product Manager",
+      "bio": "He ensures the perfect link between your business needs and technical implementation."
+    }
+  },
+  "Privacy": {
+    "badge": "Privacy",
+    "title": "Privacy Policy",
+    "description": "We are committed to protecting your privacy and your personal data with the utmost transparency.",
+    "lastUpdated": "Last updated: December 21, 2025",
+    "introduction": {
+      "title": "Introduction",
+      "content": "This Privacy Policy describes how NeoCraft collects, uses, and protects your information when you use our website and services. By using our services, you agree to the practices described in this policy."
+    },
+    "dataCollection": {
+      "title": "Data Collection",
+      "content": "When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies installed.",
+      "cookies": "Cookies and Trackers",
+      "logs": "Log Files",
+      "info": "Order Information"
+    },
+    "usage": {
+      "title": "Data Usage",
+      "services": "Core Services",
+      "improvement": "Service Improvement",
+      "marketing": "Marketing",
+      "legal": "Legal Obligations"
+    },
+    "protection": {
+      "title": "Protection & Sharing",
+      "noSale": "Non-Sale Commitment",
+      "noSaleContent": "NeoCraft never sells, rents, or exchanges your personal information with third parties for commercial purposes.",
+      "security": "Technical and Organizational Security Measures"
+    },
+    "rights": {
+      "title": "Your Rights (GDPR)",
+      "content": "In accordance with GDPR, you have full control over your data:",
+      "access": "Right of Access",
+      "rectification": "Right of Rectification",
+      "erasure": "Right to Erasure",
+      "portability": "Portability",
+      "how": "Contact us at privacy@neocraft.dev to exercise your rights."
+    }
+  },
+  "Realisations": {
+    "badge": "Portfolio",
+    "title": "Our Work",
+    "description": "Discover how we transform complex ideas into exceptional digital experiences.",
+    "viewProject": "View Project"
+  },
+  "Outils": {
+    "badge": "Tech Stack",
+    "title": "Our Precision Tools",
+    "description": "We use the most advanced technologies to ensure performance, security, and scalability for your projects.",
+    "frontend": {
+      "title": "Frontend & Design",
+      "description": "Fluid interfaces with React, Next.js, and Tailwind CSS for an exceptional user experience."
+    },
+    "backend": {
+      "title": "Backend & Cloud",
+      "description": "Robust infrastructure with Node.js, PostgreSQL, and Vercel for rock-solid stability."
+    },
+    "ai": {
+      "title": "Artificial Intelligence",
+      "description": "Integrating AI tools like OpenAI and Claude to automate and optimize your workflows."
+    }
+  },
+  "CTA": {
+    "badge": "Ready to start?",
+    "title": "Let's bring",
+    "subtitle": "your project to life",
+    "description": "Let's transform your vision into an exceptional digital solution together. Contact us to discuss your project.",
+    "button": "Start a project"
+  },
+  "TrustBadges": {
+    "stats": {
+      "projects": "Projects delivered",
+      "satisfaction": "Client satisfaction",
+      "availability": "Availability",
+      "rating": "Average rating"
+    },
+    "badges": {
+      "security": "Secure data",
+      "delivery": "On-time delivery",
+      "support": "Responsive support",
+      "quality": "Quality guaranteed"
+    },
+    "clientsTitle": "Trusted by leading companies",
+    "guarantee": {
+      "title": "Satisfaction Guarantee",
+      "description": "Money-back guarantee for 30 days"
+    }
+  },
+  "Booking": {
+    "bookCall": "Book a call",
+    "title": "Schedule a free consultation",
+    "description": "Let's discuss your project during a 30-minute call."
+  },
+  "WhatsApp": {
+    "greeting": "Need help?",
+    "subtitle": "We're here to answer your questions.",
+    "startChat": "Start a conversation",
+    "defaultMessage": "Hello! I'd like to learn more about your services."
+  },
+  "CookieConsent": {
+    "title": "We use cookies 🍪",
+    "description": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.",
+    "learnMore": "Learn more",
+    "customize": "Customize",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject all",
+    "savePreferences": "Save preferences",
+    "settings": {
+      "title": "Cookie preferences",
+      "required": "Required",
+      "necessary": {
+        "title": "Essential cookies",
+        "description": "These cookies are necessary for the website to function and cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics cookies",
+        "description": "Help us understand how visitors interact with the site (Google Analytics, Clarity)."
+      },
+      "marketing": {
+        "title": "Marketing cookies",
+        "description": "Used to deliver relevant ads and measure campaign effectiveness."
+      }
+    }
   }
 }

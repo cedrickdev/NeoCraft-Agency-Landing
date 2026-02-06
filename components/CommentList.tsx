@@ -40,7 +40,7 @@ export function CommentList({ comments, config, isLoading }: CommentListProps) {
   if (comments.length === 0) {
     return (
       <div className="text-muted-foreground mt-8 text-center">
-        Aucun commentaire pour l'instant. Soyez le premier à commenter !
+        Aucun commentaire pour l&apos;instant. Soyez le premier à commenter !
       </div>
     );
   }

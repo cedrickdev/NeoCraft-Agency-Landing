@@ -1,10 +1,10 @@
 "use client";
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTrigger,
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTrigger,
 } from "@/components/ui/sheet";
 import { config } from "@/config";
 import { cn } from "@/lib/utils";
@@ -77,7 +77,7 @@ export const BlogHeader: FunctionComponent = () => {
     <section className="flex items-center justify-between mt-12 md:mt-16 mb-5 p-6">
       <Link href="/blog">
         <h1 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight bg-gradient-to-r from-blue-600  to-emerald-500 bg-clip-text text-transparent animate-gradient ">
-          {config.blog.name}
+          {config.title}
         </h1>
       </Link>
       {/*<Navigation />*/}
