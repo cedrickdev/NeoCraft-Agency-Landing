@@ -2,30 +2,48 @@
 
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Github, Linkedin, Twitter } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-const teamMembers = [
+type SocialLinks = {
+  twitter?: string;
+  linkedin?: string;
+  github?: string;
+  facebook?: string;
+};
+
+const socialIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  twitter: Twitter,
+  linkedin: Linkedin,
+  github: Github,
+  facebook: Facebook,
+};
+
+const teamMembers: {
+  id: string;
+  image: string;
+  socials: SocialLinks;
+}[] = [
   {
     id: "member1",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=60",
-    socials: { twitter: "#", linkedin: "#", github: "#" }
+    socials: { twitter: "https://x.com/fezz4real", linkedin: "https://www.linkedin.com/in/cedrick-feze", github: "https://github.com/cedrickdev" }
   },
   {
     id: "member2",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop&q=60",
-    socials: { twitter: "#", linkedin: "#", github: "#" }
+    socials: { facebook: "https://www.facebook.com/marine.mamgue" }
   },
   {
     id: "member3",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&auto=format&fit=crop&q=60",
-    socials: { twitter: "#", linkedin: "#", github: "#" }
+    socials: { linkedin: "#", github: "#" }
   },
   {
     id: "member4",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=60",
-    socials: { twitter: "#", linkedin: "#", github: "#" }
+    socials: { linkedin: "#" }
   }
 ];
 
@@ -97,15 +115,21 @@ export default function Team() {
                 {/* Social Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                   <div className="flex gap-4">
-                    <a href={member.socials.twitter} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
-                      <Twitter className="w-4 h-4" />
-                    </a>
-                    <a href={member.socials.linkedin} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
-                      <Linkedin className="w-4 h-4" />
-                    </a>
-                    <a href={member.socials.github} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
-                      <Github className="w-4 h-4" />
-                    </a>
+                    {Object.entries(member.socials).map(([platform, url]) => {
+                      const Icon = socialIcons[platform];
+                      if (!Icon || !url) return null;
+                      return (
+                        <a
+                          key={platform}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+                        >
+                          <Icon className="w-4 h-4" />
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

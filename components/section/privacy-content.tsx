@@ -17,7 +17,7 @@ export default function PrivacyContent() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } }
   };
 
   const sections = [
@@ -77,12 +77,12 @@ export default function PrivacyContent() {
           <Button variant="ghost" asChild className="group text-muted-foreground hover:text-primary transition-colors">
             <Link href="/" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-              <span>Back to Home</span>
+              <span>{t('backToHome')}</span>
             </Link>
           </Button>
         </motion.div>
 
-        {/* Header Section */}
+        {/* Header */}
         <div className="mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -105,38 +105,44 @@ export default function PrivacyContent() {
           </motion.div>
         </div>
 
-        {/* Main Content Sections */}
+        {/* Sections */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-12"
+          className="space-y-6"
         >
           {sections.map((section, idx) => (
             <motion.div
               key={idx}
               variants={itemVariants}
-              className="glass-card p-8 md:p-12 rounded-[2.5rem] border-primary/10 hover:border-primary/20 transition-all duration-500"
+              className="group rounded-2xl border border-primary/5 bg-primary/[0.02] p-8 md:p-10 hover:border-primary/20 transition-all duration-500 relative overflow-hidden"
             >
-              <div className="flex flex-col md:flex-row gap-8">
+              {/* Subtle hover glow */}
+              <div className="absolute -top-20 -right-20 w-48 h-48 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+              <div className="flex flex-col md:flex-row gap-6 relative z-10">
                 <div className="flex-shrink-0">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary">
-                    <section.icon className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
+                    <section.icon className="w-5 h-5" />
                   </div>
                 </div>
                 <div className="flex-grow">
-                  <h2 className="text-2xl font-bold mb-6 tracking-tight">{section.title}</h2>
+                  <h2 className="text-xl font-bold mb-4 tracking-tight">{section.title}</h2>
+                  
                   {section.content && (
                     <p className="text-muted-foreground leading-relaxed mb-6">
-                      {section.highlight && <span className="text-primary font-bold block mb-2">{section.highlight}</span>}
+                      {section.highlight && (
+                        <span className="text-primary font-bold block mb-2">{section.highlight}</span>
+                      )}
                       {section.content}
                     </p>
                   )}
                   
                   {section.items && (
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid sm:grid-cols-3 gap-3">
                       {section.items.map((item, i) => (
-                        <div key={i} className="p-4 rounded-2xl bg-primary/5 border border-primary/5">
+                        <div key={i} className="p-4 rounded-xl bg-primary/[0.03] border border-primary/5">
                           <p className="font-bold text-sm mb-1">{item.label}</p>
                           <p className="text-xs text-muted-foreground">{item.desc}</p>
                         </div>
@@ -145,9 +151,9 @@ export default function PrivacyContent() {
                   )}
 
                   {section.grid && (
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                       {section.grid.map((item, i) => (
-                        <div key={i} className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-primary/5 border border-primary/5 hover:bg-primary/10 transition-colors">
+                        <div key={i} className="flex flex-col items-center gap-3 p-4 rounded-xl bg-primary/[0.03] border border-primary/5 hover:bg-primary/5 transition-colors">
                           <item.icon className="w-5 h-5 text-primary/40" />
                           <p className="text-[10px] font-black uppercase tracking-widest text-center">{item.label}</p>
                         </div>
@@ -169,21 +175,27 @@ export default function PrivacyContent() {
             </motion.div>
           ))}
 
-          {/* Contact Box */}
+          {/* Contact CTA */}
           <motion.div
             variants={itemVariants}
-            className="p-1 rounded-[3rem] bg-gradient-to-br from-primary/20 via-primary/5 to-transparent mt-20"
+            className="mt-16 rounded-2xl border border-primary/10 bg-primary/[0.02] p-10 md:p-14 relative overflow-hidden group hover:border-primary/20 transition-all duration-500"
           >
-            <div className="bg-card p-10 md:p-16 rounded-[2.9rem] text-center">
-              <div className="w-20 h-20 rounded-3xl bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-primary/20">
-                <Mail className="w-8 h-8" />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
+            </div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+              <div className="w-16 h-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shrink-0 shadow-lg shadow-primary/20">
+                <Mail className="w-7 h-7" />
               </div>
-              <h2 className="text-3xl font-bold mb-6">{t('rights.title')}</h2>
-              <p className="text-muted-foreground mb-10 max-w-md mx-auto">
-                {t('rights.how')}
-              </p>
-              <Button asChild size="lg" className="rounded-2xl h-14 px-10 font-bold">
-                <a href="mailto:privacy@neocraft.dev">Get in Touch</a>
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-2xl font-bold mb-2 tracking-tight">{t('rights.title')}</h2>
+                <p className="text-muted-foreground">
+                  {t('rights.how')}
+                </p>
+              </div>
+              <Button asChild size="lg" className="rounded-full px-8 shrink-0">
+                <a href="mailto:privacy@neocraft.dev">{t('contactButton')}</a>
               </Button>
             </div>
           </motion.div>

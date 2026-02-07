@@ -3,42 +3,69 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowLeft, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Facebook, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+
+type SocialLinks = {
+  twitter?: string;
+  linkedin?: string;
+  github?: string;
+  facebook?: string;
+};
+
+const socialIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  twitter: Twitter,
+  linkedin: Linkedin,
+  github: Github,
+  facebook: Facebook,
+};
 
 export default function TeamContent() {
   const t = useTranslations('Team');
 
   const team = [
     {
-      name: "Cedrick Feze",
+      name: "Cédrick Tchinda",
       role: t("cedrick.role"),
       bio: t("cedrick.bio"),
       image: "/team/cedrick.webp",
-      social: { twitter: "#", linkedin: "#", github: "#" }
+      social: {
+        twitter: "https://x.com/fezz4real",
+        linkedin: "https://www.linkedin.com/in/cedrick-feze",
+        github: "https://github.com/cedrickdev",
+      } as SocialLinks
     },
     {
       name: "Marine Mamgue",
       role: t("mj.role"),
       bio: t("mj.bio"),
       image: "/team/mj.webp",
-      social: { twitter: "#", linkedin: "#", github: "#" }
+      social: {
+        facebook: "https://www.facebook.com/profile.php?id=61557157384910",
+      } as SocialLinks
     },
     {
-      name: "Jorel",
+      name: "Jorel Kue",
       role: t("jorel.role"),
       bio: t("jorel.bio"),
       image: "/team/jorel.webp",
-      social: { twitter: "#", linkedin: "#", github: "#" }
+      social: {
+        linkedin: "https://www.linkedin.com/in/jorel-kue-5a7961262/",
+        github: "https://github.com/Bassogog",
+      } as SocialLinks
     },
     {
-      name: "Stephane",
+      name: "Stephane Kamga",
       role: t("stephane.role"),
       bio: t("stephane.bio"),
       image: "/team/stephane.webp",
-      social: { twitter: "#", linkedin: "#", github: "#" }
+      social: {
+        linkedin: "https://www.linkedin.com/in/stephkamga",
+        twitter: "https://x.com/kamgasteph32994?s=21",
+        github: "https://github.com/stephanekamga",
+      } as SocialLinks
     }
   ];
 
@@ -97,7 +124,7 @@ export default function TeamContent() {
           </motion.div>
         </div>
 
-        {/* Team Grid */}
+        {/* Team Grid - 4 columns */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -123,17 +150,23 @@ export default function TeamContent() {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                {/* Social Links on Hover */}
+                {/* Social Links on Hover - only existing ones */}
                 <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-4 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <a href={member.social.twitter} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-primary transition-colors">
-                    <Twitter className="w-4 h-4" />
-                  </a>
-                  <a href={member.social.linkedin} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-primary transition-colors">
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                  <a href={member.social.github} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-primary transition-colors">
-                    <Github className="w-4 h-4" />
-                  </a>
+                  {Object.entries(member.social).map(([platform, url]) => {
+                    const Icon = socialIcons[platform];
+                    if (!Icon || !url) return null;
+                    return (
+                      <a
+                        key={platform}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-primary transition-colors"
+                      >
+                        <Icon className="w-4 h-4" />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -153,6 +186,48 @@ export default function TeamContent() {
               <div className="absolute inset-0 -z-10 bg-primary/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Join the Team CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-7xl mx-auto mt-10"
+        >
+          <div className="rounded-[2.5rem] border border-primary/10 bg-primary/[0.02] p-12 sm:p-16 relative overflow-hidden group hover:border-primary/20 transition-all duration-500">
+            {/* Animated gradient bg */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/[0.07] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
+              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/[0.05] rounded-full blur-[80px] translate-y-1/2 -translate-x-1/3 animate-pulse" style={{ animationDelay: "1s" }} />
+            </div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-3">
+                  {t("cta.title")}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed max-w-lg text-lg">
+                  {t("cta.description")}
+                </p>
+              </div>
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full px-10 py-6 text-base group/btn shrink-0"
+              >
+                <a
+                  href="mailto:careers@neocraft.dev"
+                  className="flex items-center gap-2"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>{t("cta.button")}</span>
+                  <ArrowUpRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                </a>
+              </Button>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
