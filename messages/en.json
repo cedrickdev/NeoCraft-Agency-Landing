@@ -455,20 +455,20 @@
     "description": "A passionate team combining technical expertise and creative vision to bring your projects to life.",
     "backToHome": "Back to Home",
     "cedrick": {
-      "role": "Founder & CEO",
-      "bio": "Founder of NeoCraft, passionate about technology and software architecture. Cedrick leads strategy, innovation and helps businesses with their digital transformation."
+      "role": "Backend Developer & Consultant",
+      "bio": "Founder of NeoCraft. Cedrick designs the backend architecture for the agency's projects and provides technical consulting to clients. He also drives the innovation strategy."
     },
     "mj": {
-      "role": "Digital Image Consulting & Growth Strategy",
-      "bio": "Digital brand image consulting & growth strategy. Community management, growth hacking, customer retention strategies, brand content & storytelling, marketing & positioning, advertising campaigns and social engagement. Not just a Community Manager, a strategic ally to grow your business."
+      "role": "Brand Image & Growth",
+      "bio": "Marine builds the agency's visual identity, manages social media and defines the growth strategy for NeoCraft and its clients."
     },
     "jorel": {
-      "role": "Java/Spring Boot Developer | Frontend Dev",
-      "bio": "Full-stack developer with a strong back-end sensibility, Jorel builds robust applications and modern interfaces."
+      "role": "Frontend Developer & Graphic Designer",
+      "bio": "Jorel develops the interfaces of our projects and creates the agency's visuals. He ensures consistency between code and design."
     },
     "stephane": {
-      "role": "Mobile Developer | Java/Dart Trainer",
-      "bio": "Passionate mobile developer and experienced trainer, Stephane masters Java and Dart to build high-performance applications."
+      "role": "Mobile Developer & Trainer",
+      "bio": "Stephane builds the agency's mobile applications and leads the technical training programs in Java and Dart offered by NeoCraft."
     },
     "cta": {
       "title": "Join the adventure",
