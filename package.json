@@ -24,7 +24,7 @@
     "start": "next start",
     "lint": "eslint app components lib hooks --ext .ts,.tsx",
     "postbuild": "next-sitemap",
-    "test": "vitest",
+    "test": "vitest run",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
