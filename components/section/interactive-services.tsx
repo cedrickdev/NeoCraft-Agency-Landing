@@ -200,22 +200,22 @@ export default function InteractiveServices() {
     const currentServiceData = servicesData[activeMainService]?.[activeSubService] || ({} as ServiceData);
 
     return (
-        <section id="iservices" className="py-32 relative overflow-hidden bg-background">
+        <section id="iservices" className="py-16 md:py-32 relative overflow-hidden bg-background">
             <div className="container mx-auto px-4 relative z-10">
-                <div className="max-w-4xl mx-auto text-center mb-20">
+                <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <Badge variant="outline" className="mb-6 px-4 py-1.5 rounded-full border-primary/10 bg-primary/5 text-primary/80 font-medium">
+                        <Badge variant="outline" className="mb-4 md:mb-6 px-4 py-1.5 rounded-full border-primary/10 bg-primary/5 text-primary/80 font-medium text-xs">
                             Full Stack Agency
                         </Badge>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 tracking-tight">
                             {t('title')}
                         </h2>
-                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                        <p className="text-base md:text-xl text-muted-foreground leading-relaxed px-2">
                             {t('description')}
                         </p>
                     </motion.div>
@@ -223,12 +223,12 @@ export default function InteractiveServices() {
 
                 <div className="max-w-6xl mx-auto">
                     {/* Main Category Tabs */}
-                    <div className="flex flex-wrap justify-center gap-4 mb-12">
+                    <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 md:mb-12">
                         {["development", "marketing", "consulting"].map((id) => (
                             <button
                                 key={id}
                                 onClick={() => setActiveMainService(id)}
-                                className={`px-10 py-4 rounded-2xl text-lg font-bold transition-all duration-300 ${
+                                className={`px-5 sm:px-10 py-2.5 sm:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-lg font-bold transition-all duration-300 ${
                                     activeMainService === id
                                         ? "bg-primary text-primary-foreground shadow-xl shadow-primary/20 scale-105"
                                         : "bg-primary/5 text-muted-foreground hover:bg-primary/10 hover:text-primary"
@@ -239,28 +239,28 @@ export default function InteractiveServices() {
                         ))}
                     </div>
 
-                    <div className="grid lg:grid-cols-12 gap-12">
-                        {/* Sub-service sidebar */}
-                        <div className="lg:col-span-4 flex flex-col gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
+                        {/* Sub-service sidebar - horizontal scroll on mobile */}
+                        <div className="lg:col-span-4">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={activeMainService}
                                     initial={{ opacity: 0, x: -10 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -10 }}
-                                    className="space-y-4"
+                                    className="flex lg:flex-col gap-2 sm:gap-4 overflow-x-auto lg:overflow-x-visible pb-2 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0 scrollbar-none"
                                 >
                                     {currentSubServices.map((sub) => (
                                         <button
                                             key={sub.id}
                                             onClick={() => setActiveSubService(sub.id)}
-                                            className={`w-full text-left p-6 rounded-2xl transition-all duration-300 border-2 ${
+                                            className={`flex-shrink-0 text-left px-4 py-3 sm:p-6 rounded-xl sm:rounded-2xl transition-all duration-300 border-2 ${
                                                 activeSubService === sub.id
                                                     ? "bg-primary/5 border-primary/20 shadow-lg"
                                                     : "bg-transparent border-transparent hover:bg-primary/5 text-muted-foreground"
                                             }`}
                                         >
-                                            <span className={`text-xl font-bold tracking-tight ${activeSubService === sub.id ? "text-primary" : ""}`}>
+                                            <span className={`text-sm sm:text-xl font-bold tracking-tight whitespace-nowrap lg:whitespace-normal ${activeSubService === sub.id ? "text-primary" : ""}`}>
                                                 {sub.name}
                                             </span>
                                         </button>
@@ -278,43 +278,43 @@ export default function InteractiveServices() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.4 }}
-                                    className="glass-card rounded-[3rem] p-10 md:p-16 h-full border-primary/10"
+                                    className="glass-card rounded-2xl md:rounded-[3rem] p-6 sm:p-10 md:p-16 h-full border-primary/10"
                                 >
-                                    <div className="flex items-center gap-6 mb-10">
-                                        <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center text-primary">
-                                            {currentServiceData.icon && <currentServiceData.icon className="w-8 h-8" />}
+                                    <div className="flex items-center gap-4 sm:gap-6 mb-6 sm:mb-10">
+                                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-primary/5 flex items-center justify-center text-primary flex-shrink-0">
+                                            {currentServiceData.icon && <currentServiceData.icon className="w-6 h-6 sm:w-8 sm:h-8" />}
                                         </div>
-                                        <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
+                                        <h3 className="text-xl sm:text-3xl md:text-4xl font-bold tracking-tight">
                                             {currentServiceData.title}
                                         </h3>
                                     </div>
 
-                                    <div className="space-y-8">
-                                        <p className="text-xl text-muted-foreground leading-relaxed">
+                                    <div className="space-y-6 sm:space-y-8">
+                                        <p className="text-base sm:text-xl text-muted-foreground leading-relaxed">
                                             {currentServiceData.description}
                                         </p>
 
                                         {currentServiceData.features && (
-                                            <div className="grid md:grid-cols-2 gap-4">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                                                 {currentServiceData.features.map((feature, i) => (
-                                                    <div key={i} className="flex items-center gap-3 p-4 bg-primary/5 rounded-xl border border-primary/5">
-                                                        <CheckCircle className="w-5 h-5 text-primary/40" />
-                                                        <span className="font-semibold">{feature}</span>
+                                                    <div key={i} className="flex items-center gap-3 p-3 sm:p-4 bg-primary/5 rounded-xl border border-primary/5">
+                                                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary/40 flex-shrink-0" />
+                                                        <span className="font-semibold text-sm sm:text-base">{feature}</span>
                                                     </div>
                                                 ))}
                                             </div>
                                         )}
 
-                                        <div className="pt-8 border-t border-primary/5">
-                                            <p className="text-primary font-bold text-lg flex items-center gap-3 italic">
-                                                <Zap className="w-6 h-6" />
+                                        <div className="pt-6 sm:pt-8 border-t border-primary/5">
+                                            <p className="text-primary font-bold text-sm sm:text-lg flex items-center gap-2 sm:gap-3 italic">
+                                                <Zap className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
                                                 {currentServiceData.cta}
                                             </p>
                                         </div>
                                         
                                         <Button 
                                             size="lg" 
-                                            className="h-14 px-10 rounded-2xl group transition-all"
+                                            className="h-12 sm:h-14 px-6 sm:px-10 rounded-xl sm:rounded-2xl group transition-all w-full sm:w-auto"
                                             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                                         >
                                             {t('getStarted')}

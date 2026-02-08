@@ -114,37 +114,38 @@ export default function Header() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -20 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="fixed inset-x-4 top-24 z-40 md:hidden"
+                        className="fixed inset-x-4 top-20 z-40 md:hidden"
                     >
-                        <div className="bg-background border border-primary/10 p-8 rounded-[2rem] shadow-2xl">
-                            <nav className="flex flex-col gap-6">
+                        <div className="bg-background border border-primary/10 p-6 rounded-2xl shadow-2xl max-h-[calc(100dvh-6rem)] overflow-y-auto">
+                            <nav className="flex flex-col gap-1">
                                 {navLinks.map((link) => (
                                     <Link
                                         key={link.href}
                                         href={link.href}
-                                        className="text-2xl font-bold tracking-tight hover:text-primary transition-colors flex items-center justify-between"
+                                        className="text-lg font-bold tracking-tight hover:text-primary transition-colors flex items-center justify-between py-3 px-2 rounded-xl hover:bg-primary/5"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         {link.label}
-                                        <ArrowRight className="w-5 h-5 opacity-20" />
+                                        <ArrowRight className="w-4 h-4 opacity-20" />
                                     </Link>
                                 ))}
-                                <div className="pt-6 border-t border-primary/5 flex items-center justify-between">
-                                    <div className="flex gap-2">
-                                        <LanguageSwitcher />
-                                        <DarkModeToggle />
-                                    </div>
-                                    <Button
-                                        className="rounded-xl px-6"
-                                        onClick={() => {
-                                            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                                            setIsMenuOpen(false);
-                                        }}
-                                    >
-                                        {t("cta")}
-                                    </Button>
-                                </div>
                             </nav>
+                            <div className="mt-4 pt-4 border-t border-primary/5 space-y-4">
+                                <Button
+                                    className="w-full rounded-xl h-12 font-bold group"
+                                    onClick={() => {
+                                        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                                        setIsMenuOpen(false);
+                                    }}
+                                >
+                                    {t("cta")}
+                                    <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                </Button>
+                                <div className="flex items-center justify-center gap-3">
+                                    <LanguageSwitcher />
+                                    <DarkModeToggle />
+                                </div>
+                            </div>
                         </div>
                     </motion.div>
                 )}

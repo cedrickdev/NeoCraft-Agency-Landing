@@ -166,37 +166,37 @@ export const RealizationList = ({ posts }: RealizationListProps) => {
                     </div>
                   )}
 
-                  {/* Gradient overlay - always visible subtly, stronger on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+                  {/* Gradient overlay - strong enough for title readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/50 transition-all duration-500" />
 
                   {/* Content overlay */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                    {/* Tags */}
-                    <div className="flex items-center gap-2 mb-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    {/* Tags - always visible */}
+                    <div className="flex items-center gap-2 mb-3">
                       {post.tags.map((tag) => (
                         <span
                           key={tag.id}
-                          className="text-[10px] uppercase tracking-[0.15em] font-bold bg-white/15 backdrop-blur-md px-3 py-1 rounded-full text-white/90"
+                          className="text-[10px] uppercase tracking-[0.15em] font-bold bg-white/15 backdrop-blur-md px-3 py-1 rounded-full text-white/80"
                         >
                           {tag.name}
                         </span>
                       ))}
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-xl md:text-2xl font-bold text-white leading-tight drop-shadow-lg">
+                    {/* Title - always visible */}
+                    <h3 className="text-xl md:text-2xl font-bold text-white/85 leading-tight [text-shadow:_0_2px_12px_rgba(0,0,0,0.3)]">
                       {post.title}
                     </h3>
 
                     {/* Description - visible on hover */}
                     {post.description && (
-                      <p className="text-white/70 text-sm mt-2 line-clamp-2 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75">
+                      <p className="text-white/70 text-sm mt-2 line-clamp-2 max-h-0 group-hover:max-h-20 opacity-0 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
                         {post.description}
                       </p>
                     )}
 
-                    {/* CTA */}
-                    <div className="flex items-center gap-1.5 mt-4 text-white/80 text-sm font-semibold translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                    {/* CTA - visible on hover */}
+                    <div className="flex items-center gap-1.5 mt-0 group-hover:mt-4 text-white/80 text-sm font-semibold max-h-0 group-hover:max-h-10 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-75 overflow-hidden">
                       <span>{t("viewProject")}</span>
                       <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>

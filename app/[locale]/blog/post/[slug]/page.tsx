@@ -35,8 +35,8 @@ export async function generateMetadata(
       title: result.post.title,
       description: result.post.description ?? "",
       type: "article",
-      publishedTime: result.post.publishedAt?.toISOString(),
-      modifiedTime: result.post.updatedAt.toISOString(),
+      publishedTime: result.post.publishedAt ? new Date(result.post.publishedAt).toISOString() : undefined,
+      modifiedTime: new Date(result.post.updatedAt).toISOString(),
       images: [result.post.image || getOgImageUrl(result.post.title)],
     },
   };

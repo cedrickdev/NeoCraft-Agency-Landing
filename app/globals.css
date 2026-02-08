@@ -153,6 +153,15 @@ html {
   @apply bg-muted-foreground/20 rounded-full border-4 border-solid border-background hover:bg-muted-foreground/40 transition-colors;
 }
 
+/* Hide scrollbar for horizontal scroll areas */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   *,
