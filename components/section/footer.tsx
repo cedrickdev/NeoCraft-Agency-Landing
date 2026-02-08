@@ -14,11 +14,11 @@ export default async function Footer() {
   const t = await getTranslations('footer');
 
   const serviceLinks = [
-    { label: t('services.showcaseWebsite'), href: "#hero" },
-    { label: t('services.ecommerceWebsite'), href: "#services" },
-    { label: t('services.development'), href: "#iservices" },
-    { label: t('services.ads'), href: "#iservices" },
-    { label: t('services.seo'), href: "#iservices" }
+    { label: t('services.showcaseWebsite'), href: "/#services" },
+    { label: t('services.ecommerceWebsite'), href: "/#services" },
+    { label: t('services.development'), href: "/#services" },
+    { label: t('services.ads'), href: "/#services" },
+    { label: t('services.seo'), href: "/#services" }
   ];
 
   return (
@@ -37,7 +37,7 @@ export default async function Footer() {
             </div>
             
             <p className="text-muted-foreground max-w-sm leading-relaxed">
-              Savoir-faire artisanal au service de votre transformation digitale. Création web, mobile et formations d&apos;excellence.
+              {t('description')}
             </p>
 
             <SocialIcons />

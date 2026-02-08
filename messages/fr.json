@@ -2,6 +2,28 @@
   "macbook": {
     "title": "Découvrez nos réalisations en action"
   },
+  "NotFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backToHome": "Retour à l'accueil"
+  },
+  "Comments": {
+    "loading": "Chargement...",
+    "addComment": "Ajouter un commentaire",
+    "comments": "Commentaires",
+    "noComments": "Aucun commentaire pour l'instant. Soyez le premier à commenter !",
+    "replyTo": "En réponse à",
+    "error": "Erreur",
+    "pendingVerification": "Vérification de l'email en cours",
+    "verificationMessage": "Merci pour votre commentaire ! Veuillez vérifier votre email pour valider et publier votre commentaire. Si vous ne le trouvez pas, vérifiez votre dossier spam.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Email",
+    "websiteLabel": "Site web (optionnel)",
+    "commentLabel": "Commentaire",
+    "commentPlaceholder": "Partagez vos réflexions...",
+    "postComment": "Publier le commentaire"
+  },
   "Blog": {
     "copyLink": "Copier le lien",
     "linkCopied": "Lien copié dans le presse-papier !",
@@ -12,7 +34,15 @@
     "filterAll": "Tous",
     "searchPlaceholder": "Rechercher un article...",
     "emptyTitle": "Aucun article trouvé",
-    "emptyDescription": "Aucun article ne correspond à votre recherche. Essayez avec d'autres mots-clés."
+    "emptyDescription": "Aucun article ne correspond à votre recherche. Essayez avec d'autres mots-clés.",
+    "toc": "Table des matières",
+    "publishedOn": "Publié le",
+    "blogLabel": "Blog",
+    "relatedPosts": "Articles associés",
+    "shareTitle": "Partager cet article",
+    "shareOnTwitter": "Partager sur X",
+    "shareOnLinkedIn": "Partager sur LinkedIn",
+    "shareOnFacebook": "Partager sur Facebook"
   },
   "Seo": {
     "title": "NeoCraft - Agence Digitale : Web, Mobile, Design, SEO",
@@ -397,6 +427,7 @@
     "trustMessage": "Ils nous font confiance"
   },
   "footer": {
+    "description": "Savoir-faire artisanal au service de votre transformation digitale. Création web, mobile et formations d'excellence.",
     "services": {
       "showcaseWebsite": "Sites vitrine & institutionnels",
       "ecommerceWebsite": "Sites e-commerce",

@@ -153,6 +153,18 @@ html {
   @apply bg-muted-foreground/20 rounded-full border-4 border-solid border-background hover:bg-muted-foreground/40 transition-colors;
 }
 
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Base animations */
 .perspective-1000 {
   perspective: 1000px;

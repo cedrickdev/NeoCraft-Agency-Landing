@@ -11,6 +11,7 @@ import { ContentWithCustomComponents } from "@wisp-cms/react-custom-component";
 import { ArrowLeft, Link as LinkIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { CommentSection } from "./CommentSection";
 import { FullWidthHeader } from "./FullWidthHeader";
@@ -54,6 +55,37 @@ export const BlogContent = ({
     return isRealization ? rpIsRealization : !rpIsRealization;
   });
 
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // Optimize blog images: lazy loading, responsive srcset via Next.js Image Optimization API
+  useEffect(() => {
+    if (!contentRef.current) return;
+    const images = contentRef.current.querySelectorAll("img");
+    images.forEach((img) => {
+      const src = img.getAttribute("src");
+      if (!src) return;
+
+      // Add lazy loading
+      img.setAttribute("loading", "lazy");
+      img.setAttribute("decoding", "async");
+
+      // Use Next.js image optimization endpoint for remote images
+      if (src.startsWith("http")) {
+        const widths = [640, 828, 1080];
+        const srcset = widths
+          .map((w) => `/_next/image?url=${encodeURIComponent(src)}&w=${w}&q=75 ${w}w`)
+          .join(", ");
+        img.setAttribute("srcset", srcset);
+        img.setAttribute("sizes", "(max-width: 720px) 100vw, 720px");
+        // Set optimized src for default
+        img.setAttribute(
+          "src",
+          `/_next/image?url=${encodeURIComponent(src)}&w=1080&q=75`
+        );
+      }
+    });
+  }, [content]);
+
   const { modifiedHtml, tableOfContents } = processTableOfContents(content, {
     h1: true,
     h2: true,
@@ -87,20 +119,20 @@ export const BlogContent = ({
       <FullWidthHeader
         title={title}
         breadcrumb={[
-          { label: "Blog", href: "/blog" },
+          { label: t("blogLabel"), href: "/blog" },
           { label: title, href: "" },
         ]}
       />
       <div className="container mx-auto mt-4 px-4 max-w-6xl dark:text-gray-400">
         <div className="flex">
-          <div className="lg:w-3/4 prose prose-lg max-w-none w-full break-words blog-content">
+          <div ref={contentRef} className="lg:w-3/4 prose prose-lg max-w-none w-full break-words blog-content">
             <Accordion
               type="single"
               collapsible
               className="w-full not-prose my-6 block lg:hidden"
             >
               <AccordionItem value="toc" className="border-none">
-                <AccordionTrigger>Table of Content</AccordionTrigger>
+                <AccordionTrigger>{t("toc")}</AccordionTrigger>
                 <AccordionContent>
                   <TableOfContents items={tableOfContents} />
                 </AccordionContent>
@@ -115,14 +147,14 @@ export const BlogContent = ({
           </div>
           <div className="w-1/4 hidden lg:block">
             <div className="sticky top-0 mt-4 p-4 max-h-screen overflow-y-auto">
-              <div className="text-lg font-semibold">Table of Contents</div>
+              <div className="text-lg font-semibold">{t("toc")}</div>
               <TableOfContents items={tableOfContents} />
             </div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <div className="font-medium">
-            Publié le {publishedAt ? formatFullDate(publishedAt) : "N/A"}
+            {t("publishedOn")} {publishedAt ? formatFullDate(publishedAt) : "N/A"}
           </div>
         </div>
         <div className="my-8 space-x-2">
@@ -131,6 +163,37 @@ export const BlogContent = ({
               #{tag.name}
             </Link>
           ))}
+        </div>
+
+        {/* Social Share */}
+        <div className="my-8 flex items-center gap-4">
+          <span className="text-sm font-semibold text-muted-foreground">{t("shareTitle")}</span>
+          <div className="flex gap-2">
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${typeof window !== 'undefined' ? encodeURIComponent(window.location.href) : ''}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-primary/5 hover:bg-primary/10 text-primary transition-colors"
+            >
+              {t("shareOnTwitter")}
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${typeof window !== 'undefined' ? encodeURIComponent(window.location.href) : ''}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-primary/5 hover:bg-primary/10 text-primary transition-colors"
+            >
+              {t("shareOnLinkedIn")}
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${typeof window !== 'undefined' ? encodeURIComponent(window.location.href) : ''}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-primary/5 hover:bg-primary/10 text-primary transition-colors"
+            >
+              {t("shareOnFacebook")}
+            </a>
+          </div>
         </div>
 
         <CommentSection slug={slug} />

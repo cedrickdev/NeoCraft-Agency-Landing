@@ -307,6 +307,10 @@ export default async function LocaleLayout({children, params}: Props) {
         <ThemeProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
                 <BreadcrumbJsonLd />
+                {/* Skip link for accessibility */}
+                <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:text-sm focus:font-bold">
+                    {locale === 'fr' ? 'Passer au contenu principal' : 'Skip to main content'}
+                </a>
                 <div className="relative min-h-screen bg-background selection:bg-primary selection:text-white overflow-x-hidden">
                     
                     {/* Multi-layered background - simplified on mobile for performance */}

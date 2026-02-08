@@ -1,6 +1,7 @@
 "use client";
 
 import { format } from "date-fns";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 interface CommentListProps {
@@ -33,14 +34,16 @@ interface CommentListProps {
 }
 
 export function CommentList({ comments, config, isLoading }: CommentListProps) {
+  const t = useTranslations("Comments");
+
   if (isLoading) {
-    return <div className="animate-pulse">Chargement des commentaires...</div>;
+    return <div className="animate-pulse text-muted-foreground">{t("loading")}</div>;
   }
 
   if (comments.length === 0) {
     return (
       <div className="text-muted-foreground mt-8 text-center">
-        Aucun commentaire pour l&apos;instant. Soyez le premier à commenter !
+        {t("noComments")}
       </div>
     );
   }
@@ -52,7 +55,7 @@ export function CommentList({ comments, config, isLoading }: CommentListProps) {
           {comment.parent && (
             <div className="ml-8 border-l-2 pl-4">
               <div className="text-muted-foreground mb-2 text-sm">
-                En réponse à {comment.parent.author}
+                {t("replyTo")} {comment.parent.author}
               </div>
               <div className="text-muted-foreground whitespace-pre-line text-sm">
                 {comment.parent.content}

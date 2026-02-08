@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 
     // ✅ URLs canoniques et alternatives
     alternates: {
-        canonical: '/blog',
+        canonical: '/fr/blog',
         languages: {
             'fr': '/fr/blog',
             'en': '/en/blog',
@@ -135,6 +135,9 @@ export default function RootLayout({
 
     return (
         <>
+            {/* ✅ RSS Feed link */}
+            <link rel="alternate" type="application/rss+xml" title="NeoCraft Blog RSS" href="/rss.xml" />
+
             {/* ✅ JSON-LD structured data */}
             <Script
                 id="blog-jsonld"

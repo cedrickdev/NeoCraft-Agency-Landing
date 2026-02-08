@@ -98,6 +98,8 @@ export default function Header() {
                         size="icon"
                         className="md:hidden w-10 h-10 rounded-full hover:bg-primary/5"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-expanded={isMenuOpen}
+                        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     >
                         {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                     </Button>

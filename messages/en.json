@@ -2,6 +2,28 @@
   "macbook": {
     "title": "See our work in action"
   },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backToHome": "Back to Home"
+  },
+  "Comments": {
+    "loading": "Loading...",
+    "addComment": "Add a comment",
+    "comments": "Comments",
+    "noComments": "No comments yet. Be the first to comment!",
+    "replyTo": "Replying to",
+    "error": "Error",
+    "pendingVerification": "Pending email verification",
+    "verificationMessage": "Thanks for your comment! Please check your email to verify and post your comment. If you don't see it in your inbox, please check your spam folder.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "websiteLabel": "Website (optional)",
+    "commentLabel": "Comment",
+    "commentPlaceholder": "Share your thoughts...",
+    "postComment": "Post Comment"
+  },
   "Blog": {
     "copyLink": "Copy link",
     "linkCopied": "Link copied to clipboard!",
@@ -12,7 +34,15 @@
     "filterAll": "All",
     "searchPlaceholder": "Search articles...",
     "emptyTitle": "No articles found",
-    "emptyDescription": "No articles match your search. Try different keywords."
+    "emptyDescription": "No articles match your search. Try different keywords.",
+    "toc": "Table of Contents",
+    "publishedOn": "Published on",
+    "blogLabel": "Blog",
+    "relatedPosts": "Related Articles",
+    "shareTitle": "Share this article",
+    "shareOnTwitter": "Share on X",
+    "shareOnLinkedIn": "Share on LinkedIn",
+    "shareOnFacebook": "Share on Facebook"
   },
   "Seo": {
     "title": "NeoCraft - Digital Agency: Web, Mobile, Design & SEO",
@@ -397,6 +427,7 @@
     "trustMessage": "They trust us"
   },
   "footer": {
+    "description": "Craftsmanship at the service of your digital transformation. Web, mobile development and premium training.",
     "services": {
       "showcaseWebsite": "Showcase & institutional websites",
       "ecommerceWebsite": "E-commerce websites",

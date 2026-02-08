@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { AxiosError } from "axios";
 import { Shield } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { wisp } from "../lib/wisp";
@@ -61,6 +62,7 @@ interface CreateCommentRequest {
 }
 
 export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
+  const t = useTranslations("Comments");
   const { toast } = useToast();
   const { mutateAsync: createComment, data } = useMutation({
     mutationFn: async (input: CreateCommentRequest) => {
@@ -102,7 +104,7 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
     } catch (e) {
       if (e instanceof Error) {
         toast({
-          title: "Error",
+          title: t("error"),
           description: e.message,
           variant: "destructive",
         });
@@ -115,11 +117,9 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
       <Alert className="bg-muted border-none">
         <AlertDescription className="space-y-2 text-center">
           <Shield className="text-muted-foreground mx-auto h-10 w-10" />
-          <div className="font-medium">Pending email verification</div>
+          <div className="font-medium">{t("pendingVerification")}</div>
           <div className="text-muted-foreground m-auto max-w-lg text-balance text-sm">
-            Thanks for your comment! Please check your email to verify your
-            email and post your comment. If you don&apos;t see it in your inbox,
-            please check your spam folder.
+            {t("verificationMessage")}
           </div>
         </AlertDescription>
       </Alert>
@@ -135,10 +135,10 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
             name="author"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{t("nameLabel")}</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Your name"
+                    placeholder={t("namePlaceholder")}
                     {...field}
                     className="focus-visible:ring-inset"
                   />
@@ -152,7 +152,7 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>{t("emailLabel")}</FormLabel>
                 <FormControl>
                   <Input
                     type="email"
@@ -173,7 +173,7 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
             name="url"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Website (optional)</FormLabel>
+                <FormLabel>{t("websiteLabel")}</FormLabel>
                 <FormControl>
                   <Input
                     type="url"
@@ -193,10 +193,10 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
           name="content"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Comment</FormLabel>
+              <FormLabel>{t("commentLabel")}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Share your thoughts..."
+                  placeholder={t("commentPlaceholder")}
                   className="min-h-[120px] resize-y focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-offset-0"
                   {...field}
                 />
@@ -230,7 +230,7 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
 
         <div className="flex items-center justify-between pt-2">
           <Button type="submit" disabled={form.formState.isSubmitting}>
-            Post Comment
+            {t("postComment")}
           </Button>
         </div>
       </form>
