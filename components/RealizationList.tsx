@@ -2,11 +2,11 @@
 
 import type { GetPostsResult } from "@wisp-cms/client";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Layers3 } from "lucide-react";
+import { ArrowUpRight, Check, Layers3, Link as LinkIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 interface RealizationListProps {
   posts: GetPostsResult["posts"];
@@ -15,6 +15,42 @@ interface RealizationListProps {
 export const RealizationList = ({ posts }: RealizationListProps) => {
   const t = useTranslations("Realisations");
   const [activeTag, setActiveTag] = useState<string>("all");
+  const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
+
+  const fallbackCopy = (text: string) => {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    try { document.execCommand("copy"); } catch { /* noop */ }
+    document.body.removeChild(textarea);
+  };
+
+  const copyLink = useCallback((e: React.MouseEvent, slug: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const url = `${window.location.origin}/blog/post/${slug}`;
+    
+    const onCopied = () => {
+      setCopiedSlug(slug);
+      setTimeout(() => setCopiedSlug(null), 2000);
+    };
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(onCopied).catch(() => {
+        fallbackCopy(url);
+        onCopied();
+      });
+    } else {
+      fallbackCopy(url);
+      onCopied();
+    }
+  }, []);
 
   // Extract unique tags from all posts
   const allTags = useMemo(() => {
@@ -196,9 +232,22 @@ export const RealizationList = ({ posts }: RealizationListProps) => {
                     )}
 
                     {/* CTA - visible on hover */}
-                    <div className="flex items-center gap-1.5 mt-0 group-hover:mt-4 text-white/80 text-sm font-semibold max-h-0 group-hover:max-h-10 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-75 overflow-hidden">
-                      <span>{t("viewProject")}</span>
-                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <div className="flex items-center gap-3 mt-0 group-hover:mt-4 max-h-0 group-hover:max-h-10 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-75 overflow-hidden">
+                      <span className="flex items-center gap-1.5 text-white/80 text-sm font-semibold">
+                        {t("viewProject")}
+                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </span>
+                      <button
+                        onClick={(e) => copyLink(e, post.slug)}
+                        className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-white/80 text-xs font-semibold hover:bg-white/25 transition-all"
+                        title={t("copyLink")}
+                      >
+                        {copiedSlug === post.slug ? (
+                          <><Check className="w-3 h-3" /> {t("linkCopied")}</>
+                        ) : (
+                          <><LinkIcon className="w-3 h-3" /> {t("copyLink")}</>
+                        )}
+                      </button>
                     </div>
                   </div>
                 </div>

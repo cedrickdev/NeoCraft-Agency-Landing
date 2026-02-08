@@ -522,6 +522,8 @@
     "title": "Nos Réalisations",
     "description": "Découvrez comment nous transformons les idées complexes en expériences numériques d'exception.",
     "viewProject": "Voir le projet",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Copié !",
     "backToHome": "Retour à l'accueil",
     "filterAll": "Tous",
     "emptyTitle": "Aucune réalisation trouvée",
