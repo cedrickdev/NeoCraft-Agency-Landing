@@ -1,6 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import { useTranslations } from "next-intl";
 import { CommentForm } from "./CommentForm";
 import { CommentList } from "./CommentList";
 import { wisp } from "../lib/wisp";
@@ -10,13 +11,14 @@ interface CommentSectionProps {
 }
 
 export function CommentSection({ slug }: CommentSectionProps) {
+  const t = useTranslations("Comments");
   const { data, isLoading } = useQuery({
     queryKey: ["comments", slug],
     queryFn: () => wisp.getComments({ slug, page: 1, limit: "all" }),
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="animate-pulse text-muted-foreground">{t("loading")}</div>;
   }
 
   if (!data?.config.enabled) {
@@ -26,11 +28,11 @@ export function CommentSection({ slug }: CommentSectionProps) {
   return (
     <div>
       <h2 className="mb-8 text-2xl font-bold tracking-tight">
-        Ajouter des commentaires
+        {t("addComment")}
       </h2>
       <CommentForm slug={slug} config={data.config} />
       <h2 className="mb-8 mt-16 text-2xl font-bold tracking-tight">
-        Commentaires
+        {t("comments")}
       </h2>
       <CommentList
         comments={data.comments}

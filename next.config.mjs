@@ -19,15 +19,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: "https",
-                hostname: "imagedelivery.net",
-            },
-            {
-                protocol: "https",
-                hostname: "**.wisp.blog",
-            },
-            {
-                protocol: "https",
-                hostname: "www.neocraft.dev",
+                hostname: "**",
             },
         ],
     },

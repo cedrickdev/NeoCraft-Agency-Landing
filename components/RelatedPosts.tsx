@@ -2,6 +2,7 @@
 
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import type { GetRelatedPostsResult } from "@wisp-cms/client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import type { FunctionComponent } from "react";
@@ -9,6 +10,8 @@ import type { FunctionComponent } from "react";
 export const RelatedPosts: FunctionComponent<{
   posts: GetRelatedPostsResult["posts"];
 }> = ({ posts }) => {
+  const t = useTranslations("Blog");
+
   if (posts.length === 0) {
     return null;
   }
@@ -16,7 +19,7 @@ export const RelatedPosts: FunctionComponent<{
   return (
     <div className="my-8">
       <div className="mb-6 text-lg font-semibold tracking-tight">
-        Articles associés
+        {t("relatedPosts")}
       </div>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
         {posts.slice(0, 4).map((post) => (
@@ -35,7 +38,7 @@ export const RelatedPosts: FunctionComponent<{
               <h3 className="line-clamp-2">{post.title}</h3>
               <p className="line-clamp-3">{post.description}</p>
               <Link href={`/blog/post/${post.slug}`}>
-                <strong>Lire l&apos;article complet</strong>
+                <strong>{t("readArticle")}</strong>
               </Link>
             </div>
           </div>

@@ -78,5 +78,7 @@ body {
 }
 
 .blog-content img {
-  @apply w-full;
+  @apply max-w-full h-auto rounded-xl mx-auto my-6;
+  max-width: min(100%, 720px);
+  loading: lazy;
 }

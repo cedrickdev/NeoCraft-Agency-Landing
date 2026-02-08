@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useState, useEffect, useRef, KeyboardEvent } from "react";
 import { Search, X } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface Category {
   id: string;
@@ -24,6 +26,7 @@ export const FilterBar = ({
   active,
   categories,
 }: BlogNavigationBarProps) => {
+  const t = useTranslations("Blog");
   const param = useSearchParams();
   const [searchText, setSearchText] = useState<string>(
     param.get("query") || ""
@@ -65,34 +68,45 @@ export const FilterBar = ({
   };
 
   return (
-    <div className={cn("flex items-center justify-between px-4", className)}>
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: 0.1 }}
+      className={cn(
+        "flex items-center justify-between max-w-6xl mx-auto px-4",
+        className
+      )}
+    >
       {isSearchActive ? (
-        <div className="flex w-full items-center justify-between rounded-sm border px-1">
+        <div className="flex w-full items-center rounded-full border border-primary/20 bg-primary/[0.02] px-4 py-2 transition-all duration-300">
+          <Search className="h-4 w-4 text-muted-foreground shrink-0" />
           <input
             ref={searchInputRef}
             type="text"
-            placeholder="Rechercher..."
-            className="w-full border-none bg-transparent px-4 py-2 focus-visible:outline-none"
+            placeholder={t("searchPlaceholder")}
+            className="w-full border-none bg-transparent px-3 py-0 text-sm focus-visible:outline-none"
             onKeyUp={onHandleKey}
             onBlur={onClearSearch}
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button onClick={onClearSearch} className="ml-4">
-            <X className="h-5 w-5" />
+          <button onClick={onClearSearch} className="shrink-0 p-1 rounded-full hover:bg-primary/10 transition-colors">
+            <X className="h-4 w-4 text-muted-foreground" />
           </button>
         </div>
       ) : (
-        <div className="flex w-full items-center justify-between">
-          <div className="flex gap-2 whitespace-nowrap overflow-x-auto">
+        <div className="flex w-full items-center justify-between gap-4">
+          <div className="flex gap-2 whitespace-nowrap overflow-x-auto scrollbar-hide">
             <Link href="/blog" key="latest">
               <button
                 className={cn(
-                  "py-1 px-2",
-                  active === "latest" && "border-b-2 border-black font-semibold"
+                  "px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300",
+                  active === "latest"
+                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                    : "bg-primary/5 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
                 )}
               >
-                Tous
+                {t("filterAll")}
               </button>
             </Link>
             {categories.map((category) => (
@@ -102,9 +116,10 @@ export const FilterBar = ({
               >
                 <button
                   className={cn(
-                    "py-1 px-2",
-                    active === category.tag &&
-                      "border-b-2 border-black font-semibold"
+                    "px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300",
+                    active === category.tag
+                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                      : "bg-primary/5 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
                   )}
                 >
                   {category.label}
@@ -112,13 +127,14 @@ export const FilterBar = ({
               </Link>
             ))}
           </div>
-          <div className="flex-shrink-0">
-            <button onClick={() => setIsSearchActive(true)}>
-              <Search className="bg-primary-foreground m-2 h-5 w-5 rounded" />
-            </button>
-          </div>
+          <button
+            onClick={() => setIsSearchActive(true)}
+            className="shrink-0 w-10 h-10 rounded-full bg-primary/5 hover:bg-primary/10 flex items-center justify-center transition-colors duration-300"
+          >
+            <Search className="h-4 w-4 text-muted-foreground" />
+          </button>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };

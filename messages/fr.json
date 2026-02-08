@@ -2,10 +2,47 @@
   "macbook": {
     "title": "Découvrez nos réalisations en action"
   },
+  "NotFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backToHome": "Retour à l'accueil"
+  },
+  "Comments": {
+    "loading": "Chargement...",
+    "addComment": "Ajouter un commentaire",
+    "comments": "Commentaires",
+    "noComments": "Aucun commentaire pour l'instant. Soyez le premier à commenter !",
+    "replyTo": "En réponse à",
+    "error": "Erreur",
+    "pendingVerification": "Vérification de l'email en cours",
+    "verificationMessage": "Merci pour votre commentaire ! Veuillez vérifier votre email pour valider et publier votre commentaire. Si vous ne le trouvez pas, vérifiez votre dossier spam.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Email",
+    "websiteLabel": "Site web (optionnel)",
+    "commentLabel": "Commentaire",
+    "commentPlaceholder": "Partagez vos réflexions...",
+    "postComment": "Publier le commentaire"
+  },
   "Blog": {
     "copyLink": "Copier le lien",
     "linkCopied": "Lien copié dans le presse-papier !",
-    "backToHome": "Retour à l'accueil"
+    "backToHome": "Retour à l'accueil",
+    "pageTitle": "Nos Articles",
+    "pageDescription": "Découvrez nos derniers articles, tutoriels et réflexions sur le développement web, le design et la transformation digitale.",
+    "readArticle": "Lire l'article",
+    "filterAll": "Tous",
+    "searchPlaceholder": "Rechercher un article...",
+    "emptyTitle": "Aucun article trouvé",
+    "emptyDescription": "Aucun article ne correspond à votre recherche. Essayez avec d'autres mots-clés.",
+    "toc": "Table des matières",
+    "publishedOn": "Publié le",
+    "blogLabel": "Blog",
+    "relatedPosts": "Articles associés",
+    "shareTitle": "Partager cet article",
+    "shareOnTwitter": "Partager sur X",
+    "shareOnLinkedIn": "Partager sur LinkedIn",
+    "shareOnFacebook": "Partager sur Facebook"
   },
   "Seo": {
     "title": "NeoCraft - Agence Digitale : Web, Mobile, Design, SEO",
@@ -390,6 +427,7 @@
     "trustMessage": "Ils nous font confiance"
   },
   "footer": {
+    "description": "Savoir-faire artisanal au service de votre transformation digitale. Création web, mobile et formations d'excellence.",
     "services": {
       "showcaseWebsite": "Sites vitrine & institutionnels",
       "ecommerceWebsite": "Sites e-commerce",
@@ -418,19 +456,24 @@
     "backToHome": "Retour à l'accueil",
     "cedrick": {
       "role": "Fondateur & CEO",
-      "bio": "Visionnaire et passionné de technologie, Cedrick dirige la stratégie et l'innovation chez NeoCraft."
+      "bio": "Fondateur de NeoCraft, passionné de technologie et d'architecture logicielle. Cedrick dirige la stratégie, l'innovation et accompagne les entreprises dans leur transformation digitale."
     },
     "mj": {
       "role": "Conseil en Image Digitale & Stratégie de Croissance",
       "bio": "Conseil en image digitale de marque & stratégie de croissance. Community management, growth hacking, stratégies de fidélisation, brand content & storytelling, marketing & positionnement, campagnes publicitaires et animation sociale. Pas juste une Community Manager, une alliée stratégique pour faire grandir votre structure."
     },
     "jorel": {
-      "role": "Développeur Full-Stack",
-      "bio": "Spécialiste React et Node.js, Jorel conçoit des applications web performantes et élégantes."
+      "role": "Développeur Java/Spring Boot | Frontend Dev",
+      "bio": "Développeur full-stack avec une vraie sensibilité back-end, Jorel conçoit des applications robustes et des interfaces modernes."
     },
     "stephane": {
-      "role": "Designer UI/UX",
-      "bio": "Créatif et méticuleux, Stephane transforme les idées en interfaces intuitives et modernes."
+      "role": "Développeur Mobile | Formateur Java/Dart",
+      "bio": "Développeur mobile passionné et formateur expérimenté, Stephane maîtrise Java et Dart pour créer des applications performantes."
+    },
+    "cta": {
+      "title": "Rejoignez l'aventure",
+      "description": "Vous êtes passionné(e) par le digital et l'innovation ? Nous cherchons des talents audacieux pour repousser les limites du possible.",
+      "button": "Postuler"
     }
   },
   "Privacy": {
@@ -470,14 +513,19 @@
       "erasure": "Droit à l'effacement",
       "portability": "Portabilité",
       "how": "Contactez-nous à privacy@neocraft.dev pour exercer vos droits."
-    }
+    },
+    "backToHome": "Retour à l'accueil",
+    "contactButton": "Nous contacter"
   },
   "Realisations": {
     "badge": "Portfolio",
     "title": "Nos Réalisations",
     "description": "Découvrez comment nous transformons les idées complexes en expériences numériques d'exception.",
     "viewProject": "Voir le projet",
-    "backToHome": "Retour à l'accueil"
+    "backToHome": "Retour à l'accueil",
+    "filterAll": "Tous",
+    "emptyTitle": "Aucune réalisation trouvée",
+    "emptyDescription": "Aucun projet ne correspond à ce filtre pour le moment. De nouvelles réalisations arrivent bientôt."
   },
   "Outils": {
     "badge": "Stack Technique",

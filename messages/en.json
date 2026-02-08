@@ -2,10 +2,47 @@
   "macbook": {
     "title": "See our work in action"
   },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backToHome": "Back to Home"
+  },
+  "Comments": {
+    "loading": "Loading...",
+    "addComment": "Add a comment",
+    "comments": "Comments",
+    "noComments": "No comments yet. Be the first to comment!",
+    "replyTo": "Replying to",
+    "error": "Error",
+    "pendingVerification": "Pending email verification",
+    "verificationMessage": "Thanks for your comment! Please check your email to verify and post your comment. If you don't see it in your inbox, please check your spam folder.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "websiteLabel": "Website (optional)",
+    "commentLabel": "Comment",
+    "commentPlaceholder": "Share your thoughts...",
+    "postComment": "Post Comment"
+  },
   "Blog": {
     "copyLink": "Copy link",
     "linkCopied": "Link copied to clipboard!",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "pageTitle": "Our Articles",
+    "pageDescription": "Discover our latest articles, tutorials and insights on web development, design and digital transformation.",
+    "readArticle": "Read article",
+    "filterAll": "All",
+    "searchPlaceholder": "Search articles...",
+    "emptyTitle": "No articles found",
+    "emptyDescription": "No articles match your search. Try different keywords.",
+    "toc": "Table of Contents",
+    "publishedOn": "Published on",
+    "blogLabel": "Blog",
+    "relatedPosts": "Related Articles",
+    "shareTitle": "Share this article",
+    "shareOnTwitter": "Share on X",
+    "shareOnLinkedIn": "Share on LinkedIn",
+    "shareOnFacebook": "Share on Facebook"
   },
   "Seo": {
     "title": "NeoCraft - Digital Agency: Web, Mobile, Design & SEO",
@@ -390,6 +427,7 @@
     "trustMessage": "They trust us"
   },
   "footer": {
+    "description": "Craftsmanship at the service of your digital transformation. Web, mobile development and premium training.",
     "services": {
       "showcaseWebsite": "Showcase & institutional websites",
       "ecommerceWebsite": "E-commerce websites",
@@ -418,19 +456,24 @@
     "backToHome": "Back to Home",
     "cedrick": {
       "role": "Founder & CEO",
-      "bio": "Visionary and technology enthusiast, Cedrick leads strategy and innovation at NeoCraft."
+      "bio": "Founder of NeoCraft, passionate about technology and software architecture. Cedrick leads strategy, innovation and helps businesses with their digital transformation."
     },
     "mj": {
       "role": "Digital Image Consulting & Growth Strategy",
       "bio": "Digital brand image consulting & growth strategy. Community management, growth hacking, customer retention strategies, brand content & storytelling, marketing & positioning, advertising campaigns and social engagement. Not just a Community Manager, a strategic ally to grow your business."
     },
     "jorel": {
-      "role": "Full-Stack Developer",
-      "bio": "React and Node.js specialist, Jorel builds performant and elegant web applications."
+      "role": "Java/Spring Boot Developer | Frontend Dev",
+      "bio": "Full-stack developer with a strong back-end sensibility, Jorel builds robust applications and modern interfaces."
     },
     "stephane": {
-      "role": "UI/UX Designer",
-      "bio": "Creative and meticulous, Stephane transforms ideas into intuitive and modern interfaces."
+      "role": "Mobile Developer | Java/Dart Trainer",
+      "bio": "Passionate mobile developer and experienced trainer, Stephane masters Java and Dart to build high-performance applications."
+    },
+    "cta": {
+      "title": "Join the adventure",
+      "description": "Passionate about digital and innovation? We're looking for bold talent to push the boundaries of what's possible.",
+      "button": "Apply now"
     }
   },
   "Privacy": {
@@ -470,14 +513,19 @@
       "erasure": "Right to Erasure",
       "portability": "Portability",
       "how": "Contact us at privacy@neocraft.dev to exercise your rights."
-    }
+    },
+    "backToHome": "Back to Home",
+    "contactButton": "Contact us"
   },
   "Realisations": {
     "badge": "Portfolio",
     "title": "Our Work",
     "description": "Discover how we transform complex ideas into exceptional digital experiences.",
     "viewProject": "View Project",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "filterAll": "All",
+    "emptyTitle": "No projects found",
+    "emptyDescription": "No projects match this filter yet. New work is coming soon."
   },
   "Outils": {
     "badge": "Tech Stack",

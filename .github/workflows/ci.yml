@@ -10,6 +10,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+      NEXT_PUBLIC_BLOG_ID: ${{ secrets.NEXT_PUBLIC_BLOG_ID }}
+      NEXT_PUBLIC_BLOG_ORGANIZATION: ${{ secrets.NEXT_PUBLIC_BLOG_ORGANIZATION }}
+      NEXT_PUBLIC_BLOG_TITLE: ${{ secrets.NEXT_PUBLIC_BLOG_TITLE }}
+      NEXT_PUBLIC_BLOG_DESCRIPTION: ${{ secrets.NEXT_PUBLIC_BLOG_DESCRIPTION }}
+
     steps:
       - name: ⏬ Checkout Code
         uses: actions/checkout@v4
@@ -17,13 +24,14 @@ jobs:
       - name: 🧰 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
-
-      - name: 🧪 Verify Node & npm
-        run: node --version && npm --version
+          node-version: "20"
+          cache: "npm"
 
       - name: 📥 Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm ci --legacy-peer-deps
+
+      - name: 🔍 Lint
+        run: npm run lint
 
       - name: ✅ Run Tests
         run: npm test
