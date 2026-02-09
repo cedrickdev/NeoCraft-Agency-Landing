@@ -57,6 +57,20 @@ export const BlogContent = ({
 
   const contentRef = useRef<HTMLDivElement>(null);
 
+  const fallbackCopy = (text: string) => {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    try { document.execCommand("copy"); } catch { /* noop */ }
+    document.body.removeChild(textarea);
+  };
+
   // Optimize blog images: lazy loading, responsive srcset via Next.js Image Optimization API
   useEffect(() => {
     if (!contentRef.current) return;
@@ -108,8 +122,18 @@ export const BlogContent = ({
           size="sm"
           className="rounded-full gap-2 border-primary/10 bg-primary/5 hover:bg-primary/10 text-primary transition-all active:scale-95"
           onClick={() => {
-            navigator.clipboard.writeText(window.location.href);
-            toast.success(t("linkCopied"));
+            const url = window.location.href;
+            if (navigator.clipboard && window.isSecureContext) {
+              navigator.clipboard.writeText(url).then(() => {
+                toast.success(t("linkCopied"));
+              }).catch(() => {
+                fallbackCopy(url);
+                toast.success(t("linkCopied"));
+              });
+            } else {
+              fallbackCopy(url);
+              toast.success(t("linkCopied"));
+            }
           }}
         >
           <LinkIcon className="w-4 h-4" />

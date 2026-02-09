@@ -455,20 +455,20 @@
     "description": "Une équipe passionnée combinant expertise technique et vision créative pour donner vie à vos projets.",
     "backToHome": "Retour à l'accueil",
     "cedrick": {
-      "role": "Fondateur & CEO",
-      "bio": "Fondateur de NeoCraft, passionné de technologie et d'architecture logicielle. Cedrick dirige la stratégie, l'innovation et accompagne les entreprises dans leur transformation digitale."
+      "role": "Développeur Backend & Consultant",
+      "bio": "Fondateur de NeoCraft. Cedrick conçoit l'architecture backend des projets de l'agence et assure le conseil technique auprès des clients. Il pilote aussi la stratégie d'innovation."
     },
     "mj": {
-      "role": "Conseil en Image Digitale & Stratégie de Croissance",
-      "bio": "Conseil en image digitale de marque & stratégie de croissance. Community management, growth hacking, stratégies de fidélisation, brand content & storytelling, marketing & positionnement, campagnes publicitaires et animation sociale. Pas juste une Community Manager, une alliée stratégique pour faire grandir votre structure."
+      "role": "Image de Marque & Croissance",
+      "bio": "Marine construit l'identité visuelle de l'agence, gère les réseaux sociaux et définit la stratégie de croissance pour NeoCraft et ses clients."
     },
     "jorel": {
-      "role": "Développeur Java/Spring Boot | Frontend Dev",
-      "bio": "Développeur full-stack avec une vraie sensibilité back-end, Jorel conçoit des applications robustes et des interfaces modernes."
+      "role": "Développeur Frontend & Graphic Designer",
+      "bio": "Jorel développe les interfaces de nos projets et crée les visuels de l'agence. Il assure la cohérence entre code et design."
     },
     "stephane": {
-      "role": "Développeur Mobile | Formateur Java/Dart",
-      "bio": "Développeur mobile passionné et formateur expérimenté, Stephane maîtrise Java et Dart pour créer des applications performantes."
+      "role": "Développeur Mobile & Formateur",
+      "bio": "Stephane développe les applications mobiles de l'agence et anime les formations techniques en Java et Dart proposées par NeoCraft."
     },
     "cta": {
       "title": "Rejoignez l'aventure",
@@ -522,6 +522,8 @@
     "title": "Nos Réalisations",
     "description": "Découvrez comment nous transformons les idées complexes en expériences numériques d'exception.",
     "viewProject": "Voir le projet",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Copié !",
     "backToHome": "Retour à l'accueil",
     "filterAll": "Tous",
     "emptyTitle": "Aucune réalisation trouvée",

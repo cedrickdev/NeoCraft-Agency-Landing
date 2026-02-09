@@ -181,11 +181,9 @@ export const BlogPostList = ({ posts }: BlogPostListProps) => {
                       {post.title}
                     </h3>
 
-                    {post.description && (
-                      <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
-                        {post.description}
-                      </p>
-                    )}
+                    <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
+                      {post.description || "\u00A0"}
+                    </p>
 
                     <div className="flex items-center justify-between text-xs text-muted-foreground mt-auto pt-4 border-t border-primary/5">
                       <div className="flex items-center gap-1.5">
