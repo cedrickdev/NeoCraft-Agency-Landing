@@ -102,6 +102,11 @@ export async function generateMetadata({
             },
         },
 
+        themeColor: [
+            { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+            { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+        ],
+
         category: 'technology',
         classification: 'Business',
 
@@ -175,7 +180,6 @@ export async function generateMetadata({
         manifest: '/manifest.json',
 
         other: {
-            'theme-color': '#1a73e8',
             'color-scheme': 'light dark',
             'format-detection': 'telephone=no',
             'mobile-web-app-capable': 'yes',

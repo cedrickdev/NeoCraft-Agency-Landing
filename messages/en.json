@@ -446,8 +446,16 @@
     "button": "Discuss"
   },
   "chat": {
-    "welcomeMessage": "Hello. I am NeoBot, your virtual assistant. How can I help you?",
-    "placeholder": "Enter your message..."
+    "welcomeMessage": "Hello. I'm NeoChat, your virtual assistant. How can I help you?",
+    "placeholder": "Enter your message...",
+    "title": "NeoChat Assistant",
+    "subtitle": "Powered by NeoCraft AI",
+    "you": "You",
+    "errorProcess": "Sorry, I couldn't process that. Please try again.",
+    "errorConnection": "Connection issue. Please try again.",
+    "errorRateLimit": "Too many messages sent. Please wait a moment.",
+    "sendMessage": "Send message",
+    "attachFile": "Attach a file"
   },
   "Team": {
     "badge": "The Team",

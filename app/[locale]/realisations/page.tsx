@@ -1,3 +1,5 @@
+export const revalidate = 60; // Re-fetch from Wisp every 60 seconds
+
 import { RealizationList } from "@/components/RealizationList";
 import { Button } from "@/components/ui/button";
 import { wisp } from "@/lib/wisp";

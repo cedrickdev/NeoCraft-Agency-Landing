@@ -80,5 +80,36 @@ body {
 .blog-content img {
   @apply max-w-full h-auto rounded-xl mx-auto my-6;
   max-width: min(100%, 720px);
-  loading: lazy;
+}
+
+/* Hide Wisp/Synscribe branding */
+.blog-content a[href*="synscribe"],
+.blog-content a[href*="wisp"],
+.blog-content p:last-child a[href*="wisp"],
+a[href*="wisp.blog"],
+a[href*="synscribe"] {
+  display: none !important;
+}
+/* Also hide the parent paragraph if it only contains the branding link */
+.blog-content p:has(> a[href*="wisp"]:only-child),
+.blog-content div:has(> a[href*="wisp"]:only-child) {
+  display: none !important;
+}
+
+/* Dark mode: ensure all blog text is readable */
+.dark .blog-content {
+  --tw-prose-body: hsl(0 0% 85%);
+  --tw-prose-headings: hsl(0 0% 98%);
+  --tw-prose-links: hsl(0 0% 98%);
+  --tw-prose-bold: hsl(0 0% 98%);
+  --tw-prose-counters: hsl(0 0% 65%);
+  --tw-prose-bullets: hsl(0 0% 50%);
+  --tw-prose-hr: hsl(0 0% 20%);
+  --tw-prose-quotes: hsl(0 0% 80%);
+  --tw-prose-quote-borders: hsl(0 0% 30%);
+  --tw-prose-code: hsl(0 0% 90%);
+  --tw-prose-pre-code: hsl(0 0% 85%);
+  --tw-prose-pre-bg: hsl(0 0% 10%);
+  --tw-prose-th-borders: hsl(0 0% 25%);
+  --tw-prose-td-borders: hsl(0 0% 18%);
 }
