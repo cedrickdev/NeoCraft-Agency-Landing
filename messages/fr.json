@@ -446,8 +446,16 @@
     "button": "Discuter?"
   },
   "chat": {
-    "welcomeMessage": "Bonjour. Je suis NeoBot, votre assistant virtuel. Comment puis-je vous aider ?",
-    "placeholder": "Saisissez votre message..."
+    "welcomeMessage": "Bonjour. Je suis NeoChat, votre assistant virtuel. Comment puis-je vous aider ?",
+    "placeholder": "Saisissez votre message...",
+    "title": "NeoChat Assistant",
+    "subtitle": "Propulsé par NeoCraft AI",
+    "you": "Vous",
+    "errorProcess": "Désolé, je n'ai pas pu traiter votre demande. Réessayez.",
+    "errorConnection": "Problème de connexion au serveur. Veuillez réessayer.",
+    "errorRateLimit": "Trop de messages envoyés. Patientez un moment.",
+    "sendMessage": "Envoyer le message",
+    "attachFile": "Joindre un fichier"
   },
   "Team": {
     "badge": "L'équipe",

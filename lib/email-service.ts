@@ -12,11 +12,21 @@ interface ContactFormData {
 }
 
 export async function sendContactFormEmails(formData: ContactFormData) {
+  const fromEmail = process.env.SEND_FORM_EMAIL;
+  const companyEmail = process.env.COMPANY_EMAIL;
+
+  if (!fromEmail || !companyEmail) {
+    return {
+      success: false,
+      error: "Email configuration is missing. Check SEND_FORM_EMAIL and COMPANY_EMAIL env vars.",
+    };
+  }
+
   try {
     const emailResult = await resend.batch.send([
       // Send confirmation email to client
       {
-        from: process.env.SEND_FORM_EMAIL!,
+        from: fromEmail,
         to: [formData.email],
         subject: "Confirmation de réception - NeoCraft",
         react: ClientConfirmationEmail({
@@ -28,8 +38,8 @@ export async function sendContactFormEmails(formData: ContactFormData) {
 
       // Send notification email to company
       {
-        from: process.env.SEND_FORM_EMAIL!,
-        to: [process.env.COMPANY_EMAIL!],
+        from: fromEmail,
+        to: [companyEmail],
         subject: "Nouvelle demande de contact",
         react: CompanyNotificationEmail({
           clientName: formData.name,
